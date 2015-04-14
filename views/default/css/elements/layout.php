@@ -68,6 +68,11 @@
 }
 
 /***** PAGE HEADER ******/
+.elgg-page-header-wrapper {
+	position: fixed;
+	width: 100%;
+}
+
 .elgg-page-header {
 	padding: 5px 20px 10px;
 	position: relative;
@@ -88,7 +93,7 @@
 
 /***** PAGE BODY LAYOUT ******/
 .elgg-page-body {
-	padding: 0 20px;
+	padding: 103px 20px 0;
 }
 
 .elgg-layout {
