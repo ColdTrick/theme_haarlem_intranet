@@ -168,19 +168,23 @@
 	SITE MENU
 *************************************** */
 .elgg-menu-site {
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	float: left;
 	left: 0;
 	top: 0;
 	position: relative;
 	z-index: 1;
+	text-transform: uppercase;
 }
 .elgg-menu-site > li {
 	float: left;
 }
 .elgg-menu-site > li > a {
 	color: #FFF;
-	padding: 14px 18px;
+	padding: 0px 23px;
+	font-size: 15px;
+	line-height: 40px;
+	font-weight: 600;
 }
 .elgg-menu-site > li > a:hover {
 	text-decoration: none;
@@ -233,7 +237,6 @@
 
 .elgg-menu-site-personal {
 	float: right;
-	text-transform: uppercase;
 }
 /* ***************************************
 	TITLE

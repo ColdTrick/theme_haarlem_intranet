@@ -24,3 +24,11 @@ echo elgg_view('output/url', array(
 	'href' => $site_url,
 	'title' => $site_name
 ));
+
+echo elgg_view('output/url', array(
+	'class' => 'elgg-button elgg-button-action',
+	'id' => 'theme-haarlem-intranet-header-help',
+	
+	'href' => 'help',
+	'text' => elgg_echo('theme_haarlem_intranet:header:help')
+));

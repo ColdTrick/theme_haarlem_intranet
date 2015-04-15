@@ -22,21 +22,21 @@
 	background: #E0E0E0;
 }
 .elgg-page-default .elgg-page-header > .elgg-inner {
-	max-width: 990px;
+	max-width: 1220px;
 	margin: 0 auto;
 	height: 40px;
 }
 .elgg-page-default .elgg-page-navbar > .elgg-inner {
-	max-width: 990px;
+	max-width: 1220px;
 	margin: 0 auto;
 	height: auto;
 }
 .elgg-page-default .elgg-page-body > .elgg-inner {
-	max-width: 990px;
+	max-width: 1220px;
 	margin: 0 auto;
 }
 .elgg-page-default .elgg-page-footer > .elgg-inner {
-	max-width: 990px;
+	max-width: 1220px;
 	margin: 0 auto;
 	padding: 5px 0;
 }
@@ -71,21 +71,25 @@
 .elgg-page-header-wrapper {
 	position: fixed;
 	width: 100%;
+	z-index: 1;
 }
 
 .elgg-page-header {
-	padding: 5px 20px 10px;
+	height: 56px;
 	position: relative;
 	background: #EBEBEB;
 }
 .elgg-page-header > .elgg-inner {
 	position: relative;
 }
+.elgg-page-header > .elgg-inner img {
+	margin-top: 6px;
+}
 /***** PAGE NAVBAR ******/
 .elgg-page-navbar {
-	padding: 0 20px;
 	position: relative;
 	background: #4A4A4B;
+	height: 40px;
 }
 .elgg-page-navbar > .elgg-inner {
 	position: relative;
@@ -106,17 +110,15 @@
 	position: relative;
 	padding: 32px 0 20px 30px;
 	float: right;
-	width: 21.212121%;
+	width: 295px;
 	margin: 0;
-	border-left: 1px solid #EBEBEB;
 }
 .elgg-sidebar-alt {
 	position: relative;
 	padding: 32px 30px 20px 0;
 	float: left;
-	width: 16.161616%;
+	width: 295px;
 	margin: 0 30px 0 0;
-	border-right: 1px solid #EBEBEB;
 }
 .elgg-main {
 	position: relative;
@@ -125,7 +127,6 @@
 }
 .elgg-main > .elgg-head {
 	padding-bottom: 5px;
-	border-bottom: 1px solid #EBEBEB;
 	margin-bottom: 10px;
 }
 .elgg-layout-one-sidebar .elgg-main {

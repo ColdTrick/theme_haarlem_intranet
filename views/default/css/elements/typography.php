@@ -13,9 +13,9 @@
 *************************************** */
 body {
 	color: #414042;
-	font-size: 90%;
+	font-size: 12px;
 	line-height: 1.4em;
-	font-family: "Helvetica Neue", Helvetica, "Lucida Grande", Arial, sans-serif;
+	font-family: Arial, sans-serif;
 }
 
 a {
@@ -75,7 +75,7 @@ blockquote {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: bold;
+	font-family: 'Source Sans Pro', sans-serif;
 	color: #444;
 
 	text-rendering: optimizelegibility;

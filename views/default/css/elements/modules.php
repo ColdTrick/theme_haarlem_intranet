@@ -20,6 +20,7 @@
 }
 .elgg-module-aside .elgg-head h3 {
 	color: white;
+	font-size: 20px;
 }
 .elgg-module-aside .elgg-body {
 	padding: 10px;
