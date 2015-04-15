@@ -110,7 +110,6 @@ h6 { font-size: 0.8em; }
 
 .elgg-subtext {
 	color: #666;
-	font-size: 85%;
 	line-height: 1.4em;
 	font-style: italic;
 }

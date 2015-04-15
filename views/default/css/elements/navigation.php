@@ -90,7 +90,6 @@
 	BREADCRUMBS
 *************************************** */
 .elgg-breadcrumbs {
-	font-size: 100%;
 	font-weight: normal;
 	line-height: 1.4em;
 	padding: 0 10px 1px 0;
@@ -417,7 +416,6 @@
 .elgg-menu-entity, .elgg-menu-annotation {
 	float: right;
 	margin-left: 15px;
-	font-size: 90%;
 	color: #AAA;
 	line-height: 16px;
 	height: auto;

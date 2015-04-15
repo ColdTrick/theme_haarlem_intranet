@@ -24,7 +24,6 @@ fieldset > div:last-child {
 label {
 	font-weight: bold;
 	color: #333;
-	font-size: 110%;
 }
 label.elgg-state-disabled {
 	opacity: 0.6;
@@ -55,7 +54,6 @@ textarea:focus {
 .elgg-longtext-control {
 	float: right;
 	margin-left: 14px;
-	font-size: 80%;
 	cursor: pointer;
 }
 .elgg-input-access {

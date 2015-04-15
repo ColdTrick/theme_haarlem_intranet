@@ -185,9 +185,7 @@
 }
 .elgg-river-timestamp {
 	color: #666;
-	font-size: 85%;
 	font-style: italic;
-	line-height: 1.2em;
 }
 
 .elgg-river-attachments,
@@ -323,9 +321,6 @@
 /* ***************************************
 	Tags
 *************************************** */
-.elgg-tags {
-	font-size: 85%;
-}
 .elgg-tags > li {
 	float:left;
 	margin-right: 5px;
