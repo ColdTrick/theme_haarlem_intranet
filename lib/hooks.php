@@ -5,11 +5,11 @@
  */
 
 /**
- * Add menu items to the site menu
+ * Add menu items to the (theme)site menu
  *
- * @param string         $hook         'register'
- * @param string         $type         'menu:site'
- * @param ElggMenuItem[] $return_value the menu items
+ * @param string         $hook         the name of the hook
+ * @param string         $type         the type of the hook
+ * @param ElggMenuItem[] $return_value current return value
  * @param array          $params       supplied params
  *
  * @return ElggMenuItem[]
@@ -18,7 +18,51 @@ function theme_haarlem_intranet_site_menu($hook, $type, $return_value, $params) 
 	
 	$user = elgg_get_logged_in_user_entity();
 	
+	// left side
+	$return_value[] = ElggMenuItem::factory(array(
+		'name' => 'home',
+		'text' => elgg_view_icon('home'),
+		'title' => elgg_echo('theme_haarlem_intranet:menu:site:home'),
+		'href' => '/',
+		'is_trusted' => true,
+	));
+	
+	$return_value[] = ElggMenuItem::factory(array(
+		'name' => 'organisation',
+		'text' => elgg_echo('theme_haarlem_intranet:menu:site:organisation'),
+		'href' => 'organisatie',
+		'is_trusted' => true,
+	));
+	
+	$return_value[] = ElggMenuItem::factory(array(
+		'name' => 'groups',
+		'text' => elgg_echo('theme_haarlem_intranet:menu:site:groups'),
+		'href' => 'groups/all',
+		'is_trusted' => true,
+	));
+	
+	$return_value[] = ElggMenuItem::factory(array(
+		'name' => 'knowledge',
+		'text' => elgg_echo('theme_haarlem_intranet:menu:site:knowledge'),
+		'href' => 'kennis',
+		'is_trusted' => true,
+	));
+	$return_value[] = ElggMenuItem::factory(array(
+		'name' => 'personnel',
+		'text' => elgg_echo('theme_haarlem_intranet:menu:site:personnel'),
+		'href' => 'personeel',
+		'is_trusted' => true,
+	));
+	$return_value[] = ElggMenuItem::factory(array(
+		'name' => 'extranet',
+		'text' => elgg_echo('theme_haarlem_intranet:menu:site:extranet'),
+		'href' => 'extranet',
+		'is_trusted' => true,
+	));
+	
 	if (!empty($user)) {
+		
+		// right side
 		$return_value[] = ElggMenuItem::factory(array(
 			'name' => 'dashboard',
 			'text' => elgg_echo('theme_haarlem_intranet:menu:site:dashboard'),
@@ -32,7 +76,7 @@ function theme_haarlem_intranet_site_menu($hook, $type, $return_value, $params) 
 			$return_value[] = ElggMenuItem::factory(array(
 				'name' => 'admin',
 				'text' => elgg_view_icon('wrench'),
-				'title' => elgg_echo('content_redirector:selector:admin'),
+				'title' => elgg_echo('admin'),
 				'href' => 'admin',
 				'section' => 'personal',
 				'is_trusted' => true,
@@ -105,6 +149,7 @@ function theme_haarlem_intranet_site_menu($hook, $type, $return_value, $params) 
 		$return_value[] = ElggMenuItem::factory(array(
 			'name' => 'profile',
 			'text' => elgg_view('output/img', array('src' => $user->getIconURL('tiny'))),
+			'title' => $user->name,
 			'href' => $user->getURL(),
 			'section' => 'personal',
 			'is_trusted' => true,
