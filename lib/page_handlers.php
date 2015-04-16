@@ -34,7 +34,7 @@ function theme_haarlem_intranet_profile_page_handler($page) {
 	}
 
 	// view profile
-	$body = elgg_view_layout("one_column", array(
+	$body = elgg_view_layout("one_sidebar", array(
 		"content" => elgg_view("profile/wrapper", array("entity" => $user))
 	));
 	echo elgg_view_page($user->name, $body);

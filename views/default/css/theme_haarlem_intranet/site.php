@@ -73,6 +73,11 @@
 	position: absolute;
 	right: 0;
 	top: 10px;
+	background: #414042;
+}
+#theme-haarlem-intranet-header-help:hover {
+	color: #bcbec0;
+	background: #414042;
 }
 
 .elgg-avatar > a > img {

@@ -180,18 +180,19 @@
 }
 .elgg-menu-site > li > a {
 	color: #FFF;
-	padding: 0px 23px;
+	padding: 4px 23px 0px;
 	font-size: 15px;
-	line-height: 40px;
+	line-height: 32px;
 	font-weight: 600;
+	
 }
 .elgg-menu-site > li > a:hover {
 	text-decoration: none;
 }
 .elgg-menu-site > .elgg-state-selected > a,
 .elgg-menu-site > li:hover > a {
-	background-color: #60B8F7;
 	color: #FFF;
+	border-bottom: 4px solid #<?php echo THEME_GREEN; ?>;
 }
 .elgg-menu-site > li > ul {
 	position: absolute;
@@ -236,6 +237,11 @@
 
 .elgg-menu-site-personal {
 	float: right;
+}
+
+.elgg-menu-site-personal > li > a:hover {
+	color: #808285;
+	background: inherit;
 }
 /* ***************************************
 	TITLE
@@ -298,19 +304,21 @@
 	margin-bottom: 15px;
 }
 .elgg-menu-page a {
-	color: white;
-	background: #BDBEC1;
+	color: #414042;
+	background: #bcbec0;
 	display: block;
 	margin: 0 0 2px 0;
-	padding: 4px 4px 4px 8px;
+	padding: 11px;
+	font-size: 17px;
+	font-family: 'Source Sans Pro', sans-serif;
 }
+.elgg-menu-page li.elgg-state-selected > a,
 .elgg-menu-page a:hover {
-	color: #414042;
+	color: #bcbec0;
+	background: #808285;
 	text-decoration: none;
 }
-.elgg-menu-page li.elgg-state-selected > a {
-	color: #414042;
-}
+
 .elgg-menu-page .elgg-child-menu {
 	display: none;
 	margin-left: 15px;
@@ -438,18 +446,20 @@
 	OWNER BLOCK
 *************************************** */
 .elgg-menu-owner-block li a {
-	color: white;
-	background: #BDBEC1;
+	color: #414042;
+	background: #bcbec0;
 	display: block;
 	margin: 0 0 2px 0;
-	padding: 4px 4px 4px 8px;
-}
-.elgg-menu-owner-block li a:hover {
-	color: #414042;
+	padding: 11px;
+	font-size: 17px;
+	font-family: 'Source Sans Pro', sans-serif;
 	text-decoration: none;
 }
+.elgg-menu-owner-block li a:hover,
 .elgg-menu-owner-block li.elgg-state-selected > a {
-	color: #414042;
+	color: #bcbec0;
+	background: #808285;
+	text-decoration: none;
 }
 
 /* ***************************************
