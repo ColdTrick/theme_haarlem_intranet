@@ -67,6 +67,73 @@
 	top: 10px;
 	left: 322px;
 	position: absolute;
+	margin: 0;
+}
+.elgg-search-header table {
+	width: 573px;
+}
+form.elgg-search {
+	height: 32px;
+	border: 2px solid #414042;
+	background: #414042;
+}
+.elgg-search-header .elgg-icon-search {
+	color: white;
+	background: #414042;
+	font-size: 22px;
+	padding: 4px;
+	cursor: pointer;
+}
+.elgg-search-header .elgg-icon-search:hover {
+	color: #808285;
+}
+.elgg-search input.search-input[type="text"] {
+	height: 32px;
+	padding: 4px;
+	border: none;
+}
+
+.elgg-search input.search-input[type="text"]:focus {
+	background: white;
+}
+
+.search-advanced-type-selection > li > a {
+	background: none;
+	height: auto;
+	line-height: 32px;
+}
+.search-advanced-type-selection-dropdown > li {
+	padding: 0 4px;
+}
+.search-advanced-type-selection-dropdown > li > a {
+	padding: 4px 0;
+}
+.search-advanced-type-selection-dropdown > li:hover {
+	background: #808285;
+}
+.search-advanced-type-selection-dropdown > li > a:hover {
+	background: none;
+}
+.search-advanced-type-selection-dropdown > li:hover a{
+	color: #bcbec0;
+}
+
+.search-advanced-type-selection-dropdown {
+	line-height: auto;
+	border: 2px solid #414042;
+	left: -2px;
+    text-align: left;
+    top: 23px;
+    right: auto;
+    padding: 0;
+}
+.search-advanced-type-selection .elgg-icon {
+	color: white;
+	display: inline;
+	
+}
+.search-advanced-type-selection .elgg-icon:hover {
+	color: #808285;
 }
 
 #theme-haarlem-intranet-header-help {
@@ -110,6 +177,7 @@
 	height: 16px;
 	font-size: 10px;
 	font-weight: bold;
+	line-height: 15px;
 }
 
 .theme-haarlem-intranet-topbar-dropdown {

@@ -184,7 +184,14 @@
 	font-size: 15px;
 	line-height: 32px;
 	font-weight: 600;
-	
+}
+
+.elgg-menu-site .elgg-icon {
+	font-size: 22px;
+	color: white;
+}
+.elgg-menu-site > li > a:hover .elgg-icon {
+	color: #bcbec0;
 }
 .elgg-menu-site > li > a:hover {
 	text-decoration: none;
@@ -238,10 +245,25 @@
 .elgg-menu-site-personal {
 	float: right;
 }
-
+.elgg-menu-site-personal > li > a {
+	padding: 4px 9px 0;
+}
 .elgg-menu-site-personal > li > a:hover {
 	color: #808285;
 	background: inherit;
+}
+
+.elgg-menu-site-personal .elgg-menu-item-groups a,
+.elgg-menu-site-personal .elgg-menu-item-profile a {
+	height: 28px;
+    padding-top: 8px;
+}
+.elgg-menu-site-personal .elgg-icon-wrench,
+.elgg-menu-site-personal .elgg-icon-envelope {
+	top: 2px;
+}
+.elgg-menu-site-personal .elgg-menu-item-profile a img {
+	border-radius: 500px;
 }
 /* ***************************************
 	TITLE

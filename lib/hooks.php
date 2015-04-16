@@ -27,6 +27,18 @@ function theme_haarlem_intranet_site_menu($hook, $type, $return_value, $params) 
 			'is_trusted' => true,
 			'priority' => 100
 		));
+
+		if (elgg_is_admin_logged_in()) {
+			$return_value[] = ElggMenuItem::factory(array(
+				'name' => 'admin',
+				'text' => elgg_view_icon('wrench'),
+				'title' => elgg_echo('content_redirector:selector:admin'),
+				'href' => 'admin',
+				'section' => 'personal',
+				'is_trusted' => true,
+				'priority' => 100
+			));
+		}
 		
 		if (elgg_is_active_plugin('content_redirector')) {
 			$return_value[] = ElggMenuItem::factory(array(
@@ -43,7 +55,7 @@ function theme_haarlem_intranet_site_menu($hook, $type, $return_value, $params) 
 		if (elgg_is_active_plugin('groups')) {
 			$invited_groups = groups_get_invited_groups($user->getGUID(), true);
 			$invite_count = count($invited_groups);
-			
+			$invite_count = 4;
 			$postfix = '';
 			if ($invite_count) {
 				$postfix = "<span class='theme-haarlem-intranet-counter'>{$invite_count}</span>";
@@ -70,7 +82,7 @@ function theme_haarlem_intranet_site_menu($hook, $type, $return_value, $params) 
 				
 			$return_value[] = ElggMenuItem::factory(array(
 				'name' => 'messages',
-				'text' => elgg_view_icon('mail') . $postfix,
+				'text' => elgg_view_icon('envelope') . $postfix,
 				'title' => elgg_echo('messages'),
 				'href' => "messages/inbox/{$user->username}",
 				'section' => 'personal',
@@ -92,10 +104,7 @@ function theme_haarlem_intranet_site_menu($hook, $type, $return_value, $params) 
 		
 		$return_value[] = ElggMenuItem::factory(array(
 			'name' => 'profile',
-			'text' => elgg_view_entity_icon($user, 'small', array(
-				'use_hover' => false,
-				'use_link' => false
-			)),
+			'text' => elgg_view('output/img', array('src' => $user->getIconURL('tiny'))),
 			'href' => $user->getURL(),
 			'section' => 'personal',
 			'is_trusted' => true,
