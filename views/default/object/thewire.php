@@ -21,6 +21,7 @@ if (!$thread_id) {
 }
 
 $owner = $post->getOwnerEntity();
+$container = $post->getContainerEntity();
 
 $owner_icon = elgg_view_entity_icon($owner, 'tiny');
 $owner_link = elgg_view('output/url', array(
@@ -39,9 +40,13 @@ $metadata = elgg_view_menu('entity', array(
 $subtitle = '';
 
 // check if need to show group
-if (($post->owner_guid != $post->container_guid) && (elgg_get_page_owner_guid() != $post->container_guid)) {
-	$group = get_entity($vars["entity"]->container_guid);
-	$group_link = elgg_view("output/url", array("href" => "thewire/group/" . $group->getGUID(), "text" => $group->name, "class" => "thewire_tools_object_link"));
+if (elgg_instanceof($container, "group") && ($container->getGUID() != elgg_get_page_owner_guid())) {
+	$group_link = elgg_view("output/url", array(
+		"href" => "thewire/group/" . $container->getGUID(),
+		"text" => $container->name,
+		"class" => "thewire_tools_object_link"
+	));
+	
 	$subtitle = elgg_echo("river:ingroup", array($group_link));
 }
 
