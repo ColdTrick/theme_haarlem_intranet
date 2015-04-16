@@ -99,7 +99,7 @@ function theme_haarlem_intranet_site_menu($hook, $type, $return_value, $params) 
 		if (elgg_is_active_plugin('groups')) {
 			$invited_groups = groups_get_invited_groups($user->getGUID(), true);
 			$invite_count = count($invited_groups);
-			$invite_count = 4;
+
 			$postfix = '';
 			if ($invite_count) {
 				$postfix = "<span class='theme-haarlem-intranet-counter'>{$invite_count}</span>";
