@@ -27,7 +27,14 @@ if (isset($vars['class'])) {
 			echo elgg_view('page/elements/sidebar_alt', $vars);
 		?>
 	</div>
-	
+	<div class="elgg-sidebar">
+		<?php
+			// With the mobile experience in mind, the content order is changed in this theme,
+			// by moving sidebar below main content.
+			// On smaller screens, blocks are stacked in left to right order: content, sidebar.
+			echo elgg_view('page/elements/sidebar', $vars);
+		?>
+	</div>
 	<div class="elgg-main elgg-body">
 		<?php
 			echo elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
@@ -44,12 +51,5 @@ if (isset($vars['class'])) {
 			echo elgg_view('page/layouts/elements/footer', $vars);
 		?>
 	</div>
-	<div class="elgg-sidebar">
-		<?php
-			// With the mobile experience in mind, the content order is changed in this theme,
-			// by moving sidebar below main content.
-			// On smaller screens, blocks are stacked in left to right order: content, sidebar.
-			echo elgg_view('page/elements/sidebar', $vars);
-		?>
-	</div>
+	
 </div>

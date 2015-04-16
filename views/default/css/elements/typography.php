@@ -97,6 +97,8 @@ h6 { font-size: 0.8em; }
 	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 	text-decoration: none;
 }
+
+.elgg-main > h2:first-child,
 .elgg-heading-main {
 	display: inline-block;
 	padding-top: 15px;
