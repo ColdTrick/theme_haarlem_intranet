@@ -33,7 +33,7 @@ $metadata = elgg_view_menu('entity', array(
 	'entity' => $post,
 	'handler' => 'thewire',
 	'sort_by' => 'priority',
-	'class' => 'elgg-menu-hz theme-haarlem-intranet-entity-thewire',
+	'class' => 'elgg-menu-hz theme-haarlem-intranet-entity-menu-bottom',
 ));
 
 $subtitle = '';
