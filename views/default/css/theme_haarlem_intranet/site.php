@@ -89,3 +89,49 @@
 .fa-hover {
 	color: #<?php echo THEME_BLUE;?>;
 }
+
+.theme-haarlem-intranet-counter {
+	color: white;
+	background-color: red;
+	
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	
+	-webkit-box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.50);
+	-moz-box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.50);
+	box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.50);
+	
+	position: absolute;
+	text-align: center;
+	top: 0px;
+	left: 26px;
+	min-width: 16px;
+	height: 16px;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.theme-haarlem-intranet-topbar-dropdown {
+	display: none;
+	position: absolute;
+	background: #FFF;
+	padding: 0 20px 10px;
+	right: 0px;
+	width: 250px;
+	text-align: left;
+	border-top: 0px solid #FFF;
+	border-left: 1px solid #<?php echo THEME_COLOR_GRAY; ?>;
+	border-right: 1px solid #<?php echo THEME_COLOR_GRAY; ?>;
+	border-bottom: 1px solid #<?php echo THEME_COLOR_GRAY; ?>;
+	
+	font-size: 12px;
+	line-height: 14px;
+	
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.elgg-menu-site-personal > li.elgg-state-active .theme-haarlem-intranet-topbar-dropdown,
+.elgg-menu-site-personal > li:hover .theme-haarlem-intranet-topbar-dropdown {
+	display: block;
+}

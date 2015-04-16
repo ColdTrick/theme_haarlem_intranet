@@ -1,7 +1,7 @@
 <?php
 /**
  * theme navbar
- * 
+ *
  */
 
 // drop-down login
@@ -16,7 +16,9 @@ echo elgg_view('core/account/login_dropdown');
 </a>
 
 <div class="elgg-nav-collapse">
-	<?php 
-		echo elgg_view_menu('site');
+	<?php
+		echo elgg_view_menu('site', array(
+			'sort_by' => 'priority'
+		));
 	?>
 </div>
