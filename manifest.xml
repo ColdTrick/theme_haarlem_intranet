@@ -4,23 +4,43 @@
 	<id>theme_haarlem_intranet</id>
 	<author>ColdTrick IT Solutions</author>
 	<version>0.1</version>
-	<category>ColdTrick</category>
-	<category>theme</category>
 	<description>Responsive theme for Haarlem intranet</description>
 	<website>http://www.coldtrick.com</website>
 	<license>GNU General Public License version 2</license>
+	
 	<requires>
 		<type>elgg_release</type>
 		<version>1.8</version>
 	</requires>
+	
 	<requires>
 		<type>priority</type>
 		<priority>after</priority>
 		<plugin>search</plugin>
 	</requires>
+	
 	<requires>
 		<type>priority</type>
 		<priority>after</priority>
 		<plugin>profile</plugin>
 	</requires>
+	
+	<requires>
+		<type>plugin</type>
+		<name>fontawesome</name>
+	</requires>
+	<requires>
+		<type>priority</type>
+		<plugin>fontawesome</plugin>
+		<priority>after</priority>
+	</requires>
+	
+	<requires>
+		<type>priority</type>
+		<plugin>static</plugin>
+		<priority>after</priority>
+	</requires>
+	
+	<category>ColdTrick</category>
+	<category>theme</category>
 </plugin_manifest>
