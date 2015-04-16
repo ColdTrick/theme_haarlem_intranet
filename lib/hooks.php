@@ -285,3 +285,34 @@ function theme_haarlem_intranet_prepare_menu_icons($hook, $type, $return_value, 
 	
 	return $return_value;
 }
+
+/**
+ * Add menu items to wire posts
+ *
+ * @param string         $hook         the name of the hook
+ * @param string         $type         the type of the hook
+ * @param ElggMenuItem[] $return_value current return value
+ * @param mixed          $params       supplied params
+ *
+ * @return ElggMenuItem[]
+ */
+function theme_haarlem_intranet_thewire_entity_menu($hook, $type, $return_value, $params) {
+	
+	if (empty($params) || !is_array($params)) {
+		return $return_value;
+	}
+	
+	$entity = elgg_extract('entity', $params);
+	if (empty($entity) || !elgg_instanceof($entity, 'object', 'thewire')) {
+		return $return_value;
+	}
+	
+	$return_value[] = ElggMenuItem::factory(array(
+		'name' => 'friendlytime',
+		'text' => elgg_view_friendly_time($entity->time_created),
+		'href' => false,
+		'priority' => 1
+	));
+	
+	return $return_value;
+}
