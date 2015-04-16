@@ -292,12 +292,17 @@
 	height: 28px;
     padding-top: 8px;
 }
-.elgg-menu-theme-haarlem-intranet-site-personal .elgg-icon-wrench,
-.elgg-menu-theme-haarlem-intranet-site-personal .elgg-icon-envelope {
+.elgg-menu-theme-haarlem-intranet-site-personal .elgg-icon {
 	top: 2px;
+}
+.elgg-menu-theme-haarlem-intranet-site-personal .elgg-icon-group {
+	top: 0;	
 }
 .elgg-menu-theme-haarlem-intranet-site-personal .elgg-menu-item-profile a img {
 	border-radius: 500px;
+}
+.elgg-menu-theme-haarlem-intranet-site-personal .elgg-menu-item-quicklinks:hover .theme-haarlem-intranet-topbar-dropdown {
+	display: block;
 }
 /* ***************************************
 	TITLE
@@ -497,7 +502,7 @@
 	height: auto;
 }
 .elgg-menu-entity > li, .elgg-menu-annotation > li {
-	margin-left: 15px;
+	margin-left: 10px;
 }
 .elgg-menu-entity > li > a, .elgg-menu-annotation > li > a {
 	color: #AAA;

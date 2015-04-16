@@ -17,20 +17,18 @@ $icon = elgg_view_entity_icon($user, 'large', array(
 ));
 
 // grab the actions and admin menu items from user hover
-$menu = elgg_trigger_plugin_hook('register', "menu:user_hover", array('entity' => $user), array());
-$builder = new ElggMenuBuilder($menu);
-$menu = $builder->getMenu();
-$actions = elgg_extract('action', $menu, array());
+$menu = elgg_extract('menu', $vars);
+// $actions = elgg_extract('action', $menu, array());
 $admin = elgg_extract('admin', $menu, array());
 
-$profile_actions = '';
-if (elgg_is_logged_in() && $actions) {
-	$profile_actions = '<ul class="elgg-menu profile-action-menu mvm">';
-	foreach ($actions as $action) {
-		$profile_actions .= '<li>' . $action->getContent(array('class' => 'elgg-button elgg-button-action')) . '</li>';
-	}
-	$profile_actions .= '</ul>';
-}
+// $profile_actions = '';
+// if (elgg_is_logged_in() && $actions) {
+// 	$profile_actions = '<ul class="elgg-menu profile-action-menu mvm">';
+// 	foreach ($actions as $action) {
+// 		$profile_actions .= '<li>' . $action->getContent(array('class' => 'elgg-button elgg-button-action')) . '</li>';
+// 	}
+// 	$profile_actions .= '</ul>';
+// }
 
 // if admin, display admin links
 if (!empty($admin)) {	
@@ -59,7 +57,6 @@ echo <<<HTML
 
 <div id="profile-owner-block">
 	$icon
-	$profile_actions
 	$admin_links
 </div>
 

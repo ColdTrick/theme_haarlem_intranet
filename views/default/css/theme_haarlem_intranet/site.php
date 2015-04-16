@@ -187,8 +187,9 @@ form.elgg-search {
 	display: none;
 	position: absolute;
 	background: #FFF;
-	padding: 0 20px 10px;
+	padding: 0;
 	right: 0px;
+	top: 40px;
 	width: 250px;
 	text-align: left;
 	border-top: 0px solid #FFF;
@@ -206,7 +207,25 @@ form.elgg-search {
 .elgg-menu-site-personal > li:hover .theme-haarlem-intranet-topbar-dropdown {
 	display: block;
 }
-
+.theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks {
+	padding: 5px;
+	border-bottom: 4px solid #<?php echo THEME_GREEN; ?>;
+}
+.theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li {
+	border: none;
+	padding: 5px;
+}
+.theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li .elgg-icon {
+	font-size: 16px;
+	color: #bcbec0;
+}
+.theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li a {
+	color: #414042;
+}
+.theme-haarlem-intranet-topbar-dropdown .alliander-theme-quicklinks-item {
+	padding: 10px;
+	color: #414042;
+}
 #widget_manager_widgets_select .widget_manager_widgets_lightbox_wrapper {
 	margin-bottom: 10px;
 }

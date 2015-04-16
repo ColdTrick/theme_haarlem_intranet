@@ -33,9 +33,18 @@ function theme_haarlem_intranet_profile_page_handler($page) {
 		return true;
 	}
 
+	$menu = elgg_trigger_plugin_hook('register', "menu:user_hover", array('entity' => $user), array());
+	$builder = new ElggMenuBuilder($menu);
+	$menu = $builder->getMenu();
+	
+	$content = '<table><tr><td>' . elgg_view("profile/owner_block", array("entity" => $user, 'menu' => $menu));
+	$content .= '</td><td>' . elgg_view("profile/details", array("entity" => $user, 'menu' => $menu)) . '</td></tr></table>';
+	
 	// view profile
 	$body = elgg_view_layout("one_sidebar", array(
-		"content" => elgg_view("profile/wrapper", array("entity" => $user))
+		"content" => $content,
+		'menu' => $menu,
+		'layout' => 'content'
 	));
 	echo elgg_view_page($user->name, $body);
 

@@ -18,19 +18,19 @@
 	border-radius: 3px;
 }
 #profile-details {
-	padding: 15px;
+	padding-left: 15px;
 }
 
 /*** ownerblock ***/
 #profile-owner-block {
 	width: 200px;
-	float: left;
-	border-right: 1px solid #DCDCDC;
-	padding: 15px;
+	padding-top: 65px;
 }
+.profile-action-menu,
 #profile-owner-block .large {
 	margin-bottom: 10px;
 }
+.profile-action-menu a.elgg-button,
 #profile-owner-block a.elgg-button {
 	margin-bottom: 2px;
 	text-align: center;
@@ -56,26 +56,48 @@
 	color: #000;
 }
 /*** profile details ***/
-#profile-details .wire-status {
-	margin-top: 10px;
+#profile-details .profile-details-header {
+	background: #<?php echo THEME_BLUE; ?>;
+	margin-bottom: 20px;
+	padding: 10px;
 }
-#profile-details .odd {
-	border-bottom: 1px solid #DCDCDC;
-	margin: 0;
-	padding: 5px 0;
+#profile-details .profile-details-header h2 {
+	color: white;
 }
-#profile-details .even {
-	border-bottom: 1px solid #DCDCDC;
-	margin: 0;
-	padding: 5px 0;
+
+#profile-details > table {
+	width: 100%;
+	margin-bottom: 10px;
 }
-.profile-aboutme-title {
-	margin: 0;
-	padding: 5px 4px 2px 0;
+#profile-details > table ul {
+	wdith: 50%;
 }
-.profile-aboutme-contents {
+#profile-details > table ul:first-child {
+	padding-right: 10px;
+}
+#profile-details > table li {
+	background: white;
+	padding: 10px;
+	margin-bottom: 5px;
+}
+
+#profile-details > table label {
+	color: #<?php echo THEME_BLUE; ?>;
+	display: inline-block;
+    width: 150px;
+}
+#profile-details .elgg-module-info {
+	background: white;
+	padding: 10px;
+}
+#profile-details .elgg-module-info .elgg-head {
+	background: white;
 	padding: 0;
 }
+#profile-details .elgg-module-info .elgg-head h3 {
+	color: #<?php echo THEME_BLUE; ?>;
+}
+
 .profile-banned-user {
 	margin: 10px 0;
 	padding: 20px;
