@@ -210,3 +210,7 @@ form.elgg-search {
 #widget_manager_widgets_select .widget_manager_widgets_lightbox_wrapper {
 	margin-bottom: 10px;
 }
+
+.mce-i-fa {
+	font-family: 'FontAwesome' !important;
+}
