@@ -242,6 +242,40 @@
 	margin-left: 6px;
 }
 
+.elgg-menu-site .elgg-menu-item-home a {
+	padding-top: 6px;
+	padding-left: 0;
+	padding-right: 0;
+	border: none;
+}
+
+.elgg-menu-site .elgg-menu-item-home a {
+	padding-top: 6px;
+	padding-left: 0;
+	padding-right: 0;
+	border: none;
+}
+.elgg-menu-site .elgg-menu-item-organisation.elgg-state-selected > a,
+.elgg-menu-site .elgg-menu-item-organisation:hover > a {
+	border-bottom: 4px solid #<?php echo THEME_RED; ?>;
+}
+.elgg-menu-site .elgg-menu-item-groups.elgg-state-selected > a,
+.elgg-menu-site .elgg-menu-item-groups:hover > a {
+	border-bottom: 4px solid #<?php echo THEME_BLUE; ?>;
+}
+.elgg-menu-site .elgg-menu-item-knowledge.elgg-state-selected > a,
+.elgg-menu-site .elgg-menu-item-knowledge:hover > a {
+	border-bottom: 4px solid #<?php echo THEME_TEAL; ?>;
+}
+.elgg-menu-site .elgg-menu-item-extranet.elgg-state-selected > a,
+.elgg-menu-site .elgg-menu-item-extranet:hover > a {
+	border-bottom: 4px solid #808285;
+}
+
+.elgg-menu-site .elgg-menu-item-home a:hover {
+	border: none;
+}
+
 .elgg-menu-theme-haarlem-intranet-site-personal {
 	float: right;
 }
@@ -330,9 +364,11 @@
 	background: #bcbec0;
 	display: block;
 	margin: 0 0 2px 0;
-	padding: 11px;
+	padding: 11px 11px 11px 51px;
 	font-size: 17px;
 	font-family: 'Source Sans Pro', sans-serif;
+	height: 16px;
+	white-space: nowrap;
 }
 .elgg-menu-page li.elgg-state-selected > a,
 .elgg-menu-page a:hover {
@@ -358,6 +394,20 @@
 .elgg-menu-page .elgg-menu-opened:before {
 	content: "\25BE";
 }
+.elgg-menu-page > li > a > .elgg-icon {
+	background: #808285;
+	color: white;
+	left: 0;
+    position: absolute;
+    top: 0;
+    width: 22px;
+    height: 20px;
+    margin: 0;
+    padding: 9px;
+    font-size: 22px;
+    
+}
+
 
 /* ***************************************
 	HOVER MENU
@@ -472,16 +522,32 @@
 	background: #bcbec0;
 	display: block;
 	margin: 0 0 2px 0;
-	padding: 11px;
+	padding: 11px 11px 11px 51px;
 	font-size: 17px;
 	font-family: 'Source Sans Pro', sans-serif;
 	text-decoration: none;
+	height: 16px;
+	white-space: nowrap;
 }
 .elgg-menu-owner-block li a:hover,
 .elgg-menu-owner-block li.elgg-state-selected > a {
 	color: #bcbec0;
 	background: #808285;
 	text-decoration: none;
+}
+
+.elgg-menu-owner-block > li > a > .elgg-icon {
+	background: #808285;
+	color: white;
+	left: 0;
+    position: absolute;
+    top: 0;
+    width: 22px;
+    height: 20px;
+    margin: 0;
+    padding: 9px;
+    font-size: 22px;
+    
 }
 
 /* ***************************************

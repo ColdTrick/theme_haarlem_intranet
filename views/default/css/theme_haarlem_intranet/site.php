@@ -108,6 +108,9 @@ form.elgg-search {
 .search-advanced-type-selection-dropdown > li > a {
 	padding: 4px 0;
 }
+.search-advanced-type-selection > li > a:after {
+	padding: 0 4px;
+}
 .search-advanced-type-selection-dropdown > li:hover {
 	background: #808285;
 }
@@ -202,4 +205,8 @@ form.elgg-search {
 .elgg-menu-site-personal > li.elgg-state-active .theme-haarlem-intranet-topbar-dropdown,
 .elgg-menu-site-personal > li:hover .theme-haarlem-intranet-topbar-dropdown {
 	display: block;
+}
+
+#widget_manager_widgets_select .widget_manager_widgets_lightbox_wrapper {
+	margin-bottom: 10px;
 }
