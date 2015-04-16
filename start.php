@@ -26,6 +26,8 @@ function theme_haarlem_intranet_init() {
 	
 	elgg_register_plugin_hook_handler("register", "menu:site", "theme_haarlem_intranet_site_menu");
 	elgg_register_plugin_hook_handler("prepare", "menu:page", "theme_haarlem_intranet_prepare_page_menu_static");
+	elgg_register_plugin_hook_handler("prepare", "menu:page", "theme_haarlem_intranet_prepare_menu_icons");
+	elgg_register_plugin_hook_handler("prepare", "menu:owner_block", "theme_haarlem_intranet_prepare_menu_icons");
 	
 	elgg_register_plugin_hook_handler('route', 'all', 'theme_haarlem_route_static_handler');
 	
