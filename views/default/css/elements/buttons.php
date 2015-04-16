@@ -12,10 +12,10 @@
 	BUTTONS
 ************************** */
 .elgg-button {
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	color: #333;
+	font-family: "Source Sans Pro", sans-serif;
+	color: #bcbec0;
 	width: auto;
-	padding: 6px 12px;
+	padding: 6px 18px;
 	cursor: pointer;
 	
 	-webkit-box-sizing: border-box;
@@ -23,15 +23,24 @@
 	box-sizing: border-box;
 	
 	background: #F0F0F0;
+	
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	
+	font-size: 13px;
+	
+	border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .elgg-button:hover,
 .elgg-button:focus {
 	text-decoration: none;
 	background: #DEDEDE;
-	color: #333;
+	color: #FFF;
 }
 .elgg-button-submit {	
 	background: #<?php echo THEME_GREEN; ?>;
+	color: white;	
 }
 .elgg-button-submit:hover,
 .elgg-button-submit:focus {
@@ -42,8 +51,8 @@
 	cursor: default;
 }
 .elgg-button-cancel {
-	border: 1px solid rgba(0, 0, 0, 0.2);
 	background: #FAA51A;
+	color: white;
 }
 .elgg-button-cancel:hover,
 .elgg-button-cancel:focus {
@@ -52,7 +61,7 @@
 .elgg-button-action {
 	
 	background: #<?php echo THEME_BLUE; ?>;
-	color: white;
+	color: #FFF;
 	
 }
 .elgg-button-action:hover,
@@ -87,7 +96,8 @@
 }
 .elgg-button-special {
 	border: 1px solid rgba(0, 0, 0, 0.2);
-	background: #42C5B8;
+	background: #<?php echo THEME_TEAL; ?>;
+	color: white;
 }
 .elgg-button-special:hover,
 .elgg-button-special:focus {

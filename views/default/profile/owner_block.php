@@ -33,11 +33,21 @@ if (elgg_is_logged_in() && $actions) {
 }
 
 // if admin, display admin links
-$admin_links = '<ul class="elgg-menu" id="profile-menu-admin">';
-foreach ($admin as $menu_item) {
-	$admin_links .= '<li>' . $menu_item->getContent(array('class' => 'elgg-button')) . '</li>';
+if (!empty($admin)) {	
+	$admin_links = '<ul class="elgg-menu"><li>';
+	$admin_links .= elgg_view('output/url', array(
+		'class' => 'elgg-button elgg-button-special',
+		'href' => '#profile-menu-admin',
+		'text' => elgg_echo('admin:options'),
+		'rel' => 'toggle' 
+	));
+	$admin_links .= '</li></ul>';
+	$admin_links .= '<ul class="elgg-menu hidden" id="profile-menu-admin">';
+	foreach ($admin as $menu_item) {
+		$admin_links .= '<li>' . $menu_item->getContent(array('class' => 'elgg-button')) . '</li>';
+	}
+	$admin_links .= '</ul>';	
 }
-$admin_links .= '</ul>';	
 
 // content links
 // $content_menu = elgg_view_menu('owner_block', array(
