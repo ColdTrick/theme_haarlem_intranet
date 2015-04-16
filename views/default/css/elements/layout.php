@@ -34,6 +34,8 @@
 .elgg-page-default .elgg-page-body > .elgg-inner {
 	max-width: 1220px;
 	margin: 0 auto;
+	padding-top: 27px;
+	padding-bottom: 27px;
 }
 .elgg-page-default .elgg-page-footer > .elgg-inner {
 	max-width: 1220px;
@@ -97,7 +99,7 @@
 
 /***** PAGE BODY LAYOUT ******/
 .elgg-page-body {
-	padding: 103px 20px 0;
+	padding: 96px 20px 0;
 }
 
 .elgg-layout {
@@ -108,34 +110,26 @@
 }
 .elgg-sidebar {
 	position: relative;
-	padding: 32px 0 20px 30px;
+	padding: 0px 0 0px 27px;
 	float: right;
 	width: 295px;
 	margin: 0;
 }
 .elgg-sidebar-alt {
 	position: relative;
-	padding: 32px 30px 20px 0;
+	padding: 0px 27px 0px 0;
 	float: left;
 	width: 295px;
-	margin: 0 30px 0 0;
+	margin: 0 0 0 0;
 }
 .elgg-main {
 	position: relative;
 	min-height: 360px;
-	padding: 12px 0 10px 0;
+	padding: 20px;
+	background: white;
 }
 .elgg-main > .elgg-head {
-	padding-bottom: 5px;
-	margin-bottom: 10px;
-}
-.elgg-layout-one-sidebar .elgg-main {
-	float: left;
-	width: 72.525252%;
-}
-.elgg-layout-two-sidebar .elgg-main {
-	float: left;
-	width: 50.101010%;
+
 }
 
 /***** PAGE FOOTER ******/

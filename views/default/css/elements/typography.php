@@ -100,7 +100,11 @@ h6 { font-size: 0.8em; }
 .elgg-heading-main {
 	display: inline-block;
 	padding-top: 15px;
+	padding-bottom: 10px;
 	margin-right: 10px;
+	font-family: Arial, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
 }
 .elgg-heading-basic {
 	color: #0054A7;
