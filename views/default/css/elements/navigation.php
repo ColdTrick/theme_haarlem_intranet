@@ -333,6 +333,8 @@
 	padding: 11px;
 	font-size: 17px;
 	font-family: 'Source Sans Pro', sans-serif;
+	height: 16px;
+	white-space: nowrap;
 }
 .elgg-menu-page li.elgg-state-selected > a,
 .elgg-menu-page a:hover {
@@ -358,6 +360,20 @@
 .elgg-menu-page .elgg-menu-opened:before {
 	content: "\25BE";
 }
+.elgg-menu-page > li > a > .elgg-icon {
+	background: #808285;
+	color: white;
+	left: 0;
+    position: absolute;
+    top: 0;
+    width: 22px;
+    height: 20px;
+    margin: 0;
+    padding: 9px;
+    font-size: 22px;
+    
+}
+
 
 /* ***************************************
 	HOVER MENU
@@ -472,16 +488,32 @@
 	background: #bcbec0;
 	display: block;
 	margin: 0 0 2px 0;
-	padding: 11px;
+	padding: 11px 11px 11px 51px;
 	font-size: 17px;
 	font-family: 'Source Sans Pro', sans-serif;
 	text-decoration: none;
+	height: 16px;
+	white-space: nowrap;
 }
 .elgg-menu-owner-block li a:hover,
 .elgg-menu-owner-block li.elgg-state-selected > a {
 	color: #bcbec0;
 	background: #808285;
 	text-decoration: none;
+}
+
+.elgg-menu-owner-block > li > a > .elgg-icon {
+	background: #808285;
+	color: white;
+	left: 0;
+    position: absolute;
+    top: 0;
+    width: 22px;
+    height: 20px;
+    margin: 0;
+    padding: 9px;
+    font-size: 22px;
+    
 }
 
 /* ***************************************
