@@ -18,7 +18,6 @@ $class = "elgg-search";
 if (isset($vars['class'])) {
 	$class = "$class {$vars['class']}";
 }
-
 // @todo - why the strip slashes?
 $value = stripslashes($value);
 

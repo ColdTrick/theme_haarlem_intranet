@@ -30,6 +30,9 @@ function theme_haarlem_intranet_init() {
 
 	elgg_extend_view('page/layouts/widgets', 'theme_haarlem_intranet/widgets_fix');
 	
+	elgg_unextend_view('page/elements/header', 'search/header');
+	elgg_extend_view('page/elements/header', 'search/header');
+	
 	elgg_register_plugin_hook_handler("register", "menu:theme-haarlem-intranet-site", "theme_haarlem_intranet_site_menu");
 	elgg_register_plugin_hook_handler("register", "menu:entity", "theme_haarlem_intranet_thewire_entity_menu");
 	elgg_register_plugin_hook_handler("prepare", "menu:page", "theme_haarlem_intranet_prepare_page_menu_static");
