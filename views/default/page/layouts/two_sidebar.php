@@ -38,8 +38,10 @@ if (isset($vars['class'])) {
 	<div class="elgg-main elgg-body">
 		<?php
 			echo elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
-
-			echo elgg_view('page/layouts/elements/header', $vars);
+			$layout = elgg_extract('layout', $vars);
+			if ($layout !== 'content') {
+				echo elgg_view('page/layouts/content/header', $vars);
+			}
 
 			echo $vars['content'];
 			

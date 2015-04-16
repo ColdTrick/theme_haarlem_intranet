@@ -43,7 +43,8 @@ function theme_haarlem_intranet_profile_page_handler($page) {
 	// view profile
 	$body = elgg_view_layout("one_sidebar", array(
 		"content" => $content,
-		'menu' => $menu
+		'menu' => $menu,
+		'layout' => 'content'
 	));
 	echo elgg_view_page($user->name, $body);
 

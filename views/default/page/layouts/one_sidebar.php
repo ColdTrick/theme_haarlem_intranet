@@ -34,7 +34,10 @@ if (isset($vars['class'])) {
 		<?php
 			echo elgg_extract('nav', $vars, elgg_view('navigation/breadcrumbs'));
 			
-			echo elgg_view('page/layouts/elements/header', $vars);
+			$layout = elgg_extract('layout', $vars);
+			if ($layout !== 'content') {
+				echo elgg_view('page/layouts/content/header', $vars);
+			}
 			
 			// @todo deprecated so remove in Elgg 2.0
 			if (isset($vars['area1'])) {
