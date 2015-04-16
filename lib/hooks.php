@@ -316,3 +316,38 @@ function theme_haarlem_intranet_thewire_entity_menu($hook, $type, $return_value,
 	
 	return $return_value;
 }
+
+/**
+ * Change the htmlawed config
+ *
+ * @param string $hook         the name of the hook
+ * @param string $type         the type of the hook
+ * @param array  $return_value current return value
+ * @param mixed  $params       supplied params
+ *
+ * @return array
+ */
+function theme_haarlem_htmlawed_config($hook, $type, $return_value, $params) {
+	
+	if (empty($return_value) || !is_array($return_value)) {
+		return $return_value;
+	}
+	
+	$deny_attribute = elgg_extract('deny_attribute', $return_value);
+	if (empty($deny_attribute)) {
+		return $return_value;
+	}
+	
+	$deny_attributes = explode(',', trim($deny_attribute));
+	$allowed = array('class');
+	foreach ($deny_attributes as $index => $attr) {
+		if (!in_array($attr, $allowed)) {
+			continue;
+		}
+		
+		unset($deny_attributes[$index]);
+	}
+	
+	$return_value['deny_attribute'] = implode(',', $deny_attributes);
+	return $return_value;
+}

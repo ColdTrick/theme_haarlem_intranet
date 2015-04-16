@@ -21,8 +21,12 @@ function theme_haarlem_intranet_init() {
 	elgg_register_css("sourcesanspro", "//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700");
 	elgg_load_css("sourcesanspro");
 	
+	elgg_register_js('tinymce', 'mod/theme_haarlem_intranet/vendors/tinymce/js/tinymce/tinymce.min.js');
+	
 	elgg_extend_view('css/elgg', 'css/theme_haarlem_intranet/site');
 	elgg_extend_view('css/elgg', 'css/theme_haarlem_intranet/responsive');
+	
+	elgg_extend_view('js/elgg', 'js/bfa_plugin');
 
 	elgg_extend_view('page/layouts/widgets', 'theme_haarlem_intranet/widgets_fix');
 	
@@ -33,6 +37,8 @@ function theme_haarlem_intranet_init() {
 	elgg_register_plugin_hook_handler("prepare", "menu:owner_block", "theme_haarlem_intranet_prepare_menu_icons");
 	
 	elgg_register_plugin_hook_handler('route', 'all', 'theme_haarlem_route_static_handler');
+	
+	elgg_register_plugin_hook_handler('config', 'htmlawed', 'theme_haarlem_htmlawed_config');
 	
 	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', 'elgg_site_menu_setup');
 	
