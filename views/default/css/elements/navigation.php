@@ -364,7 +364,7 @@
 	background: #bcbec0;
 	display: block;
 	margin: 0 0 2px 0;
-	padding: 11px 11px 11px 51px;
+	padding: 11px 11px 11px 11px;
 	font-size: 17px;
 	font-family: 'Source Sans Pro', sans-serif;
 	height: 16px;
@@ -397,15 +397,11 @@
 .elgg-menu-page > li > a > .elgg-icon {
 	background: #808285;
 	color: white;
-	left: 0;
-    position: absolute;
-    top: 0;
-    width: 22px;
+	width: 22px;
     height: 20px;
-    margin: 0;
+	margin: -11px 11px 0 -11px;
     padding: 9px;
     font-size: 22px;
-    
 }
 
 
@@ -522,7 +518,7 @@
 	background: #bcbec0;
 	display: block;
 	margin: 0 0 2px 0;
-	padding: 11px 11px 11px 51px;
+	padding: 11px 11px 11px 11px;
 	font-size: 17px;
 	font-family: 'Source Sans Pro', sans-serif;
 	text-decoration: none;
@@ -539,12 +535,9 @@
 .elgg-menu-owner-block > li > a > .elgg-icon {
 	background: #808285;
 	color: white;
-	left: 0;
-    position: absolute;
-    top: 0;
-    width: 22px;
+	width: 22px;
     height: 20px;
-    margin: 0;
+	margin: -11px 11px 0 -11px;
     padding: 9px;
     font-size: 22px;
     
