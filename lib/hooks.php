@@ -64,18 +64,6 @@ function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $para
 		'priority' => 100
 	));
 
-	if (elgg_is_admin_logged_in()) {
-		$return_value[] = ElggMenuItem::factory(array(
-			'name' => 'admin',
-			'text' => elgg_view_icon('wrench'),
-			'title' => elgg_echo('admin'),
-			'href' => 'admin',
-			'section' => 'personal',
-			'is_trusted' => true,
-			'priority' => 100
-		));
-	}
-	
 	if (elgg_is_active_plugin('content_redirector')) {
 		$return_value[] = ElggMenuItem::factory(array(
 			'name' => 'content_redirector',
