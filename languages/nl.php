@@ -1,6 +1,6 @@
 <?php
 
-$english = array(
+$dutch = array(
 	"theme_haarlem_intranet:header:help" => "Help!",
 	
 	"theme_haarlem_intranet:menu:site:home" => "Home",
@@ -11,6 +11,9 @@ $english = array(
 	"theme_haarlem_intranet:menu:site:extranet" => "Extranet",
 	
 	"theme_haarlem_intranet:menu:site:dashboard" => "Mijn pagina",
+	
+	"theme_haarlem_intranet:menu:site:profile:mine" => "Mijn profiel",
+	"theme_haarlem_intranet:menu:site:profile:settings" => "Mijn instellingen",
 );
 
-add_translation("nl", $english);
+add_translation("nl", $dutch);

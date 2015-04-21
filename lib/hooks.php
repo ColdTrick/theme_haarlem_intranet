@@ -150,9 +150,38 @@ function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $para
 			'name' => 'profile',
 			'text' => elgg_view('output/img', array('src' => $user->getIconURL('tiny'))),
 			'title' => $user->name,
-			'href' => $user->getURL(),
+			'href' => false,
 			'section' => 'personal',
 			'is_trusted' => true,
+			'priority' => 300
+		));
+		
+		$return_value[] = ElggMenuItem::factory(array(
+			'name' => 'profile_mine',
+			'text' => elgg_echo('theme_haarlem_intranet:menu:site:profile:mine'),
+			'href' => $user->getURL(),
+			'section' => 'personal',
+			'parent_name' => 'profile',
+			'is_trusted' => true,
+			'priority' => 100
+		));
+		$return_value[] = ElggMenuItem::factory(array(
+			'name' => 'profile_mine',
+			'text' => elgg_echo('theme_haarlem_intranet:menu:site:profile:settings'),
+			'href' => "settings/user/{$user->username}",
+			'section' => 'personal',
+			'parent_name' => 'profile',
+			'is_trusted' => true,
+			'priority' => 200
+		));
+		$return_value[] = ElggMenuItem::factory(array(
+			'name' => 'profile_mine',
+			'text' => elgg_echo('logout'),
+			'href' => 'action/logout',
+			'section' => 'personal',
+			'parent_name' => 'profile',
+			'is_trusted' => true,
+			'is_action' => true,
 			'priority' => 300
 		));
 	}

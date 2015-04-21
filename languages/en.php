@@ -11,6 +11,9 @@ $english = array(
 	"theme_haarlem_intranet:menu:site:extranet" => "Extranet",
 	
 	"theme_haarlem_intranet:menu:site:dashboard" => "My page",
+	
+	"theme_haarlem_intranet:menu:site:profile:mine" => "My profile",
+	"theme_haarlem_intranet:menu:site:profile:settings" => "My settings",
 );
 
 add_translation("en", $english);
