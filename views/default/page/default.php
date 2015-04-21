@@ -30,7 +30,11 @@ $messages = elgg_view('page/elements/messages', array('object' => $vars['sysmess
 
 $header = elgg_view('page/elements/header', $vars);
 $navbar = elgg_view('page/elements/navbar', $vars);
-$content = elgg_view('page/elements/body', $vars);
+
+$params = $vars;
+$params['content'] = elgg_view('page/elements/body', $vars);
+$content_wrapper = elgg_view('page/elements/content_wrapper', $params);
+
 $footer = elgg_view('page/elements/footer', $vars);
 
 $body = <<<__BODY
@@ -55,11 +59,7 @@ $body .= <<<__BODY
 			</div>
 		</div>
 	</div>
-	<div class="elgg-page-body">
-		<div class="elgg-inner">
-			$content
-		</div>
-	</div>
+	$content_wrapper
 	<div class="elgg-page-footer">
 		<div class="elgg-inner">
 			$footer
