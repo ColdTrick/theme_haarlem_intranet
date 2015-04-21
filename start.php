@@ -57,6 +57,10 @@ function theme_haarlem_intranet_init() {
 	elgg_register_plugin_hook_handler('route', 'all', 'theme_haarlem_route_static_handler');
 	elgg_register_plugin_hook_handler('route', 'settings', 'theme_haarlem_route_settings_handler');
 	
+	elgg_unregister_plugin_hook_handler("route", "file", "file_tools_file_route_hook");
+	elgg_register_plugin_hook_handler("route", "file", "theme_haarlem_intranet_file_route_handler");
+	elgg_register_plugin_hook_handler("route", "file", "file_tools_file_route_hook");
+	
 	elgg_register_plugin_hook_handler('config', 'htmlawed', 'theme_haarlem_htmlawed_config');
 
 // 	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', 'elgg_site_menu_setup');
