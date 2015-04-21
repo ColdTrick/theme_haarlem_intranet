@@ -30,7 +30,9 @@ if ($owner instanceof ElggGroup || $owner instanceof ElggUser) {
 		}
 	}
 	
-	$body .= elgg_view_menu('owner_block', array('entity' => $owner));
+	if (group_gatekeeper(false)) {
+		$body .= elgg_view_menu('owner_block', array('entity' => $owner));
+	}
 	
 	$body .= elgg_view('page/elements/owner_block/extend', $vars);
 
