@@ -515,7 +515,26 @@ form.elgg-search {
 }
 
 
-
+.theme-haarlem-intranet-accordion-header {
+	font-weight: bold;
+	border-bottom: 1px solid #BDBEC1;
+	padding: 10px 2px;
+	font-family: Arial;
+	font-size: 12px;
+}
+.theme-haarlem-intranet-accordion-header .ui-icon {
+	font-size: 16px;
+}
+.theme-haarlem-intranet-accordion-header.ui-state-active,
+.theme-haarlem-intranet-accordion-header.ui-state-active .ui-icon,
+.theme-haarlem-intranet-accordion-header:hover .ui-icon, 
+.theme-haarlem-intranet-accordion-header:hover {
+	color: #<?php echo THEME_TEAL; ?>;
+}
+.elgg-output .ui-accordion-content {
+	padding: 10px;
+	margin: 0;
+}
 
 
 
