@@ -14,6 +14,39 @@
  *
  * @return ElggMenuItem[]
  */
+function theme_haarlem_intranet_prepare_site_menu($hook, $type, $return_value, $params) {
+	
+	$user = elgg_get_logged_in_user_entity();
+	
+	$items = elgg_extract('default', $return_value);
+	if (empty($items)) {
+		return $return_value;
+	}
+	
+	$names = array(
+		0 => 'home',
+		1 => 'organisation',
+		2 => 'groups',
+		3 => 'knowledge',
+		4 => 'personnel',
+		5 => 'extranet',
+	);
+	
+	foreach ($items as $index => $item) {
+		$item->setName($names[$index]);
+	}
+}
+
+/**
+ * Add menu items to the (theme)personal menu
+ *
+ * @param string         $hook         the name of the hook
+ * @param string         $type         the type of the hook
+ * @param ElggMenuItem[] $return_value current return value
+ * @param array          $params       supplied params
+ *
+ * @return ElggMenuItem[]
+ */
 function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $params) {
 	
 	$user = elgg_get_logged_in_user_entity();

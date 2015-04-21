@@ -38,12 +38,12 @@ function theme_haarlem_intranet_init() {
 	elgg_register_plugin_hook_handler("prepare", "menu:page", "theme_haarlem_intranet_prepare_page_menu_static");
 	elgg_register_plugin_hook_handler("prepare", "menu:page", "theme_haarlem_intranet_prepare_menu_icons");
 	elgg_register_plugin_hook_handler("prepare", "menu:owner_block", "theme_haarlem_intranet_prepare_menu_icons");
+
+	elgg_register_plugin_hook_handler("prepare", "menu:site", "theme_haarlem_intranet_prepare_site_menu", 99999);
 	
 	elgg_register_plugin_hook_handler('route', 'all', 'theme_haarlem_route_static_handler');
 	
 	elgg_register_plugin_hook_handler('config', 'htmlawed', 'theme_haarlem_htmlawed_config');
-	
-// 	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', 'elgg_site_menu_setup');
-	
+		
 	elgg_register_page_handler('profile', 'theme_haarlem_intranet_profile_page_handler');
 }
