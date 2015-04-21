@@ -247,6 +247,48 @@ form.elgg-search {
 	font-family: 'FontAwesome' !important;
 }
 
+.elgg-menu-page-static {
+	background: white;
+	border-top: 4px solid #<?php echo THEME_TEAL; ?>;
+	border-bottom: 4px solid #<?php echo THEME_TEAL; ?>;
+}
+
+.elgg-menu-page-static li > a, 
+.elgg-menu-page-static li.elgg-state-selected > a, 
+.elgg-menu-page-static a:hover {
+	background: none;
+}
+.elgg-menu-page-static li.elgg-state-selected > a, 
+.elgg-menu-page-static a:hover {
+	color: #<?php echo THEME_TEAL; ?>;
+}
+
+.elgg-menu-page-static .elgg-menu-closed:before {
+	content: "\f0d7";
+	font-family: "FontAwesome";
+	color: #808285;
+}
+.elgg-menu-page-static .elgg-menu-opened:before {
+	content: "\f0da";
+	font-family: "FontAwesome";
+	color: #414042;
+}
+
+.elgg-menu-page-static a {
+	color: #414042;
+}
+
+.elgg-menu-page-static > li > ul a {
+	padding: 4px;
+}
+.elgg-menu-page-static > li > ul {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.elgg-menu-page-static > li > a {
+	border-bottom: 1px solid #808285;
+}
 .elgg-menu-site > li > ul {
 	top: 40px;
 	width: auto;
