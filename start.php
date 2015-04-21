@@ -31,6 +31,7 @@ function theme_haarlem_intranet_init() {
 	elgg_extend_view('css/elgg', 'css/theme_haarlem_intranet/responsive');
 	
 	elgg_extend_view('js/elgg', 'js/bfa_plugin');
+	elgg_extend_view('page/elements/foot', 'js/theme_haarlem_intranet/accordion');
 
 	elgg_extend_view('page/layouts/widgets', 'theme_haarlem_intranet/widgets_fix');
 	

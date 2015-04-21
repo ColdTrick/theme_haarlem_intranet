@@ -20,6 +20,7 @@ if(empty($valid_elements)){
 
 
 ?>
+//<script>
 elgg.provide('elgg.tinymce');
 
 /**
@@ -74,6 +75,9 @@ elgg.tinymce.init = function() {
 		content_css: [
 			elgg.config.wwwroot + 'mod/tinymce/css/elgg_tinymce.css',
 			elgg.config.wwwroot + 'mod/fontawesome/vendors/font-awesome-4.1.0/css/font-awesome.min.css'
+		],
+		style_formats: [
+			{title: 'Accordion header', block: 'h3', classes: 'accordion-header', selector: 'p'}
 		]
 	});
 
