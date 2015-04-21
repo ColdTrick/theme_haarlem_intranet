@@ -410,11 +410,6 @@ function theme_haarlem_route_settings_handler($hook, $type, $return_value, $para
 		return $return_value;
 	}
 	
-	$handler = elgg_extract('handler', $return_value);
-	if (empty($handler) || ($handler !== 'settings')) {
-		return $return_value;
-	}
-	
 	$page = elgg_extract('segments', $return_value);
 	switch ($page[0]) {
 		case 'user':
@@ -423,4 +418,36 @@ function theme_haarlem_route_settings_handler($hook, $type, $return_value, $para
 			forward("notifications/personal/{$username}");
 			break;
 	}
+}
+
+/**
+ * Route file
+ *
+ * @param string $hook         the name of the hook
+ * @param string $type         the type of the hook
+ * @param array  $return_value current return value
+ * @param array  $params       supplied params
+ *
+ * @return array
+ */
+function theme_haarlem_intranet_file_route_handler($hook, $type, $return_value, $params) {
+	
+	if (empty($return_value) || !is_array($return_value)) {
+		return $return_value;
+	}
+	
+	$page = elgg_extract('segments', $return_value);
+	switch ($page[0]) {
+		case "owner":
+		case "group":
+			
+			if (elgg_is_active_plugin('file_tools') && file_tools_use_folder_structure()) {
+				$return_value = false;
+					
+				include(dirname(dirname(__FILE__)) . "/pages/file/list.php");
+			}
+			break;
+	}
+	
+	return $return_value;
 }
