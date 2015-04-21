@@ -32,8 +32,13 @@ function theme_haarlem_intranet_prepare_site_menu($hook, $type, $return_value, $
 		5 => 'extranet',
 	);
 	
-	foreach ($items as $index => $item) {
-		$item->setName($names[$index]);
+	$i = 0;
+	foreach ($items as $item) {
+		if (!array_key_exists($i, $names)) {
+			break;
+		}
+		$item->setName($names[$i]);
+		$i++;
 	}
 }
 
