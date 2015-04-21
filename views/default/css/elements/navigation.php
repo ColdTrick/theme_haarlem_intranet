@@ -187,7 +187,7 @@
 }
 
 .elgg-menu-site .elgg-icon {
-	font-size: 22px;
+	font-size: 22px !important;
 	color: white;
 }
 .elgg-menu-site > li > a:hover .elgg-icon {
@@ -406,7 +406,7 @@
     height: 20px;
 	margin: -11px 11px 0 -11px;
     padding: 9px;
-    font-size: 22px;
+    font-size: 22px !important;
 }
 
 
@@ -544,7 +544,7 @@
     height: 20px;
 	margin: -11px 11px 0 -11px;
     padding: 9px;
-    font-size: 22px;
+    font-size: 22px !important;
     
 }
 

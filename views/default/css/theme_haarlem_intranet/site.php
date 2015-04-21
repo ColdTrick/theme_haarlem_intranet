@@ -80,7 +80,7 @@ form.elgg-search {
 .elgg-search-header .elgg-icon-search {
 	color: white;
 	background: #414042;
-	font-size: 22px;
+	font-size: 22px !important;
 	padding: 4px;
 	cursor: pointer;
 }
