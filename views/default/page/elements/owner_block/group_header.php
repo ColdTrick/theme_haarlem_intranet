@@ -30,35 +30,37 @@ if ($entity->isPublicMembership()) {
 echo '</div>';
 
 // more
-$more_title = elgg_view('output/url', array(
-	'text' => elgg_echo('theme_haarlem_intranet:owner_block:group:more') . elgg_view_icon('chevron-circle-right', 'float-alt') . elgg_view_icon('chevron-circle-down', 'float-alt'),
-	'href' => '#theme-haarlem-intranet-owner-block-group-more',
-	'rel' => 'toggle'
-));
-
-$more_content = '<div id="theme-haarlem-intranet-owner-block-group-more" class="hidden">';
-
-// owner
-$owner = $entity->getOwnerEntity();
-$more_content .= '<div>';
-$more_content .= elgg_view_icon('user');
-$more_content .= '<b>' . elgg_echo('groups:owner') . ': </b>';
-$more_content .= elgg_view('output/url', array(
-	'text' => $owner->name,
-	'href' => $owner->getURL(),
-	'is_trusted' => true
-));
-$more_content .= '</div>';
-
-// description
-if ($entity->description) {
+if (group_gatekeeper(false)) {
+	$more_title = elgg_view('output/url', array(
+		'text' => elgg_echo('theme_haarlem_intranet:owner_block:group:more') . elgg_view_icon('chevron-circle-right', 'float-alt') . elgg_view_icon('chevron-circle-down', 'float-alt'),
+		'href' => '#theme-haarlem-intranet-owner-block-group-more',
+		'rel' => 'toggle'
+	));
+	
+	$more_content = '<div id="theme-haarlem-intranet-owner-block-group-more" class="hidden">';
+	
+	// owner
+	$owner = $entity->getOwnerEntity();
 	$more_content .= '<div>';
-	$more_content .= elgg_view('output/longtext', array('value' => $entity->description));
+	$more_content .= elgg_view_icon('user');
+	$more_content .= '<b>' . elgg_echo('groups:owner') . ': </b>';
+	$more_content .= elgg_view('output/url', array(
+		'text' => $owner->name,
+		'href' => $owner->getURL(),
+		'is_trusted' => true
+	));
 	$more_content .= '</div>';
+	
+	// description
+	if ($entity->description) {
+		$more_content .= '<div>';
+		$more_content .= elgg_view('output/longtext', array('value' => $entity->description));
+		$more_content .= '</div>';
+	}
+	
+	$more_content .= '</div>';
+	echo elgg_view_module('info', $more_title, $more_content, array('class' => 'theme-haarlem-intranet-owner-block-section'));
 }
-
-$more_content .= '</div>';
-echo elgg_view_module('info', $more_title, $more_content, array('class' => 'theme-haarlem-intranet-owner-block-section'));
 
 // admins
 echo elgg_view('group_tools/group_admins', $vars);

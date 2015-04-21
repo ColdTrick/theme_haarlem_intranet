@@ -181,7 +181,7 @@ function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $para
  * @param array  $return_value current return value
  * @param mixed  $params       supplied params
  */
-function theme_haarlem_route_static_handler($hook, $type, $return_value, $params) {
+function theme_haarlem_intranet_route_static_handler($hook, $type, $return_value, $params) {
 	
 	if (empty($return_value) || !is_array($return_value)) {
 		return $return_value;
@@ -339,7 +339,7 @@ function theme_haarlem_intranet_thewire_entity_menu($hook, $type, $return_value,
  *
  * @return array
  */
-function theme_haarlem_htmlawed_config($hook, $type, $return_value, $params) {
+function theme_haarlem_intranet_htmlawed_config($hook, $type, $return_value, $params) {
 	
 	if (empty($return_value) || !is_array($return_value)) {
 		return $return_value;
@@ -374,14 +374,15 @@ function theme_haarlem_htmlawed_config($hook, $type, $return_value, $params) {
  *
  * @return ElggMenuItem[]
  */
-function theme_haarlem_intranet_register_page_menu_settings($hook, $type, $return_value, $params) {
+function theme_haarlem_intranet_cleanup_menu($hook, $type, $return_value, $params) {
 	
 	if (empty($return_value) || !is_array($return_value)) {
 		return $return_value;
 	}
 	
 	$remove_items = array(
-		'1_account'
+		'1_account',
+		'tinymce_toggler'
 	);
 	foreach ($return_value as $index => $menu_item) {
 		if (!in_array($menu_item->getName(), $remove_items)) {
@@ -404,7 +405,7 @@ function theme_haarlem_intranet_register_page_menu_settings($hook, $type, $retur
  *
  * @return array
  */
-function theme_haarlem_route_settings_handler($hook, $type, $return_value, $params) {
+function theme_haarlem_intranet_route_settings_handler($hook, $type, $return_value, $params) {
 	
 	if (empty($return_value) || !is_array($return_value)) {
 		return $return_value;
@@ -428,7 +429,7 @@ function theme_haarlem_route_settings_handler($hook, $type, $return_value, $para
  * @param array  $return_value current return value
  * @param array  $params       supplied params
  *
- * @return array
+ * @return array|false
  */
 function theme_haarlem_intranet_file_route_handler($hook, $type, $return_value, $params) {
 	
@@ -446,6 +447,37 @@ function theme_haarlem_intranet_file_route_handler($hook, $type, $return_value, 
 					
 				include(dirname(dirname(__FILE__)) . "/pages/file/list.php");
 			}
+			break;
+	}
+	
+	return $return_value;
+}
+
+/**
+ * Route groups
+ *
+ * @param string $hook         the name of the hook
+ * @param string $type         the type of the hook
+ * @param array  $return_value current return value
+ * @param array  $params       supplied params
+ *
+ * @return array|false
+ */
+function theme_haarlem_intranet_groups_route_handler($hook, $type, $return_value, $params) {
+	
+	if (empty($return_value) || !is_array($return_value)) {
+		return $return_value;
+	}
+	
+	$page = elgg_extract('segments', $return_value);
+	switch ($page[0]) {
+		case 'profile':
+			$return_value = false;
+			
+			elgg_load_library('elgg:groups');
+			set_input('group_guid', (int) elgg_extract(1, $page));
+			
+			include(dirname(dirname(__FILE__)) . "/pages/groups/profile.php");
 			break;
 	}
 	
