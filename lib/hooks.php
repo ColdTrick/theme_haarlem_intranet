@@ -181,7 +181,7 @@ function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $para
  * @param array  $return_value current return value
  * @param mixed  $params       supplied params
  */
-function theme_haarlem_route_static_handler($hook, $type, $return_value, $params) {
+function theme_haarlem_intranet_route_static_handler($hook, $type, $return_value, $params) {
 	
 	if (empty($return_value) || !is_array($return_value)) {
 		return $return_value;
@@ -339,7 +339,7 @@ function theme_haarlem_intranet_thewire_entity_menu($hook, $type, $return_value,
  *
  * @return array
  */
-function theme_haarlem_htmlawed_config($hook, $type, $return_value, $params) {
+function theme_haarlem_intranet_htmlawed_config($hook, $type, $return_value, $params) {
 	
 	if (empty($return_value) || !is_array($return_value)) {
 		return $return_value;
@@ -374,14 +374,15 @@ function theme_haarlem_htmlawed_config($hook, $type, $return_value, $params) {
  *
  * @return ElggMenuItem[]
  */
-function theme_haarlem_intranet_register_page_menu_settings($hook, $type, $return_value, $params) {
+function theme_haarlem_intranet_cleanup_menu($hook, $type, $return_value, $params) {
 	
 	if (empty($return_value) || !is_array($return_value)) {
 		return $return_value;
 	}
 	
 	$remove_items = array(
-		'1_account'
+		'1_account',
+		'tinymce_toggler'
 	);
 	foreach ($return_value as $index => $menu_item) {
 		if (!in_array($menu_item->getName(), $remove_items)) {
@@ -404,7 +405,7 @@ function theme_haarlem_intranet_register_page_menu_settings($hook, $type, $retur
  *
  * @return array
  */
-function theme_haarlem_route_settings_handler($hook, $type, $return_value, $params) {
+function theme_haarlem_intranet_route_settings_handler($hook, $type, $return_value, $params) {
 	
 	if (empty($return_value) || !is_array($return_value)) {
 		return $return_value;
