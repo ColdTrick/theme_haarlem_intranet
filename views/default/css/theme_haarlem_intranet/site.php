@@ -247,6 +247,138 @@ form.elgg-search {
 	font-family: 'FontAwesome' !important;
 }
 
+.elgg-menu-page-static {
+	background: white;
+	border-top: 4px solid #<?php echo THEME_TEAL; ?>;
+	border-bottom: 4px solid #<?php echo THEME_TEAL; ?>;
+}
+
+.elgg-menu-page-static li > a, 
+.elgg-menu-page-static li.elgg-state-selected > a, 
+.elgg-menu-page-static a:hover {
+	background: none;
+}
+.elgg-menu-page-static li.elgg-state-selected > a, 
+.elgg-menu-page-static a:hover {
+	color: #<?php echo THEME_TEAL; ?>;
+}
+
+.elgg-menu-page-static .elgg-menu-closed:before {
+	content: "\f0d7";
+	font-family: "FontAwesome";
+	color: #808285;
+}
+.elgg-menu-page-static .elgg-menu-opened:before {
+	content: "\f0da";
+	font-family: "FontAwesome";
+	color: #414042;
+}
+
+.elgg-menu-page-static a {
+	color: #414042;
+}
+
+.elgg-menu-page-static > li > ul a {
+	padding: 4px;
+}
+.elgg-menu-page-static > li > ul {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.elgg-menu-page-static > li > a {
+	border-bottom: 1px solid #808285;
+}
+
+
+#file_tools_list_tree_container {
+	background: none;
+}
+#file_tools_list_tree_container > .elgg-body {
+	padding: 0px;
+}
+
+#file-tools-folder-tree {
+	background: white;
+	border-top: 4px solid #<?php echo THEME_TEAL; ?>;
+	border-bottom: 4px solid #<?php echo THEME_TEAL; ?>;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 17px;
+	color: #414042;
+}
+#file-tools-folder-tree ul {
+	margin: 0;
+}
+#file-tools-folder-tree li {
+	width: 100%;
+}
+
+#file-tools-folder-tree a {
+	padding: 4px;
+	color: #414042;
+}
+#file-tools-folder-tree > ul > li {
+	padding-left: 0;
+}
+#file-tools-folder-tree > ul > li > a {
+	padding: 11px;
+	border-bottom: 1px solid #414042;
+	width: 100%;
+}
+.tree-classic li,
+.tree-classic ul {
+	background: none !important;
+}
+.tree-classic li.open a.elgg-menu-parent:before {
+	content: "\f0da";
+	font-family: "FontAwesome";
+	color: #414042;
+	padding-right: 5px;
+}
+.tree-classic li.closed a.elgg-menu-parent:before {
+	content: "\f0d7";
+	font-family: "FontAwesome";
+	color: #808285;
+	padding-right: 5px;
+}
+
+.tree-classic li a.clicked, 
+.tree-classic li a.clicked:hover, 
+.tree-classic li span.clicked {
+	background: none !important;
+	color: #<?php echo THEME_TEAL; ?> !important;
+	border: inherit !important;
+}
+#file_tools_breadcrumbs {
+	display: none;
+}
+.file-tools-folder,
+.file-tools-file {
+	padding: 2px 0;
+}
+
+.file-tools-folder .elgg-menu-item-access,
+.file-tools-file .elgg-menu-item-access,
+.file-tools-folder .elgg-menu-item-edit,
+.file-tools-file .elgg-menu-item-edit,
+.file-tools-folder .elgg-menu-item-delete,
+.file-tools-file .elgg-menu-item-delete {
+	display: none;
+}
+.file-tools-folder:hover .elgg-menu-item-access,
+.file-tools-file:hover .elgg-menu-item-access,
+.file-tools-folder:hover .elgg-menu-item-edit,
+.file-tools-file:hover .elgg-menu-item-edit,
+.file-tools-folder:hover .elgg-menu-item-delete,
+.file-tools-file:hover .elgg-menu-item-delete {
+	display: inline-block;
+}
+
+#file_tools_list_files .file-tools-folder:hover,
+#file_tools_list_files .file-tools-file:hover {
+	background: #e2e3e4;
+}
+
 .elgg-menu-site > li > ul {
 	top: 40px;
 	width: auto;
