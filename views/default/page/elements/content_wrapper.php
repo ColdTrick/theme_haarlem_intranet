@@ -18,6 +18,9 @@ if ($owner instanceof ElggGroup) {
 } elseif (elgg_in_context('dashboard')) {
 	$content_class = ' theme-intranet-dashboard';
 	$content_header = elgg_view('page/elements/content_header/dashboard', $vars);
+} elseif (elgg_in_context('profile')) {
+	$content_class = ' theme-intranet-dashboard';
+	$content_header = elgg_view('page/elements/content_header/profile', $vars);
 }
 
 echo '<div class="elgg-page-content-header' . $content_class . '">';

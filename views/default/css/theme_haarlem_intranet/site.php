@@ -514,6 +514,12 @@ form.elgg-search {
 	margin-right: 10px;
 }
 
+.profile-action-menu {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+
 
 .theme-haarlem-intranet-accordion-header {
 	font-weight: bold;
