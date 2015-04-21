@@ -248,6 +248,7 @@ form.elgg-search {
 
 .elgg-menu-site > li > ul {
 	top: 40px;
+	width: auto;
 }
 
 .elgg-menu-site .elgg-child-menu a {
