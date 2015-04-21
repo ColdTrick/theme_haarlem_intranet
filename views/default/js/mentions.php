@@ -23,17 +23,22 @@ elgg.mentions.handleResponse = function (json) {
 	$(json).each(function(key, user) {
 		userOptions += user.label;
 	});
+
+	var $selector = $('#mentions-popup');
+	if (mentionsEditor == 'textarea' && textarea !== null) {
+		$selector = $(textarea).siblings('#mentions-popup');
+	}
 	
 	if (!userOptions) {
-		$('#mentions-popup > .elgg-body').html('<div class="elgg-ajax-loader"></div>');
-		$('#mentions-popup').addClass('hidden');
+		$selector.find('> .elgg-body').html('<div class="elgg-ajax-loader"></div>');
+		$selector.addClass('hidden');
 		return;
 	}
 
-	$('#mentions-popup > .elgg-body').html(userOptions);
-	$('#mentions-popup').removeClass('hidden');
+	$selector.find('> .elgg-body').html(userOptions);
+	$selector.removeClass('hidden');
 
-	$('.mentions-popup .elgg-autocomplete-item').bind('click', function(e) {
+	$selector.find('.elgg-autocomplete-item').bind('click', function(e) {
 		e.preventDefault();
 		var userUrl = $(this).find('a').first().attr('href');
 		var username = userUrl.split('/').pop();
@@ -57,7 +62,7 @@ elgg.mentions.handleResponse = function (json) {
 		}
 
 		// Hide the autocomplete popup
-		$('#mentions-popup').addClass('hidden');
+		$selector.addClass('hidden');
 	});
 }
 
@@ -76,17 +81,22 @@ elgg.mentions.autocomplete = function (content, position) {
 			}
 		}
 	}
+
+	var $selector = $('#mentions-popup');
+	if (mentionsEditor == 'textarea' && textarea !== null) {
+		$selector = $(textarea).siblings('#mentions-popup');
+	}
 	
 	if (current.match(/@/) && current.length > 1) {
 		current = current.replace('@', '');
-		$('#mentions-popup').removeClass('hidden');
+		$selector.removeClass('hidden');
 
 		var options = {success: elgg.mentions.handleResponse};
 
 		elgg.get(elgg.config.wwwroot + 'livesearch?q=' + current + '&match_on=users', options);
 	} else {
-		$('#mentions-popup > .elgg-body').html('<div class="elgg-ajax-loader"></div>');
-		$('#mentions-popup').addClass('hidden');
+		$selector.find('> .elgg-body').html('<div class="elgg-ajax-loader"></div>');
+		$selector.addClass('hidden');
 	}
 }
 
@@ -96,8 +106,8 @@ elgg.mentions.init = function() {
 		if (e.which == 8 || e.which == 13) {
 			$('#mentions-popup > .elgg-body').html('<div class="elgg-ajax-loader"></div>');
 			$('#mentions-popup').addClass('hidden');
-		}
-		else {
+			textarea = null;
+		} else {
 			textarea = $(this);
 			content = $(this).val();
 			position = elgg.mentions.getCursorPosition(this);
