@@ -289,6 +289,67 @@ form.elgg-search {
 .elgg-menu-page-static > li > a {
 	border-bottom: 1px solid #808285;
 }
+
+
+#file_tools_list_tree_container {
+	background: none;
+}
+#file_tools_list_tree_container > .elgg-body {
+	padding: 0px;
+}
+
+#file-tools-folder-tree {
+	background: white;
+	border-top: 4px solid #<?php echo THEME_TEAL; ?>;
+	border-bottom: 4px solid #<?php echo THEME_TEAL; ?>;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 17px;
+	color: #414042;
+}
+#file-tools-folder-tree ul {
+	margin: 0;
+}
+#file-tools-folder-tree li {
+	width: 100%;
+}
+
+#file-tools-folder-tree a {
+	padding: 4px;
+	color: #414042;
+}
+#file-tools-folder-tree > ul > li {
+	padding-left: 0;
+}
+#file-tools-folder-tree > ul > li > a {
+	padding: 11px;
+	border-bottom: 1px solid #414042;
+	width: 100%;
+}
+.tree-classic li,
+.tree-classic ul {
+	background: none !important;
+}
+.tree-classic li.open a.elgg-menu-parent:before {
+	content: "\f0da";
+	font-family: "FontAwesome";
+	color: #414042;
+	padding-right: 5px;
+}
+.tree-classic li.closed a.elgg-menu-parent:before {
+	content: "\f0d7";
+	font-family: "FontAwesome";
+	color: #808285;
+	padding-right: 5px;
+}
+
+.tree-classic li a.clicked, 
+.tree-classic li a.clicked:hover, 
+.tree-classic li span.clicked {
+	background: none !important;
+	color: #<?php echo THEME_TEAL; ?> !important;
+	border: inherit !important;
+}
+
 .elgg-menu-site > li > ul {
 	top: 40px;
 	width: auto;
