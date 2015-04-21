@@ -33,11 +33,11 @@ elgg.tinymce.toggleEditor = function(event) {
 
 	var target = $(this).attr('href');
 	var id = $(target).attr('id');
-	if (!tinyMCE.get(id)) {
-		tinyMCE.execCommand('mceAddControl', false, id);
+	if (tinyMCE.get(id).isHidden()) {
+		tinyMCE.editors[id].show();
 		$(this).html(elgg.echo('tinymce:remove'));
 	} else {
-		tinyMCE.execCommand('mceRemoveControl', false, id);
+		tinyMCE.editors[id].hide();
 		$(this).html(elgg.echo('tinymce:add'));
 	}
 }
