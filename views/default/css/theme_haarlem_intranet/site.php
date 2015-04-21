@@ -150,6 +150,7 @@ form.elgg-search {
 	background: #414042;
 }
 
+.elgg-owner-block-group .elgg-head > .elgg-image-block .elgg-image img,
 .elgg-avatar > a > img {
 	border-radius: 500px;
 }
@@ -277,6 +278,75 @@ form.elgg-search {
 	left: auto;
 	right: -1px;
 }
+
+.elgg-owner-block-group .elgg-head {
+	background: white;
+	margin-bottom: 20px;
+}
+.elgg-owner-block-group .elgg-head > .elgg-image-block {
+	background: #<?php echo THEME_BLUE; ?>;
+	padding: 2px;
+	height: 40px;
+	overflow: hidden;
+}
+.elgg-owner-block-group .elgg-head > .elgg-image-block .elgg-body a {
+	color: white;
+	font-size: 17px;
+	font-family: "Source Sans Pro",sans-serif;
+	line-height: 40px;
+}
+
+.elgg-owner-block-group .theme-haarlem-intranet-briefdescription {
+	padding: 10px 20px 5px;
+}
+.elgg-owner-block-group .theme-haarlem-intranet-status {
+	padding: 5px 20px 10px 30px;
+	font-weight: bold;
+}
+.elgg-owner-block-group .theme-haarlem-intranet-status .elgg-icon-unlock-alt{
+	color: #<?php echo THEME_GREEN; ?>;
+}
+
+.theme-haarlem-intranet-owner-block-section,
+.theme-haarlem-intranet-owner-block-section > .elgg-head {
+	margin: 0;
+}
+.theme-haarlem-intranet-owner-block-section > .elgg-head {
+	background: #<?php echo THEME_BLUE; ?>;
+	box-shadow: none;
+	margin-top: 2px;
+}
+.theme-haarlem-intranet-owner-block-section > .elgg-head a {
+	background: #<?php echo THEME_BLUE; ?>;
+	color: white;
+	font-size: 17px;
+	font-family: "Source Sans Pro",sans-serif;
+}
+.theme-haarlem-intranet-owner-block-section > .elgg-head .elgg-icon {
+	color: white;
+}
+.theme-haarlem-intranet-owner-block-section > .elgg-body > div {
+	padding: 10px;
+}
+
+.elgg-owner-block-group .elgg-menu-title {
+	float: none;
+	margin: 0;
+}
+.elgg-owner-block-group .elgg-menu-title > li {
+	margin: 2px 0 0;
+	display: block;
+}
+.elgg-owner-block-group .elgg-menu-title > li > a {
+	border-radius: 0;
+	border: none;
+	font-size: 17px;
+	font-family: "Source Sans Pro",sans-serif;
+	padding: 9px 10px;
+}
+
+
+
 
 .elgg-page-content-header.theme-intranet-afdeling {
 	background: #<?php echo THEME_PURPLE; ?>;

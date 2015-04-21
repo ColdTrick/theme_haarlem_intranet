@@ -53,7 +53,6 @@ $more_content .= '</div>';
 // description
 if ($entity->description) {
 	$more_content .= '<div>';
-	$more_content .= '<b>' . elgg_echo('groups:description') . '</b>';
 	$more_content .= elgg_view('output/longtext', array('value' => $entity->description));
 	$more_content .= '</div>';
 }
@@ -68,6 +67,8 @@ echo elgg_view('group_tools/group_admins', $vars);
 echo elgg_view('groups/sidebar/members', $vars);
 
 // actions
-echo elgg_view_menu('title', array(
-	'sort_by' => 'priority'
-));
+if (elgg_in_context('group_profile')) {
+	echo elgg_view_menu('title', array(
+		'sort_by' => 'priority'
+	));
+}
