@@ -77,7 +77,7 @@ elgg.tinymce.init = function() {
 			elgg.config.wwwroot + 'mod/fontawesome/vendors/font-awesome-4.1.0/css/font-awesome.min.css'
 		],
 		style_formats: [
-			{title: 'Accordion header', block: 'h3', classes: 'accordion-header', selector: 'p'}
+			{title: 'Accordion header', block: 'h3', classes: 'theme-haarlem-intranet-accordion-header', selector: 'p'}
 		]
 	});
 
