@@ -150,7 +150,7 @@ function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $para
 			'name' => 'profile',
 			'text' => elgg_view('output/img', array('src' => $user->getIconURL('tiny'))),
 			'title' => $user->name,
-			'href' => false,
+			'href' => '#',
 			'section' => 'personal',
 			'is_trusted' => true,
 			'priority' => 300
