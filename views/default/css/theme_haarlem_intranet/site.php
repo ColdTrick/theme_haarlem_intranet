@@ -542,6 +542,16 @@ form.elgg-search {
 	margin: 0;
 }
 
+.elgg-menu-widget .elgg-menu-item-settings,
+.elgg-menu-widget .elgg-menu-item-delete {
+	display: none;
+}
+
+.elgg-module-widget:hover .elgg-menu-widget .elgg-menu-item-settings,
+.elgg-module-widget:hover .elgg-menu-widget .elgg-menu-item-delete {
+	display: inline-block;
+}
+
 .elgg-widget-instance-thewire > .elgg-head,
 .elgg-widget-instance-index_thewire > .elgg-head,
 .elgg-widget-instance-thewire_groups > .elgg-head,
