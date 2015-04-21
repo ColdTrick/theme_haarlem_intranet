@@ -574,3 +574,14 @@ form.elgg-search {
 	background: #<?php echo THEME_GREEN; ?>;
 	height: 40px;
 }
+
+.event_manager_event_list_icon_day {
+	border-bottom: 1px solid #414042;
+    border-left: 1px solid #414042;
+    border-right: 1px solid #414042;
+}
+
+.event_manager_event_list_icon_month {
+	background: none repeat scroll 0 0 #414042;
+    border: 1px solid #414042;
+}
