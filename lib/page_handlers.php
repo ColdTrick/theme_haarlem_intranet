@@ -40,11 +40,14 @@ function theme_haarlem_intranet_profile_page_handler($page) {
 	$content = '<table><tr><td>' . elgg_view("profile/owner_block", array("entity" => $user, 'menu' => $menu));
 	$content .= '</td><td>' . elgg_view("profile/details", array("entity" => $user, 'menu' => $menu)) . '</td></tr></table>';
 	
+	$sidebar = elgg_view('theme_haarlem_intranet/profile/group_membership', array('entity' => $user));
+	
 	// view profile
 	$body = elgg_view_layout("one_sidebar", array(
 		"content" => $content,
 		'menu' => $menu,
-		'layout' => 'content'
+		'layout' => 'content',
+		'sidebar' => $sidebar
 	));
 	echo elgg_view_page($user->name, $body);
 
