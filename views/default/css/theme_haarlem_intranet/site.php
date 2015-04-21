@@ -542,6 +542,33 @@ form.elgg-search {
 	margin: 0;
 }
 
+.elgg-widget-instance-thewire > .elgg-head,
+.elgg-widget-instance-index_thewire > .elgg-head,
+.elgg-widget-instance-thewire_groups > .elgg-head,
+.elgg-widget-instance-thewire_post > .elgg-head,
+.elgg-widget-instance-group_river_widget > .elgg-head,
+.elgg-widget-instance-river_widget > .elgg-head,
+.elgg-widget-instance-index_activity > .elgg-head {
+	background: #<?php echo THEME_BLUE; ?>;
+}
+
+.theme-intranet-afdeling .elgg-widget-instance-thewire > .elgg-head,
+.theme-intranet-afdeling .elgg-widget-instance-index_thewire > .elgg-head,
+.theme-intranet-afdeling .elgg-widget-instance-thewire_groups > .elgg-head,
+.theme-intranet-afdeling .elgg-widget-instance-thewire_post > .elgg-head,
+.theme-intranet-afdeling .elgg-widget-instance-group_river_widget > .elgg-head,
+.theme-intranet-afdeling .elgg-widget-instance-river_widget > .elgg-head,
+.theme-intranet-afdeling .elgg-widget-instance-index_activity > .elgg-head {
+	background: #<?php echo THEME_PURPLE; ?>;
+}
+
+.theme-intranet-afdeling .elgg-owner-block-group .elgg-head > .elgg-image-block,
+.theme-intranet-afdeling .theme-haarlem-intranet-owner-block-section > .elgg-head,
+.theme-intranet-afdeling .theme-haarlem-intranet-owner-block-section > .elgg-head a,
+.theme-intranet-afdeling .elgg-owner-block-group .elgg-button-action {
+	background: #<?php echo THEME_PURPLE; ?>;
+}
+
 .elgg-page-content-header.theme-intranet-afdeling {
 	background: #<?php echo THEME_PURPLE; ?>;
 }
