@@ -31,6 +31,15 @@
 	margin: 0 auto;
 	height: auto;
 }
+.elgg-page-default .elgg-page-content-header {
+	padding-top: 96px;
+	
+}
+.elgg-page-default .elgg-page-content-header > .elgg-inner {
+	max-width: 1220px;
+	margin: 0 auto;
+	height: 90px;
+}
 .elgg-page-default .elgg-page-body > .elgg-inner {
 	max-width: 1220px;
 	margin: 0 auto;
@@ -99,7 +108,7 @@
 
 /***** PAGE BODY LAYOUT ******/
 .elgg-page-body {
-	padding: 96px 20px 0;
+	padding: 0px 20px 0;
 }
 
 .elgg-layout {

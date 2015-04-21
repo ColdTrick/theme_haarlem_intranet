@@ -277,3 +277,16 @@ form.elgg-search {
 	left: auto;
 	right: -1px;
 }
+
+.elgg-page-content-header.theme-intranet-afdeling {
+	background: #<?php echo THEME_PURPLE; ?>;
+}
+.elgg-page-content-header.theme-intranet-groep {
+	background: #<?php echo THEME_BLUE; ?>;
+}
+.elgg-page-content-header.theme-intranet-dashboard {
+	background: #<?php echo THEME_GREEN; ?>;
+}
+.elgg-page-content-header.theme-intranet-kennisbank {
+	background: #<?php echo THEME_TEAL; ?>;
+}
