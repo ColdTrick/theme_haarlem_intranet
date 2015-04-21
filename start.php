@@ -14,10 +14,14 @@ define('THEME_RED', 'EE1124');
 
 elgg_register_event_handler('init','system','theme_haarlem_intranet_init');
 
+/**
+ * Called during system init
+ *
+ * @return void
+ */
 function theme_haarlem_intranet_init() {
 
 	// theme specific CSS
-	
 	elgg_register_css("sourcesanspro", "//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700");
 	elgg_load_css("sourcesanspro");
 	
@@ -30,9 +34,17 @@ function theme_haarlem_intranet_init() {
 
 	elgg_extend_view('page/layouts/widgets', 'theme_haarlem_intranet/widgets_fix');
 	
+	// unextend views
 	elgg_unextend_view('page/elements/header', 'search/header');
 	elgg_extend_view('page/elements/header', 'search/header');
 	
+	elgg_unextend_view("page/elements/owner_block/extend", "group_tools/owner_block");
+	elgg_unextend_view("groups/sidebar/members", "group_tools/group_admins", 400);
+	
+	// events
+	elgg_register_event_handler('pagesetup', 'system', 'theme_haarlem_intranet_pagesetup', 600);
+	
+	// plugin hooks
 	elgg_register_plugin_hook_handler("register", "menu:personal", "theme_haarlem_intranet_personal_menu");
 	elgg_register_plugin_hook_handler("register", "menu:entity", "theme_haarlem_intranet_thewire_entity_menu");
 	elgg_register_plugin_hook_handler("register", "menu:page", "theme_haarlem_intranet_register_page_menu_settings");
@@ -47,5 +59,18 @@ function theme_haarlem_intranet_init() {
 	
 // 	elgg_unregister_plugin_hook_handler('prepare', 'menu:site', 'elgg_site_menu_setup');
 	
+	// page handlers
 	elgg_register_page_handler('profile', 'theme_haarlem_intranet_profile_page_handler');
+}
+
+/**
+ * Called during pagesetup
+ *
+ * @return void
+ */
+function theme_haarlem_intranet_pagesetup() {
+	
+	// unextend views
+	elgg_unextend_view("groups/sidebar/members", "group_tools/group_admins");
+	
 }

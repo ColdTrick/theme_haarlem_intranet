@@ -245,3 +245,12 @@ form.elgg-search {
 .elgg-menu-site .menu-builder-edit-menu-item {
 	display: none;
 }
+
+.theme-haarlem-intranet-owner-block-section .elgg-head a > .elgg-icon-chevron-circle-down,
+.theme-haarlem-intranet-owner-block-section .elgg-head a.elgg-state-active > .elgg-icon-chevron-circle-right {
+	display: none;
+}
+
+.theme-haarlem-intranet-owner-block-section .elgg-head a.elgg-state-active > .elgg-icon-chevron-circle-down {
+	display: inline;
+}
