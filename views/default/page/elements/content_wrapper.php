@@ -7,6 +7,10 @@ $owner = elgg_get_page_owner_entity();
 
 if ($owner instanceof ElggGroup) {
 	$content_class = ' theme-intranet-groep';
+	$group_type = strtolower($owner->group_type);
+	if ($group_type === 'afdeling') {
+		$content_class = ' theme-intranet-afdeling';
+	}
 	$content_header = elgg_view('page/elements/content_header/group', $vars);
 } elseif (elgg_in_context('static')) {
 	$content_class = ' theme-intranet-kennisbank';
