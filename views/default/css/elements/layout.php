@@ -39,6 +39,7 @@
 	max-width: 1220px;
 	margin: 0 auto;
 	height: 90px;
+	position: relative;
 }
 .elgg-page-default .elgg-page-body > .elgg-inner {
 	max-width: 1220px;

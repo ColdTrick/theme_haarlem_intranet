@@ -345,6 +345,40 @@ form.elgg-search {
 	padding: 9px 10px;
 }
 
+.elgg-page-content-header > .elgg-inner > h1 {
+	font-size: 24px;
+	font-family: "Source Sans Pro",sans-serif;
+	color: white;
+	position: absolute;
+	top: 26px;
+	line-height: 32px;
+}
+
+.elgg-page-content-header > .elgg-inner > h1 > .elgg-icon {
+	background: white;
+	border-radius: 500px;
+    height: 32px;
+    line-height: 30px;
+    text-align: center;
+    width: 32px;
+    float: left;
+}
+
+.elgg-page-content-header > .elgg-inner > h1 img {
+	float: left;
+	border-radius: 500px;
+	width: 32px;
+	height: 32px;
+	margin-right: 10px;
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -357,6 +391,10 @@ form.elgg-search {
 .elgg-page-content-header.theme-intranet-dashboard {
 	background: #<?php echo THEME_GREEN; ?>;
 }
+
 .elgg-page-content-header.theme-intranet-kennisbank {
 	background: #<?php echo THEME_TEAL; ?>;
+}
+.elgg-page-content-header.theme-intranet-kennisbank > .elgg-inner > h1 > .elgg-icon {
+	color: #<?php echo THEME_TEAL; ?>;
 }
