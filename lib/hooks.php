@@ -51,174 +51,131 @@ function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $para
 	
 	$user = elgg_get_logged_in_user_entity();
 	
-	// left side
-// 	$return_value[] = ElggMenuItem::factory(array(
-// 		'name' => 'home',
-// 		'text' => elgg_view_icon('home'),
-// 		'title' => elgg_echo('theme_haarlem_intranet:menu:site:home'),
-// 		'href' => '/',
-// 		'is_trusted' => true,
-// 	));
-	
-// 	$return_value[] = ElggMenuItem::factory(array(
-// 		'name' => 'organisation',
-// 		'text' => elgg_echo('theme_haarlem_intranet:menu:site:organisation'),
-// 		'href' => 'organisatie',
-// 		'is_trusted' => true,
-// 	));
-	
-// 	$return_value[] = ElggMenuItem::factory(array(
-// 		'name' => 'groups',
-// 		'text' => elgg_echo('theme_haarlem_intranet:menu:site:groups'),
-// 		'href' => 'groups/all',
-// 		'is_trusted' => true,
-// 	));
-	
-// 	$return_value[] = ElggMenuItem::factory(array(
-// 		'name' => 'knowledge',
-// 		'text' => elgg_echo('theme_haarlem_intranet:menu:site:knowledge'),
-// 		'href' => 'kennis',
-// 		'is_trusted' => true,
-// 	));
-// 	$return_value[] = ElggMenuItem::factory(array(
-// 		'name' => 'personnel',
-// 		'text' => elgg_echo('theme_haarlem_intranet:menu:site:personnel'),
-// 		'href' => 'personeel',
-// 		'is_trusted' => true,
-// 	));
-// 	$return_value[] = ElggMenuItem::factory(array(
-// 		'name' => 'extranet',
-// 		'text' => elgg_echo('theme_haarlem_intranet:menu:site:extranet'),
-// 		'href' => 'extranet',
-// 		'is_trusted' => true,
-// 	));
-	
-	if (!empty($user)) {
+	if (empty($user)) {
+		return $return_value;
+	}
 		
-		// right side
+	$return_value[] = ElggMenuItem::factory(array(
+		'name' => 'dashboard',
+		'text' => elgg_echo('theme_haarlem_intranet:menu:site:dashboard'),
+		'href' => 'dashboard',
+		'section' => 'personal',
+		'is_trusted' => true,
+		'priority' => 100
+	));
+
+	if (elgg_is_admin_logged_in()) {
 		$return_value[] = ElggMenuItem::factory(array(
-			'name' => 'dashboard',
-			'text' => elgg_echo('theme_haarlem_intranet:menu:site:dashboard'),
-			'href' => 'dashboard',
+			'name' => 'admin',
+			'text' => elgg_view_icon('wrench'),
+			'title' => elgg_echo('admin'),
+			'href' => 'admin',
 			'section' => 'personal',
 			'is_trusted' => true,
 			'priority' => 100
-		));
-
-		if (elgg_is_admin_logged_in()) {
-			$return_value[] = ElggMenuItem::factory(array(
-				'name' => 'admin',
-				'text' => elgg_view_icon('wrench'),
-				'title' => elgg_echo('admin'),
-				'href' => 'admin',
-				'section' => 'personal',
-				'is_trusted' => true,
-				'priority' => 100
-			));
-		}
-		
-		if (elgg_is_active_plugin('content_redirector')) {
-			$return_value[] = ElggMenuItem::factory(array(
-				'name' => 'content_redirector',
-				'text' => elgg_view_icon('plus'),
-				'title' => elgg_echo('content_redirector:selector:add'),
-				'href' => 'add',
-				'section' => 'personal',
-				'is_trusted' => true,
-				'priority' => 150
-			));
-		}
-		
-		if (elgg_is_active_plugin('groups')) {
-			$invited_groups = groups_get_invited_groups($user->getGUID(), true);
-			$invite_count = count($invited_groups);
-
-			$postfix = '';
-			if ($invite_count) {
-				$postfix = "<span class='theme-haarlem-intranet-counter'>{$invite_count}</span>";
-			}
-			
-			$return_value[] = ElggMenuItem::factory(array(
-				'name' => 'groups',
-				'text' => elgg_view_icon('group') . $postfix,
-				'title' => elgg_echo('groups:yours'),
-				'href' => "groups/member/{$user->username}",
-				'section' => 'personal',
-				'is_trusted' => true,
-				'priority' => 150
-			));
-		}
-		
-		if (elgg_is_active_plugin('messages')) {
-			$message_count = messages_count_unread();
-				
-			$postfix = '';
-			if ($message_count) {
-				$postfix = "<span class='theme-haarlem-intranet-counter'>{$message_count}</span>";
-			}
-				
-			$return_value[] = ElggMenuItem::factory(array(
-				'name' => 'messages',
-				'text' => elgg_view_icon('envelope') . $postfix,
-				'title' => elgg_echo('messages'),
-				'href' => "messages/inbox/{$user->username}",
-				'section' => 'personal',
-				'is_trusted' => true,
-				'priority' => 200
-			));
-		}
-		
-		if (elgg_is_active_plugin('quicklinks')) {
-			$return_value[] = ElggMenuItem::factory(array(
-				'name' => 'quicklinks',
-				'text' => elgg_view('page/elements/topbar/quicklinks'),
-				'href' => false,
-				'section' => 'personal',
-				'is_trusted' => true,
-				'priority' => 250
-			));
-		}
-		
-		$return_value[] = ElggMenuItem::factory(array(
-			'name' => 'profile',
-			'text' => elgg_view('output/img', array('src' => $user->getIconURL('tiny'))),
-			'title' => $user->name,
-			'href' => '#',
-			'section' => 'personal',
-			'is_trusted' => true,
-			'priority' => 300
-		));
-		
-		$return_value[] = ElggMenuItem::factory(array(
-			'name' => 'profile_mine',
-			'text' => elgg_echo('theme_haarlem_intranet:menu:site:profile:mine'),
-			'href' => $user->getURL(),
-			'section' => 'personal',
-			'parent_name' => 'profile',
-			'is_trusted' => true,
-			'priority' => 100
-		));
-		$return_value[] = ElggMenuItem::factory(array(
-			'name' => 'profile_mine',
-			'text' => elgg_echo('theme_haarlem_intranet:menu:site:profile:settings'),
-			'href' => "settings/user/{$user->username}",
-			'section' => 'personal',
-			'parent_name' => 'profile',
-			'is_trusted' => true,
-			'priority' => 200
-		));
-		$return_value[] = ElggMenuItem::factory(array(
-			'name' => 'profile_mine',
-			'text' => elgg_echo('logout'),
-			'href' => 'action/logout',
-			'section' => 'personal',
-			'parent_name' => 'profile',
-			'is_trusted' => true,
-			'is_action' => true,
-			'priority' => 300
 		));
 	}
 	
+	if (elgg_is_active_plugin('content_redirector')) {
+		$return_value[] = ElggMenuItem::factory(array(
+			'name' => 'content_redirector',
+			'text' => elgg_view_icon('plus'),
+			'title' => elgg_echo('content_redirector:selector:add'),
+			'href' => 'add',
+			'section' => 'personal',
+			'is_trusted' => true,
+			'priority' => 150
+		));
+	}
+	
+	if (elgg_is_active_plugin('groups')) {
+		$invited_groups = groups_get_invited_groups($user->getGUID(), true);
+		$invite_count = count($invited_groups);
+
+		$postfix = '';
+		if ($invite_count) {
+			$postfix = "<span class='theme-haarlem-intranet-counter'>{$invite_count}</span>";
+		}
+		
+		$return_value[] = ElggMenuItem::factory(array(
+			'name' => 'groups',
+			'text' => elgg_view_icon('group') . $postfix,
+			'title' => elgg_echo('groups:yours'),
+			'href' => "groups/member/{$user->username}",
+			'section' => 'personal',
+			'is_trusted' => true,
+			'priority' => 150
+		));
+	}
+	
+	if (elgg_is_active_plugin('messages')) {
+		$message_count = messages_count_unread();
+			
+		$postfix = '';
+		if ($message_count) {
+			$postfix = "<span class='theme-haarlem-intranet-counter'>{$message_count}</span>";
+		}
+			
+		$return_value[] = ElggMenuItem::factory(array(
+			'name' => 'messages',
+			'text' => elgg_view_icon('envelope') . $postfix,
+			'title' => elgg_echo('messages'),
+			'href' => "messages/inbox/{$user->username}",
+			'section' => 'personal',
+			'is_trusted' => true,
+			'priority' => 200
+		));
+	}
+	
+	if (elgg_is_active_plugin('quicklinks')) {
+		$return_value[] = ElggMenuItem::factory(array(
+			'name' => 'quicklinks',
+			'text' => elgg_view('page/elements/topbar/quicklinks'),
+			'href' => false,
+			'section' => 'personal',
+			'is_trusted' => true,
+			'priority' => 250
+		));
+	}
+	
+	$return_value[] = ElggMenuItem::factory(array(
+		'name' => 'profile',
+		'text' => elgg_view('output/img', array('src' => $user->getIconURL('tiny'))),
+		'title' => $user->name,
+		'href' => '#',
+		'section' => 'personal',
+		'is_trusted' => true,
+		'priority' => 300
+	));
+	
+	$return_value[] = ElggMenuItem::factory(array(
+		'name' => 'profile_mine',
+		'text' => elgg_echo('theme_haarlem_intranet:menu:site:profile:mine'),
+		'href' => $user->getURL(),
+		'section' => 'personal',
+		'parent_name' => 'profile',
+		'is_trusted' => true,
+		'priority' => 100
+	));
+	$return_value[] = ElggMenuItem::factory(array(
+		'name' => 'profile_mine',
+		'text' => elgg_echo('theme_haarlem_intranet:menu:site:profile:settings'),
+		'href' => "settings/user/{$user->username}",
+		'section' => 'personal',
+		'parent_name' => 'profile',
+		'is_trusted' => true,
+		'priority' => 200
+	));
+	$return_value[] = ElggMenuItem::factory(array(
+		'name' => 'profile_mine',
+		'text' => elgg_echo('logout'),
+		'href' => 'action/logout',
+		'section' => 'personal',
+		'parent_name' => 'profile',
+		'is_trusted' => true,
+		'is_action' => true,
+		'priority' => 300
+	));
 	
 	return $return_value;
 }
