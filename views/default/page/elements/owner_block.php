@@ -14,7 +14,9 @@ elgg_push_context('owner_block');
 $owner = elgg_get_page_owner_entity();
 if ($owner instanceof ElggGroup || $owner instanceof ElggUser) {
 	$body = '';
-	if (!elgg_in_context('profile')) {
+	if ($owner instanceof ElggGroup) {
+		$header = elgg_view('page/elements/owner_block/group_header', array('entity' => $owner));
+	} elseif (!elgg_in_context('profile')) {
 		$header = elgg_view_entity($owner, array('full_view' => false));
 	} else {
 		$menu = elgg_extract('menu', $vars);
@@ -35,7 +37,7 @@ if ($owner instanceof ElggGroup || $owner instanceof ElggUser) {
 	echo elgg_view('page/components/module', array(
 		'header' => $header,
 		'body' => $body,
-		'class' => 'elgg-owner-block',
+		'class' => "elgg-owner-block elgg-owner-block-{$owner->getType()}",
 	));
 }
 

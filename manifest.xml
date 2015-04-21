@@ -34,6 +34,7 @@
 		<plugin>fontawesome</plugin>
 		<priority>after</priority>
 	</requires>
+	
 	<requires>
 		<type>plugin</type>
 		<name>menu_builder</name>
@@ -47,6 +48,12 @@
 	<requires>
 		<type>priority</type>
 		<plugin>static</plugin>
+		<priority>after</priority>
+	</requires>
+	
+	<requires>
+		<type>priority</type>
+		<plugin>group_tools</plugin>
 		<priority>after</priority>
 	</requires>
 	

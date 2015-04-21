@@ -264,6 +264,15 @@ form.elgg-search {
 	display: none;
 }
 
+.theme-haarlem-intranet-owner-block-section .elgg-head a > .elgg-icon-chevron-circle-down,
+.theme-haarlem-intranet-owner-block-section .elgg-head a.elgg-state-active > .elgg-icon-chevron-circle-right {
+	display: none;
+}
+
+.theme-haarlem-intranet-owner-block-section .elgg-head a.elgg-state-active > .elgg-icon-chevron-circle-down {
+	display: inline;
+}
+
 .elgg-menu-site.elgg-menu-personal .elgg-child-menu {
 	left: auto;
 	right: -1px;
