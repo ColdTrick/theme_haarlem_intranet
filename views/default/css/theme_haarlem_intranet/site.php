@@ -349,6 +349,35 @@ form.elgg-search {
 	color: #<?php echo THEME_TEAL; ?> !important;
 	border: inherit !important;
 }
+#file_tools_breadcrumbs {
+	display: none;
+}
+.file-tools-folder,
+.file-tools-file {
+	padding: 2px 0;
+}
+
+.file-tools-folder .elgg-menu-item-access,
+.file-tools-file .elgg-menu-item-access,
+.file-tools-folder .elgg-menu-item-edit,
+.file-tools-file .elgg-menu-item-edit,
+.file-tools-folder .elgg-menu-item-delete,
+.file-tools-file .elgg-menu-item-delete {
+	display: none;
+}
+.file-tools-folder:hover .elgg-menu-item-access,
+.file-tools-file:hover .elgg-menu-item-access,
+.file-tools-folder:hover .elgg-menu-item-edit,
+.file-tools-file:hover .elgg-menu-item-edit,
+.file-tools-folder:hover .elgg-menu-item-delete,
+.file-tools-file:hover .elgg-menu-item-delete {
+	display: inline-block;
+}
+
+#file_tools_list_files .file-tools-folder:hover,
+#file_tools_list_files .file-tools-file:hover {
+	background: #e2e3e4;
+}
 
 .elgg-menu-site > li > ul {
 	top: 40px;
