@@ -306,7 +306,17 @@ form.elgg-search {
 .elgg-owner-block-group .theme-haarlem-intranet-status .elgg-icon-unlock-alt{
 	color: #<?php echo THEME_GREEN; ?>;
 }
+.elgg-owner-block-group .theme-haarlem-intranet-status .elgg-icon-lock-closed{
+	color: #<?php echo THEME_RED; ?>;
+}
 
+.elgg-main .theme-haarlem-intranet-owner-block-section > .elgg-head h3 {
+	color: white;
+}
+.elgg-main .theme-haarlem-intranet-owner-block-section > .elgg-body {
+	background: white;
+	padding: 10px;
+}
 .theme-haarlem-intranet-owner-block-section,
 .theme-haarlem-intranet-owner-block-section > .elgg-head {
 	margin: 0;
