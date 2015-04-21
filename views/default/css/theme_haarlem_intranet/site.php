@@ -514,7 +514,7 @@ form.elgg-search {
 	margin-right: 10px;
 }
 
-.profile-action-menu {
+.elgg-page-content-header .profile-action-menu {
 	position: absolute;
 	right: 0;
 	bottom: 0;
