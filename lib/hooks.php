@@ -232,8 +232,12 @@ function theme_haarlem_intranet_prepare_page_menu_static($hook, $type, $return_v
 		return $return_value;
 	}
 	
+	$remove_sections = array(
+		'static_admin',
+		'static'
+	);
 	foreach ($return_value as $section => $menu_items) {
-		if ($section !== 'static') {
+		if (!in_array($section, $remove_sections)) {
 			continue;
 		}
 		
