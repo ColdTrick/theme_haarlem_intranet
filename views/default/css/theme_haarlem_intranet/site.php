@@ -216,7 +216,6 @@ form.elgg-search {
 	padding: 5px;
 }
 .theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li .elgg-icon {
-	font-size: 16px;
 	color: #bcbec0;
 }
 .theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li a {
@@ -232,4 +231,17 @@ form.elgg-search {
 
 .mce-i-fa {
 	font-family: 'FontAwesome' !important;
+}
+
+.elgg-menu-site > li > ul {
+	top: 40px;
+}
+
+.elgg-menu-site .elgg-child-menu a:hover {
+	background: #<?php echo THEME_GREEN; ?>;
+	color: white;
+}
+
+.elgg-menu-site .menu-builder-edit-menu-item {
+	display: none;
 }

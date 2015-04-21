@@ -14,51 +14,51 @@
  *
  * @return ElggMenuItem[]
  */
-function theme_haarlem_intranet_site_menu($hook, $type, $return_value, $params) {
+function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $params) {
 	
 	$user = elgg_get_logged_in_user_entity();
 	
 	// left side
-	$return_value[] = ElggMenuItem::factory(array(
-		'name' => 'home',
-		'text' => elgg_view_icon('home'),
-		'title' => elgg_echo('theme_haarlem_intranet:menu:site:home'),
-		'href' => '/',
-		'is_trusted' => true,
-	));
+// 	$return_value[] = ElggMenuItem::factory(array(
+// 		'name' => 'home',
+// 		'text' => elgg_view_icon('home'),
+// 		'title' => elgg_echo('theme_haarlem_intranet:menu:site:home'),
+// 		'href' => '/',
+// 		'is_trusted' => true,
+// 	));
 	
-	$return_value[] = ElggMenuItem::factory(array(
-		'name' => 'organisation',
-		'text' => elgg_echo('theme_haarlem_intranet:menu:site:organisation'),
-		'href' => 'organisatie',
-		'is_trusted' => true,
-	));
+// 	$return_value[] = ElggMenuItem::factory(array(
+// 		'name' => 'organisation',
+// 		'text' => elgg_echo('theme_haarlem_intranet:menu:site:organisation'),
+// 		'href' => 'organisatie',
+// 		'is_trusted' => true,
+// 	));
 	
-	$return_value[] = ElggMenuItem::factory(array(
-		'name' => 'groups',
-		'text' => elgg_echo('theme_haarlem_intranet:menu:site:groups'),
-		'href' => 'groups/all',
-		'is_trusted' => true,
-	));
+// 	$return_value[] = ElggMenuItem::factory(array(
+// 		'name' => 'groups',
+// 		'text' => elgg_echo('theme_haarlem_intranet:menu:site:groups'),
+// 		'href' => 'groups/all',
+// 		'is_trusted' => true,
+// 	));
 	
-	$return_value[] = ElggMenuItem::factory(array(
-		'name' => 'knowledge',
-		'text' => elgg_echo('theme_haarlem_intranet:menu:site:knowledge'),
-		'href' => 'kennis',
-		'is_trusted' => true,
-	));
-	$return_value[] = ElggMenuItem::factory(array(
-		'name' => 'personnel',
-		'text' => elgg_echo('theme_haarlem_intranet:menu:site:personnel'),
-		'href' => 'personeel',
-		'is_trusted' => true,
-	));
-	$return_value[] = ElggMenuItem::factory(array(
-		'name' => 'extranet',
-		'text' => elgg_echo('theme_haarlem_intranet:menu:site:extranet'),
-		'href' => 'extranet',
-		'is_trusted' => true,
-	));
+// 	$return_value[] = ElggMenuItem::factory(array(
+// 		'name' => 'knowledge',
+// 		'text' => elgg_echo('theme_haarlem_intranet:menu:site:knowledge'),
+// 		'href' => 'kennis',
+// 		'is_trusted' => true,
+// 	));
+// 	$return_value[] = ElggMenuItem::factory(array(
+// 		'name' => 'personnel',
+// 		'text' => elgg_echo('theme_haarlem_intranet:menu:site:personnel'),
+// 		'href' => 'personeel',
+// 		'is_trusted' => true,
+// 	));
+// 	$return_value[] = ElggMenuItem::factory(array(
+// 		'name' => 'extranet',
+// 		'text' => elgg_echo('theme_haarlem_intranet:menu:site:extranet'),
+// 		'href' => 'extranet',
+// 		'is_trusted' => true,
+// 	));
 	
 	if (!empty($user)) {
 		

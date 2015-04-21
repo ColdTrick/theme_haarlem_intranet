@@ -187,8 +187,10 @@
 }
 
 .elgg-menu-site .elgg-icon {
-	font-size: 22px !important;
 	color: white;
+}
+.elgg-menu-site > li > a > .elgg-icon {
+	font-size: 22px !important;
 }
 .elgg-menu-site > li > a:hover .elgg-icon {
 	color: #bcbec0;
@@ -276,32 +278,32 @@
 	border: none;
 }
 
-.elgg-menu-theme-haarlem-intranet-site-personal {
+.elgg-menu-personal {
 	float: right;
 }
-.elgg-menu-theme-haarlem-intranet-site-personal > li > a {
+.elgg-menu-personal > li > a {
 	padding: 4px 9px 0;
 }
-.elgg-menu-theme-haarlem-intranet-site-personal > li > a:hover {
+.elgg-menu-personal > li > a:hover {
 	color: #808285;
 	background: inherit;
 }
 
-.elgg-menu-theme-haarlem-intranet-site-personal .elgg-menu-item-groups a,
-.elgg-menu-theme-haarlem-intranet-site-personal .elgg-menu-item-profile a {
+.elgg-menu-personal .elgg-menu-item-groups a,
+.elgg-menu-personal .elgg-menu-item-profile a {
 	height: 28px;
     padding-top: 8px;
 }
-.elgg-menu-theme-haarlem-intranet-site-personal .elgg-icon {
+.elgg-menu-personal .elgg-icon {
 	top: 2px;
 }
-.elgg-menu-theme-haarlem-intranet-site-personal .elgg-icon-group {
+.elgg-menu-personal .elgg-icon-group {
 	top: 0;	
 }
-.elgg-menu-theme-haarlem-intranet-site-personal .elgg-menu-item-profile a img {
+.elgg-menu-personal .elgg-menu-item-profile a img {
 	border-radius: 500px;
 }
-.elgg-menu-theme-haarlem-intranet-site-personal .elgg-menu-item-quicklinks:hover .theme-haarlem-intranet-topbar-dropdown {
+.elgg-menu-personal .elgg-menu-item-quicklinks:hover .theme-haarlem-intranet-topbar-dropdown {
 	display: block;
 }
 /* ***************************************

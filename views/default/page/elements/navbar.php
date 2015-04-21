@@ -17,7 +17,10 @@ echo elgg_view('core/account/login_dropdown');
 
 <div class="elgg-nav-collapse">
 	<?php
-		echo elgg_view_menu('theme-haarlem-intranet-site', array(
+		echo elgg_view_menu('site', array(
+			'sort_by' => 'priority'
+		));
+		echo elgg_view_menu('personal', array(
 			'sort_by' => 'priority',
 			'class' => 'elgg-menu-site'
 		));
