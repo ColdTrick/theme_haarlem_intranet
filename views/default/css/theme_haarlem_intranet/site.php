@@ -207,19 +207,32 @@ form.elgg-search {
 .elgg-menu-site-personal > li:hover .theme-haarlem-intranet-topbar-dropdown {
 	display: block;
 }
+
+.theme-haarlem-intranet-topbar-dropdown {
+	border-bottom: 1px solid #999999;
+    border-left: 1px solid #999999;
+    border-radius: 0 0 4px 4px;
+    border-right: 1px solid #999999;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+    right: -1px;
+}
 .theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks {
-	padding: 5px;
+	padding: 0;
 	border-bottom: 4px solid #<?php echo THEME_GREEN; ?>;
+	
 }
 .theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li {
 	border: none;
-	padding: 5px;
+	height: 20px;
+	padding: 0;
 }
 .theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li .elgg-icon {
 	color: #bcbec0;
 }
-.theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li a {
+.theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li > a {
 	color: #414042;
+	height: 20px;
+    padding: 3px 13px 0;
 }
 .theme-haarlem-intranet-topbar-dropdown .alliander-theme-quicklinks-item {
 	padding: 10px;
@@ -235,6 +248,11 @@ form.elgg-search {
 
 .elgg-menu-site > li > ul {
 	top: 40px;
+	width: auto;
+}
+
+.elgg-menu-site .elgg-child-menu a {
+	font-weight: normal;
 }
 
 .elgg-menu-site .elgg-child-menu a:hover {
@@ -253,4 +271,9 @@ form.elgg-search {
 
 .theme-haarlem-intranet-owner-block-section .elgg-head a.elgg-state-active > .elgg-icon-chevron-circle-down {
 	display: inline;
+}
+
+.elgg-menu-site.elgg-menu-personal .elgg-child-menu {
+	left: auto;
+	right: -1px;
 }
