@@ -380,3 +380,64 @@ function theme_haarlem_htmlawed_config($hook, $type, $return_value, $params) {
 	$return_value['deny_attribute'] = implode(',', $deny_attributes);
 	return $return_value;
 }
+
+/**
+ * Change page menu
+ *
+ * @param string         $hook         the name of the hook
+ * @param string         $type         the type of the hook
+ * @param ElggMenuItem[] $return_value current return value
+ * @param mixed          $params       supplied params
+ *
+ * @return ElggMenuItem[]
+ */
+function theme_haarlem_intranet_register_page_menu_settings($hook, $type, $return_value, $params) {
+	
+	if (empty($return_value) || !is_array($return_value)) {
+		return $return_value;
+	}
+	
+	$remove_items = array(
+		'1_account'
+	);
+	foreach ($return_value as $index => $menu_item) {
+		if (!in_array($menu_item->getName(), $remove_items)) {
+			continue;
+		}
+		
+		unset($return_value[$index]);
+	}
+	
+	return $return_value;
+}
+
+/**
+ * Route users away from /settings/user
+ *
+ * @param string $hook         the name of the hook
+ * @param string $type         the type of the hook
+ * @param array  $return_value current return value
+ * @param array  $params       supplied params
+ *
+ * @return array
+ */
+function theme_haarlem_route_settings_handler($hook, $type, $return_value, $params) {
+	
+	if (empty($return_value) || !is_array($return_value)) {
+		return $return_value;
+	}
+	
+	$handler = elgg_extract('handler', $return_value);
+	if (empty($handler) || ($handler !== 'settings')) {
+		return $return_value;
+	}
+	
+	$page = elgg_extract('segments', $return_value);
+	switch ($page[0]) {
+		case 'user':
+			$username = elgg_extract(1, $page);
+			
+			forward("notifications/personal/{$username}");
+			break;
+	}
+}
