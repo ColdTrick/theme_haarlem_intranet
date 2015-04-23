@@ -17,7 +17,10 @@ function theme_haarlem_intranet_is_afdelings_group(ElggEntity $entity) {
 	}
 	
 	$allowed_values = array(
+		'hoofdafdeling',
 		'afdeling',
+		'bureau',
+		'team',
 	);
 	
 	$group_type = theme_haarlem_intranet_get_group_type($entity);
