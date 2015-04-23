@@ -151,7 +151,7 @@ function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $para
 		'priority' => 100
 	));
 	$return_value[] = ElggMenuItem::factory(array(
-		'name' => 'profile_mine',
+		'name' => 'profile_settings',
 		'text' => elgg_echo('theme_haarlem_intranet:menu:site:profile:settings'),
 		'href' => "settings/user/{$user->username}",
 		'section' => 'personal',
@@ -160,7 +160,7 @@ function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $para
 		'priority' => 200
 	));
 	$return_value[] = ElggMenuItem::factory(array(
-		'name' => 'profile_mine',
+		'name' => 'profile_logout',
 		'text' => elgg_echo('logout'),
 		'href' => 'action/logout',
 		'section' => 'personal',
@@ -386,7 +386,9 @@ function theme_haarlem_intranet_cleanup_menu($hook, $type, $return_value, $param
 	
 	$remove_items = array(
 		'1_account',
-		'tinymce_toggler'
+		'tinymce_toggler',
+		'avatar:edit',
+		'edit_avatar'
 	);
 	foreach ($return_value as $index => $menu_item) {
 		if (!in_array($menu_item->getName(), $remove_items)) {
@@ -486,4 +488,64 @@ function theme_haarlem_intranet_groups_route_handler($hook, $type, $return_value
 	}
 	
 	return $return_value;
+}
+
+/**
+ * Add menu items to user hover menu
+ *
+ * @param string         $hook         the name of the hook
+ * @param string         $type         the type of the hook
+ * @param ElggMenuItem[] $return_value current return value
+ * @param mixed          $params       supplied params
+ *
+ * @return ElggMenuItem[]
+ */
+function theme_haarlem_intranet_user_hover_menu($hook, $type, $return_value, $params) {
+	
+	if (empty($params) || !is_array($params)) {
+		return $return_value;
+	}
+	
+	$user = elgg_extract('entity', $params);
+	if (empty($user) || !elgg_instanceof($user, 'user')) {
+		return $return_value;
+	}
+	
+	if ($user->canEdit()) {
+		$return_value[] = ElggMenuItem::factory(array(
+			'name' => 'profile_settings',
+			'text' => elgg_echo('theme_haarlem_intranet:menu:site:profile:settings'),
+			'href' => "settings/user/{$user->username}",
+			'section' => 'action',
+			'is_trusted' => true,
+		));
+	}
+	
+	return $return_value;
+}
+
+/**
+ * Route users away from /avatar/edit
+ *
+ * @param string $hook         the name of the hook
+ * @param string $type         the type of the hook
+ * @param array  $return_value current return value
+ * @param array  $params       supplied params
+ *
+ * @return array
+ */
+function theme_haarlem_intranet_route_avatar_handler($hook, $type, $return_value, $params) {
+	
+	if (empty($return_value) || !is_array($return_value)) {
+		return $return_value;
+	}
+	
+	$page = elgg_extract('segments', $return_value);
+	switch ($page[0]) {
+		case 'edit':
+			$username = elgg_extract(1, $page);
+				
+			forward("profile/{$username}/edit");
+			break;
+	}
 }
