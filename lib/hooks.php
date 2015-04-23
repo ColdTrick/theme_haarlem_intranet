@@ -15,6 +15,9 @@
  * @return ElggMenuItem[]
  */
 function theme_haarlem_intranet_prepare_site_menu($hook, $type, $return_value, $params) {
+	if (elgg_in_context("menu_builder")) {
+		return $return_value;
+	}
 	
 	$user = elgg_get_logged_in_user_entity();
 	
