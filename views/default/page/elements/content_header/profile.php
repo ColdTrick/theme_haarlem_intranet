@@ -6,7 +6,7 @@ if (!$page_owner || !$user) {
 	return;
 }
 
-if ($page_owner->guid !== $user->guid) {
+if ($page_owner->getGUID() !== $user->getGUID()) {
 	return;
 }
 
@@ -16,7 +16,7 @@ $menu = $builder->getMenu();
 	
 $actions = elgg_extract('action', $menu, array());
 if (!$actions) {
-	return;	
+	return;
 }
 
 $body = '<ul class="elgg-menu elgg-menu-hz profile-action-menu">';
