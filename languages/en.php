@@ -15,7 +15,10 @@ $english = array(
 	"theme_haarlem_intranet:menu:site:profile:mine" => "My profile",
 	"theme_haarlem_intranet:menu:site:profile:settings" => "My settings",
 	
-	"theme_haarlem_intranet:owner_block:group:more" => "More about this group",
+	"theme_haarlem_intranet:owner_block:group:more:groep" => "More about this group",
+	"theme_haarlem_intranet:owner_block:group:more:afdeling" => "More about this department",
+	
+	"theme_haarlem_intranet:owner_block:group:related:afdeling" => "Subdepartments of this department",
 );
 
 add_translation("en", $english);
