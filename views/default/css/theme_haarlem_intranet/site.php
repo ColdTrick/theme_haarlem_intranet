@@ -155,6 +155,10 @@ form.elgg-search {
 	border-radius: 500px;
 }
 
+#profile-owner-block .elgg-avatar > a > img {
+	background-size: cover !important;
+}
+
 :focus > .fa,
 .fa:hover,
 .fa-hover {
