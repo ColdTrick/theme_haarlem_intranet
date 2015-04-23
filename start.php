@@ -3,6 +3,7 @@
  * Haarlem theme plugin
  */
 
+require_once(dirname(__FILE__) . "/lib/functions.php");
 require_once(dirname(__FILE__) . "/lib/hooks.php");
 require_once(dirname(__FILE__) . "/lib/page_handlers.php");
 
