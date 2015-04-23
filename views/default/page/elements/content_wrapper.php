@@ -7,8 +7,7 @@ $owner = elgg_get_page_owner_entity();
 
 if ($owner instanceof ElggGroup) {
 	$content_class = ' theme-intranet-groep';
-	$group_type = strtolower($owner->group_type);
-	if ($group_type === 'afdeling') {
+	if (theme_haarlem_intranet_is_afdelings_group($owner)) {
 		$content_class = ' theme-intranet-afdeling';
 	}
 	$content_header = elgg_view('page/elements/content_header/group', $vars);
@@ -24,7 +23,7 @@ if ($owner instanceof ElggGroup) {
 }
 
 echo '<div class="elgg-page-content-header' . $content_class . '">';
-if ($content_header) {	
+if ($content_header) {
 	echo '<div class="elgg-inner">' . $content_header . '</div>';
 }
 echo '</div>';
