@@ -268,12 +268,12 @@ form.elgg-search {
 }
 
 .elgg-menu-page-static .elgg-menu-closed:before {
-	content: "\f0d7";
+	content: "\f0da";
 	font-family: "FontAwesome";
 	color: #808285;
 }
 .elgg-menu-page-static .elgg-menu-opened:before {
-	content: "\f0da";
+	content: "\f0d7";
 	font-family: "FontAwesome";
 	color: #414042;
 }
@@ -334,13 +334,13 @@ form.elgg-search {
 	background: none !important;
 }
 .tree-classic li.open a.elgg-menu-parent:before {
-	content: "\f0da";
+	content: "\f0d7";
 	font-family: "FontAwesome";
 	color: #414042;
 	padding-right: 5px;
 }
 .tree-classic li.closed a.elgg-menu-parent:before {
-	content: "\f0d7";
+	content: "\f0da";
 	font-family: "FontAwesome";
 	color: #808285;
 	padding-right: 5px;
