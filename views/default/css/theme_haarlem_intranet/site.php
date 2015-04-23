@@ -155,6 +155,10 @@ form.elgg-search {
 	border-radius: 500px;
 }
 
+#profile-owner-block .elgg-avatar > a > img {
+	background-size: cover !important;
+}
+
 :focus > .fa,
 .fa:hover,
 .fa-hover {
@@ -621,4 +625,30 @@ form.elgg-search {
 .event_manager_event_list_icon_month {
 	background: none repeat scroll 0 0 #414042;
     border: 1px solid #414042;
+}
+
+.promo-widget-green, 
+.promo-widget-green a {
+    background-color: #<?php echo THEME_GREEN; ?>;
+    color: white;
+}
+.promo-widget-teal, 
+.promo-widget-teal a {
+    background-color: #<?php echo THEME_TEAL; ?>;
+    color: white;
+}
+.promo-widget-blue, 
+.promo-widget-blue a {
+    background-color: #<?php echo THEME_BLUE; ?>;
+    color: white;
+}
+.promo-widget-purple, 
+.promo-widget-purple a {
+    background-color: #<?php echo THEME_PURPLE; ?>;
+    color: white;
+}
+.promo-widget-red, 
+.promo-widget-red a {
+    background-color: #<?php echo THEME_RED; ?>;
+    color: white;
 }
