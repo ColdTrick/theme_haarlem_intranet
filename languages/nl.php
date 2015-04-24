@@ -1,5 +1,11 @@
 <?php
 $language = array (
+  'theme_haarlem_intranet:search:groep' => 'Zoeken in deze groep',
+  'theme_haarlem_intranet:search:hoofdafdeling' => 'Zoeken in deze hoofdafdeling',
+  'theme_haarlem_intranet:search:afdeling' => 'Zoeken in deze afdeling',
+  'theme_haarlem_intranet:search:bureau' => 'Zoeken in dit bureau',
+  'theme_haarlem_intranet:search:team' => 'Zoeken in dit team',
+  'theme_haarlem_intranet:search:kennisbank' => 'Zoeken in de kennisbank',
   'theme_haarlem_intranet:owner_block:group:more:hoofdafdeling' => 'Meer over deze hoofdafdeling',
   'theme_haarlem_intranet:owner_block:group:more:bureau' => 'Meer over dit bureau',
   'theme_haarlem_intranet:owner_block:group:more:team' => 'Meer over dit team',
