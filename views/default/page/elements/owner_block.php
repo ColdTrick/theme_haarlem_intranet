@@ -16,10 +16,10 @@ if ($owner instanceof ElggGroup || $owner instanceof ElggUser) {
 	$body = '';
 	if ($owner instanceof ElggGroup) {
 		$header = elgg_view('page/elements/owner_block/group_header', array('entity' => $owner));
-	} elseif (!elgg_in_context('profile')) {
+	} elseif (!elgg_in_context('profile') && !elgg_in_context('dashboard')) {
 		$header = elgg_view('page/elements/owner_block/user_header', array('entity' => $owner));
 	} else {
-		// user profile page
+		// user profile/dashboard page
 		if ($owner->getGUID() == elgg_get_logged_in_user_guid()) {
 			// own profile
 			$body .= elgg_view('profile_manager/profile_completeness/content', array('entity' => $owner));

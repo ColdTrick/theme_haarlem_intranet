@@ -41,7 +41,7 @@ function theme_haarlem_intranet_init() {
 	elgg_extend_view('page/elements/header', 'search/header');
 	
 	elgg_unextend_view("page/elements/owner_block/extend", "group_tools/owner_block");
-	elgg_unextend_view("groups/sidebar/members", "group_tools/group_admins", 400);
+	elgg_unextend_view("groups/sidebar/members", "group_tools/group_admins");
 	
 	// events
 	elgg_register_event_handler('pagesetup', 'system', 'theme_haarlem_intranet_pagesetup', 600);
@@ -76,6 +76,7 @@ function theme_haarlem_intranet_init() {
 	
 	// page handlers
 	elgg_register_page_handler('profile', 'theme_haarlem_intranet_profile_page_handler');
+	elgg_register_page_handler('dashboard', 'theme_haarlem_intranet_dashboard_page_handler');
 }
 
 /**

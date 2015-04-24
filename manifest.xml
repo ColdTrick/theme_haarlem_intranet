@@ -63,6 +63,12 @@
 		<priority>after</priority>
 	</requires>
 	
+	<requires>
+		<type>priority</type>
+		<plugin>dashboard</plugin>
+		<priority>after</priority>
+	</requires>
+	
 	<category>ColdTrick</category>
 	<category>theme</category>
 </plugin_manifest>

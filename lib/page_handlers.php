@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * The profile page handler
+ *
+ * @param array $page page elements
+ *
+ * @return bool
+ */
 function theme_haarlem_intranet_profile_page_handler($page) {
 	$user = false;
 	if (isset($page[0])) {
@@ -51,5 +58,18 @@ function theme_haarlem_intranet_profile_page_handler($page) {
 	));
 	echo elgg_view_page($user->name, $body);
 
+	return true;
+}
+
+/**
+ * The dashboard page handler
+ *
+ * @param array $page page elements
+ *
+ * @return bool
+ */
+function theme_haarlem_intranet_dashboard_page_handler($page) {
+	
+	include(dirname(dirname(__FILE__)) . '/pages/dashboard/index.php');
 	return true;
 }
