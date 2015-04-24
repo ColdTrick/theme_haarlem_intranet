@@ -609,6 +609,13 @@ form.elgg-search {
 	background: #<?php echo THEME_PURPLE; ?>;
 }
 
+.theme-intranet-kennisbank .elgg-owner-block-group .elgg-head > .elgg-image-block,
+.theme-intranet-kennisbank .theme-haarlem-intranet-owner-block-section > .elgg-head,
+.theme-intranet-kennisbank .theme-haarlem-intranet-owner-block-section > .elgg-head a,
+.theme-intranet-kennisbank .elgg-owner-block-group .elgg-button-action {
+	background: #<?php echo THEME_TEAL; ?>;
+}
+
 .elgg-page-content-header.theme-intranet-afdeling {
 	background: #<?php echo THEME_PURPLE; ?>;
 }
