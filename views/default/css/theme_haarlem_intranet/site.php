@@ -556,6 +556,22 @@ form.elgg-search {
 	display: inline-block;
 }
 
+.elgg-module-widget.widget-green > .elgg-head {
+	background: #<?php echo THEME_GREEN; ?>;
+}
+.elgg-module-widget.widget-blue > .elgg-head {
+	background: #<?php echo THEME_BLUE; ?>;
+}
+.elgg-module-widget.widget-red > .elgg-head {
+	background: #<?php echo THEME_RED; ?>;
+}
+.elgg-module-widget.widget-teal > .elgg-head {
+	background: #<?php echo THEME_TEAL; ?>;
+}
+.elgg-module-widget.widget-purple > .elgg-head {
+	background: #<?php echo THEME_PURPLE; ?>;
+}
+
 .elgg-widget-instance-thewire > .elgg-head,
 .elgg-widget-instance-index_thewire > .elgg-head,
 .elgg-widget-instance-thewire_groups > .elgg-head,
