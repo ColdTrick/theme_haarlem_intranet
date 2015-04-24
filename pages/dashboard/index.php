@@ -22,7 +22,8 @@ $widgets = elgg_view_layout('widgets', $params);
 $body = elgg_view_layout('one_sidebar', array(
 	'title' => ' ',
 	'content' => $widgets,
-	'layout' => 'content'
+	'layout' => 'content',
+	'sidebar' => elgg_view('theme_haarlem_intranet/dashboard_sidebar')
 ));
 
 echo elgg_view_page($title, $body);
