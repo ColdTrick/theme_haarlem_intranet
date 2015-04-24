@@ -47,6 +47,8 @@ if ($container_entity && $container_entity instanceof ElggGroup) {
 	));
 }
 
+$extra_input = elgg_extract('extra_input', $vars, '');
+
 ?>	
 <form class="<?php echo $class; ?>" action="<?php echo elgg_get_site_url(); ?>search" method="get">
 	<fieldset>
@@ -67,5 +69,8 @@ if ($container_entity && $container_entity instanceof ElggGroup) {
 			</tr>
 		</table>
 	</fieldset>
-	<?php echo $container; ?>
+	<?php 
+		echo $container; 
+		echo $extra_input; 
+	?>
 </form>

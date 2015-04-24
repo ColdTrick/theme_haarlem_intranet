@@ -270,6 +270,10 @@ form.elgg-search {
 	border-bottom: 4px solid #<?php echo THEME_TEAL; ?>;
 }
 
+.elgg-widget-content .elgg-menu-page-static {
+	border: none;
+}
+
 .elgg-menu-page-static li > a,
 .elgg-menu-page-static li.elgg-state-selected > a,
 .elgg-menu-page-static a:hover {
