@@ -17,7 +17,7 @@ if ($owner instanceof ElggGroup || $owner instanceof ElggUser) {
 	if ($owner instanceof ElggGroup) {
 		$header = elgg_view('page/elements/owner_block/group_header', array('entity' => $owner));
 	} elseif (!elgg_in_context('profile')) {
-		$header = elgg_view_entity($owner, array('full_view' => false));
+		$header = elgg_view('page/elements/owner_block/user_header', array('entity' => $owner));
 	} else {
 		// user profile page
 		if ($owner->getGUID() == elgg_get_logged_in_user_guid()) {

@@ -2,7 +2,7 @@
 
 $entity = elgg_extract('entity', $vars);
 
-$icon = elgg_view_entity_icon($entity, 'small');
+$icon = elgg_view_entity_icon($entity, 'tiny');
 
 $owner_link = elgg_view('output/url', array(
 	'text' => $entity->name,

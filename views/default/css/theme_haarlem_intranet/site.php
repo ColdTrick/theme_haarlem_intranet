@@ -415,16 +415,26 @@ form.elgg-search {
 	right: -1px;
 }
 
+.elgg-owner-block-user .elgg-head,
 .elgg-owner-block-group .elgg-head {
 	background: white;
 	margin-bottom: 20px;
 }
+.elgg-owner-block-user .elgg-head > .elgg-image-block,
 .elgg-owner-block-group .elgg-head > .elgg-image-block {
 	background: #<?php echo THEME_BLUE; ?>;
-	padding: 2px;
+	padding: 0px;
 	height: 40px;
 	overflow: hidden;
 }
+.elgg-owner-block-user .elgg-head > .elgg-image-block {
+	background: #<?php echo THEME_GREEN; ?>;
+}
+.elgg-owner-block-user .elgg-head > .elgg-image-block .elgg-image,
+.elgg-owner-block-group .elgg-head > .elgg-image-block .elgg-image {
+	margin: 8px;
+}
+.elgg-owner-block-user .elgg-head > .elgg-image-block .elgg-body a,
 .elgg-owner-block-group .elgg-head > .elgg-image-block .elgg-body a {
 	color: white;
 	font-size: 17px;
