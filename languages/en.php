@@ -28,7 +28,8 @@ $english = array(
 	"theme_haarlem_intranet:owner_block:group:related:team" => "Subdepartments of this team",
 
 	"theme_haarlem_intranet:search:groep" => "Search in this group",
-	"theme_haarlem_intranet:search:department" => "Search in this department",
+	"theme_haarlem_intranet:search:hoofdafdeling" => "Search in this maindepartment",
+	"theme_haarlem_intranet:search:afdeling" => "Search in this department",
 	"theme_haarlem_intranet:search:bureau" => "Search in this office",
 	"theme_haarlem_intranet:search:team" => "Search in this team",
 	"theme_haarlem_intranet:search:kennisbank" => "Search in this knowledge base",
