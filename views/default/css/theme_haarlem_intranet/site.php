@@ -72,11 +72,22 @@
 .elgg-search-header table {
 	width: 573px;
 }
+
+.elgg-search-content-header {
+	top: 24px;
+	right: 0;
+	position: absolute;
+	margin: 0;
+}
+.elgg-search-content-header table {
+	width: 291px;
+}
 form.elgg-search {
 	height: 32px;
 	border: 2px solid #414042;
 	background: #414042;
 }
+.elgg-search-content-header .elgg-icon-search,
 .elgg-search-header .elgg-icon-search {
 	color: white;
 	background: #414042;
@@ -84,6 +95,7 @@ form.elgg-search {
 	padding: 4px;
 	cursor: pointer;
 }
+.elgg-search-content-header .elgg-icon-search:hover,
 .elgg-search-header .elgg-icon-search:hover {
 	color: #808285;
 }
@@ -101,6 +113,7 @@ form.elgg-search {
 	background: none;
 	height: auto;
 	line-height: 32px;
+	white-space: nowrap;
 }
 .search-advanced-type-selection-dropdown > li {
 	padding: 0 4px;
