@@ -38,7 +38,9 @@ if (group_gatekeeper(false)) {
 echo elgg_view('group_tools/group_admins', $vars);
 
 // members
-echo elgg_view('groups/sidebar/members', $vars);
+if (!theme_haarlem_intranet_is_afdelings_group($entity)) {
+	echo elgg_view('groups/sidebar/members', $vars);
+}
 
 // sub groups
 if (theme_haarlem_intranet_is_afdelings_group($entity)) {
