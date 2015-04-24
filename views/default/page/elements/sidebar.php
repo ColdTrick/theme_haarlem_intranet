@@ -6,7 +6,9 @@
  */
 $owner = elgg_get_page_owner_entity();
 if ($owner instanceof ElggGroup && theme_haarlem_intranet_get_group_type($owner) === 'kennisbank') {
-	return true;
+	if (elgg_in_context('static')) {
+		return true;
+	}
 }
 
 echo elgg_view('page/elements/owner_block', $vars);

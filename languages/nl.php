@@ -17,6 +17,7 @@ $dutch = array(
 	
 	"theme_haarlem_intranet:owner_block:group:more:groep" => "Meer over deze groep",
 	"theme_haarlem_intranet:owner_block:group:more:afdeling" => "Meer over deze afdeling",
+	"theme_haarlem_intranet:owner_block:group:more:kennisbank" => "Meer over deze groep",
 	
 	"theme_haarlem_intranet:owner_block:group:related:afdeling" => "Subafdelingen van deze afdeling",
 );
