@@ -16,10 +16,16 @@ $english = array(
 	"theme_haarlem_intranet:menu:site:profile:settings" => "My settings",
 	
 	"theme_haarlem_intranet:owner_block:group:more:groep" => "More about this group",
+	"theme_haarlem_intranet:owner_block:group:more:hoofdafdeling" => "More about this maindepartment",
 	"theme_haarlem_intranet:owner_block:group:more:afdeling" => "More about this department",
-	"theme_haarlem_intranet:owner_block:group:more:kennisbank" => "More about this group",
+	"theme_haarlem_intranet:owner_block:group:more:bureau" => "More about this office",
+	"theme_haarlem_intranet:owner_block:group:more:team" => "More about this team",
+	"theme_haarlem_intranet:owner_block:group:more:kennisbank" => "More about this knowledge base",
 	
+	"theme_haarlem_intranet:owner_block:group:related:hoofdafdeling" => "Subdepartments of this maindepartment",
 	"theme_haarlem_intranet:owner_block:group:related:afdeling" => "Subdepartments of this department",
+	"theme_haarlem_intranet:owner_block:group:related:bureau" => "Subdepartments of this office",
+	"theme_haarlem_intranet:owner_block:group:related:team" => "Subdepartments of this team",
 
 	"theme_haarlem_intranet:color:green" => "Green",
 	"theme_haarlem_intranet:color:teal" => "Teal",
