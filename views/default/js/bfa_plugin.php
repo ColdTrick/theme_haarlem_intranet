@@ -1,7 +1,12 @@
 <?php
 
-$fontawesome_path = elgg_get_plugins_path() . "fontawesome/vendors/font-awesome-4.1.0/css/font-awesome.css";
-$contents = file_get_contents($fontawesome_path);
+$externals = elgg_get_config('externals_map');
+$fa = $externals['css']['fontawesome'];
+
+$url = elgg_normalize_url($fa->url);
+$path = str_ireplace(elgg_get_site_url(), elgg_get_root_path(), $url);
+
+$contents = file_get_contents($path);
 
 $icons = array();
 $hex_codes = array();
