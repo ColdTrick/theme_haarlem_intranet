@@ -725,3 +725,9 @@ form.elgg-search {
 .theme-haarlem-intranet-quick-nav-wrapper .elgg-icon {
 	cursor: pointer;
 }
+.elgg-widget-instance-quick_nav .elgg-widget-content {
+	padding: 0;
+}
+.elgg-widget-instance-quick_nav .elgg-widget-content .elgg-menu {
+	margin: 0;
+}

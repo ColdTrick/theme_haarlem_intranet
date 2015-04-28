@@ -2,7 +2,7 @@
 
 $english = array(
 	"theme_haarlem_intranet:owner_block:content" => "Content",
-	"theme_haarlem_intranet:owner_block:links" => "Links",
+	"theme_haarlem_intranet:owner_block:quick_nav" => "Links",
 	
 	"theme_haarlem_intranet:header:help" => "Help!",
 	
@@ -48,6 +48,9 @@ $english = array(
 	"theme_haarlem_intranet:quick_nav:text" => "Link text",
 	"theme_haarlem_intranet:quick_nav:href" => "Link URL",
 	"theme_haarlem_intranet:quick_nav:add_link" => "Add a link",
+	
+	"theme_haarlem_intranet:quick_nav:widget:title" => "Links",
+	"theme_haarlem_intranet:quick_nav:widget:description" => "Add a list of quick navigation links",
 	
 	"theme_haarlem_intranet:action:quick_nav:success" => "Quick navigation saved",
 );

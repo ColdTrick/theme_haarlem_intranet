@@ -570,7 +570,7 @@ function theme_haarlem_intranet_quick_nav_menu($hook, $type, $return_value, $par
 	}
 	
 	$entity = elgg_extract('entity', $params);
-	if (empty($entity) || !elgg_instanceof($entity, 'group')) {
+	if (empty($entity) || (!elgg_instanceof($entity, 'group') && !elgg_instanceof($entity, 'object', 'widget'))) {
 		return $return_value;
 	}
 	
