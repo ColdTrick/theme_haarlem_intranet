@@ -42,6 +42,7 @@ $english = array(
 	"theme_haarlem_intranet:color:blue" => "Blue",
 	"theme_haarlem_intranet:color:purple" => "Purple",
 	"theme_haarlem_intranet:color:red" => "Red",
+	"theme_haarlem_intranet:thewire:form:placeholder" => "Share your news",
 	
 	"theme_haarlem_intranet:quick_nav:edit" => "Add links",
 	"theme_haarlem_intranet:quick_nav:title" => "Manage quick navigation links",

@@ -604,6 +604,22 @@ form.elgg-search {
 	background: #<?php echo THEME_PURPLE; ?>;
 }
 
+.elgg-module-widget.widget-green > .elgg-body {
+	border-bottom: 4px solid #<?php echo THEME_GREEN; ?>;
+}
+.elgg-module-widget.widget-blue > .elgg-body {
+	border-bottom: 4px solid #<?php echo THEME_BLUE; ?>;
+}
+.elgg-module-widget.widget-red > .elgg-body {
+	border-bottom: 4px solid #<?php echo THEME_RED; ?>;
+}
+.elgg-module-widget.widget-teal > .elgg-body {
+	border-bottom: 4px solid #<?php echo THEME_TEAL; ?>;
+}
+.elgg-module-widget.widget-purple > .elgg-body {
+	border-bottom: 4px solid #<?php echo THEME_PURPLE; ?>;
+}
+
 .elgg-widget-instance-thewire > .elgg-head,
 .elgg-widget-instance-index_thewire > .elgg-head,
 .elgg-widget-instance-thewire_groups > .elgg-head,
@@ -612,6 +628,15 @@ form.elgg-search {
 .elgg-widget-instance-river_widget > .elgg-head,
 .elgg-widget-instance-index_activity > .elgg-head {
 	background: #<?php echo THEME_BLUE; ?>;
+}
+.elgg-widget-instance-thewire > .elgg-body,
+.elgg-widget-instance-index_thewire > .elgg-body,
+.elgg-widget-instance-thewire_groups > .elgg-body,
+.elgg-widget-instance-thewire_post > .elgg-body,
+.elgg-widget-instance-group_river_widget > .elgg-body,
+.elgg-widget-instance-river_widget > .elgg-body,
+.elgg-widget-instance-index_activity > .elgg-body {
+	border-bottom: 4px solid #<?php echo THEME_BLUE; ?>;
 }
 
 .theme-intranet-afdeling .elgg-widget-instance-thewire > .elgg-head,
@@ -622,6 +647,16 @@ form.elgg-search {
 .theme-intranet-afdeling .elgg-widget-instance-river_widget > .elgg-head,
 .theme-intranet-afdeling .elgg-widget-instance-index_activity > .elgg-head {
 	background: #<?php echo THEME_PURPLE; ?>;
+}
+
+.theme-intranet-afdeling .elgg-widget-instance-thewire > .elgg-body,
+.theme-intranet-afdeling .elgg-widget-instance-index_thewire > .elgg-body,
+.theme-intranet-afdeling .elgg-widget-instance-thewire_groups > .elgg-body,
+.theme-intranet-afdeling .elgg-widget-instance-thewire_post > .elgg-body,
+.theme-intranet-afdeling .elgg-widget-instance-group_river_widget > .elgg-body,
+.theme-intranet-afdeling .elgg-widget-instance-river_widget > .elgg-body,
+.theme-intranet-afdeling .elgg-widget-instance-index_activity > .elgg-body {
+	border-bottom: 4px solid #<?php echo THEME_PURPLE; ?>;
 }
 
 .theme-intranet-afdeling .elgg-owner-block-group .elgg-head > .elgg-image-block,
@@ -706,6 +741,103 @@ form.elgg-search {
 .promo-widget-red a {
     background-color: #<?php echo THEME_RED; ?>;
     color: white;
+}
+
+.theme-haarlem-intranet-entity-menu-bottom {
+	float: none;
+	margin: 5px 0 0;
+}
+.theme-haarlem-intranet-entity-menu-bottom > li {
+	margin-left: 0;
+	margin-right: 10px;
+}
+.elgg-form-thewire-add #thewire-characters-remaining {
+	float: left;
+}
+
+.elgg-form-thewire-add #thewire-submit-button {
+	float: right;
+}
+.elgg-widget-content .elgg-form-thewire-add .thewire-tools-widget-access {
+	display: none;
+}
+
+.elgg-form-thewire-add {
+	border-bottom: 1px solid #bcbec0;
+	padding-bottom: 5px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+/* Triagles */
+
+.widget-purple > .elgg-body > .elgg-widget-content,
+.widget-teal > .elgg-body > .elgg-widget-content,
+.widget-red > .elgg-body > .elgg-widget-content,
+.widget-blue > .elgg-body > .elgg-widget-content,
+.widget-green > .elgg-body > .elgg-widget-content {
+	position: relative;
+	padding-top: 20px;
+}
+
+.widget-purple > .elgg-body > .elgg-widget-content:after,
+.widget-teal > .elgg-body > .elgg-widget-content:after,
+.widget-red > .elgg-body > .elgg-widget-content:after,
+.widget-blue > .elgg-body > .elgg-widget-content:after,
+.widget-green > .elgg-body > .elgg-widget-content:after {
+	border-top:15px solid #<?php echo THEME_GREEN; ?>;
+    border-left:15px solid transparent;
+    border-right:15px solid transparent;
+    top:0px;
+    left: 40px;
+    content: '';
+    position: absolute;
+}
+
+.widget-purple > .elgg-body > .elgg-widget-content:after {
+	border-top-color: #<?php echo THEME_PURPLE; ?>;
+}
+.widget-teal > .elgg-body > .elgg-widget-content:after {
+	border-top-color: #<?php echo THEME_TEAL; ?>;
+}
+.widget-red > .elgg-body > .elgg-widget-content:after {
+	border-top-color: #<?php echo THEME_RED; ?>;
+}
+.widget-blue > .elgg-body > .elgg-widget-content:after {
+	border-top-color: #<?php echo THEME_BLUE; ?>;
+}
+
+.elgg-form-thewire-add:before,
+.elgg-form-thewire-add:after {
+	border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 14px solid #fff;
+    bottom: -14px;
+    content: '';
+    left: 60px;
+    margin-left: -14px;
+    position: absolute;
+}
+.elgg-form-thewire-add:before {
+	border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid;
+    border-top-color: inherit; /* Can't be included in the shorthand to work */
+    bottom: -15px;
+    margin-left: -15px;
+}
+
+.elgg-widget-instance-content_by_tag .elgg-widget-content > .elgg-list > .elgg-item {
+	border: 0;
+}
+.elgg-widget-instance-content_by_tag .elgg-widget-content > .elgg-list > .elgg-item > div {
+	padding: 5px 0;
+}
+.elgg-widget-instance-content_by_tag .elgg-widget-content > .elgg-list > .elgg-item > div > a {
+	color: #414042;
+}
+.elgg-widget-instance-content_by_tag .elgg-widget-content > .elgg-list > .elgg-item > div > span {
+	color: #BCBEC0;
 }
 
 /* Quick nav */
