@@ -375,7 +375,7 @@ form.elgg-search {
 }
 .file-tools-folder,
 .file-tools-file {
-	padding: 2px 0;
+	padding: 8px 0 2px 0;
 }
 
 .file-tools-folder .elgg-menu-item-access,
@@ -395,8 +395,8 @@ form.elgg-search {
 	display: inline-block;
 }
 
-#file_tools_list_files .file-tools-folder:hover,
-#file_tools_list_files .file-tools-file:hover {
+.file-tools-folder:hover,
+.file-tools-file:hover {
 	background: #e2e3e4;
 }
 
