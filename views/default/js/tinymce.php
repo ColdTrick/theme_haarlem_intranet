@@ -18,6 +18,11 @@ if(empty($valid_elements)){
 	$valid_elements = elgg_echo("tinymce_extended:defaults:valid_elements");
 }
 
+// fa css
+$externals = elgg_get_config('externals_map');
+$fa = $externals['css']['fontawesome'];
+
+$fa_url = elgg_normalize_url($fa->url);
 
 ?>
 //<script>
@@ -74,7 +79,7 @@ elgg.tinymce.init = function() {
 		extended_valid_elements : "<?php echo $valid_elements;?>",
 		content_css: [
 			elgg.config.wwwroot + 'mod/tinymce/css/elgg_tinymce.css',
-			elgg.config.wwwroot + 'mod/fontawesome/vendors/font-awesome-4.1.0/css/font-awesome.min.css'
+			'<?php echo $fa_url; ?>'
 		],
 		style_formats: [
 			{title: 'Accordion header', block: 'h3', classes: 'theme-haarlem-intranet-accordion-header', selector: 'p'}
