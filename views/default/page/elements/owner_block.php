@@ -14,6 +14,7 @@ elgg_push_context('owner_block');
 $owner = elgg_get_page_owner_entity();
 if ($owner instanceof ElggGroup || $owner instanceof ElggUser) {
 	$body = '';
+	
 	if ($owner instanceof ElggGroup) {
 		$header = elgg_view('page/elements/owner_block/group_header', array('entity' => $owner));
 	} elseif (!elgg_in_context('profile') && !elgg_in_context('dashboard')) {
@@ -38,7 +39,10 @@ if ($owner instanceof ElggGroup || $owner instanceof ElggUser) {
 	}
 	
 	if (group_gatekeeper(false)) {
-		$body .= elgg_view_menu('owner_block', array('entity' => $owner));
+		$body .= elgg_view_menu('owner_block', array(
+			'entity' => $owner,
+			'show_section_headers' => true
+		));
 	}
 	
 	$body .= elgg_view('page/elements/owner_block/extend', $vars);
