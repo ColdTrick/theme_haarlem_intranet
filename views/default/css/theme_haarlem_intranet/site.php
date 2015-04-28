@@ -300,7 +300,7 @@ form.elgg-search {
 }
 
 .elgg-menu-page-static > li > ul a {
-	padding: 4px;
+	padding: 6px;
 }
 .elgg-menu-page-static > li > ul {
 	padding-top: 4px;
@@ -324,7 +324,7 @@ form.elgg-search {
 	border-top: 4px solid #<?php echo THEME_TEAL; ?>;
 	border-bottom: 4px solid #<?php echo THEME_TEAL; ?>;
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 17px;
+	font-size: 15px;
 	color: #414042;
 }
 #file-tools-folder-tree ul {
@@ -335,7 +335,7 @@ form.elgg-search {
 }
 
 #file-tools-folder-tree a {
-	padding: 4px;
+	padding: 6px;
 	color: #414042;
 }
 #file-tools-folder-tree > ul > li {
@@ -345,6 +345,7 @@ form.elgg-search {
 	padding: 11px;
 	border-bottom: 1px solid #414042;
 	width: 100%;
+	font-size: 17px;
 }
 .tree-classic li,
 .tree-classic ul {
