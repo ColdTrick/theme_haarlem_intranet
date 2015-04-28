@@ -39,10 +39,13 @@ if ($owner instanceof ElggGroup || $owner instanceof ElggUser) {
 	}
 	
 	if (group_gatekeeper(false)) {
-		$body .= elgg_view_menu('owner_block', array(
-			'entity' => $owner,
-			'show_section_headers' => true
-		));
+		$owner_block_options = array(
+			'entity' => $owner
+		);
+		if ($owner instanceof ElggGroup) {
+			$owner_block_options['show_section_headers'] = true;
+		}
+		$body .= elgg_view_menu('owner_block', $owner_block_options);
 	}
 	
 	$body .= elgg_view('page/elements/owner_block/extend', $vars);
