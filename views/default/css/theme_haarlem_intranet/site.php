@@ -731,3 +731,30 @@ form.elgg-search {
 .elgg-widget-instance-quick_nav .elgg-widget-content .elgg-menu {
 	margin: 0;
 }
+
+/* Izine */
+.theme-haarlem-intranet-izine-image {
+	height: 200px;
+	position: relative;
+}
+.theme-haarlem-intranet-izine-image > .elgg-icon {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	font-size: 22px !important;
+}
+.theme-haarlem-intranet-izine-image > .elgg-icon-chevron-left {
+	left: 0;
+}
+.theme-haarlem-intranet-izine-image > .elgg-icon-chevron-right {
+	right: 0;
+}
+.elgg-module-izine {
+	padding: 10px;
+	margin: 0;
+}
+.elgg-module-izine .elgg-head h3 {
+	font-weight: bold;
+	font-size: 17px;
+	padding-bottom: 5px;
+}

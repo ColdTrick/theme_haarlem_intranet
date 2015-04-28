@@ -53,6 +53,13 @@ $english = array(
 	"theme_haarlem_intranet:quick_nav:widget:description" => "Add a list of quick navigation links",
 	
 	"theme_haarlem_intranet:action:quick_nav:success" => "Quick navigation saved",
+	
+	"theme_haarlem_intranet:izine:widget:title" => "Izine",
+	"theme_haarlem_intranet:izine:widget:description" => "Show blogs from a specific group",
+	"theme_haarlem_intranet:izine:widget:group" => "Please select a group to show the blogs from",
+	"theme_haarlem_intranet:izine:widget:no_group" => "Please select a group",
+	"theme_haarlem_intranet:izine:widget:no_content" => "No blogs in this group, please add some",
+	"theme_haarlem_intranet:izine:widget:more" => "Read more",
 );
 
 add_translation("en", $english);

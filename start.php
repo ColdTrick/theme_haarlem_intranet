@@ -80,7 +80,7 @@ function theme_haarlem_intranet_init() {
 	elgg_register_page_handler('profile', 'theme_haarlem_intranet_profile_page_handler');
 	elgg_register_page_handler('dashboard', 'theme_haarlem_intranet_dashboard_page_handler');
 	
-	// ajax views
+	// quick nav
 	elgg_register_ajax_view('theme_haarlem_intranet/forms/quick_nav');
 	
 	$js = elgg_get_simplecache_url('js', 'theme_haarlem_intranet/quick_nav');
@@ -89,6 +89,10 @@ function theme_haarlem_intranet_init() {
 	elgg_register_widget_type('quick_nav', elgg_echo('theme_haarlem_intranet:quick_nav:widget:title'), elgg_echo('theme_haarlem_intranet:quick_nav:widget:description'), 'index', true);
 	
 	elgg_register_action('theme_haarlem_intranet/quick_nav', dirname(__FILE__) . '/actions/quick_nav.php');
+	
+	// izine
+	elgg_register_widget_type('izine', elgg_echo('theme_haarlem_intranet:izine:widget:title'), elgg_echo('theme_haarlem_intranet:izine:widget:description'), 'index', true);
+	
 }
 
 /**
