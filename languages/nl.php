@@ -1,5 +1,21 @@
 <?php
 $language = array (
+  'theme_haarlem_intranet:owner_block:content' => 'Acties',
+  'theme_haarlem_intranet:owner_block:quick_nav' => 'Snel naar',
+  'theme_haarlem_intranet:quick_nav:edit' => 'Voeg een link toe',
+  'theme_haarlem_intranet:quick_nav:title' => 'Beheer de snelle navigatie links',
+  'theme_haarlem_intranet:quick_nav:text' => 'Link tekst',
+  'theme_haarlem_intranet:quick_nav:href' => 'Link URL',
+  'theme_haarlem_intranet:quick_nav:add_link' => 'Voeg een link toe',
+  'theme_haarlem_intranet:quick_nav:widget:title' => 'Snel naar',
+  'theme_haarlem_intranet:quick_nav:widget:description' => 'Toon een lijst met snelle navigatie links',
+  'theme_haarlem_intranet:action:quick_nav:success' => 'Snelle navigatie links opgeslagen',
+  'theme_haarlem_intranet:izine:widget:title' => 'Izine',
+  'theme_haarlem_intranet:izine:widget:description' => 'Toon de blogs uit een opgegeven groep',
+  'theme_haarlem_intranet:izine:widget:group' => 'Selecteer een groep om de blogs uit te tonen',
+  'theme_haarlem_intranet:izine:widget:no_group' => 'Selecteer aub een groep',
+  'theme_haarlem_intranet:izine:widget:no_content' => 'Geen blogs gevonden in deze groep, voeg er een paar toe',
+  'theme_haarlem_intranet:izine:widget:more' => 'Lees meer',
   'theme_haarlem_intranet:search:groep' => 'Zoeken in deze groep',
   'theme_haarlem_intranet:search:hoofdafdeling' => 'Zoeken in deze hoofdafdeling',
   'theme_haarlem_intranet:search:afdeling' => 'Zoeken in deze afdeling',
@@ -31,7 +47,6 @@ $language = array (
   'theme_haarlem_intranet:owner_block:group:more:afdeling' => 'Meer over deze afdeling',
   'theme_haarlem_intranet:owner_block:group:more:kennisbank' => 'Meer over deze groep',
   'theme_haarlem_intranet:owner_block:group:related:afdeling' => 'Subafdelingen van deze afdeling',
-	"theme_haarlem_intranet:thewire:form:placeholder" => "Deel jouw nieuws, mening en vragen met collega’s.",
-	
+  'theme_haarlem_intranet:thewire:form:placeholder' => 'Deel jouw nieuws, mening en vragen met collega’s.',
 );
 add_translation("nl", $language);
