@@ -1,8 +1,8 @@
 <?php
 
 $english = array(
-	"menu:owner-block:header:default" => "Owner content",
-	"menu:owner-block:header:quick_nav" => "Navigate to",
+	"theme_haarlem_intranet:owner_block:content" => "Content",
+	"theme_haarlem_intranet:owner_block:links" => "Links",
 	
 	"theme_haarlem_intranet:header:help" => "Help!",
 	
