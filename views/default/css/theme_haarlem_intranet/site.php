@@ -717,27 +717,27 @@ form.elgg-search {
     border: 1px solid #414042;
 }
 
-.promo-widget-green, 
+.promo-widget-green,
 .promo-widget-green a {
     background-color: #<?php echo THEME_GREEN; ?>;
     color: white;
 }
-.promo-widget-teal, 
+.promo-widget-teal,
 .promo-widget-teal a {
     background-color: #<?php echo THEME_TEAL; ?>;
     color: white;
 }
-.promo-widget-blue, 
+.promo-widget-blue,
 .promo-widget-blue a {
     background-color: #<?php echo THEME_BLUE; ?>;
     color: white;
 }
-.promo-widget-purple, 
+.promo-widget-purple,
 .promo-widget-purple a {
     background-color: #<?php echo THEME_PURPLE; ?>;
     color: white;
 }
-.promo-widget-red, 
+.promo-widget-red,
 .promo-widget-red a {
     background-color: #<?php echo THEME_RED; ?>;
     color: white;
@@ -825,4 +825,28 @@ form.elgg-search {
     border-top-color: inherit; /* Can't be included in the shorthand to work */
     bottom: -15px;
     margin-left: -15px;
+}
+
+/* Quick nav */
+.theme-haarlem-intranet-quick-nav-wrapper {
+	width: 500px;
+}
+
+.theme-haarlem-intranet-quick-nav-wrapper .elgg-input-text {
+	width: 300px;
+}
+.theme-haarlem-intranet-quick-nav-wrapper .elgg-input-url {
+	width: 453px;
+}
+.theme-haarlem-intranet-quick-nav-wrapper select {
+	width: 150px;
+}
+.theme-haarlem-intranet-quick-nav-wrapper .elgg-icon {
+	cursor: pointer;
+}
+.elgg-widget-instance-quick_nav .elgg-widget-content {
+	padding: 0;
+}
+.elgg-widget-instance-quick_nav .elgg-widget-content .elgg-menu {
+	margin: 0;
 }

@@ -51,3 +51,20 @@ function theme_haarlem_intranet_get_group_type(ElggEntity $entity) {
 	
 	return strtolower($entity->$profile_field_name);
 }
+
+/**
+ * Get the quick nav menu for an entity
+ *
+ * @param int $entity_guid the guid of the entity to get the quick nav for
+ *
+ * @return array
+ */
+function theme_haarlem_intranet_get_quick_nav($entity_guid) {
+	
+	$settings = get_private_setting($entity_guid, 'quick_nav');
+	if (empty($settings)) {
+		return array();
+	}
+	
+	return @json_decode($settings, true);
+}

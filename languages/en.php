@@ -2,7 +2,7 @@
 
 $english = array(
 	"theme_haarlem_intranet:owner_block:content" => "Content",
-	"theme_haarlem_intranet:owner_block:links" => "Links",
+	"theme_haarlem_intranet:owner_block:quick_nav" => "Links",
 	
 	"theme_haarlem_intranet:header:help" => "Help!",
 	
@@ -42,8 +42,18 @@ $english = array(
 	"theme_haarlem_intranet:color:blue" => "Blue",
 	"theme_haarlem_intranet:color:purple" => "Purple",
 	"theme_haarlem_intranet:color:red" => "Red",
-
 	"theme_haarlem_intranet:thewire:form:placeholder" => "Share your news",
+	
+	"theme_haarlem_intranet:quick_nav:edit" => "Add links",
+	"theme_haarlem_intranet:quick_nav:title" => "Manage quick navigation links",
+	"theme_haarlem_intranet:quick_nav:text" => "Link text",
+	"theme_haarlem_intranet:quick_nav:href" => "Link URL",
+	"theme_haarlem_intranet:quick_nav:add_link" => "Add a link",
+	
+	"theme_haarlem_intranet:quick_nav:widget:title" => "Links",
+	"theme_haarlem_intranet:quick_nav:widget:description" => "Add a list of quick navigation links",
+	
+	"theme_haarlem_intranet:action:quick_nav:success" => "Quick navigation saved",
 );
 
 add_translation("en", $english);
