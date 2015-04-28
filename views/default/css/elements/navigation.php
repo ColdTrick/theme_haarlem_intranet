@@ -259,11 +259,15 @@
 }
 .elgg-menu-site .elgg-menu-item-organisation.elgg-state-selected > a,
 .elgg-menu-site .elgg-menu-item-organisation:hover > a {
-	border-bottom: 4px solid #<?php echo THEME_RED; ?>;
+	border-bottom: 4px solid #<?php echo THEME_PURPLE; ?>;
 }
 .elgg-menu-site .elgg-menu-item-groups.elgg-state-selected > a,
 .elgg-menu-site .elgg-menu-item-groups:hover > a {
 	border-bottom: 4px solid #<?php echo THEME_BLUE; ?>;
+}
+.elgg-menu-site .elgg-menu-item-personnel.elgg-state-selected > a,
+.elgg-menu-site .elgg-menu-item-personnel:hover > a {
+	border-bottom: 4px solid #<?php echo THEME_RED; ?>;
 }
 .elgg-menu-site .elgg-menu-item-knowledge.elgg-state-selected > a,
 .elgg-menu-site .elgg-menu-item-knowledge:hover > a {

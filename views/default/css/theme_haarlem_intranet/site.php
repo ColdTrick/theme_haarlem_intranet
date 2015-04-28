@@ -526,6 +526,10 @@ form.elgg-search {
 	top: 26px;
 	line-height: 32px;
 }
+.elgg-page-content-header > .elgg-inner > h1 a.theme-link {
+	color: white;
+	text-decoration: none;
+}
 
 .elgg-page-content-header > .elgg-inner > h1 > .elgg-icon {
 	background: white;
