@@ -112,6 +112,24 @@
 	margin-bottom: 20px;
 }
 
+.elgg-owner-block > .elgg-body > h2 {
+	background: #808285;
+	color: white;
+	padding: 11px;
+	margin: 0 0 2px;
+	cursor: pointer;
+}
+.elgg-owner-block > .elgg-body > h2 > .elgg-icon {
+	color: white;
+	float: right;
+}
+.elgg-owner-block > .elgg-body > h2.elgg-state-opened > .elgg-icon-chevron-circle-right {
+	display: none;
+}
+.elgg-owner-block > .elgg-body > h2.elgg-state-closed > .elgg-icon-chevron-circle-down {
+	display: none;
+}
+
 /* ***************************************
 	Messages
 *************************************** */
