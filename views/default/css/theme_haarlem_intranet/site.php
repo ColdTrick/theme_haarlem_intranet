@@ -827,6 +827,19 @@ form.elgg-search {
     margin-left: -15px;
 }
 
+.elgg-widget-instance-content_by_tag .elgg-widget-content > .elgg-list > .elgg-item {
+	border: 0;
+}
+.elgg-widget-instance-content_by_tag .elgg-widget-content > .elgg-list > .elgg-item > div {
+	padding: 5px 0;
+}
+.elgg-widget-instance-content_by_tag .elgg-widget-content > .elgg-list > .elgg-item > div > a {
+	color: #414042;
+}
+.elgg-widget-instance-content_by_tag .elgg-widget-content > .elgg-list > .elgg-item > div > span {
+	color: #BCBEC0;
+}
+
 /* Quick nav */
 .theme-haarlem-intranet-quick-nav-wrapper {
 	width: 500px;
