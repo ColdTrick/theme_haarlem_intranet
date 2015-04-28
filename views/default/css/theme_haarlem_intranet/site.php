@@ -890,3 +890,9 @@ form.elgg-search {
 	font-size: 17px;
 	padding-bottom: 5px;
 }
+.elgg-widget-instance-izine .elgg-widget-content {
+	padding: 0 !important;
+}
+.elgg-module-widget.widget_manager_disable_widget_content_style > .elgg-head {
+	border: 0;
+}
