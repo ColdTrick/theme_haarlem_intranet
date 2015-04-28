@@ -29,9 +29,9 @@ function theme_haarlem_intranet_prepare_site_menu($hook, $type, $return_value, $
 	$names = array(
 		0 => 'home',
 		1 => 'organisation',
-		2 => 'groups',
-		3 => 'knowledge',
-		4 => 'personnel',
+		2 => 'knowledge',
+		3 => 'personnel',
+		4 => 'groups',
 		5 => 'extranet',
 	);
 	
