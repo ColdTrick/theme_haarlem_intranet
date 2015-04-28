@@ -6,4 +6,11 @@ echo elgg_view('search/search_box', array(
 	'placeholder' => elgg_echo('theme_haarlem_intranet:search:' . theme_haarlem_intranet_get_group_type($group)),
 	'container_entity' => $group,
 ));
-echo '<h1>' . elgg_view_entity_icon($group, 'small', array('class' => 'mrm')) . $group->name . "</h1>";
+echo '<h1>';
+echo elgg_view_entity_icon($group, 'small', array('class' => 'mrm'));
+echo elgg_view('output/url', array(
+	'text' => $group->name,
+	'href' => $group->getURL(),
+	'class' => 'theme-link'
+)); 
+echo '</h1>';

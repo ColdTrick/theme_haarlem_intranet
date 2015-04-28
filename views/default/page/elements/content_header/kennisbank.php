@@ -20,4 +20,11 @@ echo elgg_view('search/search_box', array(
 	'extra_input' => $extra_input
 ));
 
-echo '<h1>' . elgg_view_icon('inbox', 'mrm') . "{$page_owner->name}</h1>";
+echo '<h1>';
+echo elgg_view_icon('inbox', 'mrm');
+echo elgg_view('output/url', array(
+	'text' => $page_owner->name,
+	'href' => $page_owner->getURL(),
+	'class' => 'theme-link'
+));
+echo '</h1>';
