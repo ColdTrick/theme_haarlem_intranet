@@ -552,3 +552,63 @@ function theme_haarlem_intranet_route_avatar_handler($hook, $type, $return_value
 			break;
 	}
 }
+
+/**
+ * Add menu items to owner_block menu
+ *
+ * @param string         $hook         the name of the hook
+ * @param string         $type         the type of the hook
+ * @param ElggMenuItem[] $return_value current return value
+ * @param mixed          $params       supplied params
+ *
+ * @return ElggMenuItem[]
+ */
+function theme_haarlem_intranet_quick_nav_menu($hook, $type, $return_value, $params) {
+	
+	if (empty($params) || !is_array($params)) {
+		return $return_value;
+	}
+	
+	$entity = elgg_extract('entity', $params);
+	if (empty($entity) || !elgg_instanceof($entity, 'group')) {
+		return $return_value;
+	}
+	
+	$nav = theme_haarlem_intranet_get_quick_nav($entity->getGUID());
+	if (!empty($nav)) {
+		// show items
+		foreach ($nav as $index => $config) {
+			$icon = '';
+			if (!empty($config['icon'])) {
+				$icon = elgg_view_icon($config['icon']);
+			}
+			
+			$return_value[] = ElggMenuItem::factory(array(
+				'name' => "quick_nav_{$index}",
+				'text' => $icon . $config['text'],
+				'href' => $config['href'],
+				'section' => 'quick_nav',
+				'priority' => $index
+			));
+		}
+	}
+	
+	// show add button
+	if ($entity->canEdit()) {
+		elgg_load_js('lightbox');
+		elgg_load_css('lightbox');
+		
+		elgg_load_js('theme_haarlem_intranet_quick_nav');
+		
+		$return_value[] = ElggMenuItem::factory(array(
+			'name' => 'quick_nav_edit',
+			'text' => elgg_view_icon('plus') . elgg_echo('theme_haarlem_intranet:quick_nav:edit'),
+			'href' => "ajax/view/theme_haarlem_intranet/forms/quick_nav?entity_guid={$entity->getGUID()}",
+			'link_class' => 'elgg-lightbox',
+			'section' => 'quick_nav',
+			'priority' => 9999999
+		));
+	}
+	
+	return $return_value;
+}

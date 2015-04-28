@@ -2,6 +2,7 @@
 
 $english = array(
 	"menu:owner-block:header:default" => "Owner content",
+	"menu:owner-block:header:quick_nav" => "Navigate to",
 	
 	"theme_haarlem_intranet:header:help" => "Help!",
 	
@@ -41,6 +42,14 @@ $english = array(
 	"theme_haarlem_intranet:color:blue" => "Blue",
 	"theme_haarlem_intranet:color:purple" => "Purple",
 	"theme_haarlem_intranet:color:red" => "Red",
+	
+	"theme_haarlem_intranet:quick_nav:edit" => "Add links",
+	"theme_haarlem_intranet:quick_nav:title" => "Manage quick navigation links",
+	"theme_haarlem_intranet:quick_nav:text" => "Link text",
+	"theme_haarlem_intranet:quick_nav:href" => "Link URL",
+	"theme_haarlem_intranet:quick_nav:add_link" => "Add a link",
+	
+	"theme_haarlem_intranet:action:quick_nav:success" => "Quick navigation saved",
 );
 
 add_translation("en", $english);
