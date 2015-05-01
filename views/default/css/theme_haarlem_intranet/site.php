@@ -399,7 +399,11 @@ form.elgg-search {
 }
 
 .file-tools-folder:hover,
-.file-tools-file:hover {
+.file-tools-file:hover,
+#file_tools_list_files .file-tools-file:hover,
+.file-tools-folder:hover .elgg-menu-entity,
+.file-tools-file:hover .elgg-menu-entity,
+#file_tools_list_files .file-tools-file:hover .elgg-menu-entity {
 	background: #e2e3e4;
 }
 
