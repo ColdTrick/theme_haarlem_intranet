@@ -905,6 +905,7 @@ form.elgg-search {
 	width: 1%;
 	color: #bcbec0;
 	padding-right: 10px;
+	white-space: nowrap;
 }
 
 .elgg-widget-instance-haarlem_news table .theme-haarlem-news-featured td {
