@@ -82,7 +82,17 @@ elgg.tinymce.init = function() {
 			'<?php echo $fa_url; ?>'
 		],
 		style_formats: [
-			{title: 'Accordion header', block: 'h3', classes: 'theme-haarlem-intranet-accordion-header', selector: 'p'}
+			{
+				title: 'Accordion header', 
+				block: 'h3', 
+				classes: 'theme-haarlem-intranet-accordion-header', 
+				selector: 'p'
+			},
+			{
+				title: 'Accordion content', 
+				block: 'div', 
+				classes: 'theme-haarlem-intranet-accordion-content'
+			},
 		]
 	});
 
