@@ -61,6 +61,14 @@ $english = array(
 	"theme_haarlem_intranet:izine:widget:no_group" => "Please select a group",
 	"theme_haarlem_intranet:izine:widget:no_content" => "No blogs in this group, please add some",
 	"theme_haarlem_intranet:izine:widget:more" => "Read more",
+	
+	"theme_haarlem_intranet:haarlem_news:widget:title" => "News",
+	"theme_haarlem_intranet:haarlem_news:widget:description" => "Show blogs from a specific group",
+	"theme_haarlem_intranet:haarlem_news:widget:group" => "Please select a group to show the blogs from",
+	"theme_haarlem_intranet:haarlem_news:widget:no_group" => "Please select a group",
+	"theme_haarlem_intranet:haarlem_news:widget:no_content" => "No blogs in this group, please add some",
+	"theme_haarlem_intranet:haarlem_news:widget:more" => "News overview",
+	
 );
 
 add_translation("en", $english);
