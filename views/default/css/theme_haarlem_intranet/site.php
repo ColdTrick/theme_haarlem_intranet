@@ -755,9 +755,10 @@ form.elgg-search {
     color: white;
 }
 
-.theme-haarlem-intranet-entity-menu-bottom {
+.elgg-menu-entity.theme-haarlem-intranet-entity-menu-bottom {
 	float: none;
 	margin: 5px 0 0;
+	position: relative;
 }
 .theme-haarlem-intranet-entity-menu-bottom > li {
 	margin-left: 0;
