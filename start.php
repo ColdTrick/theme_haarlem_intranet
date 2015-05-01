@@ -92,6 +92,7 @@ function theme_haarlem_intranet_init() {
 	
 	// izine
 	elgg_register_widget_type('izine', elgg_echo('theme_haarlem_intranet:izine:widget:title'), elgg_echo('theme_haarlem_intranet:izine:widget:description'), 'index', true);
+	elgg_register_widget_type('haarlem_news', elgg_echo('theme_haarlem_intranet:haarlem_news:widget:title'), elgg_echo('theme_haarlem_intranet:haarlem_news:widget:description'), 'index', true);
 	
 }
 

@@ -896,3 +896,22 @@ form.elgg-search {
 .elgg-module-widget.widget_manager_disable_widget_content_style > .elgg-head {
 	border: 0;
 }
+
+.elgg-widget-instance-haarlem_news table {
+	width: 100%;
+}
+
+.elgg-widget-instance-haarlem_news table td:first-child {
+	width: 1%;
+	color: #bcbec0;
+	padding-right: 10px;
+}
+
+.elgg-widget-instance-haarlem_news table .theme-haarlem-news-featured td {
+	font-weight: bold;
+	padding-bottom: 20px;
+}
+
+.elgg-widget-instance-haarlem_news table h3 {
+	font-size: 16px;
+}

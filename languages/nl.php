@@ -1,5 +1,11 @@
 <?php
 $language = array (
+  'theme_haarlem_intranet:haarlem_news:widget:title' => 'Nieuws',
+  'theme_haarlem_intranet:haarlem_news:widget:description' => 'Toon blogs uit een bepaalde groep',
+  'theme_haarlem_intranet:haarlem_news:widget:group' => 'Selecteer een groep om de blogs uit te tonen',
+  'theme_haarlem_intranet:haarlem_news:widget:no_group' => 'Selecteer aub en groep',
+  'theme_haarlem_intranet:haarlem_news:widget:no_content' => 'Geen blogs gevonden in deze groep, voeg er een aantal toe',
+  'theme_haarlem_intranet:haarlem_news:widget:more' => 'Nieuwsoverzicht',
   'theme_haarlem_intranet:owner_block:content' => 'Acties',
   'theme_haarlem_intranet:owner_block:quick_nav' => 'Snel naar',
   'theme_haarlem_intranet:quick_nav:edit' => 'Voeg een link toe',
