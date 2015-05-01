@@ -93,6 +93,11 @@ function theme_haarlem_intranet_init() {
 	// izine
 	elgg_register_widget_type('izine', elgg_echo('theme_haarlem_intranet:izine:widget:title'), elgg_echo('theme_haarlem_intranet:izine:widget:description'), 'index', true);
 	
+	// increase master icon sizes
+	$icon_sizes = elgg_get_config('icon_sizes');
+	$icon_sizes['master']['h'] = 1024;
+	$icon_sizes['master']['w'] = 1024;
+	elgg_set_config('icon_sizes', $icon_sizes);
 }
 
 /**
