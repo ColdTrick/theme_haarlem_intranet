@@ -839,19 +839,6 @@ form.elgg-search {
     margin-left: -15px;
 }
 
-.elgg-widget-instance-content_by_tag .elgg-widget-content > .elgg-list > .elgg-item {
-	border: 0;
-}
-.elgg-widget-instance-content_by_tag .elgg-widget-content > .elgg-list > .elgg-item > div {
-	padding: 5px 0;
-}
-.elgg-widget-instance-content_by_tag .elgg-widget-content > .elgg-list > .elgg-item > div > a {
-	color: #414042;
-}
-.elgg-widget-instance-content_by_tag .elgg-widget-content > .elgg-list > .elgg-item > div > span {
-	color: #BCBEC0;
-}
-
 /* Quick nav */
 .theme-haarlem-intranet-quick-nav-wrapper {
 	width: 500px;
@@ -922,10 +909,20 @@ form.elgg-search {
 .elgg-widget-instance-haarlem_news table .theme-haarlem-news-featured td {
 	font-weight: bold;
 	padding-bottom: 20px;
+	vertical-align: baseline;
 }
 
 .elgg-widget-instance-haarlem_news table h3 {
-	font-size: 16px;
+	font-size: 17px;
+	font-weight: normal;
+}
+.elgg-widget-instance-haarlem_news table a,
+.elgg-widget-instance-haarlem_news table .elgg-icon {
+	color: #414042;
+}
+
+.elgg-widget-instance-haarlem_news table .elgg-icon {
+	font-size: 19px !important;
 }
 
 .elgg-widget-instance-promo_widget .elgg-widget-content > table a {

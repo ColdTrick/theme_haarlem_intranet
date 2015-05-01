@@ -195,6 +195,8 @@ a.elgg-widget-collapsed:before {
 	display: block;
 	text-align: right;
 	padding-top: 5px;
+	margin-top: 5px;
+	border-top: 1px solid #dcdcdc;
 }
 .elgg-widget-more a {
 	text-decoration: none;
@@ -203,7 +205,9 @@ a.elgg-widget-collapsed:before {
 }
 .elgg-widget-more a:after {
 	font-family: "FontAwesome";
-	content: "\f0a9";
+	content: "\f18e";
 	margin-left: 10px;
-	
+	font-size: 19px !important;
+	font-weight: normal;
+	vertical-align: text-bottom;
 }

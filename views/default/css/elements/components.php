@@ -35,6 +35,10 @@
 .elgg-list > li {
 	border-bottom: 1px solid #DCDCDC;
 }
+
+.elgg-list > li:last-child {
+	border-bottom: none;
+}
 .elgg-item h3 a {
 	padding-bottom: 4px;
 }
