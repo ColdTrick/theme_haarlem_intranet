@@ -927,3 +927,7 @@ form.elgg-search {
 .elgg-widget-instance-haarlem_news table h3 {
 	font-size: 16px;
 }
+
+.elgg-widget-instance-promo_widget .elgg-widget-content > table a {
+	height: 170px;
+}
