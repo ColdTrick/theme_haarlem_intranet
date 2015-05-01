@@ -565,7 +565,13 @@ form.elgg-search {
 	padding: 10px 2px;
 	font-family: Arial;
 	font-size: 12px;
+	cursor: pointer;
 }
+
+.theme-haarlem-intranet-accordion-header:hover {
+	background: #EEE;
+}
+
 .theme-haarlem-intranet-accordion-header .ui-icon {
 	font-size: 16px;
 }
