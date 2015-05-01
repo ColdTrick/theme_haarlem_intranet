@@ -51,6 +51,7 @@
 .elgg-list-entity .elgg-menu-entity {
 	position: absolute;
 	right: 0;
+	top: 0;
 	background: white;
 }
 .elgg-list-entity > .elgg-item > .elgg-image-block > .elgg-body {
