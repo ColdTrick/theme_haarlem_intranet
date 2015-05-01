@@ -18,7 +18,7 @@ $options  = array(
 	'subtype' => 'blog',
 	'container_guid' => $group_guid,
 	'limit' => 1,
-// 	'metadata_name' => 'featured'
+	'metadata_name' => 'featured'
 );
 $featured = elgg_get_entities_from_metadata($options);
 if (!empty($featured)) {
