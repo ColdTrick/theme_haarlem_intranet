@@ -18,7 +18,7 @@ $site_url = elgg_get_site_url();
 
 echo elgg_view('output/url', array(
 	'text' => elgg_view('output/img', array(
-		'src' => $site_url . 'mod/theme_haarlem_intranet/graphics/logo.png', 
+		'src' => $site_url . 'mod/theme_haarlem_intranet/graphics/logo.png',
 		'alt' => 'logo'
 	)),
 	'href' => $site_url,
@@ -29,6 +29,6 @@ echo elgg_view('output/url', array(
 	'class' => 'elgg-button elgg-button-action',
 	'id' => 'theme-haarlem-intranet-header-help',
 	
-	'href' => 'help',
+	'href' => 'groups/profile/27255802',
 	'text' => elgg_echo('theme_haarlem_intranet:header:help')
 ));
