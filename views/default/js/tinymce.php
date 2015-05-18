@@ -93,14 +93,15 @@ elgg.tinymce.init = function() {
 			{
 				title: 'Accordion content', 
 				block: 'div', 
-				classes: 'theme-haarlem-intranet-accordion-content'
+				classes: 'theme-haarlem-intranet-accordion-content',
+				wrapper: true
 			},
 			{
 				title: 'Normal', 
 				format: 'p',
-				classes: ''
+				classes: '',
 			},
-		],
+		]
 	});
 
 	// work around for IE/TinyMCE bug where TinyMCE loses insert carot
