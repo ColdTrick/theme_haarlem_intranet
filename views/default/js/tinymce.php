@@ -73,7 +73,7 @@ elgg.tinymce.init = function() {
 		menu: {},
 		toolbar1 : "<?php echo $menu1;?>",
 		toolbar2 : "<?php echo $menu2;?>,bfaSelect",
-		toolbar3 : "<?php echo $menu3;?>,removeformat",
+		toolbar3 : "<?php echo $menu3;?>",
 		media_strict: false,
 		image_advtab: true,
 		width : "100%",
