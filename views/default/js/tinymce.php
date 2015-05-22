@@ -73,7 +73,7 @@ elgg.tinymce.init = function() {
 		menu: {},
 		toolbar1 : "<?php echo $menu1;?>",
 		toolbar2 : "<?php echo $menu2;?>,bfaSelect",
-		toolbar3 : "<?php echo $menu3;?>,removeformat",
+		toolbar3 : "<?php echo $menu3;?>",
 		media_strict: false,
 		image_advtab: true,
 		width : "100%",
@@ -93,14 +93,15 @@ elgg.tinymce.init = function() {
 			{
 				title: 'Accordion content', 
 				block: 'div', 
-				classes: 'theme-haarlem-intranet-accordion-content'
+				classes: 'theme-haarlem-intranet-accordion-content',
+				wrapper: true
 			},
 			{
 				title: 'Normal', 
 				format: 'p',
-				classes: ''
+				classes: '',
 			},
-		],
+		]
 	});
 
 	// work around for IE/TinyMCE bug where TinyMCE loses insert carot

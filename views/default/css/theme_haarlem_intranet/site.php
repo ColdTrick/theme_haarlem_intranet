@@ -237,7 +237,7 @@ form.elgg-search {
 .theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks {
 	padding: 0;
 	border-bottom: 4px solid #<?php echo THEME_GREEN; ?>;
-	max-height: 500px;
+	max-height: 250px;
 	overflow: auto;
 	
 }

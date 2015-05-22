@@ -25,7 +25,7 @@ if (isset($vars['class'])) {
 
 $header_class = 'elgg-state-opened';
 $entity = elgg_extract('entity', $vars);
-if (theme_haarlem_intranet_is_afdelings_group($entity)) {
+if ($entity instanceof ElggGroup) {
 	$header_class = 'elgg-state-closed';
 	$class .= ' hidden';
 }
