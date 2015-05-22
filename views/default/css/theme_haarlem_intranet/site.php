@@ -590,6 +590,13 @@ form.elgg-search {
 	margin: 0;
 }
 
+.elgg-output ul ul, 
+.elgg-output ul ol, 
+.elgg-output ol ul,
+.elgg-output ol ol {
+	margin-bottom: 0px;
+}
+
 .elgg-menu-widget .elgg-menu-item-settings,
 .elgg-menu-widget .elgg-menu-item-delete {
 	display: none;
