@@ -930,6 +930,10 @@ form.elgg-search {
 	color: #414042;
 }
 
+.elgg-widget-instance-haarlem_news table a:visited {
+	color: #999;
+}
+
 .elgg-widget-instance-haarlem_news table .elgg-icon {
 	font-size: 19px !important;
 }
