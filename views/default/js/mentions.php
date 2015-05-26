@@ -25,7 +25,7 @@ elgg.mentions.handleResponse = function (json) {
 	});
 
 	var $selector = $('#mentions-popup');
-	if (mentionsEditor == 'textarea' && textarea !== null) {
+	if (textarea !== null) {
 		$selector = $(textarea).siblings('#mentions-popup');
 	}
 	
@@ -83,7 +83,7 @@ elgg.mentions.autocomplete = function (content, position) {
 	}
 
 	var $selector = $('#mentions-popup');
-	if (mentionsEditor == 'textarea' && textarea !== null) {
+	if (textarea !== null) {
 		$selector = $(textarea).siblings('#mentions-popup');
 	}
 	
@@ -104,10 +104,11 @@ elgg.mentions.init = function() {
 	$('textarea').bind('keyup', function(e) {
 		
 		if (e.which == 8 || e.which == 13) {
-			$('#mentions-popup > .elgg-body').html('<div class="elgg-ajax-loader"></div>');
-			$('#mentions-popup').addClass('hidden');
+			$('.mentions-popup > .elgg-body').html('<div class="elgg-ajax-loader"></div>');
+			$('.mentions-popup').addClass('hidden');
 			textarea = null;
 		} else {
+			console.log('set');
 			textarea = $(this);
 			content = $(this).val();
 			position = elgg.mentions.getCursorPosition(this);
@@ -140,11 +141,12 @@ elgg.mentions.init = function() {
 				 tinymce.editors[i].on('keyup', function (e) {
 				
 					mentionsEditor = 'tinymce';
-
+					textarea = $(this.getElement());
+					console.log(textarea);
 					// Hide on backspace or enter
 					if (e.keyCode == 8 || e.keyCode == 13) {
-						$('#mentions-popup > .elgg-body').html('<div class="elgg-ajax-loader"></div>');
-						$('#mentions-popup').addClass('hidden');
+						$('.mentions-popup > .elgg-body').html('<div class="elgg-ajax-loader"></div>');
+						$('.mentions-popup').addClass('hidden');
 					} else {
 						position = this.selection.getRng(1).startOffset;
 						content = this.getContent({format : 'text'});
