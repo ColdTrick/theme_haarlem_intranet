@@ -612,3 +612,73 @@ function theme_haarlem_intranet_quick_nav_menu($hook, $type, $return_value, $par
 	
 	return $return_value;
 }
+
+/**
+ * Change some menu items to icons
+ *
+ * @param string         $hook         the name of the hook
+ * @param string         $type         the type of the hook
+ * @param ElggMenuItem[] $return_value current return value
+ * @param mixed          $params       supplied params
+ *
+ * @return ElggMenuItem[]
+ */
+function theme_haarlem_intranet_entity_menu_icons($hook, $type, $return_value, $params) {
+	
+	if (empty($return_value) || !is_array($return_value)) {
+		return $return_value;
+	}
+	
+	if (empty($params) || !is_array($params)) {
+		return $return_value;
+	}
+	
+	$entity = elgg_extract('entity', $params);
+	if (empty($entity) || !elgg_instanceof($entity)) {
+		return $return_value;
+	}
+	
+	$site = elgg_get_site_entity();
+	$container = $entity->getContainerEntity();
+	
+	foreach ($return_value as $menu_item) {
+		
+		switch ($menu_item->getName()) {
+			case 'edit':
+				if (!$menu_item->getTooltip()) {
+					$menu_item->setTooltip($menu_item->getText());
+				}
+				
+				$menu_item->setText(elgg_view_icon('pencil'));
+				break;
+			case 'access':
+				$access_id_string = get_readable_access_level($entity->access_id);
+				$access_id_string = htmlspecialchars($access_id_string, ENT_QUOTES, 'UTF-8', false);
+				
+				$menu_item->setTooltip($access_id_string);
+				$menu_item->setHref('#');
+				
+				switch ($entity->access_id) {
+					case ACCESS_PRIVATE:
+						$menu_item->setText(elgg_view_icon('minus-circle'));
+						break;
+					case ACCESS_LOGGED_IN:
+						$menu_item->setText(elgg_view_icon('circle-o-notch'));
+						break;
+					default:
+						
+						if (($site instanceof Subsite) && ($entity->access_id == $site->getACL())) {
+							// subsite
+							$menu_item->setText(elgg_view_icon('circle-o'));
+						}
+						
+						if (($container instanceof ElggGroup) && ($entity->access_id == $container->group_acl)) {
+							// group
+							$menu_item->setText(elgg_view_icon('dot-circle-o'));
+						}
+						break;
+				}
+				
+		}
+	}
+}
