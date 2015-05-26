@@ -4,6 +4,7 @@
  */
 
 require_once(dirname(__FILE__) . "/lib/functions.php");
+require_once(dirname(__FILE__) . "/lib/events.php");
 require_once(dirname(__FILE__) . "/lib/hooks.php");
 require_once(dirname(__FILE__) . "/lib/page_handlers.php");
 
@@ -50,6 +51,8 @@ function theme_haarlem_intranet_init() {
 	
 	// events
 	elgg_register_event_handler('pagesetup', 'system', 'theme_haarlem_intranet_pagesetup', 600);
+	elgg_register_event_handler('create', 'member_of_site', 'theme_haarlem_intranet_site_join_event');
+	elgg_register_event_handler('delete', 'member_of_site', 'theme_haarlem_intranet_site_leave_event');
 	
 	// plugin hooks
 	elgg_register_plugin_hook_handler("register", "menu:personal", "theme_haarlem_intranet_personal_menu");
@@ -94,6 +97,7 @@ function theme_haarlem_intranet_init() {
 	elgg_register_widget_type('quick_nav', elgg_echo('theme_haarlem_intranet:quick_nav:widget:title'), elgg_echo('theme_haarlem_intranet:quick_nav:widget:description'), 'index', true);
 	
 	elgg_register_action('theme_haarlem_intranet/quick_nav', dirname(__FILE__) . '/actions/quick_nav.php');
+	elgg_register_action('theme_haarlem_intranet/admin/reset_mentions', dirname(__FILE__) . '/actions/admin/reset_mentions.php', 'admin');
 	
 	// izine
 	elgg_register_widget_type('izine', elgg_echo('theme_haarlem_intranet:izine:widget:title'), elgg_echo('theme_haarlem_intranet:izine:widget:description'), 'index', true);
