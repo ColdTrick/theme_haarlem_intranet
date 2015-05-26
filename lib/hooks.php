@@ -682,3 +682,81 @@ function theme_haarlem_intranet_entity_menu_icons($hook, $type, $return_value, $
 		}
 	}
 }
+
+/**
+ * Listen to /livesearc for special mentions search
+ *
+ * @param string $hook         the name of the hook
+ * @param string $type         the type of the hook
+ * @param array  $return_value current return value
+ * @param array  $params       supplied params
+ *
+ * @return array
+ */
+function theme_haarlem_intranet_livesearch_route_handler($hook, $type, $return_value, $params) {
+	
+	$query = get_input('q');
+	$match_on = get_input('match_on');
+	
+	if (empty($query) || ($match_on !== 'mentions')) {
+		return $return_value;
+	}
+	
+	// backup search advanced mulitsite search setting
+	$mulitsite = elgg_extract('search_advanced:multisite', $_SESSION);
+	$_SESSION['search_advanced:multisite'] = false;
+	
+	$params = array(
+		'type' => 'user',
+		'limit' => 10,
+		'query' => sanitise_string($query)
+	);
+	
+	$users = trigger_plugin_hook('search', 'user', $params, array());
+	if (empty($users) || !is_array($users)) {
+		header("Content-Type: application/json");
+		echo json_encode(array());
+		return false;
+	}
+	
+	$count = elgg_extract('count', $users);
+	if (empty($count)) {
+		header("Content-Type: application/json");
+		echo json_encode(array());
+		return false;
+	}
+	
+	$users = elgg_extract('entities', $users);
+	$results = array();
+	foreach ($users as $user) {
+		$output = elgg_view_list_item($user, array(
+			'use_hover' => false,
+			'class' => 'elgg-autocomplete-item',
+		));
+		
+		$icon = elgg_view_entity_icon($user, 'tiny', array(
+			'use_hover' => false,
+		));
+		
+		$result = array(
+			'type' => 'user',
+			'name' => $user->name,
+			'desc' => $user->username,
+			'guid' => $user->guid,
+			'label' => $output,
+			'value' => $user->username,
+			'icon' => $icon,
+			'url' => $user->getURL(),
+		);
+		$results[$user->name . rand(1, 100)] = $result;
+	}
+	
+	ksort($results);
+	header("Content-Type: application/json");
+	echo json_encode(array_values($results));
+	
+	// reset search advanced mulitsite search setting
+	$_SESSION['search_advanced:multisite'] = $mulitsite;
+	
+	return false;
+}

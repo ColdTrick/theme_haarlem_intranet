@@ -93,7 +93,7 @@ elgg.mentions.autocomplete = function (content, position) {
 
 		var options = {success: elgg.mentions.handleResponse};
 
-		elgg.get(elgg.config.wwwroot + 'livesearch?q=' + current + '&match_on=users', options);
+		elgg.get(elgg.config.wwwroot + 'livesearch?q=' + current + '&match_on=mentions', options);
 	} else {
 		$selector.find('> .elgg-body').html('<div class="elgg-ajax-loader"></div>');
 		$selector.addClass('hidden');

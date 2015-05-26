@@ -76,6 +76,8 @@ function theme_haarlem_intranet_init() {
 	
 	elgg_register_plugin_hook_handler("route", "groups", "theme_haarlem_intranet_groups_route_handler");
 	
+	elgg_register_plugin_hook_handler("route", "livesearch", "theme_haarlem_intranet_livesearch_route_handler");
+	
 	elgg_register_plugin_hook_handler('config', 'htmlawed', 'theme_haarlem_intranet_htmlawed_config');
 	
 	elgg_register_plugin_hook_handler("register", "menu:page", "theme_haarlem_intranet_cleanup_menu");
