@@ -28,6 +28,10 @@ function theme_haarlem_intranet_init() {
 	
 	elgg_register_js('tinymce', 'mod/theme_haarlem_intranet/vendors/tinymce/js/tinymce/tinymce.min.js');
 	
+	elgg_register_js('placeholders', elgg_get_site_url() . 'mod/theme_haarlem_intranet/vendors/placeholders/placeholders.jquery.min.js', 'footer');
+	elgg_load_js('placeholders');
+	
+	
 	elgg_extend_view('css/elgg', 'css/theme_haarlem_intranet/site');
 	elgg_extend_view('css/elgg', 'css/theme_haarlem_intranet/responsive');
 	
