@@ -565,6 +565,7 @@ form.elgg-search {
 
 .theme-haarlem-intranet-accordion-header {
 	font-weight: bold;
+	border-top: 1px solid #BDBEC1;
 	border-bottom: 1px solid #BDBEC1;
 	padding: 10px 2px;
 	font-family: Arial;
