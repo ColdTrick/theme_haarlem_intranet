@@ -264,6 +264,11 @@ form.elgg-search {
 	padding: 10px;
 	color: #414042;
 }
+.elgg-menu-personal .elgg-menu-item-groups .elgg-child-menu {
+	max-height: 250px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
 #widget_manager_widgets_select .widget_manager_widgets_lightbox_wrapper {
 	margin-bottom: 10px;
 }
@@ -607,8 +612,8 @@ form.elgg-search {
 	margin: 0;
 }
 
-.elgg-output ul ul, 
-.elgg-output ul ol, 
+.elgg-output ul ul,
+.elgg-output ul ol,
 .elgg-output ol ul,
 .elgg-output ol ol {
 	margin-bottom: 0px;
