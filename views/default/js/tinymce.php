@@ -66,6 +66,7 @@ elgg.tinymce.init = function() {
 		mode : "specific_textareas",
 		editor_selector : "elgg-input-longtext",
 		theme : "modern",
+		skin : "custom_pf",
 		plugins : "lists,<?php echo $plugins;?>,bfa_plugin,noneditable,wordcount",
 		relative_urls : false,
 		remove_script_host : false,
