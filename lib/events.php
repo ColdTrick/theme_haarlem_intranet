@@ -18,12 +18,12 @@ function theme_haarlem_intranet_site_join_event($event, $type, $object) {
 		return;
 	}
 	
-	// enable site notifications for the new user
-	set_user_notification_setting($user->getGUID(), 'site', true);
-	
-	// enable mentions notifications for the new user
 	$user_guid = (int) $object->guid_one;
 	
+	// enable site notifications for the new user
+	set_user_notification_setting($user_guid, 'site', true);
+	
+	// enable mentions notifications for the new user
 	elgg_set_plugin_user_setting('notify', '1', $user_guid, 'mentions');
 }
 
