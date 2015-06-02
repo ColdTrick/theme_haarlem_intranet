@@ -958,3 +958,12 @@ form.elgg-search {
     color: white;
     font-size: 48px !important;
 }
+
+.elgg-widget-instance-promo_widget .elgg-head {
+	display: none;
+}
+.elgg-state-draggable.elgg-widget-instance-promo_widget:hover .elgg-head {
+	display: block;
+	position: absolute;
+	width: 100%;
+}
