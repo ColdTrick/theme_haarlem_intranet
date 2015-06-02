@@ -97,10 +97,43 @@ function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $para
 			'name' => 'groups',
 			'text' => elgg_view_icon('group') . $postfix,
 			'title' => elgg_echo('groups:yours'),
-			'href' => "groups/member/{$user->username}",
+			'href' => "#",
 			'section' => 'personal',
 			'is_trusted' => true,
 			'priority' => 150
+		));
+		
+		// add my groups
+		$dbprefix = elgg_get_config('dbprefix');
+		$group_options = array(
+			'type' => 'group',
+			'limit' => false,
+			'relationship' => 'member',
+			'relationship_guid' => $user->getGUID(),
+			'joins' => array("JOIN {$dbprefix}groups_entity ge ON e.guid = ge.guid"),
+			'order_by' => 'ge.name ASC'
+		);
+		$groups = new ElggBatch('elgg_get_entities_from_relationship', $group_options);
+		foreach ($groups as $index => $group) {
+			$return_value[] = ElggMenuItem::factory(array(
+				'name' => "group_{$group->getGUID()}",
+				'text' => $group->name,
+				'href' => $group->getURL(),
+				'section' => 'personal',
+				'is_trusted' => true,
+				'priority' => $index,
+				'parent_name' => 'groups'
+			));
+		}
+		
+		$return_value[] = ElggMenuItem::factory(array(
+			'name' => 'my_groups',
+			'text' => elgg_echo('groups:yours'),
+			'href' => "groups/member/{$user->username}",
+			'section' => 'personal',
+			'is_trusted' => true,
+			'priority' => 9999999,
+			'parent_name' => 'groups'
 		));
 	}
 	
