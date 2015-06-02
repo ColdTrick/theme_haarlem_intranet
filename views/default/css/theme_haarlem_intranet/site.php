@@ -177,6 +177,12 @@ form.elgg-search {
 .fa-hover {
 	color: #<?php echo THEME_BLUE;?>;
 }
+.elgg-output .fa {
+	color: #ccc;
+}
+.elgg-output a .fa:hover {
+	color: #<?php echo THEME_BLUE;?>;
+}
 
 .theme-haarlem-intranet-counter {
 	color: white;
