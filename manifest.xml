@@ -69,6 +69,12 @@
 		<priority>after</priority>
 	</requires>
 	
+	<requires>
+		<type>priority</type>
+		<plugin>promo_widget</plugin>
+		<priority>after</priority>
+	</requires>
+	
 	<category>ColdTrick</category>
 	<category>theme</category>
 </plugin_manifest>
