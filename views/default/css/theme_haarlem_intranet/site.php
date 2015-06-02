@@ -525,6 +525,16 @@ form.elgg-search {
 	padding: 9px 10px;
 }
 
+.elgg-owner-block-group .elgg-menu-title > li > a {
+	background: #<?php echo THEME_BLUE; ?>;
+}
+.theme-intranet-afdeling .elgg-owner-block-group .elgg-menu-title > li > a {
+	background: #<?php echo THEME_PURPLE; ?>;
+}
+.elgg-owner-block-group .elgg-menu-title > li > a:hover {
+	text-decoration: underline;
+}
+
 .elgg-page-content-header > .elgg-inner > h1 {
 	font-size: 24px;
 	font-family: "Source Sans Pro",sans-serif;
