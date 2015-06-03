@@ -118,10 +118,10 @@ html {
 		margin: 5px 0 0 0;
 	}
 	/***** CUSTOM INDEX ******/
-	.elgg-col-1of2 {
+	/*.elgg-col-1of2 {
 		float: none;
 		width: 100%;
-	}
+	}*/
 	.prl {
 		padding-right: 0;
 	}
