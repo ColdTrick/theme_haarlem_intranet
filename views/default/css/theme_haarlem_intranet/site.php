@@ -970,10 +970,10 @@ form.elgg-search {
     font-size: 48px !important;
 }
 
-.elgg-widget-instance-promo_widget .elgg-head {
+.elgg-widget-instance-promo_widget > .elgg-head {
 	display: none;
 }
-.elgg-state-draggable.elgg-widget-instance-promo_widget:hover .elgg-head {
+.elgg-state-draggable.elgg-widget-instance-promo_widget:hover > .elgg-head {
 	display: block;
 	position: absolute;
 	width: 100%;
