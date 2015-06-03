@@ -30,6 +30,7 @@ $english = array(
 	"theme_haarlem_intranet:owner_block:group:related:bureau" => "Subdepartments of this office",
 	"theme_haarlem_intranet:owner_block:group:related:team" => "Subdepartments of this team",
 
+	"theme_haarlem_intranet:search" => "Search (one word is optimal)",
 	"theme_haarlem_intranet:search:groep" => "Search in this group",
 	"theme_haarlem_intranet:search:hoofdafdeling" => "Search in this maindepartment",
 	"theme_haarlem_intranet:search:afdeling" => "Search in this department",

@@ -6,7 +6,7 @@
  * @uses $vars['class'] Additional class
  */
 
-$placeholder = elgg_extract('placeholder', $vars, elgg_echo('search'));
+$placeholder = elgg_extract('placeholder', $vars, elgg_echo('theme_haarlem_intranet:search'));
 $container_entity = elgg_extract('container_entity', $vars);
 
 if (array_key_exists('value', $vars)) {
