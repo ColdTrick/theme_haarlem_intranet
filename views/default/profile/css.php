@@ -63,28 +63,37 @@
 }
 #profile-details .profile-details-header h2 {
 	color: white;
+	font-weight: bold;
 }
 
 #profile-details > table {
 	width: 100%;
 	margin-bottom: 10px;
 }
-#profile-details > table ul {
-	wdith: 50%;
-}
-#profile-details > table ul:first-child {
-	padding-right: 10px;
-}
+
 #profile-details > table li {
 	background: white;
 	padding: 10px;
 	margin-bottom: 5px;
+	position: relative;
 }
 
 #profile-details > table label {
 	color: #<?php echo THEME_BLUE; ?>;
 	display: inline-block;
     width: 150px;
+}
+
+#profile-details > table .elgg-icon {
+	background: #<?php echo THEME_BLUE; ?>;
+    color: white;
+    float: left;
+    height: 32px;
+    left: -10px;
+    line-height: 28px;
+    margin: 0;
+    padding: 5px 10px 0;
+    top: -10px;
 }
 #profile-details .elgg-module-info {
 	background: white;

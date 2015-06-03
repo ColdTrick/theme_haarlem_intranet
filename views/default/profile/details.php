@@ -13,62 +13,81 @@ echo "<span class='float-alt'>{$user->birthday} {$user->gender}</span>";
 echo "<h2>{$user->name}</h2>";
 echo '</div>';
 
+$haarlem_functie = $user->haarlem_functie;
+$haarlem_werklocatie = $user->haarlem_werklocatie;
+$haarlem_hoofdafdeling = elgg_view('output/tags', array('value' => $user->haarlem_hoofdafdeling));
+$haarlem_afdeling = elgg_view('output/tags', array('value' => $user->haarlem_afdeling));
+$haarlem_team = elgg_view('output/tags', array('value' => $user->haarlem_team));
+$haarlem_werktijden = $user->haarlem_werktijden;
+$haarlem_email = $user->haarlem_email;
+$$haarlem_tel_werk = $user->haarlem_tel_werk;
+$haarlem_tel_mobiel = $user->haarlem_tel_mobiel;
+$haarlem_grip = $user->haarlem_grip;
+$haarlem_tel_alt = $user->haarlem_tel_alt;
+$haarlem_twitter = $user->haarlem_twitter;
+
 echo <<<__TABLE
 <table>
 	<tr>
 		<td>
-			<ul>
+			<ul class="prm">
 				<li>
 					<label>Functie:</label>
-					{$user->functie}
+					{$haarlem_functie}
 				</li>
 				<li>
 					<label>Werklocatie:</label>
-					{$user->locatie}
+					{$haarlem_werklocatie}
 				</li>
 				<li>				
 					<label>Hoofdafdeling:</label>
-					{$user->hoofdafdeling}
+					{$haarlem_hoofdafdeling}
 				</li>
 				<li>
 					<label>Afdeling:</label>
-					{$user->afdeling}
+					{$haarlem_afdeling}
 				</li>
 				<li>
 					<label>Bureau/team:</label>
-					{$user->team}
+					{$haarlem_team}
 				</li>
 				<li>
 					<label>Werktijden:</label>
-					{$user->werktijden}
+					{$haarlem_werktijden}
 				</li>
 			</ul>
 		</td>
 		<td>
 			<ul>
 				<li>
+					<span class='elgg-icon fa fa-at'></span>
 					<label>Emailadres:</label>
-					{$user->email}
+					{$haarlem_email}
 				</li>
 				<li>
+					<span class='elgg-icon fa fa-phone'></span>
 					<label>Telefoonnummer werk:</label>
-					{$user->phone}
+					{$haarlem_tel_werk}
 				</li>
 				<li>
+					<span class='elgg-icon fa fa-phone'></span>
 					<label>Mobiel nummer werk:</label>
-					{$user->mobile}
+					{$haarlem_tel_mobiel}
 				</li>
 				<li>
+					<span class='elgg-icon fa fa-phone'></span>
 					<label>Grip:</label>
-					{$user->grip}
+					{$haarlem_grip}
 				</li>
 				<li>
+					<span class='elgg-icon fa fa-phone'></span>
 					<label>Ander telefoonnummer:</label>
-					{$user->phone_other}
+					{$haarlem_tel_alt}
 				</li>
 				<li>
+					<span class='elgg-icon fa fa-twitter'></span>
 					<label>Twitter:</label>
-					{$user->twitter}
+					{$haarlem_twitter}
 				</li>
 			</ul>
 		</td>
@@ -77,8 +96,8 @@ echo <<<__TABLE
 
 __TABLE;
 
-echo elgg_view_module('info', 'Werkgebied', $user->description);
-echo elgg_view_module('info', 'Vraag mij over', $user->description);
+echo elgg_view_module('info', 'Werkgebied', $user->haarlem_werkgebied);
+echo elgg_view_module('info', 'Vraag mij over', $user->haarlem_vraag_mij_over);
 echo elgg_view_module('info', 'Wie ben ik', $user->description);
 
 $activity = elgg_list_river(array(

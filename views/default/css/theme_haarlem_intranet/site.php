@@ -478,6 +478,13 @@ form.elgg-search {
 	line-height: 40px;
 }
 
+.elgg-owner-block-user .profile-action-menu .elgg-button-action {
+	background: #<?php echo THEME_GREEN; ?>;
+}
+.elgg-owner-block-user .profile-action-menu .elgg-button-action:hover {
+	text-decoration: underline;
+}
+
 .elgg-owner-block-group .theme-haarlem-intranet-briefdescription {
 	padding: 10px 20px 5px;
 }
