@@ -14,6 +14,14 @@ if (empty($entity) || !$entity->canEdit()) {
 $new_values = array();
 
 foreach ($hrefs as $index => $href) {
+	// check if value matches placeholder text
+	if ($texts[$index] == elgg_echo('theme_haarlem_intranet:quick_nav:text')) {
+		$texts[$index] = '';
+	}
+	if ($href == elgg_echo('theme_haarlem_intranet:quick_nav:href')) {
+		continue;
+	}
+	
 	if (empty($href)) {
 		continue;
 	}
