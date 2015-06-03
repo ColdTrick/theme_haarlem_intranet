@@ -65,18 +65,27 @@
 }
 
 /***** PAGE MESSAGES ******/
-.elgg-system-messages {
+.elgg-page-messages {
 	position: fixed;
-	top: 32px;
-	right: 20px;
+	width: 100%;
+}
+.elgg-system-messages {
+	top: 300px;
+	margin: 0 auto;
 	max-width: 500px;
 	z-index: 2000;
+	position: relative;
 }
 .elgg-system-messages li {
 	margin-top: 10px;
 }
 .elgg-system-messages li p {
 	margin: 0;
+}
+.elgg-system-messages li:before {
+	float: right;
+	font-family: "FontAwesome";
+	content: "\f00d";
 }
 
 /***** PAGE HEADER ******/
