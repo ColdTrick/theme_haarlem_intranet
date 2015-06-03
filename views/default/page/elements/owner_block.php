@@ -26,15 +26,13 @@ if ($owner instanceof ElggGroup || $owner instanceof ElggUser) {
 			$body .= elgg_view('profile_manager/profile_completeness/content', array('entity' => $owner));
 		} else {
 			// other profile
-			$menu = elgg_extract('menu', $vars);
-			$actions = elgg_extract('action', $menu, array());
-			if ($actions) {
-				$body .= '<ul class="elgg-menu profile-action-menu">';
-				foreach ($actions as $action) {
-					$body .= '<li>' . $action->getContent(array('class' => 'elgg-button elgg-button-action')) . '</li>';
-				}
-				$body .= '</ul>';
-			}
+			$body .= '<ul class="elgg-menu profile-action-menu"><li>';
+			$body .= elgg_view('output/url', array(
+				'text' => elgg_echo('messages:sendmessage'),
+				'href' => 'messages/compose?send_to=' . $owner->guid,
+				'class' => 'elgg-button elgg-button-action'
+			));
+			$body .= '</li></ul>';
 		}
 	}
 	
