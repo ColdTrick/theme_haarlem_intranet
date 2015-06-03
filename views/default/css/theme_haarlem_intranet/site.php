@@ -164,6 +164,7 @@ form.elgg-search {
 }
 
 .elgg-owner-block-group .elgg-head > .elgg-image-block .elgg-image img,
+.theme-haarlem-intranet-profile-group-membership .elgg-image img,
 .elgg-avatar > a > img {
 	border-radius: 500px;
 }
@@ -977,4 +978,12 @@ form.elgg-search {
 	display: block;
 	position: absolute;
 	width: 100%;
+}
+
+.theme-haarlem-intranet-profile-group-membership .elgg-image-block {
+	padding: 0;
+}
+.theme-haarlem-intranet-profile-group-membership .elgg-image-block > .elgg-body,
+.theme-haarlem-intranet-profile-group-membership .elgg-image-block.elgg-divide-top > .elgg-image {
+	padding-top: 4px;
 }

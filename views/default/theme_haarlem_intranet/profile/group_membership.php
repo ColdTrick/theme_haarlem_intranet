@@ -10,7 +10,7 @@ if (empty($groups)) {
 	return;
 }
 
-$title = elgg_view_icon('group');
+$title = elgg_view_icon('group', 'prs');
 $title .= elgg_echo('groups');
 
 $content = '';
