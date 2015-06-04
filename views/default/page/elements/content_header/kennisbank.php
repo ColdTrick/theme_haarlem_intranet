@@ -3,7 +3,7 @@
 $page_owner = elgg_get_page_owner_entity();
 
 // can we view the current page
-if (!elgg_in_context('static') && !$page_owner->canEdit()) {
+if (!elgg_in_context('static') && !$page_owner->canEdit() && !$page_owner->isMember()) {
 	// no
 	forward();
 }
