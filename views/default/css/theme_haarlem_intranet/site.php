@@ -998,3 +998,13 @@ form.elgg-search {
 .theme-haarlem-intranet-profile-group-membership .elgg-image-block.elgg-divide-top > .elgg-image {
 	padding-top: 4px;
 }
+
+#event_manager_event_edit > fieldset > table td {
+	padding: 0 0 20px;
+}
+#event_manager_event_edit .event_manager_event_edit_label {
+	max-width: 150px;
+}
+#event_manager_event_edit .mce-tinymce {
+	width: auto !important;
+}
