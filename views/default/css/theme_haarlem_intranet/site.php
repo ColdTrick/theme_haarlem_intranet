@@ -1003,7 +1003,8 @@ form.elgg-search {
 	padding: 0 0 20px;
 }
 #event_manager_event_edit .event_manager_event_edit_label {
-	max-width: 150px;
+	width: 150px;
+	padding-right: 10px;
 }
 #event_manager_event_edit .mce-tinymce {
 	width: auto !important;
