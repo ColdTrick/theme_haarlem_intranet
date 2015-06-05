@@ -793,3 +793,45 @@ function theme_haarlem_intranet_livesearch_route_handler($hook, $type, $return_v
 	
 	return false;
 }
+
+/**
+ * Custom icon only on this site
+ *
+ * @param string $hook         the name of the hook
+ * @param string $type         the type of the hook
+ * @param string $return_value current return value
+ * @param array  $params       supplied params
+ *
+ * @return string
+ */
+function theme_haarlem_intranet_profile_icon($hook, $type, $return_value, $params) {
+	
+	if (empty($params) || !is_array($params)) {
+		return;
+	}
+	
+	$user = elgg_extract('entity', $params);
+	if (empty($user) || !($user instanceof ElggUser)) {
+		return;
+	}
+	
+	if (!$user->haarlem_icontime) {
+		return;
+	}
+	
+	$size = elgg_extract('size', $params);
+	$icon_sizes = elgg_get_config('icon_sizes');
+	if (!isset($icon_sizes[$size])) {
+		return;
+	}
+	
+	$fh = new ElggFile();
+	$fh->owner_guid = $user->getGUID();
+	
+	$fh->setFilename("haarlem_icon/{$size}.jpg");
+	if (!$fh->exists()) {
+		return;
+	}
+	
+	return "haarlem_avatar/{$user->getGUID()}/{$size}/{$user->haarlem_icontime}.jpg";
+}
