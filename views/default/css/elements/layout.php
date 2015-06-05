@@ -68,6 +68,7 @@
 .elgg-page-messages {
 	position: fixed;
 	width: 100%;
+	z-index: 2000;
 }
 .elgg-system-messages {
 	top: 300px;
