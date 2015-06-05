@@ -73,3 +73,15 @@ function theme_haarlem_intranet_dashboard_page_handler($page) {
 	include(dirname(dirname(__FILE__)) . '/pages/dashboard/index.php');
 	return true;
 }
+
+/**
+ * The custom haarlem avatar handler
+ *
+ * @param array $page page elements
+ *
+ * @return bool
+ */
+function theme_haarlem_intranet_avatar_page_handler($page) {
+	include(dirname(dirname(__FILE__)) . '/pages/avatar/user.php');
+	return true;
+}

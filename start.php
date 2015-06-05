@@ -87,9 +87,12 @@ function theme_haarlem_intranet_init() {
 
 	elgg_unregister_plugin_hook_handler("search_multisite", "search", "subsite_manager_search_multisite_search_hook");
 	
+	elgg_register_plugin_hook_handler('entity:icon:url', 'user', 'theme_haarlem_intranet_profile_icon');
+	
 	// page handlers
 	elgg_register_page_handler('profile', 'theme_haarlem_intranet_profile_page_handler');
 	elgg_register_page_handler('dashboard', 'theme_haarlem_intranet_dashboard_page_handler');
+	elgg_register_page_handler('haarlem_avatar', 'theme_haarlem_intranet_avatar_page_handler');
 	
 	// quick nav
 	elgg_register_ajax_view('theme_haarlem_intranet/forms/quick_nav');
