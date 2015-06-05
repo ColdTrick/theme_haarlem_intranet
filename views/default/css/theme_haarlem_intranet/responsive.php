@@ -58,6 +58,9 @@ html {
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
     }
+    .elgg-layout {
+    	display: table;
+    }
     .elgg-layout-one-sidebar .elgg-main,
 	.elgg-layout-two-sidebar .elgg-main {
         width: 100%;
@@ -68,16 +71,19 @@ html {
 		border-bottom: 1px solid #DCDCDC;
 		background-color: #FAFAFA;
 		width: 100%;
-		float: left;
+		float: none;
 		padding: 27px 20px 20px;
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05) inset;
 
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
+		
+		display: table-footer-group;
 	}
 	.elgg-sidebar-alt {
-		display: none;
+		width: 100%;
+		float: none;
 	}
 	.elgg-page-default .elgg-page-footer > .elgg-inner {
 		border-top: none;
@@ -91,26 +97,7 @@ html {
 	.elgg-menu-groups-my-status {
 		border-bottom: 1px solid #DCDCDC;
 	}
-	.elgg-menu-page a,
-	.elgg-sidebar .elgg-menu-owner-block li a,
-	.elgg-menu-groups-my-status li a {
-		border-color: #DCDCDC;
-		border-style: solid;
-		border-width: 1px 1px 0 1px;
-		margin: 0;
-		padding: 10px;		
-		background-color: #FFFFFF;
-	}
-	.elgg-menu-page a:hover,
-	.elgg-sidebar .elgg-menu-owner-block li a:hover,
-	.elgg-menu-groups-my-status li a:hover,
-	.elgg-menu-page li.elgg-state-selected > a,
-	.elgg-sidebar .elgg-menu-owner-block li.elgg-state-selected > a,
-	.elgg-menu-groups-my-status li.elgg-state-selected > a {
-		color: #444;
-		background-color: #F0F0F0;
-		text-decoration: none;
-	}
+	
 	.elgg-river-item input[type=text] {
 		width: 100%;
 	}
@@ -133,7 +120,7 @@ html {
 	#elgg-widget-col-3 {
 		float: none;
 		min-height: 0 !important;
-		width: 100%;
+		width: 100% !important;
 	}
 	.elgg-module-widget {
 		margin: 0 0 15px;
