@@ -139,7 +139,7 @@
 	position: relative;
 	padding: 0px 27px 0px 0;
 	float: left;
-	width: 295px;
+	width: 260px;
 	margin: 0 0 0 0;
 }
 .elgg-main {
