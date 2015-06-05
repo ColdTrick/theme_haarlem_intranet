@@ -71,7 +71,7 @@
 	margin-bottom: 10px;
 }
 
-#profile-details > table li {
+#profile-details > table td > ul > li {
 	background: white;
 	padding: 10px;
 	margin-bottom: 5px;
@@ -84,7 +84,7 @@
     width: 150px;
 }
 
-#profile-details > table .elgg-icon {
+#profile-details > table td > ul > li > .elgg-icon {
 	background: #<?php echo THEME_BLUE; ?>;
     color: white;
     float: left;

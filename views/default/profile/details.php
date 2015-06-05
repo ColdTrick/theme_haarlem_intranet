@@ -15,13 +15,13 @@ echo '</div>';
 
 $haarlem_functie = $user->haarlem_functie;
 $haarlem_werklocatie = $user->haarlem_werklocatie;
-$haarlem_hoofdafdeling = elgg_view('output/tags', array('value' => $user->haarlem_hoofdafdeling));
-$haarlem_afdeling = elgg_view('output/tags', array('value' => $user->haarlem_afdeling));
-$haarlem_team = elgg_view('output/tags', array('value' => $user->haarlem_team));
+$haarlem_hoofdafdeling = implode(",", (array) $user->haarlem_hoofdafdeling);
+$haarlem_afdeling = implode(",", (array) $user->haarlem_afdeling);
+$haarlem_team = implode(",", (array) $user->haarlem_team);
 $haarlem_werktijden = $user->haarlem_werktijden;
 $haarlem_email = $user->haarlem_email;
-$$haarlem_tel_werk = $user->haarlem_tel_werk;
-$haarlem_tel_mobiel = $user->haarlem_tel_mobiel;
+$haarlem_tel_werk = $user->haarlem_tel_werk;
+$haarlem_mob_werk = $user->haarlem_mob_werk;
 $haarlem_grip = $user->haarlem_grip;
 $haarlem_tel_alt = $user->haarlem_tel_alt;
 $haarlem_twitter = $user->haarlem_twitter;
@@ -72,7 +72,7 @@ echo <<<__TABLE
 				<li>
 					<span class='elgg-icon fa fa-phone'></span>
 					<label>Mobiel nummer werk:</label>
-					{$haarlem_tel_mobiel}
+					{$haarlem_mob_werk}
 				</li>
 				<li>
 					<span class='elgg-icon fa fa-phone'></span>
