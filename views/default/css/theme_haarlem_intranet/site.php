@@ -311,10 +311,10 @@ form.elgg-search {
 
 .elgg-menu-page-static a {
 	color: #414042;
-	font-size: 15px;
+	font-size: 16px;
 }
 .elgg-menu-page-static .elgg-child-menu a {
-	font-size: 13px;
+	font-size: 14px;
 }
 
 .elgg-menu-page-static > li > ul a {
