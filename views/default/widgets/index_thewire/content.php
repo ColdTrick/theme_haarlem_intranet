@@ -20,7 +20,16 @@ $options = array(
 );
 
 if (elgg_in_context("index")) {
-	$options['wheres'] = "e.access_id IN(" . ACCESS_PUBLIC . "," . ACCESS_LOGGED_IN . "," . elgg_get_site_entity()->getACL() . ")";
+	$access = array(
+		ACCESS_PUBLIC,
+		ACCESS_LOGGED_IN
+	);
+	$site = elgg_get_site_entity();
+	if ($site instanceof Subsite) {
+		$access[] = $site->getACL();
+	}
+	
+	$options['wheres'] = "e.access_id IN(" . implode(',', $access) . ")";
 }
 
 if (!empty($filter)) {
