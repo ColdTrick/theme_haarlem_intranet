@@ -311,10 +311,10 @@ form.elgg-search {
 
 .elgg-menu-page-static a {
 	color: #414042;
-	font-size: 15px;
+	font-size: 16px;
 }
 .elgg-menu-page-static .elgg-child-menu a {
-	font-size: 13px;
+	font-size: 14px;
 }
 
 .elgg-menu-page-static > li > ul a {
@@ -997,4 +997,15 @@ form.elgg-search {
 .theme-haarlem-intranet-profile-group-membership .elgg-image-block > .elgg-body,
 .theme-haarlem-intranet-profile-group-membership .elgg-image-block.elgg-divide-top > .elgg-image {
 	padding-top: 4px;
+}
+
+#event_manager_event_edit > fieldset > table td {
+	padding: 0 0 20px;
+}
+#event_manager_event_edit .event_manager_event_edit_label {
+	width: 150px;
+	padding-right: 10px;
+}
+#event_manager_event_edit .mce-tinymce {
+	width: auto !important;
 }
