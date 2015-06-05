@@ -835,3 +835,31 @@ function theme_haarlem_intranet_profile_icon($hook, $type, $return_value, $param
 	
 	return "haarlem_avatar/{$user->getGUID()}/{$size}/{$user->haarlem_icontime}.jpg";
 }
+
+/**
+ * Change file/folder structure menu
+ *
+ * @param string         $hook         the name of the hook
+ * @param string         $type         the type of the hook
+ * @param ElggMenuItem[] $return_value current return value
+ * @param mixed          $params       supplied params
+ *
+ * @return ElggMenuItem[]
+ */
+function theme_haarlem_intranet_folder_tree_menu($hook, $type, $return_value, $params) {
+	
+	if (empty($return_value) || !is_array($return_value)) {
+		return;
+	}
+	
+	foreach ($return_value as $menu_item) {
+		if ($menu_item->getName() !== 'root') {
+			continue;
+		}
+		
+		$menu_item->setText(elgg_echo('file'));
+		break;
+	}
+	
+	return $return_value;
+}
