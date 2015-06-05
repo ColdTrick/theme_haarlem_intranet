@@ -364,6 +364,8 @@ form.elgg-search {
 	border-bottom: 1px solid #414042;
 	width: 100%;
 	font-size: 17px;
+	background: #<?php echo THEME_TEAL; ?> !important;
+	color: white !important;
 }
 .tree-classic li,
 .tree-classic ul {
@@ -374,6 +376,9 @@ form.elgg-search {
 	font-family: "FontAwesome";
 	color: #414042;
 	padding-right: 5px;
+}
+#file-tools-folder-tree.tree-classic li.open a.elgg-menu-parent:before {
+	content: "";
 }
 .tree-classic li.closed a.elgg-menu-parent:before {
 	content: "\f0da";
