@@ -806,6 +806,10 @@ function theme_haarlem_intranet_livesearch_route_handler($hook, $type, $return_v
  */
 function theme_haarlem_intranet_profile_icon($hook, $type, $return_value, $params) {
 	
+	if (!elgg_is_logged_in()) {
+		return;
+	}
+	
 	if (empty($params) || !is_array($params)) {
 		return;
 	}
