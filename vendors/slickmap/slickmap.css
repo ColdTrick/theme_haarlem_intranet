@@ -103,8 +103,8 @@
 #primaryNav li:last-child {
 	background: url('images/L1-right.png') center top no-repeat;
 }
-a:link:before,
-a:visited:before {
+.slickmap a:link:before,
+.slickmap a:visited:before {
 /*  content: " "attr(href)" ";       */
 	display: block;
 	text-transform: uppercase;
