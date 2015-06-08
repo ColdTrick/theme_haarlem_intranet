@@ -26,6 +26,9 @@ function theme_haarlem_intranet_init() {
 	// theme specific CSS
 	elgg_register_css("sourcesanspro", "//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700");
 	elgg_load_css("sourcesanspro");
+
+	elgg_register_css("slickmap", elgg_get_site_url() . 'mod/theme_haarlem_intranet/vendors/slickmap/slickmap.css');
+	elgg_load_css("slickmap");
 	
 	elgg_register_js('tinymce', 'mod/theme_haarlem_intranet/vendors/tinymce/js/tinymce/tinymce.min.js');
 	
