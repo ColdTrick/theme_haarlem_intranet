@@ -250,7 +250,7 @@ form.elgg-search {
 }
 .theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li {
 	border: none;
-	height: 20px;
+	min-height: 20px;
 	padding: 0;
 }
 .theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li .elgg-icon {
@@ -258,7 +258,7 @@ form.elgg-search {
 }
 .theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li > a {
 	color: #414042;
-	height: 20px;
+	word-wrap: break-word;
     padding: 3px 13px 0;
 }
 .theme-haarlem-intranet-topbar-dropdown .alliander-theme-quicklinks-item {

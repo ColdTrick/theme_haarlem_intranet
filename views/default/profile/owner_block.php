@@ -17,34 +17,36 @@ $icon = elgg_view_entity_icon($user, 'large', array(
 ));
 
 // grab the actions and admin menu items from user hover
-$menu = elgg_extract('menu', $vars);
-// $actions = elgg_extract('action', $menu, array());
-$admin = elgg_extract('admin', $menu, array());
-
-// $profile_actions = '';
-// if (elgg_is_logged_in() && $actions) {
-// 	$profile_actions = '<ul class="elgg-menu profile-action-menu mvm">';
-// 	foreach ($actions as $action) {
-// 		$profile_actions .= '<li>' . $action->getContent(array('class' => 'elgg-button elgg-button-action')) . '</li>';
-// 	}
-// 	$profile_actions .= '</ul>';
-// }
-
-// if admin, display admin links
-if (!empty($admin)) {	
-	$admin_links = '<ul class="elgg-menu"><li>';
-	$admin_links .= elgg_view('output/url', array(
-		'class' => 'elgg-button elgg-button-special',
-		'href' => '#profile-menu-admin',
-		'text' => elgg_echo('admin:options'),
-		'rel' => 'toggle' 
-	));
-	$admin_links .= '</li></ul>';
-	$admin_links .= '<ul class="elgg-menu hidden" id="profile-menu-admin">';
-	foreach ($admin as $menu_item) {
-		$admin_links .= '<li>' . $menu_item->getContent(array('class' => 'elgg-button')) . '</li>';
+if (elgg_is_admin_logged_in()) {
+	$menu = elgg_extract('menu', $vars);
+	// $actions = elgg_extract('action', $menu, array());
+	$admin = elgg_extract('admin', $menu, array());
+	
+	// $profile_actions = '';
+	// if (elgg_is_logged_in() && $actions) {
+	// 	$profile_actions = '<ul class="elgg-menu profile-action-menu mvm">';
+	// 	foreach ($actions as $action) {
+	// 		$profile_actions .= '<li>' . $action->getContent(array('class' => 'elgg-button elgg-button-action')) . '</li>';
+	// 	}
+	// 	$profile_actions .= '</ul>';
+	// }
+	
+	// if admin, display admin links
+	if (!empty($admin)) {	
+		$admin_links = '<ul class="elgg-menu"><li>';
+		$admin_links .= elgg_view('output/url', array(
+			'class' => 'elgg-button elgg-button-special',
+			'href' => '#profile-menu-admin',
+			'text' => elgg_echo('admin:options'),
+			'rel' => 'toggle' 
+		));
+		$admin_links .= '</li></ul>';
+		$admin_links .= '<ul class="elgg-menu hidden" id="profile-menu-admin">';
+		foreach ($admin as $menu_item) {
+			$admin_links .= '<li>' . $menu_item->getContent(array('class' => 'elgg-button')) . '</li>';
+		}
+		$admin_links .= '</ul>';	
 	}
-	$admin_links .= '</ul>';	
 }
 
 // content links
