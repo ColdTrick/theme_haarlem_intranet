@@ -187,13 +187,13 @@
 					$field_result = "<div>";
 				}
 				
-				$field_result .= "<label>" . $title . "</label>";
+				$field_result .= "<div class='pbm'><label>" . $title . "</label>";
 				
 				if($hint = $field->getHint()){
-					$field_result .= "<span class='custom_fields_more_info' id='more_info_". $metadata_name . "'></span>";
-					$field_result .= "<span class='custom_fields_more_info_text' id='text_more_info_" . $metadata_name . "'>" . $hint . "</span>";
+// 					$field_result .= "<span class='custom_fields_more_info' id='more_info_". $metadata_name . "'></span>";
+					$field_result .= "<div class='elgg-subtext clearfix'>" . $hint . "</div>";
 				}
-				
+				$field_result .= "</div>";
 				if($valtype == "dropdown"){
 					// add div around dropdown to let it act as a block level element
 					$field_result .= "<div>";
@@ -248,7 +248,7 @@
 
 	if($simple_access_control == "yes"){
 		?>
-		<div>
+		<div class='hidden'>
 			<label><?php echo elgg_echo("profile_manager:simple_access_control"); ?></label>
 			<?php echo elgg_view('input/access',array('name' => 'simple_access_control', 'value' => $access_id, 'class' => 'simple_access_control', 'js' => 'onchange="set_access_control(this.value)"')); ?>
 		</div>
@@ -263,6 +263,9 @@
 	?>
 	</div>
 
+	<div>
+		<?php echo elgg_view_module("info", "Aanpassen overige informatie", elgg_echo("Voor het wijzigen van andere gegevens, zoals werktijden, naam of pasfoto graag een FIX melding maken. Ga naar FIX -> ..... -> ......"));?>
+	</div>
 <?php
 	if($simple_access_control == "yes"){
 		?>

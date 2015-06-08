@@ -63,7 +63,8 @@
 }
 #profile-details .profile-details-header h2 {
 	color: white;
-	font-weight: bold;
+	font-size: 1.8em;
+	line-height: 1em;
 }
 
 #profile-details > table {

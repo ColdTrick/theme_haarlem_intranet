@@ -19,7 +19,7 @@ $haarlem_hoofdafdeling = implode(",", (array) $user->haarlem_hoofdafdeling);
 $haarlem_afdeling = implode(",", (array) $user->haarlem_afdeling);
 $haarlem_team = implode(",", (array) $user->haarlem_team);
 $haarlem_werktijden = $user->haarlem_werktijden;
-$haarlem_email = $user->haarlem_email;
+$haarlem_email = elgg_view("output/email", array("value" => $user->haarlem_email));
 $haarlem_tel_werk = $user->haarlem_tel_werk;
 $haarlem_mob_werk = $user->haarlem_mob_werk;
 $haarlem_grip = $user->haarlem_grip;
