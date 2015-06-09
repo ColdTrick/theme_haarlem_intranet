@@ -97,8 +97,8 @@ echo <<<__TABLE
 __TABLE;
 
 echo elgg_view_module('info', 'Werkgebied', $user->haarlem_werkgebied);
-echo elgg_view_module('info', 'Vraag mij over', $user->haarlem_vraag_mij_over);
-echo elgg_view_module('info', 'Wie ben ik', $user->description);
+echo elgg_view_module('info', 'Vraag mij over', $user->haarlem_vraag_mij);
+echo elgg_view_module('info', 'Wie ben ik', $user->haarlem_wie_ben_ik);
 
 $activity = elgg_list_river(array(
 	'subject_guid' => $user->guid,
