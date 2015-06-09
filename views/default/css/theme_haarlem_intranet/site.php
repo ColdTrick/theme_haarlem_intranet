@@ -314,7 +314,7 @@ form.elgg-search {
 	font-size: 16px;
 }
 .elgg-menu-page-static .elgg-child-menu a {
-	font-size: 14px;
+	font-size: 15px;
 }
 
 .elgg-menu-page-static > li > ul a {
