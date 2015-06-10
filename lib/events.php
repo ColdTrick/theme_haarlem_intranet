@@ -84,7 +84,7 @@ function theme_haarlem_intranet_profile_sync_update_user($event, $type, $object)
 	}
 	
 	// duplicate email to profile field
-	$email = elgg_extract('ZAKELIJKEMAIL', $source_row);
+	$email = elgg_extract('zakelijkemail', $source_row);
 	if (!empty($email)) {
 		// default access
 		$access = ACCESS_LOGGED_IN;
@@ -116,7 +116,7 @@ function theme_haarlem_intranet_profile_sync_update_user($event, $type, $object)
 	
 	$icon_sizes = elgg_get_config('icon_sizes');
 	
-	$icon_path = elgg_extract('ICON', $source_row);
+	$icon_path = elgg_extract('profielfoto', $source_row);
 	if (empty($icon_path)) {
 		// remove icon
 		foreach ($icon_sizes as $size => $info) {
