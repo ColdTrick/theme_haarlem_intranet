@@ -52,6 +52,8 @@ function theme_haarlem_intranet_init() {
 	elgg_unextend_view("page/elements/owner_block/extend", "group_tools/owner_block");
 	elgg_unextend_view("groups/sidebar/members", "group_tools/group_admins");
 	
+	elgg_set_view_location('plugins/simplesaml/usersettings', 'nonexisting');
+	
 	// events
 	elgg_register_event_handler('pagesetup', 'system', 'theme_haarlem_intranet_pagesetup', 600);
 	elgg_register_event_handler('create', 'member_of_site', 'theme_haarlem_intranet_site_join_event');
