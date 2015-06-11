@@ -145,6 +145,18 @@ function theme_haarlem_intranet_profile_sync_update_user($event, $type, $object)
 	if (empty($icon_contents)) {
 		return;
 	}
+	
+	// was csv image updated
+	$csv_icontime = @filemtime($icon_path);
+	if (($csv_icontime !== false) && isset($user->haarlem_icontime)) {
+		$csv_icontime = sanitise_int($csv_icontime);
+		$icontime = sanitise_int($user->haarlem_icontime);
+	
+		if ($csv_icontime < $icontime) {
+			// base image was modified before current user image, so skipp
+			return;
+		}
+	}
 		
 	// write icon to a temp location for further handling
 	$tmp_icon = tempnam(sys_get_temp_dir(), $user->getGUID());
