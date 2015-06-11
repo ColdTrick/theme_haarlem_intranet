@@ -377,7 +377,7 @@ form.elgg-search {
 	color: #414042;
 	padding-right: 5px;
 }
-#file-tools-folder-tree.tree-classic li.open a.elgg-menu-parent:before {
+#file-tools-folder-tree.tree-classic li.elgg-menu-item-root > a.elgg-menu-parent:before {
 	content: "";
 }
 .tree-classic li.closed a.elgg-menu-parent:before {
