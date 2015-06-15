@@ -443,6 +443,12 @@ form.elgg-search {
 	color: white;
 }
 
+.elgg-menu-site .elgg-child-menu li .elgg-menu li a {
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+
 .elgg-menu-site .menu-builder-edit-menu-item {
 	display: none;
 }
