@@ -112,7 +112,7 @@ $content .= '</div>';
 $content .= '</div>';
 
 // content
-echo elgg_view('navigation/tabs', array('tabs' => $tabs));
+echo elgg_view('navigation/tabs', array('tabs' => $tabs, 'class' => 'theme-haarlem-intranet-dashboard-activity-tabs'));
 
 echo $content;
 ?>
@@ -130,3 +130,13 @@ echo $content;
 		return false;
 	});
 </script>
+<?php
+if (elgg_get_page_owner_guid() == elgg_get_logged_in_user_guid()) {
+?>
+<style type="text/css">
+	.elgg-widget-instance-river_widget .elgg-head {
+		display: none;
+	}
+</style>
+<?php
+}

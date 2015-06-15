@@ -1024,3 +1024,31 @@ form.elgg-search {
 	margin-left: 20px;
     min-width: 300px;
 }
+.theme-haarlem-intranet-dashboard-activity-tabs {
+	border: none;
+	margin: -10px 0 0 -10px;
+}
+.theme-haarlem-intranet-dashboard-activity-tabs > li {
+	margin: 0 0 0 0;
+	padding-top: 5px;
+	border: 0;
+	background: white;
+	border-right: 2px solid #e0e0e0;
+	
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+.theme-haarlem-intranet-dashboard-activity-tabs > li:last-child {
+	border-right: 0px solid #e0e0e0;
+}
+.theme-haarlem-intranet-dashboard-activity-tabs > li > a {
+	font-weight: bold;
+}
+.theme-haarlem-intranet-dashboard-activity-tabs > li:hover a {
+	background: white;
+	color: #5097cf;
+}
+.theme-haarlem-intranet-dashboard-activity-tabs .elgg-state-selected a {
+	color: #5097cf;
+}
