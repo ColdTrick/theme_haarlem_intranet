@@ -435,6 +435,7 @@ form.elgg-search {
 
 .elgg-menu-site .elgg-child-menu a {
 	font-weight: normal;
+	padding: 3px 13px 3px;
 }
 
 .elgg-menu-site .elgg-child-menu a:hover {
@@ -1013,4 +1014,13 @@ form.elgg-search {
 }
 #event_manager_event_edit .mce-tinymce {
 	width: auto !important;
+}
+
+.search-advanced-user-profile-table td {
+	padding: 0 0 5px;
+	vertical-align: middle;
+}
+.search-advanced-user-profile-table .elgg-input-text {
+	margin-left: 20px;
+    min-width: 300px;
 }

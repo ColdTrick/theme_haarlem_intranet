@@ -25,71 +25,85 @@ $haarlem_mob_werk = $user->haarlem_mob_werk;
 $haarlem_grip = $user->haarlem_grip;
 $haarlem_tel_alt = $user->haarlem_tel_alt;
 $haarlem_twitter = $user->haarlem_twitter;
+$haarlem_linkedin = $user->haarlem_linkedin;
+$haarlem_facebook = $user->haarlem_facebook;
+
+$social_links = array();
+if (!empty($haarlem_twitter)) {
+	$social_links['twitter'] =  '<td class="icon-cell"><span class="elgg-icon fa fa-twitter"></span></td><td class="pls">' . elgg_view('output/url', array('text' => 'Twitter', 'href' => $haarlem_twitter, 'target' => '_blank')) . '</td>';
+}
+if (!empty($haarlem_linkedin)) {
+	$social_links['linkedin'] = '<td class="icon-cell"><span class="elgg-icon fa fa-linkedin"></span></td><td class="pls">' . elgg_view('output/url', array('text' => 'LinkedIn', 'href' => $haarlem_linkedin, 'target' => '_blank')) . '</td>';
+}
+if (!empty($haarlem_facebook)) {
+	$social_links['facebook'] = '<td class="icon-cell"><span class="elgg-icon fa fa-facebook"></span></td><td class="pls">' . elgg_view('output/url', array('text' => 'Facebook', 'href' => $haarlem_facebook, 'target' => '_blank')) . '</td>';
+}
+
+$social_links_row = '';
+if (!empty($social_links)) {
+	$social_links_row = '<tr><td colspan="3"><table><tr>' . implode('', $social_links) . '</tr></table></td></tr>';
+}
 
 echo <<<__TABLE
-<table>
+<table class='haarlem-profile-details'>
 	<tr>
-		<td>
-			<ul class="prm">
-				<li>
-					<label>Functie:</label>
-					{$haarlem_functie}
-				</li>
-				<li>
-					<label>Werklocatie:</label>
-					{$haarlem_werklocatie}
-				</li>
-				<li>				
-					<label>Hoofdafdeling:</label>
-					{$haarlem_hoofdafdeling}
-				</li>
-				<li>
-					<label>Afdeling:</label>
-					{$haarlem_afdeling}
-				</li>
-				<li>
-					<label>Bureau/team:</label>
-					{$haarlem_team}
-				</li>
-				<li>
-					<label>Werktijden:</label>
-					{$haarlem_werktijden}
-				</li>
-			</ul>
+		<td class="prm">
+			<table>
+				<tr>
+					<td class='label-cell'><label>Functie:</label></td>
+					<td>{$haarlem_functie}</td>
+				</tr>
+				<tr>
+					<td class='label-cell'><label>Werklocatie:</label></td>
+					<td>{$haarlem_werklocatie}</td>
+				</tr>
+				<tr>
+					<td class='label-cell'><label>Hoofdafdeling:</label></td>
+					<td>{$haarlem_hoofdafdeling}</td>
+				</tr>
+				<tr>
+					<td class='label-cell'><label>Afdeling:</label></td>
+					<td>{$haarlem_afdeling}</td>
+				</tr>
+				<tr>
+					<td class='label-cell'><label>Bureau/team:</label></td>
+					<td>{$haarlem_team}</td>
+				</tr>
+				<tr>
+					<td class='label-cell'><label>Werktijden:</label></td>
+					<td>{$haarlem_werktijden}</td>
+				</tr>
+			</table>
 		</td>
 		<td>
-			<ul>
-				<li>
-					<span class='elgg-icon fa fa-at'></span>
-					<label>Emailadres:</label>
-					{$haarlem_email}
-				</li>
-				<li>
-					<span class='elgg-icon fa fa-phone'></span>
-					<label>Telefoonnummer werk:</label>
-					{$haarlem_tel_werk}
-				</li>
-				<li>
-					<span class='elgg-icon fa fa-phone'></span>
-					<label>Mobiel nummer werk:</label>
-					{$haarlem_mob_werk}
-				</li>
-				<li>
-					<span class='elgg-icon fa fa-phone'></span>
-					<label>Grip:</label>
-					{$haarlem_grip}
-				</li>
-				<li>
-					<span class='elgg-icon fa fa-phone'></span>
-					<label>Ander telefoonnummer:</label>
-					{$haarlem_tel_alt}
-				</li>
-				<li>
-					<span class='elgg-icon fa fa-twitter'></span>
-					<label>Twitter:</label>
-					{$haarlem_twitter}
-				</li>
-			</ul>
+			<table>
+				<tr>
+					<td class='icon-cell'><span class='elgg-icon fa fa-at'></span></td>
+					<td class='label-cell'><label>Emailadres:</label></td>
+					<td>{$haarlem_email}</td>
+				</tr>
+				<tr>
+					<td class='icon-cell'><span class='elgg-icon fa fa-phone'></span></td>
+					<td class='label-cell'><label>Telefoonnummer werk:</label></td>
+					<td>{$haarlem_tel_werk}</td>
+				</tr>
+				<tr>
+					<td class='icon-cell'><span class='elgg-icon fa fa-phone'></span></td>
+					<td class='label-cell'><label>Mobiel nummer werk:</label></td>
+					<td>{$haarlem_mob_werk}</td>
+				</tr>
+				<tr>
+					<td class='icon-cell'><span class='elgg-icon fa fa-phone'></span></td>
+					<td class='label-cell'><label>Grip:</label></td>
+					<td>{$haarlem_grip}</td>
+				</tr>
+				<tr>
+					<td class='icon-cell'><span class='elgg-icon fa fa-phone'></span></td>
+					<td class='label-cell'><label>Ander telefoonnummer:</label></td>
+					<td>{$haarlem_tel_alt}</td>
+				</tr>
+				{$social_links_row}
+			</table>
 		</td>
 	</tr>
 </table>

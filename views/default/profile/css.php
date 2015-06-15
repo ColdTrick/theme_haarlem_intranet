@@ -67,34 +67,46 @@
 	line-height: 1em;
 }
 
-#profile-details > table {
+.haarlem-profile-details {
 	width: 100%;
 	margin-bottom: 10px;
 }
 
-#profile-details > table td > ul > li {
+.haarlem-profile-details > tbody > tr > td {
+	width: 50%;
+}
+
+.haarlem-profile-details .label-cell {
+	width: 1%;
+	white-space: nowrap;
+	padding: 10px 5px;
+}
+.haarlem-profile-details .icon-cell {
+	width: 1%;
+	white-space: nowrap;
+}
+.haarlem-profile-details table {
+	width: 100%;
+}
+.haarlem-profile-details table tr {
 	background: white;
-	padding: 10px;
-	margin-bottom: 5px;
-	position: relative;
+	border-bottom: 5px solid #e0e0e0;
+}
+.haarlem-profile-details table td {
+	vertical-align: middle;
 }
 
-#profile-details > table label {
+.haarlem-profile-details label {
 	color: #<?php echo THEME_BLUE; ?>;
-	display: inline-block;
-    width: 150px;
 }
 
-#profile-details > table td > ul > li > .elgg-icon {
+.haarlem-profile-details td > .elgg-icon {
 	background: #<?php echo THEME_BLUE; ?>;
     color: white;
-    float: left;
     height: 32px;
-    left: -10px;
     line-height: 28px;
     margin: 0;
     padding: 5px 10px 0;
-    top: -10px;
 }
 #profile-details .elgg-module-info {
 	background: white;
