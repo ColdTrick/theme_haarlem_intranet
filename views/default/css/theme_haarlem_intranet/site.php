@@ -1050,6 +1050,7 @@ form.elgg-search {
 }
 .theme-haarlem-intranet-dashboard-activity-tabs > li > a {
 	font-weight: bold;
+	padding: 5px 10px;
 }
 .theme-haarlem-intranet-dashboard-activity-tabs > li:hover a {
 	background: white;
