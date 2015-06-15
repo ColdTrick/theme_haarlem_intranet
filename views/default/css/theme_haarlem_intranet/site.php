@@ -1014,3 +1014,12 @@ form.elgg-search {
 #event_manager_event_edit .mce-tinymce {
 	width: auto !important;
 }
+
+.search-advanced-user-profile-table td {
+	padding: 0 0 5px;
+	vertical-align: middle;
+}
+.search-advanced-user-profile-table .elgg-input-text {
+	margin-left: 20px;
+    min-width: 300px;
+}
