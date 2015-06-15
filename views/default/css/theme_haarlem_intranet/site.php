@@ -435,6 +435,7 @@ form.elgg-search {
 
 .elgg-menu-site .elgg-child-menu a {
 	font-weight: normal;
+	padding: 3px 13px 3px;
 }
 
 .elgg-menu-site .elgg-child-menu a:hover {
