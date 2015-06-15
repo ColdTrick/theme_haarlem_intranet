@@ -60,7 +60,7 @@ $tabs[] = array(
 	'selected' => $first,
 	'rel' => 'mine'
 );
-$first = false;
+
 $river_options['subject_guid'] = $owner->getGUID();
 
 $class = array(
@@ -82,6 +82,7 @@ $content .= '</div>';
 $content .= '</div>';
 
 unset($river_options['subject_guid']);
+$first = false;
 
 // all activity
 $tabs[] = array(
