@@ -35,6 +35,8 @@ function theme_haarlem_intranet_init() {
 	elgg_register_js('placeholders', elgg_get_site_url() . 'mod/theme_haarlem_intranet/vendors/placeholders/placeholders.jquery.min.js', 'footer');
 	elgg_load_js('placeholders');
 	
+	$userpicker_js = elgg_get_simplecache_url('js', 'theme_haarlem_intranet/ui.userpicker');
+	elgg_register_js('elgg.userpicker', $userpicker_js);
 	
 	elgg_extend_view('css/elgg', 'css/theme_haarlem_intranet/site');
 	elgg_extend_view('css/elgg', 'css/theme_haarlem_intranet/responsive');

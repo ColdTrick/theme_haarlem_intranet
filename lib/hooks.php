@@ -728,10 +728,30 @@ function theme_haarlem_intranet_entity_menu_icons($hook, $type, $return_value, $
  */
 function theme_haarlem_intranet_livesearch_route_handler($hook, $type, $return_value, $params) {
 	
-	$query = get_input('q');
-	$match_on = get_input('match_on');
+	$query = get_input('q', get_input('term'));
+	if (empty($query)) {
+		return $return_value;
+	}
 	
-	if (empty($query) || ($match_on !== 'mentions')) {
+	$match_on = get_input('match_on');
+	if (empty($match_on)) {
+		return $return_value;
+	}
+	
+	if (is_array($match_on) && count($match_on) > 1) {
+		return $return_value;
+	}
+	
+	if (is_array($match_on)) {
+		$match_on = $match_on[0];
+	}
+	
+	$overrule_cases = array(
+		'mentions',
+		'member_of_site'
+	);
+	
+	if (!in_array($match_on, $overrule_cases)) {
 		return $return_value;
 	}
 	
