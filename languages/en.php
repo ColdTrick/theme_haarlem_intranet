@@ -73,6 +73,9 @@ $english = array(
 	"theme_haarlem_intranet:settings:mentions" => "Mentions",
 	"theme_haarlem_intranet:settings:mentions:reset" => "By default users who join the site will get the Mentions notifications. You can reset this setting for ALL users, so the user will receive notifications from the Mentions plugin.",
 	"theme_haarlem_intranet:action:mentions:reset" => "Mentions notifications enabled for %s users",
+	
+	"theme_haarlem_intranet:river:widget:my_groups" => "Activity in my groups",
+	"" => "",
 );
 
 add_translation("en", $english);

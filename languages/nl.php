@@ -1,5 +1,6 @@
 <?php
 $language = array (
+  'theme_haarlem_intranet:river:widget:my_groups' => "Activiteiten in mijn groepen",
   'theme_haarlem_intranet:haarlem_news:widget:title' => 'Nieuws',
   'theme_haarlem_intranet:haarlem_news:widget:description' => 'Toon blogs uit een bepaalde groep',
   'theme_haarlem_intranet:haarlem_news:widget:group' => 'Selecteer een groep om de blogs uit te tonen',
