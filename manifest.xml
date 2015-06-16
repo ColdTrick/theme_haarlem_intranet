@@ -50,6 +50,11 @@
 		<plugin>static</plugin>
 		<priority>after</priority>
 	</requires>
+	<requires>
+		<type>priority</type>
+		<plugin>wizard</plugin>
+		<priority>after</priority>
+	</requires>
 	
 	<requires>
 		<type>priority</type>
