@@ -68,3 +68,38 @@ function theme_haarlem_intranet_get_quick_nav($entity_guid) {
 	
 	return @json_decode($settings, true);
 }
+
+/**
+ * Find a Profile Manager profile field with the given name
+ *
+ * @param string $metadata_name the profile field name
+ *
+ * @return false|ElggObject
+ */
+function theme_haarlem_intranet_get_profile_manager_profile_field($metadata_name) {
+	static $fields;
+	
+	if (!isset($fields)) {
+		$fields = array();
+		
+		if (elgg_is_active_plugin('profile_manager')) {
+			$site = elgg_get_site_entity();
+			
+			$options = array(
+				'type' => 'object',
+				'subtype' => ProfileManagerCustomProfileField::SUBTYPE,
+				'limit' => false,
+				'owner_guid' => $site->getGUID(),
+				'site_guid' => $site->getGUID()
+			);
+			$profile_fields = elgg_get_entities($options);
+			if (!empty($profile_fields)) {
+				foreach ($profile_fields as $profile_field) {
+					$fields[$profile_field->metadata_name] = $profile_field;
+				}
+			}
+		}
+	}
+	
+	return elgg_extract($metadata_name, $fields, false);
+}
