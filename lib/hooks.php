@@ -160,7 +160,7 @@ function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $para
 		$return_value[] = ElggMenuItem::factory(array(
 			'name' => 'quicklinks',
 			'text' => elgg_view('page/elements/topbar/quicklinks'),
-			'href' => '#',
+			'href' => false,
 			'section' => 'personal',
 			'is_trusted' => true,
 			'priority' => 250
