@@ -1032,7 +1032,7 @@ form.elgg-search {
 }
 .theme-haarlem-intranet-dashboard-activity-tabs {
 	border: none;
-	margin: -10px 0 0 -10px;
+	margin: -10px 0 15px -10px;
 }
 .theme-haarlem-intranet-dashboard-activity-tabs > li {
 	margin: 0 0 0 0;
