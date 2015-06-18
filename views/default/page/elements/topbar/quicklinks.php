@@ -4,7 +4,7 @@ $user = elgg_get_logged_in_user_entity();
 
 echo elgg_view("output/url", array(
 	"title" => elgg_echo("quicklinks"),
-	"href" => false,
+	"href" => '#',
 	"text" => elgg_view_icon("star")
 ));
 
