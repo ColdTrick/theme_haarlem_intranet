@@ -130,6 +130,12 @@ function theme_haarlem_intranet_init() {
 		elgg_unregister_plugin_hook_handler('profile:fields', 'profile', 'subsite_manager_profile_fields_hook');
 		elgg_unregister_plugin_hook_handler('categorized_profile_fields', 'profile_manager', 'subsite_manager_profile_manager_profile_hook');
 	}
+	
+
+	// overrule outgoing email
+// 	register_notification_handler("email", "theme_haarlem_intranet_notification_handler");
+// 	elgg_unregister_plugin_hook_handler("email", "system", "html_email_handler_email_hook");
+// 	elgg_register_plugin_hook_handler("email", "system", "theme_haarlem_intranet_notification_handler");
 }
 
 /**
@@ -142,4 +148,8 @@ function theme_haarlem_intranet_pagesetup() {
 	// unextend views
 	elgg_unextend_view("groups/sidebar/members", "group_tools/group_admins");
 	
+}
+
+function theme_haarlem_intranet_notification_handler() {
+	return true;
 }
