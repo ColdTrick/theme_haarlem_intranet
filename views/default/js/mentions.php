@@ -108,7 +108,6 @@ elgg.mentions.init = function() {
 			$('.mentions-popup').addClass('hidden');
 			textarea = null;
 		} else {
-			console.log('set');
 			textarea = $(this);
 			content = $(this).val();
 			position = elgg.mentions.getCursorPosition(this);
@@ -142,7 +141,7 @@ elgg.mentions.init = function() {
 				
 					mentionsEditor = 'tinymce';
 					textarea = $(this.getElement());
-					console.log(textarea);
+
 					// Hide on backspace or enter
 					if (e.keyCode == 8 || e.keyCode == 13) {
 						$('.mentions-popup > .elgg-body').html('<div class="elgg-ajax-loader"></div>');
