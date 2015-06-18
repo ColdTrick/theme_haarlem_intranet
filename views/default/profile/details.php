@@ -114,6 +114,12 @@ echo elgg_view_module('info', 'Werkgebied', $user->haarlem_werkgebied);
 echo elgg_view_module('info', 'Vraag mij over', $user->haarlem_vraag_mij);
 echo elgg_view_module('info', 'Wie ben ik', $user->haarlem_wie_ben_ik);
 
+// Organisatienevenfuncties
+$functions = (array) $user->haarlem_organisatienevenfuncties;
+if (!(empty($functions))) {
+	echo elgg_view_module('info', 'Organisatienevenfuncties', implode(', ', $functions));
+}
+
 $activity = elgg_list_river(array(
 	'subject_guid' => $user->guid,
 	'limit' => 10,

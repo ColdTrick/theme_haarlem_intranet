@@ -16,10 +16,12 @@
 	PAGE LAYOUT
 *************************************** */
 /***** DEFAULT LAYOUT ******/
+body {
+	background: #E0E0E0;
+}
 <?php // the width is on the page rather than topbar to handle small viewports ?>
 .elgg-page-default {
 	min-width: 800px;
-	background: #E0E0E0;
 }
 .elgg-page-default .elgg-page-header > .elgg-inner {
 	max-width: 1220px;
@@ -162,4 +164,10 @@
 
 .elgg-page-footer a:hover {
 	color: #666;
+}
+
+/** Wizard page **/
+.elgg-page-wizard .elgg-page-header > .elgg-inner,
+.elgg-page-wizard .elgg-page-body > .elgg-inner {
+	max-width: 900px;
 }
