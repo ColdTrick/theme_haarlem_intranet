@@ -1032,11 +1032,12 @@ form.elgg-search {
 }
 .theme-haarlem-intranet-dashboard-activity-tabs {
 	border: none;
-	margin: -10px 0 15px -10px;
+	margin: -10px 0 0 -10px;
 }
 .theme-haarlem-intranet-dashboard-activity-tabs > li {
 	margin: 0 0 0 0;
 	padding-top: 5px;
+	padding-bottom: 5px;
 	border: 0;
 	background: white;
 	border-right: 2px solid #e0e0e0;
@@ -1059,8 +1060,15 @@ form.elgg-search {
 .theme-haarlem-intranet-dashboard-activity-tabs .elgg-state-selected a {
 	color: #5097cf;
 }
-
+.elgg-page-wizard {
+	font-size: 14px;
+}
 .elgg-page-wizard .elgg-page-header {
 	background: none;
 	padding-top: 50px;
+}
+
+.elgg-avatar-large > a > img {
+	width: 170px;
+	height: 170px;
 }
