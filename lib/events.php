@@ -86,26 +86,29 @@ function theme_haarlem_intranet_profile_sync_update_user($event, $type, $object)
 	// duplicate email to profile field
 	$email = elgg_extract('zakelijkemail', $source_row);
 	if (!empty($email)) {
-		// default access
-		$access = ACCESS_LOGGED_IN;
-		if ($site instanceof Subsite) {
-			$access = $site->getACL();
-		}
 		
-		// get the access of existing profile data
-		if (isset($user->haarlem_email)) {
-			$metadata_options = array(
-				"guid" => $user->getGUID(),
-				"metadata_name" => 'haarlem_email',
-				"limit" => 1
-			);
-			$metadata = elgg_get_metadata($metadata_options);
-			$access = (int) $metadata[0]->access_id;
+		// new value?
+		if ($user->haarlem_email !== $email) {
+			// default access
+			$access = ACCESS_LOGGED_IN;
+			if ($site instanceof Subsite) {
+				$access = $site->getACL();
+			}
+			
+			// get the access of existing profile data
+			if (isset($user->haarlem_email)) {
+				$metadata_options = array(
+					"guid" => $user->getGUID(),
+					"metadata_name" => 'haarlem_email',
+					"limit" => 1
+				);
+				$metadata = elgg_get_metadata($metadata_options);
+				$access = (int) $metadata[0]->access_id;
+			}
+				
+			// save new value
+			$user->setMetadata('haarlem_email', $email, '', false, $user->getGUID(), $access);
 		}
-			
-		// save new value
-		$user->setMetadata('haarlem_email', $email, '', false, $user->getGUID(), $access);
-			
 	} else {
 		unset($user->haarlem_email);
 	}
