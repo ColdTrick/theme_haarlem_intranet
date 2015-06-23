@@ -1060,8 +1060,15 @@ form.elgg-search {
 .theme-haarlem-intranet-dashboard-activity-tabs .elgg-state-selected a {
 	color: #5097cf;
 }
-
+.elgg-page-wizard {
+	font-size: 14px;
+}
 .elgg-page-wizard .elgg-page-header {
 	background: none;
 	padding-top: 50px;
+}
+
+.elgg-avatar-large > a > img {
+	width: 170px;
+	height: 170px;
 }

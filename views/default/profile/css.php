@@ -25,6 +25,7 @@
 #profile-owner-block {
 	width: 200px;
 	padding-top: 65px;
+	text-align: center;
 }
 .profile-action-menu,
 #profile-owner-block .large {
