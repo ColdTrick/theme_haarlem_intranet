@@ -53,6 +53,7 @@
 }
 .slickmap ol, .slickmap ul {
 	list-style: none;
+	padding: 0;
 }
 
 
@@ -130,6 +131,7 @@
 #primaryNav li li a {
 	background-color: #CCCCCC;
 	color: black;
+	margin: 0;
 }
 #primaryNav li li a:hover {
 	background-color: #999999;
