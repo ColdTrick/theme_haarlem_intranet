@@ -33,9 +33,9 @@ echo '<br />';
 echo elgg_view_icon('delete');
 echo '</div>';
 echo elgg_view('input/fa_icon', array('name' => 'icons[]'));
-echo elgg_view('input/text', array('name' => 'texts[]', 'placeholder' => elgg_echo('theme_haarlem_intranet:quick_nav:text')));
+echo elgg_view('input/text', array('name' => 'texts[]', 'data-placeholder' => elgg_echo('theme_haarlem_intranet:quick_nav:text'), 'value' => elgg_echo('theme_haarlem_intranet:quick_nav:text')));
 echo '<br />';
-echo elgg_view('input/url', array('name' => 'hrefs[]', 'placeholder' => elgg_echo('theme_haarlem_intranet:quick_nav:href')));
+echo elgg_view('input/url', array('name' => 'hrefs[]', 'data-placeholder' => elgg_echo('theme_haarlem_intranet:quick_nav:href'), 'value' => elgg_echo('theme_haarlem_intranet:quick_nav:href')));
 echo '</div>';
 
 echo '<div>';
