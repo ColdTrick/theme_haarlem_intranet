@@ -56,5 +56,14 @@ $language = array (
   'theme_haarlem_intranet:owner_block:group:more:kennisbank' => 'Meer over deze groep',
   'theme_haarlem_intranet:owner_block:group:related:afdeling' => 'Subafdelingen van deze afdeling',
   'theme_haarlem_intranet:thewire:form:placeholder' => 'Deel jouw nieuws, mening en vragen met collega’s.',
+  'theme_haarlem_intranet:event_attending' => 'Je bent aanwezig',
+  'theme_haarlem_intranet:event_waitinglist' => 'Je staat op de wachtlijst',
+  'theme_haarlem_intranet:event_pending' => 'In afwachting van emailvalidatie',
+  'theme_haarlem_intranet:event_interested' => 'Je bent geïnteresseerd',
+  'theme_haarlem_intranet:event_presenting' => 'Je presenteerd',
+  'theme_haarlem_intranet:event_exhibiting' => 'Je presenteerd',
+  'theme_haarlem_intranet:event_organizing' => 'Je organiseerd',
+  'theme_haarlem_intranet:rsvp' => 'Aanmelden',
+	
 );
 add_translation("nl", $language);

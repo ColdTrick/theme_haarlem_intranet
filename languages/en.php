@@ -75,7 +75,16 @@ $english = array(
 	"theme_haarlem_intranet:action:mentions:reset" => "Mentions notifications enabled for %s users",
 	
 	"theme_haarlem_intranet:river:widget:my_groups" => "Activity in my groups",
-	"" => "",
+	
+	'theme_haarlem_intranet:rsvp' => 'Register',
+	'theme_haarlem_intranet:event_attending' => 'You are attending',
+	'theme_haarlem_intranet:event_waitinglist' => 'You are on the waiting list',
+	'theme_haarlem_intranet:event_pending' => 'Pending email validation',
+	'theme_haarlem_intranet:event_interested' => 'You are interested',
+	'theme_haarlem_intranet:event_presenting' => 'You are presenting',
+	'theme_haarlem_intranet:event_exhibiting' => 'You are exhibiting',
+	'theme_haarlem_intranet:event_organizing' => 'You are organizing',
+	
 );
 
 add_translation("en", $english);
