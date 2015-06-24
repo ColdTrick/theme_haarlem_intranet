@@ -106,6 +106,7 @@ function theme_haarlem_intranet_profile_sync_zakelijkemail($event, $type, $objec
 	
 	// duplicate email to profile field
 	$email = elgg_extract('zakelijkemail', $source_row);
+	$email = profile_sync_filter_var($email);
 	if (!empty($email)) {
 		
 		// new value?
@@ -162,6 +163,7 @@ function theme_haarlem_intranet_profile_sync_profile_icon($event, $type, $object
 	$icon_sizes = elgg_get_config('icon_sizes');
 	
 	$icon_path = elgg_extract('profielfoto', $source_row);
+	$icon_path = profile_sync_filter_var($icon_path);
 	if (empty($icon_path)) {
 		// remove icon
 		foreach ($icon_sizes as $size => $info) {
