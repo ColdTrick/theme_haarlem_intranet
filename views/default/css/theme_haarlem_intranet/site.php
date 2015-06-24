@@ -1062,6 +1062,7 @@ form.elgg-search {
 }
 .elgg-page-wizard {
 	font-size: 14px;
+	line-height: 1.6em;
 }
 .elgg-page-wizard .elgg-page-header {
 	background: none;
