@@ -49,7 +49,7 @@ function theme_haarlem_intranet_site_leave_event($event, $type, $object) {
 }
 
 /**
- * Update a user based on information from profile sync
+ * Make sure the user from profile_sync is a member of the site
  *
  * @param string $event  the name of the event
  * @param string $type   the type of the event
@@ -57,7 +57,7 @@ function theme_haarlem_intranet_site_leave_event($event, $type, $object) {
  *
  * @return void
  */
-function theme_haarlem_intranet_profile_sync_update_user($event, $type, $object) {
+function theme_haarlem_intranet_profile_sync_site_join($event, $type, $object) {
 	
 	if (empty($object) || !is_array($object)) {
 		return;
@@ -74,17 +74,39 @@ function theme_haarlem_intranet_profile_sync_update_user($event, $type, $object)
 		// not a member, so add
 		$site->addUser($user->getGUID());
 	}
+}
+/**
+ * Copy a profile_sync field to another profile field
+ *
+ * @param string $event  the name of the event
+ * @param string $type   the type of the event
+ * @param mixed  $object supplied object
+ *
+ * @return void
+ */
+function theme_haarlem_intranet_profile_sync_zakelijkemail($event, $type, $object) {
 	
-	// handle icons
-	$datasource = elgg_extract('datasource', $object);
+	if (empty($object) || !is_array($object)) {
+		return;
+	}
+	
+	$user = elgg_extract('entity', $object);
+	if (empty($user) || !elgg_instanceof($user, 'user')) {
+		return;
+	}
+	
+	$site = elgg_get_site_entity();
+	
+	// handle zakelijkemail
 	$source_row = elgg_extract('source_row', $object);
 	
-	if (empty($datasource) || empty($source_row)) {
+	if (empty($source_row)) {
 		return;
 	}
 	
 	// duplicate email to profile field
 	$email = elgg_extract('zakelijkemail', $source_row);
+	$email = profile_sync_filter_var($email);
 	if (!empty($email)) {
 		
 		// new value?
@@ -96,21 +118,42 @@ function theme_haarlem_intranet_profile_sync_update_user($event, $type, $object)
 			}
 			
 			// get the access of existing profile data
-			if (isset($user->haarlem_email)) {
-				$metadata_options = array(
-					"guid" => $user->getGUID(),
-					"metadata_name" => 'haarlem_email',
-					"limit" => 1
-				);
-				$metadata = elgg_get_metadata($metadata_options);
-				$access = (int) $metadata[0]->access_id;
-			}
+			$access = profile_sync_get_profile_field_access($user->getGUID(), 'haarlem_email', $access);
 				
 			// save new value
 			$user->setMetadata('haarlem_email', $email, '', false, $user->getGUID(), $access);
 		}
-	} else {
+	} elseif(isset($user->haarlem_email)) {
+		// only unset if not set
 		unset($user->haarlem_email);
+	}
+}
+/**
+ * Update the user profile icon based on profile_sync data
+ *
+ * @param string $event  the name of the event
+ * @param string $type   the type of the event
+ * @param mixed  $object supplied object
+ *
+ * @return void
+ */
+function theme_haarlem_intranet_profile_sync_profile_icon($event, $type, $object) {
+	
+	if (empty($object) || !is_array($object)) {
+		return;
+	}
+	
+	$user = elgg_extract('entity', $object);
+	if (empty($user) || !elgg_instanceof($user, 'user')) {
+		return;
+	}
+	
+	// handle icons
+	$datasource = elgg_extract('datasource', $object);
+	$source_row = elgg_extract('source_row', $object);
+	
+	if (empty($datasource) || empty($source_row)) {
+		return;
 	}
 	
 	// handle custom icon
@@ -120,11 +163,14 @@ function theme_haarlem_intranet_profile_sync_update_user($event, $type, $object)
 	$icon_sizes = elgg_get_config('icon_sizes');
 	
 	$icon_path = elgg_extract('profielfoto', $source_row);
+	$icon_path = profile_sync_filter_var($icon_path);
 	if (empty($icon_path)) {
 		// remove icon
 		foreach ($icon_sizes as $size => $info) {
 			$fh->setFilename("haarlem_icon/{$size}.jpg");
-			$fh->delete();
+			if ($fh->exists()) {
+				$fh->delete();
+			}
 		}
 		
 		unset($user->haarlem_icontime);
@@ -200,5 +246,4 @@ function theme_haarlem_intranet_profile_sync_update_user($event, $type, $object)
 	
 	// cleanup
 	unlink($tmp_icon);
-	unset($fh);
 }

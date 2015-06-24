@@ -60,7 +60,9 @@ function theme_haarlem_intranet_init() {
 	elgg_register_event_handler('pagesetup', 'system', 'theme_haarlem_intranet_pagesetup', 600);
 	elgg_register_event_handler('create', 'member_of_site', 'theme_haarlem_intranet_site_join_event');
 	elgg_register_event_handler('delete', 'member_of_site', 'theme_haarlem_intranet_site_leave_event');
-	elgg_register_event_handler('update_user', 'profile_sync', 'theme_haarlem_intranet_profile_sync_update_user');
+	elgg_register_event_handler('update_user', 'profile_sync', 'theme_haarlem_intranet_profile_sync_site_join');
+	elgg_register_event_handler('update_user', 'profile_sync', 'theme_haarlem_intranet_profile_sync_zakelijkemail');
+	elgg_register_event_handler('update_user', 'profile_sync', 'theme_haarlem_intranet_profile_sync_profile_icon');
 	
 	// plugin hooks
 	elgg_register_plugin_hook_handler("register", "menu:personal", "theme_haarlem_intranet_personal_menu");
