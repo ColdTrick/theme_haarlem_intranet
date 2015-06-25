@@ -57,7 +57,7 @@ function theme_haarlem_intranet_site_leave_event($event, $type, $object) {
  *
  * @return void
  */
-function theme_haarlem_intranet_profile_sync_site_join($event, $type, $object) {
+function theme_haarlem_intranet_profile_sync_site_membership($event, $type, $object) {
 	
 	if (empty($object) || !is_array($object)) {
 		return;
@@ -68,9 +68,29 @@ function theme_haarlem_intranet_profile_sync_site_join($event, $type, $object) {
 		return;
 	}
 	
-	$site = elgg_get_site_entity();
+	$datasource = elgg_extract('datasource', $object);
+	if (empty($datasource) || !elgg_instanceof($datasource, 'object', 'profile_sync_datasource')) {
+		return;
+	}
 	
-	if (!check_entity_relationship($user->getGUID(), 'member_of_site', $site->getGUID())) {
+	if ($datasource->datasource_type !== 'csv') {
+		return;
+	}
+	
+	$csv_location = $datasource->csv_location;
+	$csv_filename = basename($csv_location);
+	
+	$site = elgg_get_site_entity();
+	$is_member = check_entity_relationship($user->getGUID(), 'member_of_site', $site->getGUID());
+	
+	if ($csv_filename === 'pleio_removed.csv') {
+		if ($is_member) {
+			$site->removeUser($user->getGUID());
+		}
+		return;
+	}
+	
+	if (!$is_member) {
 		// not a member, so add
 		$site->addUser($user->getGUID());
 	}
