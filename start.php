@@ -135,7 +135,8 @@ function theme_haarlem_intranet_init() {
 	
 	elgg_register_page_handler('search', 'theme_haarlem_intranet_search_page_handler');
 	
-
+	elgg_register_extender_url_handler('annotation', 'group_topic_post', 'theme_haarlem_intranet_annotation_url_handler');
+	
 	// overrule outgoing email
 // 	register_notification_handler("email", "theme_haarlem_intranet_notification_handler");
 // 	elgg_unregister_plugin_hook_handler("email", "system", "html_email_handler_email_hook");
@@ -156,6 +157,19 @@ function theme_haarlem_intranet_pagesetup() {
 
 function theme_haarlem_intranet_notification_handler() {
 	return true;
+}
+
+function theme_haarlem_intranet_annotation_url_handler($annotation) {
+	if (empty($annotation)) {
+		return;
+	}
+	
+	$entity_guid = $annotation->entity_guid;
+	$entity = get_entity($entity_guid);
+
+	if ($entity) {
+		return $entity->getURL();
+	}
 }
 
 /**
