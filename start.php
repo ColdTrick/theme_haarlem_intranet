@@ -133,6 +133,8 @@ function theme_haarlem_intranet_init() {
 		elgg_unregister_plugin_hook_handler('categorized_profile_fields', 'profile_manager', 'subsite_manager_profile_manager_profile_hook');
 	}
 	
+	elgg_register_page_handler('search', 'theme_haarlem_intranet_search_page_handler');
+	
 
 	// overrule outgoing email
 // 	register_notification_handler("email", "theme_haarlem_intranet_notification_handler");
@@ -153,5 +155,33 @@ function theme_haarlem_intranet_pagesetup() {
 }
 
 function theme_haarlem_intranet_notification_handler() {
+	return true;
+}
+
+/**
+ * Handles search advanced pages
+ *
+ * @param array $page page segments
+ *
+ * @return boolean
+ */
+function theme_haarlem_intranet_search_page_handler($page){
+	// if there is no q set, we're being called from a legacy installation
+	// it expects a search by tags.
+	// actually it doesn't, but maybe it should.
+	// maintain backward compatibility
+	if (!get_input('q', get_input('tag', NULL)) && isset($page[0])) {
+		set_input('q', $page[0]);
+		//set_input('search_type', 'tags');
+	}
+
+	// as there is no tags search any more, replace it with ALL search
+	if (get_input("search_type") == "tags") {
+		set_input("search_type", "all");
+	}
+
+	$base_dir = elgg_get_plugins_path() . 'theme_haarlem_intranet/pages/search';
+
+	include_once("$base_dir/index.php");
 	return true;
 }
