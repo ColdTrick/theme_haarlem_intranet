@@ -85,6 +85,11 @@ $english = array(
 	'theme_haarlem_intranet:event_exhibiting' => 'You are exhibiting',
 	'theme_haarlem_intranet:event_organizing' => 'You are organizing',
 	
+	'error:404:content' => '<h1>Oeps: pagina niet gevonden!</h1>
+<br /><br/>
+Probeer te zoeken op één enkel woord.<br />
+Lukt het nog steeds niet meldt dit via de <a href="/groups/profile/27255802">Help</a> knop.',
+	
 );
 
 add_translation("en", $english);

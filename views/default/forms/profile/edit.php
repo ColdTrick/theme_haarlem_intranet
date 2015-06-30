@@ -264,7 +264,7 @@
 	</div>
 
 	<div>
-		<?php echo elgg_view_module("info", "Aanpassen overige informatie", elgg_echo("Voor het wijzigen van andere gegevens, zoals werktijden, naam of pasfoto graag een FIX melding maken. Ga naar FIX -> ..... -> ......"));?>
+		<?php echo elgg_view_module("info", "Aanpassen overige informatie", "Voor info over hoe je andere profielgegevens wijzigt zoals naam of foto, KLIK EERST OP OPSLAAN. Ga daarna naar de <a href='" . elgg_get_site_url() . "mijn-pagina-profiel'>Mijn Pagina/Profiel pagina</a> in de HELP groep");?>
 	</div>
 <?php
 	if($simple_access_control == "yes"){
