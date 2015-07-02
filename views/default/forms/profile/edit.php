@@ -269,15 +269,6 @@
 <?php
 	if($simple_access_control == "yes"){
 		?>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$(".simple_access_control").val($(".elgg-input-access:first").val()).trigger("change");
-			});
-		
-			function set_access_control(val){
-				$(".elgg-input-access").not(".simple_access_control").val(val);
-			}
-		</script>
 		<style type="text/css">
 			.elgg-input-access {
 				display: none;
