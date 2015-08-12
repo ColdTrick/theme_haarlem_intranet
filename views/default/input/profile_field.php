@@ -9,9 +9,6 @@ if (empty($profile_fields) || !isset($profile_fields[$metadata_name])) {
 }
 
 $type = elgg_extract($metadata_name, $profile_fields);
-if ($type === 'longtext') {
-	$type = 'plaintext';
-}
 
 $sticky_values = elgg_get_sticky_value('wizard', 'profile');
 $value = $user->$metadata_name;
