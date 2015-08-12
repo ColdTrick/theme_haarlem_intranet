@@ -1070,6 +1070,11 @@ form.elgg-search {
 }
 
 .elgg-avatar-large > a > img {
-	width: 170px;
-	height: 170px;
+	width: 150px;
+	height: 200px;
+	margin-right: 12px;
+}
+
+#profile-owner-block .elgg-avatar-large > a > img {
+	border-radius: 0px;
 }
