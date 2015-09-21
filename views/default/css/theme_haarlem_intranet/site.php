@@ -264,6 +264,9 @@ form.elgg-search {
 	word-wrap: break-word;
     padding: 3px 13px 0;
 }
+.elgg-menu-quicklinks .elgg-discoverable {
+	background: white;
+}
 .theme-haarlem-intranet-topbar-dropdown .alliander-theme-quicklinks-item {
 	padding: 10px;
 	color: #414042;
