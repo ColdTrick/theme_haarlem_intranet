@@ -44,6 +44,11 @@ html {
 		padding: 0 20px;
 	}
 }
+@media (max-width: 880px) {
+	#profile-owner-block {
+		width: 150px;
+	}
+}
 @media (max-width: 820px) {
 	.elgg-page-default {
 		min-width: 0;

@@ -298,6 +298,8 @@ form.elgg-search {
 .elgg-menu-page-static li.elgg-state-selected > a,
 .elgg-menu-page-static a:hover {
 	background: none;
+	overflow: hidden;
+    text-overflow: ellipsis;
 }
 .elgg-menu-page-static li.elgg-state-selected > a,
 .elgg-menu-page-static a:hover {
