@@ -49,15 +49,22 @@ if ($container_entity && $container_entity instanceof ElggGroup) {
 
 $extra_input = elgg_extract('extra_input', $vars, '');
 
-?>	
+$input_class = 'search-input';
+if (elgg_extract('autocomplete', $vars, true) === false) {
+	$input_class = 'search-input-no-autocomplete';
+}
+
+?>
 <form class="<?php echo $class; ?>" action="<?php echo elgg_get_site_url(); ?>search" method="get">
 	<fieldset>
 		<table>
 			<tr>
 				<?php echo $type_selection;?>
-				<td style="width: 100%"><input type="text" class="search-input" size="21" name="q" value="<?php echo $display_query; ?>" onblur="if (this.value=='') { this.value='<?php echo $placeholder; ?>' }" onfocus="if (this.value=='<?php echo $placeholder; ?>') { this.value='' };" /></td>
+				<td style="width: 100%">
+					<input type="text" class="<?php echo $input_class; ?>" size="21" name="q" value="<?php echo $display_query; ?>" onblur="if (this.value=='') { this.value='<?php echo $placeholder; ?>' }" onfocus="if (this.value=='<?php echo $placeholder; ?>') { this.value='' };" />
+				</td>
 				<td>
-					<?php 
+					<?php
 					echo elgg_view("output/url", array(
 						'href' => false,
 						'text' => elgg_view_icon('search'),
@@ -69,8 +76,8 @@ $extra_input = elgg_extract('extra_input', $vars, '');
 			</tr>
 		</table>
 	</fieldset>
-	<?php 
-		echo $container; 
-		echo $extra_input; 
+	<?php
+		echo $container;
+		echo $extra_input;
 	?>
 </form>
