@@ -17,7 +17,8 @@ echo elgg_view('search/search_box', array(
 	'placeholder' => elgg_echo('theme_haarlem_intranet:search:' . theme_haarlem_intranet_get_group_type($page_owner)),
 	'container_entity' => $page_owner,
 	'show_type_selection' => false,
-	'extra_input' => $extra_input
+	'extra_input' => $extra_input,
+	'autocomplete' => false,
 ));
 
 echo '<h1>';

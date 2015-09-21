@@ -99,13 +99,16 @@ form.elgg-search {
 .elgg-search-header .elgg-icon-search:hover {
 	color: #808285;
 }
-.elgg-search input.search-input[type="text"] {
+.elgg-search input.search-input[type="text"],
+.elgg-search input.search-input-no-autocomplete[type="text"] {
 	height: 32px;
 	padding: 4px;
 	border: none;
+	border-radius: 0px;
 }
 
-.elgg-search input.search-input[type="text"]:focus {
+.elgg-search input.search-input[type="text"]:focus,
+.elgg-search input.search-input-no-autocomplete[type="text"]:focus {
 	background: white;
 }
 
