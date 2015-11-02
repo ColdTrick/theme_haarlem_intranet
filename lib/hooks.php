@@ -359,12 +359,47 @@ function theme_haarlem_intranet_thewire_entity_menu($hook, $type, $return_value,
 		return $return_value;
 	}
 	
+	// replace reply text with icon
+	foreach ($return_value as $menu_item) {
+		if ($menu_item->getName() !== 'reply') {
+			continue;
+		}
+		
+		$menu_item->setTooltip($menu_item->getText());
+		$menu_item->setText(elgg_view_icon('reply'));
+	}
+	
+	// add time stamp
 	$return_value[] = ElggMenuItem::factory(array(
 		'name' => 'friendlytime',
 		'text' => elgg_view_friendly_time($entity->time_created),
 		'href' => false,
 		'priority' => 1
 	));
+	
+	// add likes in widgets (likes doesn't do this)
+	if (elgg_in_context('widgets')) {
+		// likes button
+		$options = array(
+			'name' => 'likes',
+			'text' => elgg_view('likes/button', array('entity' => $entity)),
+			'href' => false,
+			'priority' => 1000,
+		);
+		$return_value[] = ElggMenuItem::factory($options);
+		
+		// likes count
+		$count = elgg_view('likes/count', array('entity' => $entity));
+		if ($count) {
+			$options = array(
+				'name' => 'likes_count',
+				'text' => $count,
+				'href' => false,
+				'priority' => 1001,
+			);
+			$return_value[] = ElggMenuItem::factory($options);
+		}
+	}
 	
 	return $return_value;
 }
