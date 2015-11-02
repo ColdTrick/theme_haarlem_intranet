@@ -302,7 +302,7 @@
 	top: 2px;
 }
 .elgg-menu-personal .elgg-icon-group {
-	top: 0;	
+	top: 0;
 }
 .elgg-menu-personal .elgg-menu-item-profile a img {
 	border-radius: 500px;
@@ -508,7 +508,7 @@
 	height: auto;
 }
 .elgg-menu-entity > li, .elgg-menu-annotation > li {
-	margin-left: 10px;
+	margin-left: 5px;
 }
 .elgg-menu-entity > li > a, .elgg-menu-annotation > li > a {
 	color: #AAA;
