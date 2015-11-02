@@ -31,7 +31,13 @@
 	
 	if($full_view){
 		// full view
-		$icon = elgg_view_entity_icon($folder, "small");
+// 		$icon = elgg_view_entity_icon($folder, "small");
+		$icon = elgg_view('output/url', array(
+			'text' => elgg_view_icon('folder-open'),
+			'title' => $folder->title,
+			'href' => $folder->getURL(),
+			'is_trusted' => true,
+		));
 		
 		$owner_link = elgg_view("output/url", array("text" => $folder->getOwnerEntity()->name, "href" => $folder->getOwnerEntity()->getURL()));
 		$owner_text = elgg_echo("byline", array($owner_link));
@@ -57,7 +63,13 @@
 		));
 	} else {
 		// summary view
-		$icon = elgg_view_entity_icon($folder, "tiny", array('img_class' => 'file-tools-icon-tiny'));
+// 		$icon = elgg_view_entity_icon($folder, "tiny", array('img_class' => 'file-tools-icon-tiny'));
+		$icon = elgg_view('output/url', array(
+			'text' => elgg_view_icon('folder'),
+			'title' => $folder->title,
+			'href' => $folder->getURL(),
+			'is_trusted' => true,
+		));
 		if (!elgg_in_context("widgets")) {
 			$icon_alt = elgg_view("input/checkbox", array("name" => "folder_guids[]", "value" => $folder->getGUID(), "default" => false));
 		}
