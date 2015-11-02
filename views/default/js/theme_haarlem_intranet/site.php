@@ -29,6 +29,10 @@ elgg.theme_haarlem_intranet.izine_nav = function() {
 };
 
 elgg.theme_haarlem_intranet.init = function() {
+
+	$('.elgg-system-messages li').animate({opacity: 0.9}, 6000);
+	$('.elgg-system-messages li.elgg-state-success').fadeOut('slow');
+
 	$(".elgg-owner-block > .elgg-body > h2").click(function() {
 		$(this).find(".elgg-icon").toggle();
 		$(this).next().slideToggle();
