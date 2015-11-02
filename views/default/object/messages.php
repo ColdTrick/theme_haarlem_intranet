@@ -65,11 +65,11 @@ $subject_info .= elgg_view('output/url', array(
 ));
 
 $delete_link = elgg_view("output/confirmlink", array(
-						'href' => "action/messages/delete?guid=" . $message->getGUID(),
-						'text' => "<span class=\"elgg-icon elgg-icon-delete float-alt\"></span>",
-						'confirm' => elgg_echo('deleteconfirm'),
-						'encode_text' => false,
-					));
+	'href' => "action/messages/delete?guid=" . $message->getGUID(),
+	'text' => elgg_view_icon('delete', 'float-alt'),
+	'confirm' => elgg_echo('deleteconfirm'),
+	'encode_text' => false,
+));
 
 $body = <<<HTML
 <div class="messages-owner">$user_link</div>
@@ -83,7 +83,7 @@ if ($full) {
 	echo elgg_view('output/longtext', array('value' => $message->description));
 } else {
 	$body .= elgg_view("output/longtext", array(
-		"value" => elgg_get_excerpt($message->description), 
+		"value" => elgg_get_excerpt($message->description),
 		"class" => "elgg-subtext clearfloat"
 	));
 	echo elgg_view_image_block($icon, $body, array('class' => $class));
