@@ -92,6 +92,7 @@ $english = array(
 Probeer te zoeken op één enkel woord.<br />
 Lukt het nog steeds niet meldt dit via de <a href="/groups/profile/27255802">Help</a> knop.',
 	
+	'theme_haarlem_intranet:messages:reply:timestamp' => "replied: %s",
 );
 
 add_translation("en", $english);

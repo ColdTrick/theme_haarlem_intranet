@@ -12,7 +12,11 @@ if (!$message) {
 	return true;
 }
 
+$recieved = false;
+
 if ($message->toId == elgg_get_page_owner_guid()) {
+	$recieved = true;
+	
 	// received
 	$user = get_entity($message->fromId);
 	if ($user) {
@@ -63,6 +67,17 @@ $subject_info .= elgg_view('output/url', array(
 	'text' => $message->title,
 	'is_trusted' => true,
 ));
+// check for reply
+if ($recieved) {
+	$replies = $message->getEntitiesFromRelationship('reply', true, 1);
+	if (!empty($replies)) {
+		
+		$reply_time = elgg_view_friendly_time($replies[0]->time_created);
+		
+		$subject_info .= '<span class="mls">' . elgg_echo('theme_haarlem_intranet:messages:reply:timestamp', array($reply_time)) . '</span>';
+	}
+}
+
 
 $delete_link = elgg_view("output/confirmlink", array(
 	'href' => "action/messages/delete?guid=" . $message->getGUID(),

@@ -139,6 +139,9 @@ function theme_haarlem_intranet_init() {
 	
 	elgg_register_extender_url_handler('annotation', 'group_topic_post', 'theme_haarlem_intranet_annotation_url_handler');
 	
+	// actions
+	elgg_register_action('messages/send', dirname(__FILE__) . '/actions/messages/send.php');
+	
 	// overrule outgoing email
 // 	register_notification_handler("email", "theme_haarlem_intranet_notification_handler");
 // 	elgg_unregister_plugin_hook_handler("email", "system", "html_email_handler_email_hook");
