@@ -682,6 +682,7 @@ function theme_haarlem_intranet_entity_menu_icons($hook, $type, $return_value, $
 					$menu_item->setTooltip($menu_item->getText());
 				}
 				
+				$menu_item->setPriority(1);
 				$menu_item->setText(elgg_view_icon('pencil'));
 				break;
 			case 'access':
