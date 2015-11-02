@@ -30,7 +30,7 @@ foreach ($groups as $group) {
 $icon = elgg_view_icon('arrow-circle-o-right');
 $link = elgg_view('output/url', array(
 	'text' => elgg_echo('groups:all'),
-	'href' => 'groups/all',
+	'href' => 'groups/member/' . $user->username,
 	'is_trusted' => true
 ));
 $content .= elgg_view_image_block($icon, $link, array('class' => 'elgg-divide-top'));
