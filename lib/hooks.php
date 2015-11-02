@@ -887,3 +887,33 @@ function theme_haarlem_intranet_folder_tree_menu($hook, $type, $return_value, $p
 	
 	return $return_value;
 }
+
+/**
+ * Listen to the logout action to disable SimpleSAML SSO force authentication
+ *
+ * @param string         $hook         the name of the hook
+ * @param string         $type         the type of the hook
+ * @param ElggMenuItem[] $return_value current return value
+ * @param mixed          $params       supplied params
+ *
+ * @return void
+ */
+function theme_haarlem_intranet_logout_action_hook($hook, $type, $return_value, $params) {
+	
+	elgg_register_plugin_hook_handler("forward", "system", "theme_haarlem_intranet_logout_forward_hook");
+}
+
+/**
+ * Make sure logout has disabled SimpleSAML SSO force authentication
+ *
+ * @param string         $hook         the name of the hook
+ * @param string         $type         the type of the hook
+ * @param ElggMenuItem[] $return_value current return value
+ * @param mixed          $params       supplied params
+ *
+ * @return void
+ */
+function theme_haarlem_intranet_logout_forward_hook($hook, $type, $return_value, $params) {
+	
+	$_SESSION["simpleaml_disable_sso"] = true;
+}
