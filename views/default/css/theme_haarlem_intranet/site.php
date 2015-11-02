@@ -639,7 +639,7 @@ form.elgg-search {
 .theme-haarlem-intranet-accordion-header:hover {
 	color: #<?php echo THEME_TEAL; ?>;
 }
-.elgg-output .ui-accordion-content {
+.elgg-output .theme-haarlem-intranet-accordion-content {
 	padding: 10px;
 	margin: 0;
 }
