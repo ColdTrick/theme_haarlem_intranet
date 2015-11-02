@@ -4,6 +4,7 @@ $entity_guid = (int) get_input('entity_guid');
 $icons = get_input('icons');
 $texts = get_input('texts');
 $hrefs = get_input('hrefs');
+$targets = get_input('targets');
 
 $entity = get_entity($entity_guid);
 if (empty($entity) || !$entity->canEdit()) {
@@ -29,7 +30,8 @@ foreach ($hrefs as $index => $href) {
 	$new_values[] = array(
 		'icon' => $icons[$index],
 		'text' => $texts[$index],
-		'href' => $href
+		'href' => $href,
+		'target' => $targets[$index],
 	);
 }
 

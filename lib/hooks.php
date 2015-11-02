@@ -620,6 +620,7 @@ function theme_haarlem_intranet_quick_nav_menu($hook, $type, $return_value, $par
 				'name' => "quick_nav_{$index}",
 				'text' => $icon . $config['text'],
 				'href' => $config['href'],
+				'target' => elgg_extract('target', $config),
 				'section' => 'quick_nav',
 				'priority' => $index
 			));
