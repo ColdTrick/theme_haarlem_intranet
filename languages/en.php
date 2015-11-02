@@ -50,6 +50,8 @@ $english = array(
 	"theme_haarlem_intranet:quick_nav:text" => "Link text",
 	"theme_haarlem_intranet:quick_nav:href" => "Link URL",
 	"theme_haarlem_intranet:quick_nav:add_link" => "Add a link",
+	"theme_haarlem_intranet:quick_nav:target:self" => "Open in the same window",
+	"theme_haarlem_intranet:quick_nav:target:blank" => "Open in a new window",
 	
 	"theme_haarlem_intranet:quick_nav:widget:title" => "Links",
 	"theme_haarlem_intranet:quick_nav:widget:description" => "Add a list of quick navigation links",

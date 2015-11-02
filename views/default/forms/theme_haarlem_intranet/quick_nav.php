@@ -3,6 +3,11 @@
 $entity_guid = elgg_extract('entity_guid', $vars);
 $values = elgg_extract('values', $vars);
 
+$target_options = array(
+	'' => elgg_echo('theme_haarlem_intranet:quick_nav:target:self'),
+	'_blank' => elgg_echo('theme_haarlem_intranet:quick_nav:target:blank'),
+);
+
 if (!empty($values)) {
 	foreach ($values as $nav) {
 		echo '<div class="elgg-discover">';
@@ -11,17 +16,27 @@ if (!empty($values)) {
 		echo '<br />';
 		echo elgg_view_icon('delete');
 		echo '</div>';
-		echo elgg_view('input/fa_icon', array('name' => 'icons[]', 'value' => $nav['icon']));
+		echo elgg_view('input/fa_icon', array(
+			'name' => 'icons[]',
+			'value' => $nav['icon'],
+		));
 		echo elgg_view('input/text', array(
 			'name' => 'texts[]',
 			'value' => $nav['text'],
-			'placeholder' => elgg_echo('theme_haarlem_intranet:quick_nav:text')
+			'placeholder' => elgg_echo('theme_haarlem_intranet:quick_nav:text'),
 		));
 		echo '<br />';
 		echo elgg_view('input/url', array(
 			'name' => 'hrefs[]',
 			'value' => $nav['href'],
-			'placeholder' => elgg_echo('theme_haarlem_intranet:quick_nav:href')));
+			'placeholder' => elgg_echo('theme_haarlem_intranet:quick_nav:href'),
+		));
+		echo '<br />';
+		echo elgg_view('input/dropdown', array(
+			'name' => 'targets[]',
+			'value' => elgg_extract('target', $nav),
+			'options_values' => $target_options,
+		));
 		echo '</div>';
 	}
 }
@@ -32,10 +47,25 @@ echo elgg_view_icon('cursor-drag-arrow');
 echo '<br />';
 echo elgg_view_icon('delete');
 echo '</div>';
-echo elgg_view('input/fa_icon', array('name' => 'icons[]'));
-echo elgg_view('input/text', array('name' => 'texts[]', 'data-placeholder' => elgg_echo('theme_haarlem_intranet:quick_nav:text'), 'value' => elgg_echo('theme_haarlem_intranet:quick_nav:text')));
+echo elgg_view('input/fa_icon', array(
+	'name' => 'icons[]',
+));
+echo elgg_view('input/text', array(
+	'name' => 'texts[]',
+	'data-placeholder' => elgg_echo('theme_haarlem_intranet:quick_nav:text'),
+	'value' => elgg_echo('theme_haarlem_intranet:quick_nav:text'),
+));
 echo '<br />';
-echo elgg_view('input/url', array('name' => 'hrefs[]', 'data-placeholder' => elgg_echo('theme_haarlem_intranet:quick_nav:href'), 'value' => elgg_echo('theme_haarlem_intranet:quick_nav:href')));
+echo elgg_view('input/url', array(
+	'name' => 'hrefs[]',
+	'data-placeholder' => elgg_echo('theme_haarlem_intranet:quick_nav:href'),
+	'value' => elgg_echo('theme_haarlem_intranet:quick_nav:href'),
+));
+echo '<br />';
+echo elgg_view('input/dropdown', array(
+	'name' => 'targets[]',
+	'options_values' => $target_options,
+));
 echo '</div>';
 
 echo '<div>';
