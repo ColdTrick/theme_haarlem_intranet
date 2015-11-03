@@ -33,7 +33,8 @@ html {
 .elgg-button-nav .icon-bar + .icon-bar {
 	margin-top: 3px;
 }
-@media (max-width: 1030px) {
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait),
+(max-width: 1030px) {
 	.elgg-menu-topbar-default > li:first-child a {
 		margin-left: 0;
 	}
@@ -44,12 +45,14 @@ html {
 		padding: 0 20px;
 	}
 }
-@media (max-width: 880px) {
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait),
+(max-width: 880px) {
 	#profile-owner-block {
 		width: 150px;
 	}
 }
-@media (max-width: 820px) {
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait),
+(max-width: 820px) {
 	.elgg-page-default {
 		min-width: 0;
 	}
@@ -143,7 +146,13 @@ html {
 		display: block !important;
 	}
 }
-@media (max-width: 766px) {
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+	.elgg-nav-collapse {
+		display: none !important;
+	}
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait),
+(max-width: 766px) {
 	.elgg-page-header > .elgg-inner h1 {
 		padding-top: 10px;
 	}
@@ -213,6 +222,7 @@ html {
 		color: #FFF;
 	}
 }
+
 @media (max-width: 600px) {
 	.groups-profile-fields {
 		float: left;
