@@ -363,9 +363,14 @@ form.elgg-search {
 #file-tools-folder-tree a {
 	padding: 6px;
 	color: #414042;
+	overflow: hidden;
+	display: block;
+	text-overflow: ellipsis;
 }
 #file-tools-folder-tree > ul > li {
 	padding-left: 0;
+	float: none;
+	display: block;
 }
 #file-tools-folder-tree > ul > li > a {
 	padding: 11px;
