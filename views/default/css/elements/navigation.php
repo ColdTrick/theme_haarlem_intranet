@@ -286,7 +286,7 @@
 	float: right;
 }
 .elgg-menu-personal > li > a {
-	padding: 4px 9px 0;
+	padding: 4px 12px 0;
 }
 .elgg-menu-personal > li > a:hover {
 	color: #808285;
