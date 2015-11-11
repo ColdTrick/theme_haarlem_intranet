@@ -13,8 +13,8 @@
 *************************************** */
 body {
 	color: #414042;
-	font-size: 12px;
-	line-height: 1.4em;
+	font-size: 0.8em;
+	line-height: 1.3em;
 	font-family: Arial, sans-serif;
 }
 
