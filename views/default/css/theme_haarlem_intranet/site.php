@@ -271,10 +271,23 @@ form.elgg-search {
 	padding: 10px;
 	color: #414042;
 }
-.elgg-menu-personal .elgg-menu-item-groups .elgg-child-menu {
+.elgg-menu-personal .elgg-menu-item-groups-member-of ul.elgg-child-menu {
 	max-height: 250px;
 	overflow-y: auto;
 	overflow-x: hidden;
+	display: block;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 4px solid #abc340;
+	position: relative;
+	left: 0 !important;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+}
+.elgg-menu-personal .elgg-menu-item-groups-member-of ul.elgg-child-menu a {
+	padding-right: 20px;
 }
 #widget_manager_widgets_select .widget_manager_widgets_lightbox_wrapper {
 	margin-bottom: 10px;

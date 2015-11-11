@@ -114,7 +114,10 @@ function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $para
 			'order_by' => 'ge.name ASC'
 		);
 		$groups = new ElggBatch('elgg_get_entities_from_relationship', $group_options);
+		$groups_found = false;
 		foreach ($groups as $index => $group) {
+			$groups_found = true;
+			
 			$return_value[] = ElggMenuItem::factory(array(
 				'name' => "group_{$group->getGUID()}",
 				'text' => $group->name,
@@ -122,6 +125,18 @@ function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $para
 				'section' => 'personal',
 				'is_trusted' => true,
 				'priority' => $index,
+				'parent_name' => 'groups_member_of'
+			));
+		}
+		
+		if ($groups_found) {
+			$return_value[] = ElggMenuItem::factory(array(
+				'name' => 'groups_member_of',
+				'text' => false,
+				'href' => false,
+				'section' => 'personal',
+				'is_trusted' => true,
+				'priority' => 8888888,
 				'parent_name' => 'groups'
 			));
 		}
