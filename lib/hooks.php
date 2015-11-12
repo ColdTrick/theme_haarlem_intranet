@@ -414,6 +414,23 @@ function theme_haarlem_intranet_thewire_entity_menu($hook, $type, $return_value,
 			);
 			$return_value[] = ElggMenuItem::factory($options);
 		}
+		
+		// tell a friend
+		if (elgg_is_active_plugin('tell_a_friend')) {
+			elgg_load_js("lightbox");
+			elgg_load_css("lightbox");
+			elgg_load_js('elgg.userpicker');
+			elgg_load_js('jquery.ui.autocomplete.html');
+			
+			$return_value[] = ElggMenuItem::factory(array(
+				"name" => "tell_a_friend",
+				"text" => elgg_view_icon("share"),
+				"title" => elgg_echo('tell_a_friend:share_title'),
+				"href" => "tell_a_friend/share/" . $entity->getGUID(),
+				"link_class" => "elgg-lightbox",
+				"priority" => 200
+			));
+		}
 	}
 	
 	return $return_value;
