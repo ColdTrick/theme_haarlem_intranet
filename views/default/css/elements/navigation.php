@@ -383,6 +383,8 @@
 	font-family: 'Source Sans Pro', sans-serif;
 	height: 16px;
 	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 .elgg-menu-page li.elgg-state-selected > a,
 .elgg-menu-page a:hover {
