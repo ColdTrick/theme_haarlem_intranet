@@ -1165,3 +1165,7 @@ form.elgg-search {
 #profile-owner-block .elgg-avatar-large > a > img {
 	border-radius: 0px;
 }
+
+.elgg-module-widget .elgg-menu-item-likes-count {
+	margin-left: -10px;
+}
