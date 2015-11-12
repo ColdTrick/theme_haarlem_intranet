@@ -350,14 +350,75 @@ form.elgg-search {
 	border-bottom: 1px solid #808285;
 }
 
+/* pages sidebar */
+.pages-navigation {
+	border-bottom: 4px solid #<?php echo THEME_TEAL; ?>;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+	color: #414042;
+}
+.pages-navigation > .elgg-head {
+	background: #<?php echo THEME_TEAL; ?>;
+	border-bottom: 1px solid #414042;
+	padding: 10px 20px;
+}
+.pages-navigation > .elgg-head > h3 {
+	font-size: 17px;
+}
+.pages-navigation > .elgg-body {
+	padding: 0px;
+}
+.pages-navigation .treeview ul {
+	margin: 0;
+}
+.pages-navigation .treeview li {
+	background: none;
+	padding: 0 0 0 15px;
+}
+.pages-navigation .treeview li.collapsable,
+.pages-navigation .treeview li.expandable {
+	background: none;
+}
 
+.pages-navigation .treeview li .hitarea {
+	background: none;
+	margin: 0px;
+	padding: 6px 0px;
+	width: 16px;
+	height: 12px;
+}
+.pages-navigation .treeview li .collapsable-hitarea:before,
+.pages-navigation .treeview li .expandable-hitarea:before {
+	content: "\f0da";
+	font-family: "FontAwesome";
+	color: #808285;
+	padding-left: 4px;
+}
+
+.pages-navigation .treeview li .collapsable-hitarea:before {
+	content: "\f0d7";
+	color: #414042;
+}
+.pages-navigation .treeview li a {
+	overflow: hidden;
+    padding: 5px 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.pages-navigation .treeview li a:hover,
+.pages-navigation .treeview li a.selected {
+	color: #<?php echo THEME_TEAL; ?>;
+	text-decoration: none;
+}
+
+
+/* file tools sidebar */
 #file_tools_list_tree_container {
 	background: none;
 }
 #file_tools_list_tree_container > .elgg-body {
 	padding: 0px;
 }
-
 #file-tools-folder-tree {
 	background: white;
 	border-top: 4px solid #<?php echo THEME_TEAL; ?>;

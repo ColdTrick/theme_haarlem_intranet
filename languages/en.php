@@ -72,6 +72,9 @@ $english = array(
 	"theme_haarlem_intranet:haarlem_news:widget:no_content" => "No blogs in this group, please add some",
 	"theme_haarlem_intranet:haarlem_news:widget:more" => "News overview",
 	
+	"theme_haarlem_intranet:widgets:pages:edit:main_page" => "Select main page for listing",
+	"theme_haarlem_intranet:widgets:pages:edit:main_page:select" => "Only show main pages",
+	
 	"theme_haarlem_intranet:settings:mentions" => "Mentions",
 	"theme_haarlem_intranet:settings:mentions:reset" => "By default users who join the site will get the Mentions notifications. You can reset this setting for ALL users, so the user will receive notifications from the Mentions plugin.",
 	"theme_haarlem_intranet:action:mentions:reset" => "Mentions notifications enabled for %s users",

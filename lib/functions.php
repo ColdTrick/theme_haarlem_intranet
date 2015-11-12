@@ -103,3 +103,60 @@ function theme_haarlem_intranet_get_profile_manager_profile_field($metadata_name
 	
 	return elgg_extract($metadata_name, $fields, false);
 }
+
+/**
+ * Get a page selector for in widgets
+ *
+ * @param ElggEntity $container the container to get the pages for
+ * @param int        $depth     used for indentation
+ *
+ * @return array|false
+ */
+function theme_haarlem_pages_get_widget_selector(ElggEntity $container, $depth = 0) {
+
+	if (empty($container) || !elgg_instanceof($container)) {
+		return false;
+	}
+	if ($depth == 0) {
+		$ordered = elgg_get_entities(array(
+			'type' => 'object',
+			'subtype' => 'page_top',
+			'container_guid' => $container->getGUID(),
+			'limit' => false,
+		));
+	} else {
+		$ordered = elgg_get_entities_from_metadata(array(
+			'type' => 'object',
+			'subtype' => 'page',
+			'metadata_name' => 'parent_guid',
+			'metadata_value' => $container->getGUID(),
+			'limit' => false,
+		));
+	}
+
+	if (empty($ordered)) {
+		return false;
+	}
+
+	$result = array();
+
+	foreach ($ordered as $order => $page) {
+		// add this page
+		$result[$page->getGUID()] = trim(str_repeat('-', $depth) . ' ' . $page->title);
+		// invalidate cache for OOM
+		// @todo find a better way for this
+		_elgg_invalidate_cache_for_entity($page->getGUID());
+
+		// append children
+		$children = theme_haarlem_pages_get_widget_selector($page, $depth + 1);
+		if (!empty($children)) {
+			$result += $children;
+				
+			unset($children);
+		}
+	}
+
+	unset($ordered);
+
+	return $result;
+}

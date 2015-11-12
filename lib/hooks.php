@@ -577,6 +577,49 @@ function theme_haarlem_intranet_groups_route_handler($hook, $type, $return_value
 }
 
 /**
+ * Route pages
+ *
+ * @param string $hook         the name of the hook
+ * @param string $type         the type of the hook
+ * @param array  $return_value current return value
+ * @param array  $params       supplied params
+ *
+ * @return array|false
+ */
+function theme_haarlem_intranet_pages_route_handler($hook, $type, $return_value, $params) {
+	
+	if (empty($return_value) || !is_array($return_value)) {
+		return $return_value;
+	}
+	
+	$page = elgg_extract('segments', $return_value);
+	switch ($page[0]) {
+		case 'group':
+		case 'owner':
+			$return_value = false;
+			
+			elgg_push_breadcrumb(elgg_echo('pages'), 'pages/all');
+			
+			elgg_load_library('elgg:pages');
+						
+			include(dirname(dirname(__FILE__)) . "/pages/pages/owner.php");
+			break;
+		case 'view':
+			$return_value = false;
+			
+			elgg_push_breadcrumb(elgg_echo('pages'), 'pages/all');
+			
+			elgg_load_library('elgg:pages');
+			set_input('guid', (int) elgg_extract(1, $page));
+			
+			include(dirname(dirname(__FILE__)) . "/pages/pages/view.php");
+			break;
+	}
+	
+	return $return_value;
+}
+
+/**
  * Add menu items to user hover menu
  *
  * @param string         $hook         the name of the hook
