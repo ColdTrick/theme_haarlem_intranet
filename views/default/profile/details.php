@@ -18,6 +18,7 @@ $haarlem_werklocatie = $user->haarlem_werklocatie;
 $haarlem_hoofdafdeling = implode(",", (array) $user->haarlem_hoofdafdeling);
 $haarlem_afdeling = implode(",", (array) $user->haarlem_afdeling);
 $haarlem_team = implode(",", (array) $user->haarlem_team);
+$haarlem_organisatie_eenheid = (array) $user->haarlem_organisatie_eenheid;
 $haarlem_werktijden = $user->haarlem_werktijden;
 $haarlem_email = elgg_view("output/email", array("value" => $user->haarlem_email));
 $haarlem_tel_werk = $user->haarlem_tel_werk;
@@ -44,7 +45,116 @@ if (!empty($social_links)) {
 	$social_links_row = '<tr><td colspan="3"><table><tr>' . implode('', $social_links) . '</tr></table></td></tr>';
 }
 
-echo <<<__TABLE
+if (count($haarlem_organisatie_eenheid) > 1) {
+	
+	$haarlem_functie_parts = explode(',', $haarlem_functie);
+	$haarlem_werktijden_parts = explode(',', $haarlem_werktijden);
+	
+	echo "<table class='haarlem-profile-details'><tr>";
+	foreach ($haarlem_organisatie_eenheid as $index => $oe) {
+		$oe_parts = explode('|', $oe);
+		$oe_haarlem_functie = elgg_extract($index, $haarlem_functie_parts);
+		$oe_hoofdafdeling = elgg_extract(0, $oe_parts);
+		$oe_afdeling = elgg_extract(1, $oe_parts);
+		$oe_team = elgg_extract(2, $oe_parts);
+		$oe_haarlem_werktijden = elgg_extract($index, $haarlem_werktijden_parts);
+		echo <<<__TD
+
+		<td class="prm">
+			<table>
+				<tr>
+					<td class='label-cell'><label>Functie:</label></td>
+					<td>{$oe_haarlem_functie}</td>
+				</tr>
+				<tr>
+					<td class='label-cell'><label>Hoofdafdeling:</label></td>
+					<td>{$oe_hoofdafdeling}</td>
+				</tr>
+				<tr>
+					<td class='label-cell'><label>Afdeling:</label></td>
+					<td>{$oe_afdeling}</td>
+				</tr>
+				<tr>
+					<td class='label-cell'><label>Bureau/team:</label></td>
+					<td>{$oe_team}</td>
+				</tr>
+				<tr>
+					<td class='label-cell'><label>Werktijden:</label></td>
+					<td>{$oe_haarlem_werktijden}</td>
+				</tr>
+			</table>
+		</td>
+__TD;
+	}
+	echo "</tr></table>";
+	
+	if (!empty($haarlem_twitter)) {
+		$haarlem_twitter = elgg_view('output/url', array('text' => 'Twitter', 'href' => $haarlem_twitter, 'target' => '_blank'));
+	}
+	if (!empty($haarlem_linkedin)) {
+		$haarlem_linkedin = elgg_view('output/url', array('text' => 'LinkedIn', 'href' => $haarlem_linkedin, 'target' => '_blank'));
+	}
+	if (!empty($haarlem_facebook)) {
+		$haarlem_facebook = elgg_view('output/url', array('text' => 'Facebook', 'href' => $haarlem_facebook, 'target' => '_blank'));
+	}
+	
+	echo <<<__TABLE
+<table class='haarlem-profile-details'>
+	<tr>
+		<td class="prm">
+			<table>
+				<tr>
+					<td class='icon-cell'><span class='elgg-icon fa fa-at'></span></td>
+					<td class='label-cell'><label>Emailadres:</label></td>
+					<td>{$haarlem_email}</td>
+				</tr>
+				<tr>
+					<td class='icon-cell'><span class='elgg-icon fa fa-phone'></span></td>
+					<td class='label-cell'><label>Telefoonnummer werk:</label></td>
+					<td>{$haarlem_tel_werk}</td>
+				</tr>
+				<tr>
+					<td class='icon-cell'><span class='elgg-icon fa fa-phone'></span></td>
+					<td class='label-cell'><label>Mobiel nummer werk:</label></td>
+					<td>{$haarlem_mob_werk}</td>
+				</tr>
+				<tr>
+					<td class='icon-cell'><span class='elgg-icon fa fa-phone'></span></td>
+					<td class='label-cell'><label>Grip:</label></td>
+					<td>{$haarlem_grip}</td>
+				</tr>
+				<tr>
+					<td class='icon-cell'><span class='elgg-icon fa fa-phone'></span></td>
+					<td class='label-cell'><label>Ander telefoonnummer:</label></td>
+					<td>{$haarlem_tel_alt}</td>
+				</tr>
+			</table>
+		</td>
+		<td>
+			<table>
+				<tr>
+					<td class='label-cell'><label>Werklocatie:</label></td>
+					<td>{$haarlem_werklocatie}</td>
+				</tr>
+				<tr>
+					<td class="icon-cell"><span class="elgg-icon fa fa-twitter"></span></td>
+					<td>{$haarlem_twitter}</td>
+				</tr>
+				<tr>
+					<td class="icon-cell"><span class="elgg-icon fa fa-linkedin"></span></td>
+					<td>{$haarlem_linkedin}</td>
+				</tr>
+				<tr>
+					<td class="icon-cell"><span class="elgg-icon fa fa-facebook"></span></td>
+					<td>{$haarlem_facebook}</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+__TABLE;
+} else {
+	echo <<<__TABLE
 <table class='haarlem-profile-details'>
 	<tr>
 		<td class="prm">
@@ -107,8 +217,8 @@ echo <<<__TABLE
 		</td>
 	</tr>
 </table>
-
 __TABLE;
+}
 
 echo elgg_view_module('info', 'Werkgebied', $user->haarlem_werkgebied);
 echo elgg_view_module('info', 'Vraag mij over', $user->haarlem_vraag_mij);
