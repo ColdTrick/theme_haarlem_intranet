@@ -96,6 +96,8 @@ Probeer te zoeken op één enkel woord.<br />
 Lukt het nog steeds niet meldt dit via de <a href="/groups/profile/27255802">Help</a> knop.',
 	
 	'theme_haarlem_intranet:messages:reply:timestamp' => "replied: %s",
+	'theme_haarlem_intranet:sidebar_toggle:toggle' => "Show sidebar",
+	'theme_haarlem_intranet:sidebar_toggle:collapse' => "Hide sidebar",
 );
 
 add_translation("en", $english);

@@ -145,6 +145,7 @@ function theme_haarlem_intranet_init() {
 	
 	// actions
 	elgg_register_action('messages/send', dirname(__FILE__) . '/actions/messages/send.php');
+	elgg_register_action('theme_haarlem_intranet/toggle_sidebar', dirname(__FILE__) . '/actions/toggle_sidebar.php');
 	
 	// overrule outgoing email
 // 	register_notification_handler("email", "theme_haarlem_intranet_notification_handler");

@@ -160,3 +160,23 @@ function theme_haarlem_pages_get_widget_selector(ElggEntity $container, $depth =
 
 	return $result;
 }
+
+/**
+ * Check if the current user wants sidebar collapsed
+ *
+ * @return bool
+ */
+function theme_haarlem_intranet_sidebar_collapsed() {
+
+	$user = elgg_get_logged_in_user_entity();
+	if (empty($user)) {
+		return false;
+	}
+	
+	$setting = elgg_get_plugin_user_setting('sidebar_collapsed', $user->guid, 'theme_haarlem_intranet');
+	if (empty($setting)) {
+		return false;
+	}
+	
+	return true;
+}

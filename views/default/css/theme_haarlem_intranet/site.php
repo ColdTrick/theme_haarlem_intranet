@@ -1169,3 +1169,21 @@ form.elgg-search {
 .elgg-module-widget .elgg-menu-item-likes-count {
 	margin-left: -10px;
 }
+
+.theme-haarlem-intranet-sidebar-toggle {
+	text-align: right;
+	margin: -10px 0 10px;
+}
+.theme-haarlem-intranet-sidebar-toggle a {
+	width: 295px;
+	color: #808285;
+	text-decoration: none;
+}
+
+.theme-haarlem-intranet-sidebar-toggle .elgg-icon {
+	color: #808285;
+}
+
+.elgg-sidebar.collapsed {
+	display: none;
+}

@@ -69,5 +69,7 @@ $language = array (
   'theme_haarlem_intranet:rsvp' => 'Aanmelden',
   "theme_haarlem_intranet:widgets:pages:edit:main_page" => "Selecteer een hoofdpagina voor lijstweergave",
   "theme_haarlem_intranet:widgets:pages:edit:main_page:select" => "Alleen hoofdpagina's",
+  'theme_haarlem_intranet:sidebar_toggle:toggle' => "Toon zijbalk",
+  'theme_haarlem_intranet:sidebar_toggle:collapse' => "Verberg zijbalk",
 );
 add_translation("nl", $language);

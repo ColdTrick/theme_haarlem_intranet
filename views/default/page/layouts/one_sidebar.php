@@ -19,15 +19,26 @@ if (isset($vars['class'])) {
 	$class = "$class {$vars['class']}";
 }
 
+$sidebar = elgg_view('page/elements/sidebar', $vars);
+$sidebar_toggle = '';
+$sidebar_class = '';
+
+if (!empty($sidebar)) {
+	$sidebar_toggle = elgg_view('page/elements/sidebar_toggle', $vars);
+	if (theme_haarlem_intranet_sidebar_collapsed()) {
+		$sidebar_class = ' collapsed';
+	}
+}
 ?>
 
 <div class="<?php echo $class; ?>">
-	<div class="elgg-sidebar">
+	<?php echo $sidebar_toggle; ?>
+	<div class="elgg-sidebar<?php echo $sidebar_class; ?>">
 		<?php
 			// With the mobile experience in mind, the content order is changed in this theme,
 			// by moving sidebar below main content.
 			// On smaller screens, blocks are stacked in left to right order: content, sidebar.
-			echo elgg_view('page/elements/sidebar', $vars);
+			echo $sidebar;
 		?>
 	</div>
 	<div class="elgg-main elgg-body">

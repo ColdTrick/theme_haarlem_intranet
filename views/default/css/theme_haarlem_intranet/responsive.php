@@ -87,7 +87,7 @@ html {
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		
-		display: table-footer-group;
+		display: table-footer-group !important;
 	}
 	.elgg-sidebar-alt {
 		width: 100%;
@@ -139,6 +139,9 @@ html {
 	}
 	#dashboard-info {
 		margin: 0 0 15px;
+	}
+	.theme-haarlem-intranet-sidebar-toggle {
+		display: none;
 	}
 }
 @media (min-width: 767px) {
