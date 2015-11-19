@@ -58,9 +58,13 @@ if (count($haarlem_organisatie_eenheid) > 1) {
 		$oe_afdeling = elgg_extract(1, $oe_parts);
 		$oe_team = elgg_extract(2, $oe_parts);
 		$oe_haarlem_werktijden = elgg_extract($index, $haarlem_werktijden_parts);
+		$class = '';
+		if ($index == 0) {
+			$class = ' class="prm"';
+		}
 		echo <<<__TD
 
-		<td class="prm">
+		<td{$class}>
 			<table>
 				<tr>
 					<td class='label-cell'><label>Functie:</label></td>
