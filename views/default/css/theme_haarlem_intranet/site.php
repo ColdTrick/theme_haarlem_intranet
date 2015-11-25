@@ -430,9 +430,6 @@ form.elgg-search {
 #file-tools-folder-tree ul {
 	margin: 0;
 }
-#file-tools-folder-tree li {
-	width: 100%;
-}
 
 #file-tools-folder-tree a {
 	padding: 6px;
