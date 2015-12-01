@@ -823,7 +823,13 @@ function theme_haarlem_intranet_entity_menu_icons($hook, $type, $return_value, $
 						}
 						break;
 				}
+				break;
+			case 'history':
 				
+				$menu_item->setTooltip($menu_item->getText());
+				$menu_item->setText(elgg_view_icon('clock-o'));
+				
+				break;
 		}
 	}
 }
