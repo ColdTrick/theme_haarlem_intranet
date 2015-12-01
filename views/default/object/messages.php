@@ -74,7 +74,7 @@ if ($recieved) {
 		
 		$reply_time = elgg_view_friendly_time($replies[0]->time_created);
 		
-		$subject_info .= '<span class="mls">' . elgg_echo('theme_haarlem_intranet:messages:reply:timestamp', array($reply_time)) . '</span>';
+		$subject_info .= '<div>' . elgg_echo('theme_haarlem_intranet:messages:reply:timestamp', array($reply_time)) . '</div>';
 	}
 }
 
