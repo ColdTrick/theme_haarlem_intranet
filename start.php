@@ -47,6 +47,9 @@ function theme_haarlem_intranet_init() {
 	elgg_extend_view('page/elements/foot', 'js/theme_haarlem_intranet/accordion');
 
 	elgg_extend_view('page/layouts/widgets', 'theme_haarlem_intranet/widgets_fix');
+
+	elgg_extend_view('widgets/free_html/edit', 'theme_haarlem_intranet/longtext_disclaimer');
+	elgg_extend_view('widgets/promo_widget/edit', 'theme_haarlem_intranet/longtext_disclaimer');
 	
 	// unextend views
 	elgg_unextend_view('page/elements/header', 'search/header');

@@ -98,6 +98,8 @@ Lukt het nog steeds niet meldt dit via de <a href="/groups/profile/27255802">Hel
 	'theme_haarlem_intranet:messages:reply:timestamp' => "Replied: %s",
 	'theme_haarlem_intranet:sidebar_toggle:toggle' => "Show sidebar",
 	'theme_haarlem_intranet:sidebar_toggle:collapse' => "Hide sidebar",
+	
+	'theme_haarlem_intranet:widgets:longtext_disclaimer' => "No editor? Try to refresh the page.",
 );
 
 add_translation("en", $english);
