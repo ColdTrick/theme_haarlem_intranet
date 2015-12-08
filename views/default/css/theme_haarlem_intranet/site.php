@@ -1010,7 +1010,6 @@ form.elgg-search {
 
 /* Izine */
 .theme-haarlem-intranet-izine-image {
-	height: 200px;
 	position: relative;
 }
 .theme-haarlem-intranet-izine-image > .elgg-icon {
@@ -1024,6 +1023,9 @@ form.elgg-search {
 }
 .theme-haarlem-intranet-izine-image > .elgg-icon-chevron-right {
 	right: 0;
+}
+.theme-haarlem-intranet-izine-image img {
+	width: 100%;
 }
 .elgg-module-izine {
 	padding: 10px;

@@ -34,12 +34,9 @@ foreach ($blogs as $blog) {
 	echo "<div class='{$class}'>";
 	
 	// image + nav
-	$attr = array(
-		'style' => 'background: url("' . $blog->getIconURL('master') . '"); background-size: cover;',
-		'class' => 'theme-haarlem-intranet-izine-image'
-	);
 	
-	echo '<div ' . elgg_format_attributes($attr) . '>';
+	echo '<div class="theme-haarlem-intranet-izine-image">';
+	echo '<img src="' . $blog->getIconURL('master') . '"/>';
 	echo elgg_view_icon('chevron-left');
 	echo elgg_view_icon('chevron-right');
 	echo '</div>';
