@@ -1193,3 +1193,11 @@ form.elgg-search {
 .elgg-sidebar.collapsed {
 	display: none;
 }
+
+/* IE 10+ fix for donedone 235*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .elgg-menu-site li .elgg-child-menu li .elgg-child-menu li .elgg-child-menu {
+    margin-left: -1px;
+    z-index: 1;
+  }
+}
