@@ -71,6 +71,6 @@ $language = array (
   "theme_haarlem_intranet:widgets:pages:edit:main_page:select" => "Alleen hoofdpagina's",
   'theme_haarlem_intranet:sidebar_toggle:toggle' => "Toon zijbalk",
   'theme_haarlem_intranet:sidebar_toggle:collapse' => "Verberg zijbalk",
-  'theme_haarlem_intranet:widgets:longtext_disclaimer' => "Zie je geen editor? Ververs de pagina en hij zou moeten verschijnen.",
+  'theme_haarlem_intranet:widgets:longtext_disclaimer' => "Zie je geen editor? Ververs dan je pagina met de F5 toets.",
 );
 add_translation("nl", $language);
