@@ -156,11 +156,37 @@ html {
 }
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait),
 (max-width: 766px) {
+
+	.elgg-page-header,
+	.elgg-page-default .elgg-page-header > .elgg-inner {
+		height: auto;
+	}
+	
+	.elgg-search-header table {
+		width: auto;
+	}
+	
 	.elgg-page-header > .elgg-inner h1 {
 		padding-top: 10px;
 	}
 	.elgg-heading-site, .elgg-heading-site:hover {
 		font-size: 1.6em;
+	}
+	.elgg-search-header {
+		position: relative;
+		left: 0;
+		top: 0;
+		margin-bottom: 5px;
+		
+	}
+	.elgg-page-header-wrapper {
+		position: relative;
+	}
+	.elgg-page-default .elgg-page-content-header {
+		padding: 0;
+	}
+	.elgg-page-navbar {
+		height: auto;
 	}
 	.elgg-button-nav {
 		cursor: pointer;
@@ -171,11 +197,57 @@ html {
 		display: none;
 		width: 100%;
 	}
+	
+	.elgg-menu-site .elgg-menu-item-home {
+		display: none;
+	}
+	
+	
+	.theme-haarlem-intranet-topbar-dropdown,
+	.elgg-menu-site .elgg-child-menu {
+		position: relative !important;
+		left: 0 !important;
+		top: 0 !important;
+		border-radius: 0px !important;
+		border: none !important;
+		box-shadow: none !important;
+		width: auto !important;
+		display: block !important;
+		background: #4a4a4b !important;
+	}
+	.theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks,
+	.elgg-menu-site .elgg-child-menu {
+		list-style: inside;
+		padding-left: 24px;
+	}
+
+	.elgg-menu-personal .elgg-menu-item-groups > ul {
+		padding-left: 0px;
+		list-style: none;
+	}
+	
+	.elgg-menu-site .elgg-child-menu > li:last-child > a {
+		border-radius: 0px;
+	}
+	.elgg-menu-site.elgg-menu-personal .elgg-child-menu {
+		right: auto;
+	}
+	
 	#login-dropdown a {
 		padding: 10px 18px;
 	}
 	.elgg-menu-site {
 		float: none;
+	}
+	.elgg-menu-site ul,
+	.elgg-menu-site li,
+	.elgg-menu-site a {
+		border: none !important;
+		background: #4a4a4b !important;
+		color: white !important;
+	}
+	.elgg-menu-site a {
+		display: inline-block !important;
 	}
 	.elgg-menu-site > li > ul {
 		position: static;
@@ -186,17 +258,13 @@ html {
 		box-shadow: none;
 		background: none;
 	}
-	.elgg-more,
-	.elgg-menu-site-more li,
+
 	.elgg-menu-site > li > ul {
 		width: auto;
 	}
 	.elgg-menu-site ul li {
 		float: none;
 		margin: 0;
-	}
-	.elgg-more > a {
-		border-bottom: 1px solid #294E6B;
 	}
 	.elgg-menu-site > li {
 		border-top: 1px solid #294E6B;
@@ -209,20 +277,6 @@ html {
 	}
 	.elgg-menu-site > li > a {
 		padding: 10px 18px;
-	}
-	.elgg-menu-site-more > li > a {
-		color: #FFF;
-		background: none;
-		padding: 10px 18px 10px 30px;
-	}
-	.elgg-menu-site-more > li:last-child > a,
-	.elgg-menu-site-more > li:last-child > a:hover {
-		border-radius: 0;
-	}
-	.elgg-menu-site-more > li.elgg-state-selected > a,
-	.elgg-menu-site-more > li > a:hover {
-		background-color: #60B8F7;
-		color: #FFF;
 	}
 }
 
