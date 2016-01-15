@@ -258,7 +258,8 @@ form.elgg-search {
 	margin: 0;
 }
 .theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li .elgg-icon {
-	color: #bcbec0;
+	color: white;
+	padding-top: 4px;
 }
 .theme-haarlem-intranet-topbar-dropdown .alliander-theme-quicklinks-item a,
 .theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li > a {
@@ -267,13 +268,15 @@ form.elgg-search {
     padding: 6px 13px;
     display: block;
 }
-.theme-haarlem-intranet-topbar-dropdown .alliander-theme-quicklinks-item a:hover {
+.theme-haarlem-intranet-topbar-dropdown .alliander-theme-quicklinks-item a:hover,
+.theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li:hover,
+.theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks li > a:hover {
 	background: #<?php echo THEME_GREEN; ?>;
 	color: white;
 	text-decoration: none;
 }
 .elgg-menu-quicklinks .elgg-discoverable {
-	background: white;
+	background: #<?php echo THEME_GREEN; ?>;
 }
 .theme-haarlem-intranet-topbar-dropdown .alliander-theme-quicklinks-item {
 	padding: 0px;
