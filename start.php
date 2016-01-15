@@ -107,6 +107,8 @@ function theme_haarlem_intranet_init() {
 	
 	elgg_register_plugin_hook_handler("action", "logout", "theme_haarlem_intranet_logout_action_hook");
 	
+	elgg_register_plugin_hook_handler("access:default", "user", "theme_haarlem_intranet_access_default");
+	
 	// page handlers
 	elgg_register_page_handler('profile', 'theme_haarlem_intranet_profile_page_handler');
 	elgg_register_page_handler('dashboard', 'theme_haarlem_intranet_dashboard_page_handler');

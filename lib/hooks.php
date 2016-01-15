@@ -1036,3 +1036,27 @@ function theme_haarlem_intranet_logout_forward_hook($hook, $type, $return_value,
 	
 	$_SESSION["simpleaml_disable_sso"] = true;
 }
+
+/**
+ * Change the default access on closed groups
+ *
+ * @param string $hook         the name of the hook
+ * @param string $type         the type of the hook
+ * @param int    $return_value current return value
+ * @param mixed  $params       supplied params
+ *
+ * @return void|int
+ */
+function theme_haarlem_intranet_access_default($hook, $type, $return_value, $params) {
+	
+	$page_owner = elgg_get_page_owner_entity();
+	if (!($page_owner instanceof ElggGroup)) {
+		return;
+	}
+	
+	if ($page_owner->isPublicMembership()) {
+		return;
+	}
+	
+	return (int) $page_owner->group_acl;
+}
