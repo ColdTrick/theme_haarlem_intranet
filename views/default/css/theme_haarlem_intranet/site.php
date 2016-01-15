@@ -320,6 +320,7 @@ form.elgg-search {
 	background: none;
 	overflow: hidden;
     text-overflow: ellipsis;
+    word-wrap: normal;
 }
 .elgg-menu-page-static li.elgg-state-selected > a,
 .elgg-menu-page-static a:hover {
@@ -410,6 +411,7 @@ form.elgg-search {
 	overflow: hidden;
     padding: 5px 0;
     text-overflow: ellipsis;
+    word-wrap: normal;
     white-space: nowrap;
 }
 .pages-navigation .treeview li a:hover,
@@ -444,6 +446,7 @@ form.elgg-search {
 	overflow: hidden;
 	display: block;
 	text-overflow: ellipsis;
+	word-wrap: normal;
 }
 #file-tools-folder-tree > ul > li {
 	padding-left: 0;

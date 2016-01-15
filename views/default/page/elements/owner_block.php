@@ -32,7 +32,22 @@ if ($owner instanceof ElggGroup || $owner instanceof ElggUser) {
 				'href' => 'messages/compose?send_to=' . $owner->guid,
 				'class' => 'elgg-button elgg-button-action'
 			));
-			$body .= '</li></ul>';
+			$body .= '</li>';
+			
+			$actions = elgg_extract('action', elgg_extract('menu', $vars));
+			if ($actions) {
+				foreach ($actions as $action) {
+					if (!in_array($action->getName(), array('add_friend', 'remove_friend', 'friend_request'))) {
+						continue;
+					}
+
+					$action->setLinkClass('elgg-button elgg-button-action');
+					
+					$body .= elgg_view('navigation/menu/elements/item', array('item' => $action));
+				}
+			}
+			
+			$body .= '</ul>';
 		}
 	}
 	
