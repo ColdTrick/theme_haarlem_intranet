@@ -13,17 +13,19 @@
 // insert site-wide navigation
 //echo elgg_view_menu('site');
 
-$site_name = elgg_get_site_entity()->name;
-$site_url = elgg_get_site_url();
-
-echo elgg_view('output/url', array(
-	'text' => elgg_view('output/img', array(
-		'src' => $site_url . 'mod/theme_haarlem_intranet/graphics/logo.png',
-		'alt' => 'logo'
-	)),
-	'href' => $site_url,
-	'title' => $site_name
-));
+if (!theme_haarlem_is_extranet()) {
+	$site_name = elgg_get_site_entity()->name;
+	$site_url = elgg_get_site_url();
+	
+	echo elgg_view('output/url', array(
+		'text' => elgg_view('output/img', array(
+			'src' => $site_url . 'mod/theme_haarlem_intranet/graphics/logo.png',
+			'alt' => 'logo'
+		)),
+		'href' => $site_url,
+		'title' => $site_name
+	));
+}
 
 echo elgg_view('output/url', array(
 	'class' => 'elgg-button elgg-button-action',

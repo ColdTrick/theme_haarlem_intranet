@@ -72,5 +72,6 @@ $language = array (
   'theme_haarlem_intranet:sidebar_toggle:toggle' => "Toon zijbalk",
   'theme_haarlem_intranet:sidebar_toggle:collapse' => "Verberg zijbalk",
   'theme_haarlem_intranet:widgets:longtext_disclaimer' => "Zie je geen editor? Ververs dan je pagina met de F5 toets.",
+  'theme_haarlem_intranet:settings:is_extranet' => "Is deze site een extranet?",
 );
 add_translation("nl", $language);

@@ -180,3 +180,24 @@ function theme_haarlem_intranet_sidebar_collapsed() {
 	
 	return true;
 }
+
+/**
+ * Check if the site is configured as extranet
+ *
+ * @return bool
+ */
+function theme_haarlem_is_extranet() {
+
+	static $result;
+	
+	if (isset($result)) {
+		return $result;
+	}
+	
+	$result = false;
+	if (elgg_get_plugin_setting('is_extranet', 'theme_haarlem_intranet') == 'yes') {
+		$result = true;
+	}
+	
+	return $result;
+}

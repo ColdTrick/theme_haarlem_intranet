@@ -75,6 +75,7 @@ $english = array(
 	"theme_haarlem_intranet:widgets:pages:edit:main_page" => "Select main page for listing",
 	"theme_haarlem_intranet:widgets:pages:edit:main_page:select" => "Only show main pages",
 	
+	"theme_haarlem_intranet:settings:is_extranet" => "Is this site an extranet?",
 	"theme_haarlem_intranet:settings:mentions" => "Mentions",
 	"theme_haarlem_intranet:settings:mentions:reset" => "By default users who join the site will get the Mentions notifications. You can reset this setting for ALL users, so the user will receive notifications from the Mentions plugin.",
 	"theme_haarlem_intranet:action:mentions:reset" => "Mentions notifications enabled for %s users",

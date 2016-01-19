@@ -16,6 +16,16 @@ if ($owner instanceof ElggGroup || $owner instanceof ElggUser) {
 	$body = '';
 	
 	if ($owner instanceof ElggGroup) {
+		
+		if (theme_haarlem_is_extranet()) {
+			echo elgg_view('search/search_box', array(
+				'class' => 'elgg-search-content-header',
+				'placeholder' => elgg_echo('theme_haarlem_intranet:search:' . theme_haarlem_intranet_get_group_type($owner)),
+				'container_entity' => $owner,
+				'autocomplete' => false,
+			));
+		}
+		
 		$header = elgg_view('page/elements/owner_block/group_header', array('entity' => $owner));
 	} elseif (!elgg_in_context('profile') && !elgg_in_context('dashboard')) {
 		$header = elgg_view('page/elements/owner_block/user_header', array('entity' => $owner));
