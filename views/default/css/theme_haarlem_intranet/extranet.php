@@ -29,3 +29,17 @@
 	top: 0;
 	margin-bottom: 10px;
 }
+
+.theme-haarlem-intranet-extranet-logo {
+	line-height: 65px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    
+    font-size: 24px;
+}
+
+.theme-haarlem-intranet-extranet-logo img {
+	float: right;
+	padding-left: 10px;
+}
