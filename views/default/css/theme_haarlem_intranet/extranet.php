@@ -20,6 +20,9 @@
 	color: #404041;
 }
 
+.elgg-page-default .elgg-page-content-header {
+	padding-top: 83px;
+}
 .elgg-page-content-header > .elgg-inner > h1 a.theme-link {
 	color: #404041;
 }
@@ -42,4 +45,5 @@
 .theme-haarlem-intranet-extranet-logo img {
 	float: right;
 	padding-left: 10px;
+	padding-top: 5px;
 }
