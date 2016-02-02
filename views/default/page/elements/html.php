@@ -22,6 +22,7 @@ if (isset($vars['body_attrs'])) {
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $lang; ?>" lang="<?php echo $lang; ?>">
 	<head>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 		<?php echo $vars["head"]; ?>
 	</head>
 	<body<?php echo $attrs ?>>
