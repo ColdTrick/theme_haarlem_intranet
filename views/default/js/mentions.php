@@ -56,7 +56,10 @@ elgg.mentions.handleResponse = function (json) {
 				this.checkDirty(); // true
 			});
 		} else if (mentionsEditor == 'tinymce') {
-			tinyMCE.activeEditor.setContent(newContent);
+			tinyMCE.activeEditor.selection.getNode().remove();
+			tinyMCE.activeEditor.selection.setContent(newContent);
+			
+			//tinyMCE.activeEditor.setContent(newContent);
 		} else {
 			$(textarea).val(newContent);
 		}
@@ -148,8 +151,9 @@ elgg.mentions.init = function() {
 						$('.mentions-popup').addClass('hidden');
 					} else {
 						position = this.selection.getRng(1).startOffset;
-						content = this.getContent({format : 'text'});
-						
+
+						var curElm  = tinyMCE.activeEditor.selection.getStart();
+						content = curElm.textContent;
 						elgg.mentions.autocomplete(content, position);
 					}
 				});
