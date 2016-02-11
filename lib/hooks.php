@@ -396,24 +396,26 @@ function theme_haarlem_intranet_thewire_entity_menu($hook, $type, $return_value,
 	// add likes in widgets (likes doesn't do this)
 	if (elgg_in_context('widgets')) {
 		// likes button
-		$options = array(
-			'name' => 'likes',
-			'text' => elgg_view('likes/button', array('entity' => $entity)),
-			'href' => false,
-			'priority' => 1000,
-		);
-		$return_value[] = ElggMenuItem::factory($options);
-		
-		// likes count
-		$count = elgg_view('likes/count', array('entity' => $entity));
-		if ($count) {
+		if (elgg_is_active_plugin('likes')) {
 			$options = array(
-				'name' => 'likes_count',
-				'text' => $count,
+				'name' => 'likes',
+				'text' => elgg_view('likes/button', array('entity' => $entity)),
 				'href' => false,
-				'priority' => 1001,
+				'priority' => 1000,
 			);
 			$return_value[] = ElggMenuItem::factory($options);
+			
+			// likes count
+			$count = elgg_view('likes/count', array('entity' => $entity));
+			if ($count) {
+				$options = array(
+					'name' => 'likes_count',
+					'text' => $count,
+					'href' => false,
+					'priority' => 1001,
+				);
+				$return_value[] = ElggMenuItem::factory($options);
+			}
 		}
 		
 		// tell a friend
