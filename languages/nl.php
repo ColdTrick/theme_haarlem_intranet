@@ -27,6 +27,7 @@ $language = array (
   'theme_haarlem_intranet:izine:widget:no_content' => 'Geen blogs gevonden in deze groep, voeg er een paar toe',
   'theme_haarlem_intranet:izine:widget:more' => 'Lees meer',
   'theme_haarlem_intranet:search' => 'Zoeken (optimaal op één woord)',
+  'theme_haarlem_intranet:search:more' => 'Voor meer resultaten maak gebruik van het selectiemenu in de rechter sidebar',
   'theme_haarlem_intranet:search:groep' => 'Zoeken in deze groep',
   'theme_haarlem_intranet:search:hoofdafdeling' => 'Zoeken in deze hoofdafdeling',
   'theme_haarlem_intranet:search:afdeling' => 'Zoeken in deze afdeling',

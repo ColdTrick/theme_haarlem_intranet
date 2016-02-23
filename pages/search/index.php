@@ -252,12 +252,17 @@ if ($search_type == 'all' || $search_type == 'entities') {
 				if ($view = search_get_search_view($current_params, 'list')) {
 					
 					// reset count to 0 to remove the "view more" url
+					$combined_count = $results['count'];
 					$results['count'] = 0;
 					
 					$results_html .= elgg_view($view, array(
 						'results' => $results,
 						'params' => $current_params,
 					));
+					
+					if ($combined_count > $current_params['limit']) {
+						$results_html .= '<div class="elgg-subtext">' . elgg_echo('theme_haarlem_intranet:search:more') . '</div>';
+					}
 				}
 			}
 			
