@@ -41,9 +41,3 @@
     
     font-size: 24px;
 }
-
-.theme-haarlem-intranet-extranet-logo img {
-	float: right;
-	padding-left: 10px;
-	padding-top: 5px;
-}
