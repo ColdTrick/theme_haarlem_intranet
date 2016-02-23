@@ -56,8 +56,8 @@ elgg.mentions.handleResponse = function (json) {
 				this.checkDirty(); // true
 			});
 		} else if (mentionsEditor == 'tinymce') {
-			tinyMCE.activeEditor.selection.getNode().remove();
-			tinyMCE.activeEditor.selection.setContent(newContent);
+			var node = tinyMCE.activeEditor.selection.getNode();
+			$(node).html(newContent);
 			
 			//tinyMCE.activeEditor.setContent(newContent);
 		} else {
