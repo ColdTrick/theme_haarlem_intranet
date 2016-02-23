@@ -55,6 +55,7 @@ $language = array (
   'theme_haarlem_intranet:menu:site:dashboard' => 'Mijn pagina',
   'theme_haarlem_intranet:menu:site:profile:mine' => 'Mijn profiel',
   'theme_haarlem_intranet:menu:site:profile:settings' => 'Mijn instellingen',
+  'theme_haarlem_intranet:menu:site:logout:info' => 'Sluit browser voor volledig veilig uitloggen',
   'theme_haarlem_intranet:owner_block:group:more:groep' => 'Meer over deze groep',
   'theme_haarlem_intranet:owner_block:group:more:afdeling' => 'Meer over deze afdeling',
   'theme_haarlem_intranet:owner_block:group:more:kennisbank' => 'Meer over deze groep',

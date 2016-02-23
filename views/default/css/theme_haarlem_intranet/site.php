@@ -236,6 +236,12 @@ form.elgg-search {
 	display: block;
 }
 
+.theme-haarlem-logout-info {
+	padding: 0 13px;
+	min-width: 150px;
+	font-size: 80%;
+}
+
 .theme-haarlem-intranet-topbar-dropdown {
 	border-bottom: 1px solid #999999;
     border-left: 1px solid #999999;

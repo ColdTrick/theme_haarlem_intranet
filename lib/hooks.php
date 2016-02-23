@@ -212,8 +212,8 @@ function theme_haarlem_intranet_personal_menu($hook, $type, $return_value, $para
 	));
 	$return_value[] = ElggMenuItem::factory(array(
 		'name' => 'profile_logout',
-		'text' => elgg_echo('logout'),
-		'href' => 'action/logout',
+		'text' => elgg_view('output/url', array('text' => elgg_echo('logout'), 'href' => 'action/logout')) . '<div class="elgg-subtext theme-haarlem-logout-info">' . elgg_echo('theme_haarlem_intranet:menu:site:logout:info') . '</div>',
+		'href' => false,
 		'section' => 'personal',
 		'parent_name' => 'profile',
 		'is_trusted' => true,
