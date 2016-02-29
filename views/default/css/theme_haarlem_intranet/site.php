@@ -474,22 +474,29 @@ form.elgg-search {
 .tree-classic ul {
 	background: none !important;
 }
-.tree-classic li.open a.elgg-menu-parent:before {
+.tree-classic .elgg-menu li.open:before {
 	content: "\f0d7";
 	font-family: "FontAwesome";
 	color: #414042;
-	padding-right: 5px;
+	position: absolute;
+	top: 5px;
+	padding-left: 7px;
 }
 #file-tools-folder-tree.tree-classic li.elgg-menu-item-root > a.elgg-menu-parent:before {
 	content: "";
 }
-.tree-classic li.closed a.elgg-menu-parent:before {
+.tree-classic .elgg-menu li.closed:before {
 	content: "\f0da";
 	font-family: "FontAwesome";
 	color: #808285;
-	padding-right: 5px;
+	position: absolute;
+	top: 5px;
+	padding-left: 7px;
 }
-
+#file-tools-folder-tree.tree-classic .elgg-menu li.open > a,
+#file-tools-folder-tree.tree-classic .elgg-menu li.closed > a {
+	margin-left: 15px;
+}
 .tree-classic li a.clicked,
 .tree-classic li a.clicked:hover,
 .tree-classic li span.clicked {
