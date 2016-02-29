@@ -261,7 +261,7 @@ if ($search_type == 'all' || $search_type == 'entities') {
 					));
 					
 					if ($combined_count > $current_params['limit']) {
-						$results_html .= '<div class="elgg-subtext">' . elgg_echo('theme_haarlem_intranet:search:more') . '</div>';
+						$results_html .= '<hr /><div class="elgg-subtext">' . elgg_echo('theme_haarlem_intranet:search:more') . '</div><hr />';
 					}
 				}
 			}
