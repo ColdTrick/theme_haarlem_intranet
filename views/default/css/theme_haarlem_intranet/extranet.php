@@ -41,3 +41,9 @@
     
     font-size: 24px;
 }
+
+.theme-haarlem-intranet-extranet-site-subtitle {
+	text-align: center;
+	line-height: 40px;
+	color: black;
+}

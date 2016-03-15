@@ -25,6 +25,8 @@ if (!theme_haarlem_is_extranet()) {
 		'href' => $site_url,
 		'title' => $site_name
 	));
+} else {
+	echo "<div class='theme-haarlem-intranet-extranet-site-subtitle'>Samenwerken met de gemeente Haarlem</div>";
 }
 
 echo elgg_view('output/url', array(
