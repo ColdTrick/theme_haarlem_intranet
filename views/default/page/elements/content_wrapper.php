@@ -23,6 +23,9 @@ if ($owner instanceof ElggGroup) {
 } elseif (elgg_in_context('profile')) {
 	$content_class = ' theme-intranet-dashboard';
 	$content_header = elgg_view('page/elements/content_header/profile', $vars);
+} elseif (elgg_in_context('index')) {
+	$content_class = ' theme-intranet-index';
+	$content_header = elgg_view('page/elements/content_header/extranet', $vars);
 }
 
 if ($content_header) {
