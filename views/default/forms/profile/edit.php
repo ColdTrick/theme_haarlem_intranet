@@ -247,8 +247,12 @@
 	}
 
 	if($simple_access_control == "yes"){
+		if (theme_haarlem_is_extranet()) {
+			echo "<div>";
+		} else {
+			echo "<div class='hidden'>";
+		}
 		?>
-		<div class='hidden'>
 			<label><?php echo elgg_echo("profile_manager:simple_access_control"); ?></label>
 			<?php echo elgg_view('input/access',array('name' => 'simple_access_control', 'value' => $access_id, 'class' => 'simple_access_control', 'js' => 'onchange="set_access_control(this.value)"')); ?>
 		</div>
@@ -263,10 +267,15 @@
 	?>
 	</div>
 
+	<?php
+	if (!theme_haarlem_is_extranet()) {
+	?>
 	<div>
 		<?php echo elgg_view_module("info", "Aanpassen overige informatie", "Voor info over hoe je andere profielgegevens wijzigt zoals naam of foto, KLIK EERST OP OPSLAAN. Ga daarna naar de <a href='" . elgg_get_site_url() . "mijn-pagina-profiel'>Mijn Pagina/Profiel pagina</a> in de HELP groep");?>
 	</div>
-<?php
+	<?php
+	}
+	
 	if($simple_access_control == "yes"){
 		?>
 		<style type="text/css">
