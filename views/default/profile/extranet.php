@@ -3,6 +3,7 @@
  * Elgg user display (details)
  * @uses $vars['entity'] The user entity
  */
+echo elgg_view("theme_haarlem_intranet/widgets_fix");
 
 $user = elgg_get_page_owner_entity();
 $about = "";
@@ -34,11 +35,13 @@ if ($user->isBanned()) {
 		$about .= "</div>";
 	}
 }
-	
-echo '<div id="profile-details" class="elgg-body pll">';
-echo "<h2>{$user->name}</h2>";
+echo '<div id="profile-details">';
 
-echo elgg_view("profile/status", array("entity" => $user));
+echo '<div id="profile-details" class="elgg-body pll">';
+echo '<div class="profile-details-header">';
+echo "<h2>{$user->name}</h2>";
+echo '</div>';
+// echo elgg_view("profile/status", array("entity" => $user));
 
 $description_position = elgg_get_plugin_setting("description_position", "profile_manager");
 $show_profile_type_on_profile = elgg_get_plugin_setting("show_profile_type_on_profile", "profile_manager");
@@ -53,13 +56,13 @@ $fields = $categorized_fields['fields'];
 
 $details_result = "";
 	
-if ($show_profile_type_on_profile != "no") {
-	if ($profile_type_guid = $user->custom_profile_type) {
-		if (($profile_type = get_entity($profile_type_guid)) && ($profile_type instanceof ProfileManagerCustomProfileType)) {
-			$details_result .= "<div class='even'><b>" . elgg_echo("profile_manager:user_details:profile_type") . "</b>: " . $profile_type->getTitle() . " </div>";
-		}
-	}
-}
+// if ($show_profile_type_on_profile != "no") {
+// 	if ($profile_type_guid = $user->custom_profile_type) {
+// 		if (($profile_type = get_entity($profile_type_guid)) && ($profile_type instanceof ProfileManagerCustomProfileType)) {
+// 			$details_result .= "<div class='even'><b>" . elgg_echo("profile_manager:user_details:profile_type") . "</b>: " . $profile_type->getTitle() . " </div>";
+// 		}
+// 	}
+// }
 	
 if (count($cats) > 0) {
 			
@@ -141,22 +144,26 @@ if (count($cats) > 0) {
 				}
 				
 				// build result
-				$field_result .= "<div class='" . $even_odd . "'>";
-				$field_result .= "<b>" . $title . "</b>:&nbsp;";
-				$field_result .= elgg_view("output/" . $output_type, array("value" => $value, "target" => $target));
-				$field_result .= "</div>\n";
+				$field_result .= "<tr>";
+				$field_result .= "<td class='label-cell'>" . $title . ":</td>";
+				$field_result .= "<td>" . elgg_view("output/" . $output_type, array("value" => $value, "target" => $target)) . "</td>";
+				$field_result .= "</tr>";
 			}
 		}
 			
 		if (!empty($field_result)) {
 			$details_result .= $cat_title;
-			$details_result .= "<div>" . $field_result . "</div>";
+			$details_result .= "<table class='haarlem-extranet-profile-details'>" . $field_result . "</table>";
 		}
 	}
 }
 	
 if (!empty($details_result)) {
-	echo "<div id='custom_fields_userdetails'>" . $details_result . "</div>";
+	
+	echo "";
+	echo $details_result;
+	echo "";
+	/*echo "<div id='custom_fields_userdetails'>" . $details_result . "</div>";
 	if (elgg_get_plugin_setting("display_categories", "profile_manager") == "accordion") {
 		?>
 		<script type="text/javascript">
@@ -166,7 +173,7 @@ if (!empty($details_result)) {
 			});
 		</script>
 		<?php
-	}
+	}*/
 }
 
 if ($description_position != "top") {

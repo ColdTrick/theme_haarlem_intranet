@@ -68,17 +68,35 @@
 	line-height: 1em;
 }
 
+.haarlem-extranet-profile-details,
 .haarlem-profile-details {
 	width: 100%;
 	margin-bottom: 10px;
 }
 
+.haarlem-extranet-profile-details > tbody > tr > td,
 .haarlem-profile-details > tbody > tr > td {
 	width: 50%;
 }
 
+.haarlem-extranet-profile-details td {
+	padding: 10px;
+	border-right: 5px solid #e0e0e0;
+}
+.haarlem-extranet-profile-details tr {
+	background: white;
+	border-bottom: 5px solid #e0e0e0;
+}
+.haarlem-extranet-profile-details .label-cell {
+	color: #<?php echo THEME_BLUE; ?>;
+	font-weight: bold;
+	vertical-align: middle;
+	width: 25%;
+}
+
 .haarlem-profile-details .label-cell {
 	width: 1%;
+	
 	white-space: nowrap;
 	padding: 10px 5px;
 }
