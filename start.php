@@ -146,9 +146,11 @@ function theme_haarlem_intranet_init() {
 	// don't allow main profile fields to be edited
 	$current_url = current_page_url();
 	$user = elgg_get_logged_in_user_entity();
-	if ((stristr($current_url, 'action/profile/edit') !== false) || (!empty($user) && (stristr($current_url, "profile/{$user->username}/edit") !== false))) {
-		elgg_unregister_plugin_hook_handler('profile:fields', 'profile', 'subsite_manager_profile_fields_hook');
-		elgg_unregister_plugin_hook_handler('categorized_profile_fields', 'profile_manager', 'subsite_manager_profile_manager_profile_hook');
+	if (!theme_haarlem_is_extranet()) {
+		if ((stristr($current_url, 'action/profile/edit') !== false) || (!empty($user) && (stristr($current_url, "profile/{$user->username}/edit") !== false))) {
+			elgg_unregister_plugin_hook_handler('profile:fields', 'profile', 'subsite_manager_profile_fields_hook');
+			elgg_unregister_plugin_hook_handler('categorized_profile_fields', 'profile_manager', 'subsite_manager_profile_manager_profile_hook');
+		}
 	}
 	
 	elgg_register_page_handler('search', 'theme_haarlem_intranet_search_page_handler');
