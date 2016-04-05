@@ -47,3 +47,15 @@
 	line-height: 40px;
 	color: black;
 }
+
+p.profile-aboutme-title,
+#profile-details > h3 {
+	color: black;
+	font-size: 16px;
+	margin: 30px 0 20px;
+	font-weight: bold;
+}
+
+.profile-aboutme-contents {
+	margin-bottom: 20px;
+}
