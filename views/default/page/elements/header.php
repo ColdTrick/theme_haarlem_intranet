@@ -25,14 +25,22 @@ if (!theme_haarlem_is_extranet()) {
 		'href' => $site_url,
 		'title' => $site_name
 	));
+	
+	echo elgg_view('output/url', array(
+		'class' => 'elgg-button elgg-button-action',
+		'id' => 'theme-haarlem-intranet-header-help',
+		'href' => 'groups/profile/27255802',
+		'text' => elgg_echo('theme_haarlem_intranet:header:help')
+	));
 } else {
 	echo "<div class='theme-haarlem-intranet-extranet-site-subtitle'>Samenwerken met de gemeente Haarlem</div>";
+	
+	echo elgg_view('output/url', array(
+		'class' => 'elgg-button elgg-button-action',
+		'id' => 'theme-haarlem-intranet-header-help',
+		'href' => 'groups/profile/43088262',
+		'text' => elgg_echo('theme_haarlem_intranet:header:help')
+	));
 }
 
-echo elgg_view('output/url', array(
-	'class' => 'elgg-button elgg-button-action',
-	'id' => 'theme-haarlem-intranet-header-help',
-	
-	'href' => 'groups/profile/27255802',
-	'text' => elgg_echo('theme_haarlem_intranet:header:help')
-));
+
