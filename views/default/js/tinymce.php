@@ -75,6 +75,7 @@ elgg.tinymce.init = function() {
 		toolbar1 : "<?php echo $menu1;?>",
 		toolbar2 : "<?php echo $menu2;?>,bfaSelect",
 		toolbar3 : "<?php echo $menu3;?>",
+		browser_spellcheck : true,
 		media_strict: false,
 		image_advtab: true,
 		width : "100%",
@@ -86,19 +87,19 @@ elgg.tinymce.init = function() {
 // 		style_formats_merge: true,
 		style_formats: [
 			{
-				title: 'Accordion header', 
-				block: 'h3', 
-				classes: 'theme-haarlem-intranet-accordion-header', 
+				title: 'Accordion header',
+				block: 'h3',
+				classes: 'theme-haarlem-intranet-accordion-header',
 				selector: 'p'
 			},
 			{
-				title: 'Accordion content', 
-				block: 'div', 
+				title: 'Accordion content',
+				block: 'div',
 				classes: 'theme-haarlem-intranet-accordion-content',
 				wrapper: true
 			},
 			{
-				title: 'Normal', 
+				title: 'Normal',
 				format: 'p',
 				classes: '',
 			},
