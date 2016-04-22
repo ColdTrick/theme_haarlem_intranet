@@ -1,6 +1,10 @@
 <?php
 ?>
 
+.elgg-avatar-large > a > img {
+	width: 200px;
+}
+
 .elgg-page-header {
 	height: 40px;
 	background: #959595;
