@@ -481,6 +481,7 @@ form.elgg-search {
 	position: absolute;
 	top: 5px;
 	padding-left: 7px;
+	cursor: pointer;
 }
 #file-tools-folder-tree.tree-classic li.elgg-menu-item-root > a.elgg-menu-parent:before {
 	content: "";
@@ -492,10 +493,12 @@ form.elgg-search {
 	position: absolute;
 	top: 5px;
 	padding-left: 7px;
+	cursor: pointer;
 }
 #file-tools-folder-tree.tree-classic .elgg-menu li.open > a,
 #file-tools-folder-tree.tree-classic .elgg-menu li.closed > a {
-	margin-left: 15px;
+	margin-left: 21px;
+	padding-left: 0px;
 }
 .tree-classic li a.clicked,
 .tree-classic li a.clicked:hover,
