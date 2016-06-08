@@ -1,5 +1,10 @@
 <?php
 $language = array (
+		'mentions:notification_types:object:file' => 'een bestand',
+	'mentions:notification_types:object:page' => 'een pagina',
+	'mentions:notification_types:object:page_top' => 'een pagina',
+	'mentions:notification_types:object:album' => 'een fotoalbum',
+	'mentions:notification_types:object:event' => 'een evenement',
   'theme_haarlem_intranet:messages:reply:timestamp' => "Geantwoord: %s",
   'theme_haarlem_intranet:river:widget:my_groups' => "Activiteiten in mijn groepen",
   'theme_haarlem_intranet:haarlem_news:widget:title' => 'Nieuws',

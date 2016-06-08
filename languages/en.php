@@ -1,6 +1,13 @@
 <?php
 
 $english = array(
+	
+	'mentions:notification_types:object:file' => 'a file',
+	'mentions:notification_types:object:page' => 'a page',
+	'mentions:notification_types:object:page_top' => 'a page',
+	'mentions:notification_types:object:album' => 'an album',
+	'mentions:notification_types:object:event' => 'an event',
+	
 	"theme_haarlem_intranet:owner_block:content" => "Content",
 	"theme_haarlem_intranet:owner_block:quick_nav" => "Links",
 	
