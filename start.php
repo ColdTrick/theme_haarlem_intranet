@@ -8,6 +8,8 @@ require_once(dirname(__FILE__) . "/lib/events.php");
 require_once(dirname(__FILE__) . "/lib/hooks.php");
 require_once(dirname(__FILE__) . "/lib/page_handlers.php");
 
+@include_once(dirname(__FILE__) . '/vendor/autoload.php');
+
 define('THEME_GREEN', 'ABC340');
 define('THEME_TEAL', '32998E');
 define('THEME_PURPLE', '6C447E');
@@ -22,7 +24,7 @@ elgg_register_event_handler('init','system','theme_haarlem_intranet_init');
  * @return void
  */
 function theme_haarlem_intranet_init() {
-
+	
 	// theme specific CSS
 	elgg_register_css("sourcesanspro", "//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700");
 	elgg_load_css("sourcesanspro");
