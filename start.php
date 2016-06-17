@@ -157,6 +157,11 @@ function theme_haarlem_intranet_init() {
 	
 	elgg_register_page_handler('search', 'theme_haarlem_intranet_search_page_handler');
 	
+	// restore tags search
+	elgg_register_plugin_hook_handler('search_advanced_types', 'get_types', 'search_custom_types_tags_hook');
+	elgg_register_plugin_hook_handler('search', 'tags', 'search_tags_hook');
+	elgg_register_plugin_hook_handler('search_types', 'get_types', 'search_custom_types_tags_hook');
+	
 	elgg_register_extender_url_handler('annotation', 'group_topic_post', 'theme_haarlem_intranet_annotation_url_handler');
 	
 	// actions
@@ -218,9 +223,9 @@ function theme_haarlem_intranet_search_page_handler($page){
 	}
 
 	// as there is no tags search any more, replace it with ALL search
-	if (get_input("search_type") == "tags") {
-		set_input("search_type", "all");
-	}
+// 	if (get_input("search_type") == "tags") {
+// 		set_input("search_type", "all");
+// 	}
 
 	$base_dir = elgg_get_plugins_path() . 'theme_haarlem_intranet/pages/search';
 

@@ -22,6 +22,12 @@
 	<requires>
 		<type>priority</type>
 		<priority>after</priority>
+		<plugin>search_advanced</plugin>
+	</requires>
+	
+	<requires>
+		<type>priority</type>
+		<priority>after</priority>
 		<plugin>profile</plugin>
 	</requires>
 	
