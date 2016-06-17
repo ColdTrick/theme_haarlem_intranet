@@ -283,6 +283,7 @@ html {
 		padding: 10px 18px;
 	}
 	
+	.elgg-menu-personal,
 	.theme-haarlem-logout-info,
 	.elgg-menu-item-menu-builder-edit-mode {
 		display: none !important;
