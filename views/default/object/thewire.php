@@ -64,7 +64,8 @@ if (elgg_in_context("widgets")) {
 		));
 	}
 }
-$text = thewire_filter($text);
+// $text = thewire_filter($text);
+$text = elgg_view('output/longtext', array('value' => $text));
 $text .= $metadata;
 
 $params = array(
