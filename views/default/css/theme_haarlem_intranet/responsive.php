@@ -218,7 +218,10 @@ html {
 	.theme-haarlem-intranet-topbar-dropdown .elgg-menu-quicklinks,
 	.elgg-menu-site .elgg-child-menu {
 		list-style: inside;
-		padding-left: 24px;
+	}
+	
+	.elgg-menu-site .elgg-child-menu li {
+		display: none;
 	}
 
 	.elgg-menu-personal .elgg-menu-item-groups > ul {
@@ -265,6 +268,7 @@ html {
 	.elgg-menu-site ul li {
 		float: none;
 		margin: 0;
+		padding-left: 24px;
 	}
 	.elgg-menu-site > li {
 		border-top: 1px solid #294E6B;
@@ -277,6 +281,18 @@ html {
 	}
 	.elgg-menu-site > li > a {
 		padding: 10px 18px;
+	}
+	
+	.theme-haarlem-logout-info,
+	.elgg-menu-item-menu-builder-edit-mode {
+		display: none !important;
+	}
+	
+	.elgg-menu-site .elgg-menu-site-toggle {
+		display: inline-block;
+		position: absolute;
+		right: 10px;
+		font-weight: bold;
 	}
 }
 

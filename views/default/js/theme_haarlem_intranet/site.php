@@ -59,6 +59,13 @@ elgg.theme_haarlem_intranet.init = function() {
 	$('.elgg-widget-instance-izine .theme-haarlem-intranet-izine-image > .elgg-icon').live('click', elgg.theme_haarlem_intranet.izine_nav);
 
 	$('.theme-haarlem-intranet-sidebar-toggle a').click(elgg.theme_haarlem_intranet.toggle_sidebar);
+
+	$('.elgg-menu-site .elgg-menu-site-toggle').click(function(event) {
+		event.preventDefault();
+		event.stopPropagation();
+		$(this).toggleClass('fa-angle-down fa-angle-right');
+		$(this).parent().next().find('>li').toggle();
+	});
 }
 
 elgg.register_hook_handler('init', 'system', elgg.theme_haarlem_intranet.init);

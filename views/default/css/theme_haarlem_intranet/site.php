@@ -541,6 +541,10 @@ form.elgg-search {
 	background: #e2e3e4;
 }
 
+.elgg-menu-site .elgg-menu-site-toggle {
+	display: none;
+}
+
 .elgg-menu-site > li > ul {
 	top: 40px;
 	width: auto;

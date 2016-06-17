@@ -46,6 +46,29 @@ function theme_haarlem_intranet_prepare_site_menu($hook, $type, $return_value, $
 }
 
 /**
+ * Adds togglelinks on menu items
+ *
+ * @param string         $hook         the name of the hook
+ * @param string         $type         the type of the hook
+ * @param ElggMenuItem[] $return_value current return value
+ * @param array          $params       supplied params
+ *
+ * @return ElggMenuItem[]
+ */
+function theme_haarlem_intranet_responsive_toggle_links($hook, $type, $return_value, $params) {
+	if (!is_array($return_value) || empty($return_value)) {
+		return;
+	}
+		
+	foreach ($return_value as $section_items) {
+		foreach ($section_items as $item) {
+			theme_haarlem_add_toggle_link($item);
+		}
+	}
+	
+}
+	
+/**
  * Add menu items to the (theme)personal menu
  *
  * @param string         $hook         the name of the hook

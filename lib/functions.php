@@ -201,3 +201,20 @@ function theme_haarlem_is_extranet() {
 	
 	return $result;
 }
+
+/**
+ * Adds a toggle link for use in responsive
+ *
+ * @param \ElggMenuItem $item
+ */
+function theme_haarlem_add_toggle_link(\ElggMenuItem &$item) {
+	$children = $item->getChildren();
+	if (empty($children)) {
+		return;
+	}
+	$item->setText($item->getText() . elgg_view_icon('angle-right', 'elgg-menu-site-toggle'));
+	
+	foreach ($children as $child) {
+		theme_haarlem_add_toggle_link($child);
+	}
+}
