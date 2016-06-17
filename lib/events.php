@@ -267,3 +267,22 @@ function theme_haarlem_intranet_profile_sync_profile_icon($event, $type, $object
 	// cleanup
 	unlink($tmp_icon);
 }
+
+/**
+ * Listen to the login event to set the correct redirect if from mobile
+ *
+ * @param string   $event the name of the event
+ * @param string   $type  the type of the event
+ * @param ElggUser $user  supplied user
+ *
+ * @return void
+ */
+function theme_haarlem_intranet_login_handler($event, $type, $user) {
+	
+	$detect = new \Mobile_Detect;
+	if (!$detect->isMobile()) {
+		return;
+	}
+
+	elgg_register_plugin_hook_handler('forward', 'system', 'theme_haarlem_intranet_login_forward_hook');
+}

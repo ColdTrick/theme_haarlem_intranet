@@ -1062,3 +1062,18 @@ function theme_haarlem_intranet_access_default($hook, $type, $return_value, $par
 	
 	return (int) $page_owner->group_acl;
 }
+
+/**
+* Hook on forward to forward to dashboard
+*
+* @param string $hook_name    the name of the hook
+* @param string $entity_type  the type of the hook
+* @param string $return_value current return value
+* @param array  $params       supplied params
+*
+* @return string
+*/
+function theme_haarlem_intranet_login_forward_hook($hook_name, $entity_type, $return_value, $params) {
+	
+	return elgg_normalize_url('dashboard');
+}

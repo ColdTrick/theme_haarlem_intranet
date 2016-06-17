@@ -76,6 +76,7 @@ function theme_haarlem_intranet_init() {
 	elgg_register_event_handler('update_user', 'profile_sync', 'theme_haarlem_intranet_profile_sync_site_membership');
 	elgg_register_event_handler('update_user', 'profile_sync', 'theme_haarlem_intranet_profile_sync_zakelijkemail');
 	elgg_register_event_handler('update_user', 'profile_sync', 'theme_haarlem_intranet_profile_sync_profile_icon');
+	elgg_register_event_handler('login', 'user', 'theme_haarlem_intranet_login_handler'); // needs to be last
 	
 	// plugin hooks
 	elgg_register_plugin_hook_handler("register", "menu:personal", "theme_haarlem_intranet_personal_menu");
