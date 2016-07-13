@@ -47,6 +47,9 @@ if (!empty($entity_type)) {
 			<li>
 				<a rel='group'><?php echo elgg_echo("item:group");?></a>
 			</li>
+			<li>
+				<a rel='tags'><?php echo elgg_echo("tags");?></a>
+			</li>
 			
 			<?php
 				foreach ($types["object"] as $subtype) {
