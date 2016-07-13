@@ -53,6 +53,8 @@ function theme_haarlem_intranet_init() {
 	elgg_extend_view('widgets/free_html/edit', 'theme_haarlem_intranet/longtext_disclaimer');
 	elgg_extend_view('widgets/promo_widget/edit', 'theme_haarlem_intranet/longtext_disclaimer');
 	
+	elgg_extend_view('river/elements/body', 'theme_haarlem_intranet/river/elements/body', 400);
+	
 	// unextend views
 	elgg_unextend_view('page/elements/header', 'search/header');
 	if (!theme_haarlem_is_extranet()) {
