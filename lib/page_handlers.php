@@ -44,7 +44,7 @@ function theme_haarlem_intranet_profile_page_handler($page) {
 	$builder = new ElggMenuBuilder($menu);
 	$menu = $builder->getMenu();
 	
-	$content = '<table><tr><td>' . elgg_view("profile/owner_block", array("entity" => $user, 'menu' => $menu));
+	$content = '<table id="theme-haarlem-intranet-profile"><tr><td>' . elgg_view("profile/owner_block", array("entity" => $user, 'menu' => $menu));
 	$content .= '</td><td>';
 	if (!theme_haarlem_is_extranet()) {
 		$content .= elgg_view("profile/details", array("entity" => $user, 'menu' => $menu)) ;

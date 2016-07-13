@@ -34,6 +34,34 @@ html {
 	margin-top: 3px;
 }
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait),
+(max-width: 1125px) {
+	.elgg-page-navbar {
+		height: 80px;
+	}
+	.elgg-page-default .elgg-page-content-header {
+		padding-top: 136px
+	}
+	
+	#theme-haarlem-intranet-profile > tbody > tr > td {
+		display: block;
+		width: 100%;
+	}
+	
+	#profile-owner-block {
+		padding-top: 0;
+	    text-align: center;
+	    width: 100%;
+	}
+	
+	#profile-owner-block .elgg-avatar-large > a > img {
+		margin: 0 auto 10px;
+	}
+	
+	#profile-details {
+		padding: 0;
+	}
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait),
 (max-width: 1030px) {
 	.elgg-menu-topbar-default > li:first-child a {
 		margin-left: 0;
@@ -47,9 +75,7 @@ html {
 }
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait),
 (max-width: 880px) {
-	#profile-owner-block {
-		width: 150px;
-	}
+	
 }
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait),
 (max-width: 820px) {
@@ -182,6 +208,15 @@ html {
 	.elgg-page-header-wrapper {
 		position: relative;
 	}
+	.elgg-page-content-header form.elgg-search {
+		left: 10px;
+		right: auto;
+		top: 50px;
+	}
+	.elgg-page-content-header > .elgg-inner > h1 {
+		top: 10px;
+		left: 10px;
+	}
 	.elgg-page-default .elgg-page-content-header {
 		padding: 0;
 	}
@@ -202,6 +237,15 @@ html {
 		display: none;
 	}
 	
+	.theme-haarlem-intranet-notifications-friendspicker {
+		display: none;
+	}
+	
+	.haarlem-extranet-profile-details > tbody > tr > td,
+	.haarlem-profile-details > tbody > tr > td {
+		display: block;
+		width: 100%;
+	}
 	
 	.theme-haarlem-intranet-topbar-dropdown,
 	.elgg-menu-site .elgg-child-menu {
