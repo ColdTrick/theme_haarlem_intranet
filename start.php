@@ -57,6 +57,10 @@ function theme_haarlem_intranet_init() {
 	
 	elgg_extend_view('page/elements/header', 'theme_haarlem_intranet/mobile_forward');
 	
+	elgg_extend_view('profile_manager/profile_completeness/content', 'theme_haarlem_intranet/profile/completeness/push', 400);
+	elgg_extend_view('profile_manager/profile_completeness/content', 'theme_haarlem_intranet/profile/completeness/pop', 900);
+	elgg_register_plugin_hook_handler('categorized_profile_fields', 'profile_manager', 'theme_haarlem_profile_completeness_fields', 99999);
+	
 	// unextend views
 	elgg_unextend_view('page/elements/header', 'search/header');
 	if (!theme_haarlem_is_extranet()) {

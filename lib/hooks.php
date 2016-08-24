@@ -1085,3 +1085,44 @@ function theme_haarlem_intranet_access_default($hook, $type, $return_value, $par
 	
 	return (int) $page_owner->group_acl;
 }
+
+/**
+ * Change the profile fields for which the profile completeness is calculated
+ *
+ * @param string $hook         the name of the hook
+ * @param string $type         the type of the hook
+ * @param array  $return_value the current return value
+ * @param array  $params       supplied params
+ *
+ * @return void|array
+ */
+function theme_haarlem_profile_completeness_fields($hook, $type, $return_value, $params) {
+	
+	if (!elgg_in_context('profile_manager_profile_completeness')) {
+		return;
+	}
+	
+	if (!is_array($return_value) || empty($return_value['fields'])) {
+		return;
+	}
+	
+	$site = elgg_get_site_entity();
+	
+	foreach ($return_value['fields'] as $cat_guid => $fields) {
+		
+		if (empty($fields) || !is_array($fields)) {
+			continue;
+		}
+		
+		/* @var $field \ProfileManagerCustomProfileField */
+		foreach ($fields as $order => $field) {
+			if ((int) $field->site_guid === (int) $site->getGUID()) {
+				continue;
+			}
+			
+			unset($return_value['fields'][$cat_guid][$order]);
+		}
+	}
+	
+	return $return_value;
+}
