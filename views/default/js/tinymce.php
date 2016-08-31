@@ -103,6 +103,13 @@ elgg.tinymce.init = function() {
 				format: 'p',
 				classes: '',
 			},
+		],
+		templates: [
+			{
+				title: 'Accordeon',
+				description: 'Show an accordeon with collapsable content',
+				content: '[accordeontitle]Enter Accordeon Title[/accordeontitle]<br />[accordeoncontent]Enter collapsed content here[/accordeoncontent]'
+			},
 		]
 	});
 
