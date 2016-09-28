@@ -1110,11 +1110,12 @@ form.elgg-search {
 .elgg-widget-instance-haarlem_news table .elgg-icon {
 	font-size: 19px !important;
 }
-
+.elgg-widget-instance-promo_widget .elgg-widget-content {
+	font-size: 19px;
+}
 .elgg-widget-instance-promo_widget .elgg-widget-content > table a {
 	height: 170px;
 	text-decoration: none;
-	font-size: 20px;
 }
 .elgg-widget-instance-promo_widget .elgg-widget-content .elgg-output .fa {
     color: white;
