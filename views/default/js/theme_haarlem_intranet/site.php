@@ -68,10 +68,10 @@ elgg.theme_haarlem_intranet.init = function() {
 	});
 
 	$('.elgg-menu-site .elgg-menu-parent').click(function(event) {
-		if ($(this).find('.elgg-icon').is(':visible')) {
+		if ($(this).find('.elgg-menu-site-toggle').is(':visible')) {
 			event.preventDefault();
 			event.stopPropagation();
-			$(this).find('.elgg-icon').toggleClass('fa-angle-down fa-angle-right');
+			$(this).find('.elgg-menu-site-toggle').toggleClass('fa-angle-down fa-angle-right');
 			$(this).next().find('>li').toggle();
 		}
 	});
