@@ -18,8 +18,21 @@ $options  = array(
 	'subtype' => 'blog',
 	'container_guid' => $group_guid,
 	'limit' => $num_display,
-	'metadata_name' => 'icontime'
+	'metadata_name_value_pairs' => [
+		[
+			'name' => 'icontime',
+			'value' => '0',
+			'operand' => '>',
+		],
+	],
 );
+
+if (!empty($widget->tag)) {
+	$options['metadata_name_value_pairs'][] = [
+		'name' => 'tags',
+		'value' => $widget->tag,
+	];
+}
 $blogs = elgg_get_entities_from_metadata($options);
 if (empty($blogs)) {
 	echo elgg_echo('theme_haarlem_intranet:izine:widget:no_content');

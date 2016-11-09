@@ -10,6 +10,7 @@ $language = array (
   'theme_haarlem_intranet:haarlem_news:widget:title' => 'Nieuws',
   'theme_haarlem_intranet:haarlem_news:widget:description' => 'Toon blogs uit een bepaalde groep',
   'theme_haarlem_intranet:haarlem_news:widget:group' => 'Selecteer een groep om de blogs uit te tonen',
+  "theme_haarlem_intranet:izine:widget:tag" => "Optional tag to filter blogs",
   'theme_haarlem_intranet:haarlem_news:widget:no_group' => 'Selecteer aub en groep',
   'theme_haarlem_intranet:haarlem_news:widget:no_content' => 'Geen blogs gevonden in deze groep, voeg er een aantal toe',
   'theme_haarlem_intranet:haarlem_news:widget:more' => 'Nieuwsoverzicht',

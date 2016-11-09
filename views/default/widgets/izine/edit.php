@@ -11,6 +11,14 @@ echo elgg_view('input/autocomplete', array(
 ));
 echo '</div>';
 
+echo '<div>';
+echo elgg_echo('theme_haarlem_intranet:izine:widget:tag');
+echo elgg_view('input/tag', array(
+	'name' => 'params[tag]',
+	'value' => $widget->tag,
+));
+echo '</div>';
+
 $num_display = (int) $widget->num_display;
 if ($num_display < 1) {
 	$num_display = 5;
@@ -21,6 +29,6 @@ echo elgg_echo('widget:numbertodisplay');
 echo elgg_view('input/dropdown', array(
 	'name' => 'params[num_display]',
 	'value' => $num_display,
-	'options' => range(1, 10)
+	'options' => range(1, 20)
 ));
 echo '</div>';
