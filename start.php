@@ -166,7 +166,7 @@ function theme_haarlem_intranet_init() {
 		}
 	}
 	
-	elgg_register_page_handler('search', 'theme_haarlem_intranet_search_page_handler');
+// 	elgg_register_page_handler('search', 'theme_haarlem_intranet_search_page_handler');
 	
 	// restore tags search
 	elgg_register_plugin_hook_handler('search_advanced_types', 'get_types', 'search_custom_types_tags_hook');
