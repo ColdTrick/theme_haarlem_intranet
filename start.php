@@ -127,6 +127,13 @@ function theme_haarlem_intranet_init() {
 	
 	elgg_register_plugin_hook_handler("action", "logout", "theme_haarlem_intranet_logout_action_hook");
 	
+	// static widgets cache
+	elgg_register_plugin_hook_handler('action', 'admin/site/flush_cache', 'theme_haarlem_intranet_static_widgets_flush_cache_hook');
+	elgg_register_plugin_hook_handler('widget_settings', 'static_groups', 'theme_haarlem_intranet_static_widget_flush_cache_hook');
+	elgg_register_event_handler('create', 'object', 'theme_haarlem_intranet_update_static');
+	elgg_register_event_handler('update', 'object', 'theme_haarlem_intranet_update_static');
+	elgg_register_event_handler('delete', 'object', 'theme_haarlem_intranet_update_static');
+	
 	elgg_register_plugin_hook_handler("access:default", "user", "theme_haarlem_intranet_access_default");
 	
 	// page handlers

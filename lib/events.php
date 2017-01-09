@@ -4,6 +4,46 @@
  */
 
 /**
+ * Removes the cache for static widgets in groups
+ *
+ * @param string $event  the name of the event
+ * @param string $type   the type of the event
+ * @param mixed  $object supplied object
+ *
+ * @return void
+ */
+function theme_haarlem_intranet_update_static($event, $type, $object) {
+	if ($object->getSubtype() !== 'static') {
+		return;
+	}
+	
+	$container = $object->getContainerEntity();
+	if (elgg_instanceof($container, 'object', 'static')) {
+		while(elgg_instanceof($container, 'object', 'static')) {
+			$container = $container->getContainerEntity();
+		}
+	}
+	
+	if (!($container instanceof ElggGroup)) {
+		return;
+	}
+	
+	$batch = new \ElggBatch('elgg_get_entities_from_private_settings', [
+		'type' => 'object',
+		'subtype' => 'widget',
+		'container_guid' => $container->guid,
+		'limit' => false,
+		'private_setting_name' => 'static_cache',
+	]);
+	
+	$batch->setIncrementOffset(false);
+		
+	foreach ($batch as $widget) {
+		$widget->static_cache = null;
+	}
+}
+
+/**
  * Listen to the join site event
  *
  * @param string $event  the name of the event

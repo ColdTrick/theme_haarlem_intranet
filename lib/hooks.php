@@ -67,6 +67,46 @@ function theme_haarlem_intranet_responsive_toggle_links($hook, $type, $return_va
 	}
 	
 }
+
+/**
+ * Flushes static widgets cache
+ *
+ * @param string         $hook         the name of the hook
+ * @param string         $type         the type of the hook
+ * @param ElggMenuItem[] $return_value current return value
+ * @param array          $params       supplied params
+ *
+ * @return ElggMenuItem[]
+ */
+function theme_haarlem_intranet_static_widgets_flush_cache_hook($hook, $type, $return_value, $params) {
+	$batch = new \ElggBatch('elgg_get_entities_from_private_settings', [
+		'type' => 'object',
+		'subtype' => 'widget',
+		'limit' => false,
+		'private_setting_name' => 'static_cache',
+	]);
+	
+	$batch->setIncrementOffset(false);
+		
+	foreach ($batch as $widget) {
+		$widget->static_cache = null;
+	}
+}
+
+/**
+ * Flushes cache of a static widget
+ *
+ * @param string         $hook         the name of the hook
+ * @param string         $type         the type of the hook
+ * @param ElggMenuItem[] $return_value current return value
+ * @param array          $params       supplied params
+ *
+ * @return ElggMenuItem[]
+ */
+function theme_haarlem_intranet_static_widget_flush_cache_hook($hook, $type, $return_value, $params) {
+	$widget = $params['widget'];
+	$widget->static_cache = null;
+}
 	
 /**
  * Add menu items to the (theme)personal menu
