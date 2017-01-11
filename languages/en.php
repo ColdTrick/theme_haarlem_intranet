@@ -111,6 +111,11 @@ Lukt het nog steeds niet meldt dit via de <a href="/groups/profile/27255802">Hel
 	'theme_haarlem_intranet:sidebar_toggle:collapse' => "Hide sidebar",
 	
 	'theme_haarlem_intranet:widgets:longtext_disclaimer' => "No editor? Try to refresh the page.",
+	
+	'theme_haarlem_intranet:widgets:events:tag' => 'Limit by tag',
+	'theme_haarlem_intranet:widgets:events:list_type' => 'List type',
+	'theme_haarlem_intranet:widgets:events:list_type:default' => 'Default',
+	'theme_haarlem_intranet:widgets:events:list_type:simple' => 'Simple',
 );
 
 add_translation("en", $english);

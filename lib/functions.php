@@ -218,3 +218,128 @@ function theme_haarlem_add_toggle_link(\ElggMenuItem &$item) {
 		theme_haarlem_add_toggle_link($child);
 	}
 }
+
+
+/**
+ * custom function to search for events. Used in events widget. Needed to be able to filter on metadata
+ * @param array $options
+ * @return unknown[]
+ */
+function theme_intranet_haarlem_search_events($options = array()){
+	$defaults = array(	'past_events' 		=> false,
+						'count' 			=> false,
+						'offset' 			=> 0,
+						'limit'				=> EVENT_MANAGER_SEARCH_LIST_LIMIT,
+						'container_guid'	=> null,
+						'query'				=> false,
+						'meattending'		=> false,
+						'owning'			=> false,
+						'friendsattending' 	=> false,
+						'region'			=> null,
+						'latitude'			=> null,
+						'longitude'			=> null,
+						'distance'			=> null,
+						'event_type'		=> false,
+						'past_events'		=> false,
+						'search_type'		=> "list"
+						
+	);
+	
+	$options = array_merge($defaults, $options);
+	
+	$entities_options = array(
+		'type' 			=> 'object',
+		'subtype' 		=> 'event',
+		'offset' 		=> $options['offset'],
+		'limit' 		=> $options['limit'],
+		'joins' => array(),
+		'wheres' => array(),
+		'order_by_metadata' => array("name" => 'start_day', "direction" => 'ASC', "as" => "integer")
+	);
+	
+	if (isset($options['entities_options'])) {
+		$entities_options = array_merge($entities_options, $options['entities_options']);
+	}
+	
+	if($options["container_guid"]){
+		// limit for a group
+		$entities_options['container_guid'] = $options['container_guid'];
+	}
+	
+	if($options['query']) {
+		$entities_options["joins"][] = "JOIN " . elgg_get_config("dbprefix") . "objects_entity oe ON e.guid = oe.guid";
+		$entities_options['wheres'][] = event_manager_search_get_where_sql('oe', array('title', 'description'), $options, false);
+	}
+				
+	if(!empty($options['start_day'])) {
+		$entities_options['metadata_name_value_pairs'][] = array('name' => 'start_day', 'value' => $options['start_day'], 'operand' => '>=');
+	}
+	
+	if(!empty($options['end_day'])) {
+		$entities_options['metadata_name_value_pairs'][] = array('name' => 'start_day', 'value' => $options['end_day'], 'operand' => '<=');
+	}
+	
+	if(!$options['past_events']) {
+		// only show from current day or newer
+		$entities_options['metadata_name_value_pairs'][] = array('name' => 'start_day', 'value' => mktime(0, 0, 1), 'operand' => '>=');
+	}
+	
+	if($options['meattending']) {
+		$entities_options['joins'][] = "JOIN " . elgg_get_config("dbprefix") . "entity_relationships e_r ON e.guid = e_r.guid_one";
+		
+		$entities_options['wheres'][] = "e_r.guid_two = " . elgg_get_logged_in_user_guid();
+		$entities_options['wheres'][] = "e_r.relationship = '" . EVENT_MANAGER_RELATION_ATTENDING . "'";
+	}
+	
+	if($options['owning']) {
+		$entities_options['owner_guids'] = array(elgg_get_logged_in_user_guid());
+	}
+	
+	if($options["region"]){
+		$entities_options['metadata_name_value_pairs'][] = array('name' => 'region', 'value' => $options["region"]);
+	}
+	
+	if($options["event_type"]){
+		$entities_options['metadata_name_value_pairs'][] = array('name' => 'event_type', 'value' => $options["event_type"]);
+	}
+	
+	if($options['friendsattending']){
+		$friends_guids = array();
+		
+		if($friends = elgg_get_logged_in_user_entity()->getFriends("", false)) {
+			foreach($friends as $user) {
+				$friends_guids[] = $user->getGUID();
+			}
+			$entities_options['joins'][] = "JOIN " . elgg_get_config("dbprefix") . "entity_relationships e_ra ON e.guid = e_ra.guid_one";
+			$entities_options['wheres'][] = "(e_ra.guid_two IN (" . implode(", ", $friends_guids) . "))";
+		} else	{
+			// return no result
+			$entities_options['joins'] = array();
+			$entities_options['wheres'] = array("(1=0)");
+		}
+	}
+	
+	if(($options["search_type"] == "onthemap") && !empty($options['latitude']) && !empty($options['longitude']) && !empty($options['distance'])){
+		$entities_options["latitude"] = $options['latitude'];
+		$entities_options["longitude"] = $options['longitude'];
+		$entities_options["distance"] = $options['distance'];
+		$entities = elgg_get_entities_from_location($entities_options);
+			
+		$entities_options['count'] = true;
+		$count_entities = elgg_get_entities_from_location($entities_options);
+		
+	} else {
+		
+		$entities = elgg_get_entities_from_metadata($entities_options);
+		
+		$entities_options['count'] = true;
+		$count_entities = elgg_get_entities_from_metadata($entities_options);
+	}
+	
+	$result = array(
+		"entities" 	=> $entities,
+		"count" 	=> $count_entities
+		);
+		
+	return $result;
+}
