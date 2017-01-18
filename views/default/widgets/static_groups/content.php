@@ -4,7 +4,6 @@ $widget = elgg_extract("entity", $vars);
 
 $widget_cache = $widget->static_cache;
 if (!empty($widget_cache)) {
-	echo 'from cache';
 	echo $widget_cache;
 	return;
 }
