@@ -82,6 +82,7 @@ elgg.tinymce.init = function() {
 		extended_valid_elements : "<?php echo $valid_elements;?>",
 		content_css: [
 			elgg.config.wwwroot + 'mod/tinymce/css/elgg_tinymce.css',
+			elgg.config.wwwroot + 'mod/theme_haarlem_intranet/views/default/css/elgg_tinymce.css',
 			'<?php echo $fa_url; ?>'
 		],
 // 		style_formats_merge: true,
