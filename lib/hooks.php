@@ -1244,6 +1244,7 @@ function theme_haarlem_intranet_delayed_group_leave($hook, $type, $return_value,
 		'type' => 'user',
 		'limit' => false,
 		'relationship' => 'member',
+		'inverse_relationship' => true,
 		'metadata_name_value_pairs' => array(
 			'name' => 'theme_haarlem_site_leave',
 			'value' => $compare_ts,
