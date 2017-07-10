@@ -116,6 +116,12 @@ Lukt het nog steeds niet meldt dit via de <a href="/groups/profile/27255802">Hel
 	'theme_haarlem_intranet:widgets:events:list_type' => 'List type',
 	'theme_haarlem_intranet:widgets:events:list_type:default' => 'Default',
 	'theme_haarlem_intranet:widgets:events:list_type:simple' => 'Simple',
+	
+	'widgets:content_by_tag:container_guids' => "Only show content from the following groups",
+	'widgets:content_by_tag:container_guids:description' => "Search for a group in which the content was placed. Leave blank if you don't wish to limit based on groups.",
+ 	
+	'theme_haarlem_intranet:special_groups:widget:title' => "Special groups list",
+	'theme_haarlem_intranet:special_groups:widget:description' => "A custom list of groups",
 );
 
 add_translation("en", $english);

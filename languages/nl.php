@@ -85,5 +85,9 @@ $language = array (
   'theme_haarlem_intranet:widgets:events:list_type' => 'Weergave',
   'theme_haarlem_intranet:widgets:events:list_type:default' => 'Standaard',
   'theme_haarlem_intranet:widgets:events:list_type:simple' => 'Simpel',
+	'widgets:content_by_tag:container_guids' => "Toon enkel content uit de volgende groep",
+	'widgets:content_by_tag:container_guids:description' => "Selecteer een groep waarin de content is gemaakt. Laat het leeg om niet te beperken obv een groep.",
+ 	'theme_haarlem_intranet:special_groups:widget:title' => "Speciale groepen",
+	'theme_haarlem_intranet:special_groups:widget:description' => "Een zelf samengestelde lijst van groepen",
 );
 add_translation("nl", $language);

@@ -7,7 +7,7 @@ if ($num_display < 1) {
 	$num_display = 5;
 }
 
-$group_guid = (int) $widget->group_guid;
+$group_guid = $widget->group_guid;
 if (empty($group_guid)) {
 	echo elgg_echo('theme_haarlem_intranet:haarlem_news:widget:no_group');
 	return;

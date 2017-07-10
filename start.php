@@ -40,6 +40,9 @@ function theme_haarlem_intranet_init() {
 	$userpicker_js = elgg_get_simplecache_url('js', 'theme_haarlem_intranet/ui.userpicker');
 	elgg_register_js('elgg.userpicker', $userpicker_js);
 	
+	$grouppicker_js = elgg_get_simplecache_url('js', 'grouppicker.js');
+	elgg_register_js('elgg.grouppicker', $grouppicker_js);
+	
 	elgg_extend_view('css/elgg', 'css/theme_haarlem_intranet/site');
 	elgg_extend_view('css/elgg', 'css/theme_haarlem_intranet/responsive');
 	elgg_extend_view('css/elgg', 'css/theme_haarlem_intranet/print');
@@ -141,6 +144,8 @@ function theme_haarlem_intranet_init() {
 	elgg_register_page_handler('dashboard', 'theme_haarlem_intranet_dashboard_page_handler');
 	elgg_register_page_handler('haarlem_avatar', 'theme_haarlem_intranet_avatar_page_handler');
 	
+	elgg_register_plugin_hook_handler("route", "livesearch", "theme_haarlem_intranet_route_livesearch_handler");
+	
 	// quick nav
 	elgg_register_ajax_view('theme_haarlem_intranet/forms/quick_nav');
 	
@@ -156,6 +161,7 @@ function theme_haarlem_intranet_init() {
 	// izine
 	elgg_register_widget_type('izine', elgg_echo('theme_haarlem_intranet:izine:widget:title'), elgg_echo('theme_haarlem_intranet:izine:widget:description'), 'index', true);
 	elgg_register_widget_type('haarlem_news', elgg_echo('theme_haarlem_intranet:haarlem_news:widget:title'), elgg_echo('theme_haarlem_intranet:haarlem_news:widget:description'), 'index', true);
+	elgg_register_widget_type('special_groups', elgg_echo('theme_haarlem_intranet:special_groups:widget:title'), elgg_echo('theme_haarlem_intranet:special_groups:widget:description'), 'index', true);
 	
 	// increase master icon sizes
 	$icon_sizes = elgg_get_config('icon_sizes');
@@ -255,4 +261,100 @@ function theme_haarlem_intranet_invalidate_cache($hook, $type, $return, $params)
 	if(isset($params["plugin"]) && ($params["plugin"]->getID() == "theme_haarlem_intranet")){
 		elgg_invalidate_simplecache();
 	}
+}
+
+/**
+ * Take over the livesearch pagehandler in case of group search
+ *
+ * @param string $hook         'route'
+ * @param string $type         'livessearch'
+ * @param array  $return_value the current params for the pagehandler
+ * @param null   $params       null
+ *
+ * @return bool|void
+ */
+function theme_haarlem_intranet_route_livesearch_handler($hook, $type, $return_value, $params) {
+	
+	// only return results to logged in users.
+	if (!$user = elgg_get_logged_in_user_entity()) {
+		exit;
+	}
+	
+	if (!$q = get_input("term", get_input("q"))) {
+		exit;
+	}
+	
+	$input_name = get_input("name", "groups");
+	
+	$q = sanitise_string($q);
+	
+	// replace mysql vars with escaped strings
+	$q = str_replace(array("_", "%"), array("\_", "\%"), $q);
+	
+	$match_on = get_input("match_on", "all");
+	
+	if (!is_array($match_on)) {
+		$match_on = array($match_on);
+	}
+	
+	// only take over groups search
+	if (count($match_on) > 1 || !in_array("groups", $match_on)) {
+		return $return_value;
+	}
+	
+	if (get_input("match_owner", false)) {
+		$owner_guid = $user->getGUID();
+	} else {
+		$owner_guid = ELGG_ENTITIES_ANY_VALUE;
+	}
+	
+	$limit = sanitise_int(get_input("limit", 10));
+	
+	// grab a list of entities and send them in json.
+	$results = array();
+	
+	$options = array(
+		"type" => "group",
+		"limit" => $limit,
+		"owner_guid" => $owner_guid,
+		"joins" => array("JOIN " . elgg_get_config("dbprefix") . "groups_entity ge ON e.guid = ge.guid"),
+		"wheres" => array("(ge.name LIKE '%" . $q . "%' OR ge.description LIKE '%" . $q . "%')")
+	);
+	
+	$entities = elgg_get_entities($options);
+	if (!empty($entities)) {
+		foreach ($entities as $entity) {
+			$output = elgg_view_list_item($entity, array(
+				"use_hover" => false,
+				"class" => "elgg-autocomplete-item",
+				"full_view" => false,
+			));
+			
+			$icon = elgg_view_entity_icon($entity, "tiny", array(
+				"use_hover" => false,
+			));
+			
+			$result = array(
+				"type" => "group",
+				"name" => $entity->name,
+				"desc" => $entity->description,
+				"guid" => $entity->getGUID(),
+				"label" => $output,
+				"value" => $entity->getGUID(),
+				"icon" => $icon,
+				"url" => $entity->getURL(),
+				"html" => elgg_view("input/grouppicker/item", array(
+					"entity" => $entity,
+					"input_name" => $input_name,
+				)),
+			);
+			
+			$results[$entity->name . rand(1, 100)] = $result;
+		}
+	}
+	
+	ksort($results);
+	header("Content-Type: application/json");
+	echo json_encode(array_values($results));
+	exit;
 }
