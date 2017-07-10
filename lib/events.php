@@ -307,3 +307,26 @@ function theme_haarlem_intranet_profile_sync_profile_icon($event, $type, $object
 	// cleanup
 	unlink($tmp_icon);
 }
+
+/**
+ * Listen to the site join event to cleanup delayed group leave administration
+ *
+ * @param string           $event        the name of the event
+ * @param string           $type         the type of the event
+ * @param ElggRelationship $relationship the new relationship
+ *
+ * @return void
+ */
+function theme_haarlem_intranet_cleanup_delayed_group_leave($event, $type, $relationship) {
+	
+	if (!($relationship instanceof ElggRelationship)) {
+		return;
+	}
+	
+	$user = get_user($relationship->guid_one);
+	if (empty($user)) {
+		return;
+	}
+	
+	unset($user->theme_haarlem_site_leave);
+}

@@ -1166,3 +1166,134 @@ function theme_haarlem_profile_completeness_fields($hook, $type, $return_value, 
 	
 	return $return_value;
 }
+
+/**
+ * Prevent users from leaving groups when leaving the site
+ *
+ * @param string $hook         the name of the hook
+ * @param string $type         the type of the hook
+ * @param array  $return_value the current return value
+ * @param array  $params       supplied params
+ *
+ * @return void|false
+ */
+function theme_haarlem_intranet_prevent_group_leave($hook, $type, $return_value, $params) {
+	
+	if (empty($params) || !is_array($params)) {
+		return;
+	}
+	
+	if (elgg_is_admin_logged_in()) {
+		// user is being kicked from the site
+		return;
+	}
+	
+	$retention = (int) elgg_get_plugin_setting('group_leave_retention', 'theme_haarlem_intranet');
+	if ($retention < 1) {
+		// no setting, or invalid setting
+		// so normal behaviour
+		return;
+	}
+	
+	$user = elgg_extract('user', $params);
+	if (!($user instanceof ElggUser)) {
+		return;
+	}
+	
+	// log timestamp for delayed group leave
+	$user->theme_haarlem_site_leave = time();
+	
+	// prevent group leave
+	return false;
+}
+
+/**
+ * Remove users from groups after retention period
+ *
+ * @param string $hook         the name of the hook
+ * @param string $type         the type of the hook
+ * @param array  $return_value the current return value
+ * @param array  $params       supplied params
+ *
+ * @return void
+ */
+function theme_haarlem_intranet_delayed_group_leave($hook, $type, $return_value, $params) {
+	
+	if (empty($params) || !is_array($params)) {
+		return;
+	}
+	
+	$site = elgg_get_site_entity();
+	if (!($site instanceof Subsite)) {
+		return;
+	}
+	
+	$time = (int) elgg_extract('time', $params, time());
+	
+	$retention = (int) elgg_get_plugin_setting('group_leave_retention', 'theme_haarlem_intranet');
+	if ($retention < 1) {
+		// no setting, or invalid setting
+		return;
+	}
+	
+	// prepare
+	$compare_ts = $time - ($retention * 24 * 60 * 60);
+	
+	// all users who are a member of a group and have the timestamp past retention period
+	$user_options = array(
+		'type' => 'user',
+		'limit' => false,
+		'relationship' => 'member',
+		'metadata_name_value_pairs' => array(
+			'name' => 'theme_haarlem_site_leave',
+			'value' => $compare_ts,
+			'operand' => '<',
+		),
+	);
+	
+	// generic group options
+	$group_options = array(
+		'type' => 'group',
+		'limit' => false,
+		'relationship' => 'member',
+		'site_guid' => $site->getGUID(),
+	);
+	
+	// ignore access
+	$ia = elgg_set_ignore_access(true);
+	// could take a while
+	set_time_limit(0);
+	
+	// create batch for processing
+	$user_batch = new ElggBatch('elgg_get_entities_from_relationship', $user_options);
+	$user_batch->setIncrementOffset(false);
+	
+	/* @var $user ElggUser */
+	foreach ($user_batch as $user) {
+		
+		if ($site->isUser($user->getGUID())) {
+			// user rejoined the site, no cleanup needed
+			unset($user->theme_haarlem_site_leave);
+			continue;
+		}
+		
+		// prepare options
+		$group_options['relationship_guid'] = $user->getGUID();
+		
+		// create batch
+		$group_batch = new ElggBatch('elgg_get_entities_from_relationship', $group_options);
+		$group_batch->setIncrementOffset(false);
+		
+		/* @var $group ElggGroup */
+		foreach ($group_batch as $group) {
+			// leave the group
+			$group->leave($user);
+		}
+		
+		// remove administration stamp
+		unset($user->theme_haarlem_site_leave);
+	}
+	
+	// restore access
+	elgg_set_ignore_access($ia);
+}

@@ -192,6 +192,11 @@ function theme_haarlem_intranet_init() {
 // 	elgg_register_plugin_hook_handler("email", "system", "theme_haarlem_intranet_notification_handler");
 
 	elgg_register_plugin_hook_handler("setting", "plugin", "theme_haarlem_intranet_invalidate_cache");
+	
+	// delayed group leave
+	elgg_register_plugin_hook_handler('leave:group_membership', 'site', 'theme_haarlem_intranet_prevent_group_leave');
+	elgg_register_plugin_hook_handler('cron', 'daily', 'theme_haarlem_intranet_delayed_group_leave');
+	elgg_register_event_handler('create', 'member_of_site', 'theme_haarlem_intranet_cleanup_delayed_group_leave');
 }
 
 /**

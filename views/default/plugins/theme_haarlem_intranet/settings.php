@@ -18,6 +18,16 @@ $is_extranet .= '</div>';
 
 echo $is_extranet;
 
+$group_leave_retention = '<div>';
+$group_leave_retention .= '<label>' . elgg_echo('theme_haarlem_intranet:settings:group_leave_retention') . '</label>';
+$group_leave_retention .= elgg_view('input/text', array(
+	'name' => 'params[group_leave_retention]',
+	'value' => $plugin->group_leave_retention,
+));
+$group_leave_retention .= '</div>';
+
+echo $group_leave_retention;
+
 // reset mentions notifications
 $content = '<div>';
 $content .= elgg_view('output/longtext', array('value' => elgg_echo('theme_haarlem_intranet:settings:mentions:reset')));

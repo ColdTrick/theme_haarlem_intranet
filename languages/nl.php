@@ -85,5 +85,6 @@ $language = array (
   'theme_haarlem_intranet:widgets:events:list_type' => 'Weergave',
   'theme_haarlem_intranet:widgets:events:list_type:default' => 'Standaard',
   'theme_haarlem_intranet:widgets:events:list_type:simple' => 'Simpel',
+  'theme_haarlem_intranet:settings:group_leave_retention' => "Aantal dagen waarna een gebruiker wordt verwijderd uit zijn groepen nadat de site is verlaten",
 );
 add_translation("nl", $language);
