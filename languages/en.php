@@ -51,7 +51,10 @@ $english = array(
 	"theme_haarlem_intranet:color:teal" => "Teal",
 	"theme_haarlem_intranet:color:blue" => "Blue",
 	"theme_haarlem_intranet:color:purple" => "Purple",
-	"theme_haarlem_intranet:color:red" => "Red",
+	"theme_haarlem_intranet:color:red" => "Signal Red",
+	"theme_haarlem_intranet:color:darkred" => "Dark Red",
+	"theme_haarlem_intranet:color:orange" => "Orange",
+	"theme_haarlem_intranet:color:darkblue" => "Dark Blue",
 	"theme_haarlem_intranet:thewire:form:placeholder" => "Share your news",
 	
 	"theme_haarlem_intranet:quick_nav:edit" => "Add links",

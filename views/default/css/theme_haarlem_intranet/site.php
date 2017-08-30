@@ -911,7 +911,7 @@ form.elgg-search {
 }
 .promo-widget-blue,
 .promo-widget-blue a {
-    background-color: #<?php echo THEME_BLUE; ?>;
+    background-color: #00ADEF;
     color: white;
 }
 .promo-widget-purple,
@@ -921,7 +921,22 @@ form.elgg-search {
 }
 .promo-widget-red,
 .promo-widget-red a {
-    background-color: #<?php echo THEME_RED; ?>;
+    background-color: #EE1124;
+    color: white;
+}
+.promo-widget-darkred,
+.promo-widget-darkred a {
+    background-color: #A60F0F;
+    color: white;
+}
+.promo-widget-orange,
+.promo-widget-orange a {
+    background-color: #D78205;
+    color: white;
+}
+.promo-widget-darkblue,
+.promo-widget-darkblue a {
+    background-color: #005D98;
     color: white;
 }
 
