@@ -71,10 +71,6 @@ if (count($haarlem_organisatie_eenheid) > 1) {
 					<td>{$oe_haarlem_functie}</td>
 				</tr>
 				<tr>
-					<td class='label-cell'><label>Hoofdafdeling:</label></td>
-					<td>{$oe_hoofdafdeling}</td>
-				</tr>
-				<tr>
 					<td class='label-cell'><label>Afdeling:</label></td>
 					<td>{$oe_afdeling}</td>
 				</tr>
@@ -170,10 +166,6 @@ __TABLE;
 				<tr>
 					<td class='label-cell'><label>Werklocatie:</label></td>
 					<td>{$haarlem_werklocatie}</td>
-				</tr>
-				<tr>
-					<td class='label-cell'><label>Hoofdafdeling:</label></td>
-					<td>{$haarlem_hoofdafdeling}</td>
 				</tr>
 				<tr>
 					<td class='label-cell'><label>Afdeling:</label></td>
