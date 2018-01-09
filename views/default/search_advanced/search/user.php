@@ -46,12 +46,17 @@ foreach ($profile_field_values as $profile_field) {
 		
 		$name_id = add_metastring($profile_field);
 		$dbprefix = elgg_get_config('dbprefix');
+		
+		$site_guid = elgg_get_site_entity()->guid;
 		$query = "SELECT msv.string
 		FROM {$dbprefix}metadata md
 		JOIN {$dbprefix}metastrings msv ON md.value_id = msv.id
 		JOIN {$dbprefix}entities e ON md.entity_guid = e.guid
+		JOIN {$dbprefix}entity_relationships r ON e.guid = r.guid_one
 		WHERE md.name_id = {$name_id}
 		AND e.type = 'user'
+		AND r.relationship = 'member_of_site'
+		AND r.guid_two = {$site_guid}
 		GROUP BY msv.string
 		ORDER BY msv.string ASC";
 				
