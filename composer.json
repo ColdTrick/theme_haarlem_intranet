@@ -3,7 +3,7 @@
 	"description": "Template for Gemeente Haarlem",
 	"type": "elgg-plugin",
 	"keywords": ["elgg", "plugin", "theme"],
-	"license": "GPL-2.0",
+	"license": "GPL-2.0-only",
 	"support": {
 		"source": "https://github.com/ColdTrick/theme_haarlem_intranet",
 		"issues": "https://github.com/ColdTrick/theme_haarlem_intranet/issues"
