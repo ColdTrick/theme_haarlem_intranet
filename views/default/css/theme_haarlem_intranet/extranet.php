@@ -40,7 +40,7 @@
 .theme-haarlem-intranet-extranet-logo {
 	line-height: 65px;
     position: absolute;
-    top: 10px;
+    top: 22px;
     right: 0;
     
     font-size: 24px;
