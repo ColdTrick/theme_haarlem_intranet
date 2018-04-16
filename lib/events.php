@@ -44,6 +44,37 @@ function theme_haarlem_intranet_update_static($event, $type, $object) {
 }
 
 /**
+ * Updates time last modified of discussion topic on reply
+ *
+ * @param string $event  the name of the event
+ * @param string $type   the type of the event
+ * @param mixed  $object supplied object
+ *
+ * @return void
+ */
+function theme_haarlem_intranet_create_group_topic_post($event, $type, $object) {
+	if (!$object instanceof \ElggAnnotation) {
+		return;
+	}
+	
+	if ($object->name !== 'group_topic_post') {
+		return;
+	}
+	
+	$topic = $object->getEntity();
+	if (!$topic instanceof \ElggEntity) {
+		return;
+	}
+	if ($topic->getSubtype() !== 'groupforumtopic') {
+		return;
+	}
+	
+	$ia = elgg_set_ignore_access(true);
+	$topic->save();
+	elgg_set_ignore_access($ia);
+}
+
+/**
  * Listen to the join site event
  *
  * @param string $event  the name of the event
