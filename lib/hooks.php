@@ -397,6 +397,9 @@ function theme_haarlem_intranet_prepare_menu_icons($hook, $type, $return_value, 
 		'messages:sentmessages' => 'upload',
 		'search' => 'search',
 		'haarlem_tangram' => 'eye',
+		'entity_tools:user' => 'wrench',
+		'entity_tools:group' => 'wrench',
+		'photo_albums' => 'camera',
 	);
 	
 	foreach ($return_value as $section => $menu_items) {
