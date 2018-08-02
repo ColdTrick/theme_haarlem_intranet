@@ -1128,7 +1128,7 @@ form.elgg-search {
 .elgg-widget-instance-promo_widget .elgg-widget-content {
 	font-size: 19px;
 }
-.elgg-widget-instance-promo_widget .elgg-widget-content > table a {
+.elgg-widget-instance-promo_widget .elgg-widget-content > table .elgg-content {
 	height: 170px;
 	text-decoration: none;
 }
