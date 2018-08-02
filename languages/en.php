@@ -104,6 +104,7 @@ $english = array(
 	'theme_haarlem_intranet:event_presenting' => 'You are presenting',
 	'theme_haarlem_intranet:event_exhibiting' => 'You are exhibiting',
 	'theme_haarlem_intranet:event_organizing' => 'You are organizing',
+	'theme_haarlem_intranet:event_unsubscribe' => 'Unsubscribe',
 	
 	'error:404:content' => '<h1>Oeps: pagina niet gevonden!</h1>
 <br /><br/>

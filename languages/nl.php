@@ -77,6 +77,7 @@ $language = array (
   'theme_haarlem_intranet:event_presenting' => 'Je presenteerd',
   'theme_haarlem_intranet:event_exhibiting' => 'Je presenteerd',
   'theme_haarlem_intranet:event_organizing' => 'Je organiseerd',
+  'theme_haarlem_intranet:event_unsubscribe' => 'Afmelden',
   'theme_haarlem_intranet:rsvp' => 'Aanmelden',
   "theme_haarlem_intranet:widgets:pages:edit:main_page" => "Selecteer een hoofdpagina voor lijstweergave",
   "theme_haarlem_intranet:widgets:pages:edit:main_page:select" => "Alleen hoofdpagina's",

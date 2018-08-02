@@ -55,6 +55,8 @@ function theme_haarlem_intranet_init() {
 
 	elgg_extend_view('widgets/free_html/edit', 'theme_haarlem_intranet/longtext_disclaimer');
 	elgg_extend_view('widgets/promo_widget/edit', 'theme_haarlem_intranet/longtext_disclaimer');
+
+	elgg_extend_view('event_manager/event/actions', 'theme_haarlem_intranet/event_manager/undo_registration', 400);
 	
 	elgg_extend_view('river/elements/body', 'theme_haarlem_intranet/river/elements/body', 400);
 	
