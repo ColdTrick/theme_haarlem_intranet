@@ -104,6 +104,16 @@ elgg.tinymce.init = function() {
 				format: 'p',
 				classes: '',
 			},
+			{
+				title: 'H3',
+				format: 'h3',
+				classes: '',
+			},
+			{
+				title: 'H4',
+				format: 'h4',
+				classes: '',
+			},
 		],
 		templates: [
 			{
