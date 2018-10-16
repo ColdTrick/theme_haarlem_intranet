@@ -15,4 +15,9 @@ echo elgg_view('output/img', array(
 	'src' => elgg_get_site_url() . 'mod/theme_haarlem_intranet/graphics/logo_footer.png',
 	'alt' => 'footer logo'
 ));
+echo elgg_view('output/img', array(
+	'src' => elgg_get_site_url() . 'mod/theme_haarlem_intranet/graphics/logo_footer_zandvoort.png',
+	'alt' => 'footer logo zandvoort',
+	'class' => 'mll',
+));
 echo '</div>';
