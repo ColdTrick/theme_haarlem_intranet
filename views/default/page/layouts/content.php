@@ -45,10 +45,10 @@ $body = $header . $filter . $content . $footer;
 
 $params = array(
 	'content' => $body,
-	'sidebar' => $sidebar,
+	'sidebar_alt' => $sidebar,
 	'layout' => 'content'
 );
 if (isset($vars['class'])) {
 	$params['class'] = $vars['class'];
 }
-echo elgg_view_layout('one_sidebar', $params);
+echo elgg_view_layout('two_sidebar', $params);
