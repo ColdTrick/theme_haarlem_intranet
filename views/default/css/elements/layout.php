@@ -24,12 +24,12 @@ body {
 	min-width: 800px;
 }
 .elgg-page-default .elgg-page-header > .elgg-inner {
-	max-width: 1220px;
+	max-width: 1600px;
 	margin: 0 auto;
 	height: 40px;
 }
 .elgg-page-default .elgg-page-navbar > .elgg-inner {
-	max-width: 1220px;
+	max-width: 1600px;
 	margin: 0 auto;
 	height: auto;
 }
@@ -38,19 +38,19 @@ body {
 	
 }
 .elgg-page-default .elgg-page-content-header > .elgg-inner {
-	max-width: 1220px;
+	max-width: 1600px;
 	margin: 0 auto;
 	height: 90px;
 	position: relative;
 }
 .elgg-page-default .elgg-page-body > .elgg-inner {
-	max-width: 1220px;
+	max-width: 1600px;
 	margin: 0 auto;
 	padding-top: 27px;
 	padding-bottom: 27px;
 }
 .elgg-page-default .elgg-page-footer > .elgg-inner {
-	max-width: 1220px;
+	max-width: 1600px;
 	margin: 0 auto;
 	padding: 5px 0;
 }
