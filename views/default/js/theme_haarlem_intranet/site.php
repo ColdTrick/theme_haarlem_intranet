@@ -10,13 +10,13 @@ elgg.theme_haarlem_intranet.izine_nav = function() {
 	var $new_item = null;
 	var right = $(this).hasClass('elgg-icon-chevron-right');
 	if (right) {
-		$new_item = $item.next();
+		$new_item = $item.next('div');
 
 		if (!$new_item.length) {
 			$new_item = $container.find('> div:first');
 		}
 	} else {
-		$new_item = $item.prev();
+		$new_item = $item.prev('div');
 
 		if (!$new_item.length) {
 			$new_item = $container.find('> div:last');
@@ -25,6 +25,15 @@ elgg.theme_haarlem_intranet.izine_nav = function() {
 
 	$container.find('> div').hide();
 	$new_item.show();
+
+	$list = $container.find('> ul.theme-haarlem-intranet-izine-list');
+	if (!$list.length) {
+		return;
+	}
+
+	var rel = $new_item.attr('rel');
+	$list.find('> li').removeClass('elgg-state-selected');
+	$list.find('> li[rel="' + rel + '"]').addClass('elgg-state-selected');
 };
 
 elgg.theme_haarlem_intranet.toggle_sidebar = function(event) {

@@ -1068,6 +1068,33 @@ form.elgg-search {
 .theme-haarlem-intranet-izine-image img {
 	width: 100%;
 }
+
+.theme-haarlem-intranet-izine-list {
+	border-top: 4px solid #<?php echo THEME_GREEN; ?>;
+	margin-top: 16px;
+	padding-top: 10px;
+	position: relative;
+}
+
+.theme-haarlem-intranet-izine-list:after {
+	border-bottom: 15px solid #<?php echo THEME_GREEN; ?>;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    top: -19px;
+    left: 40px;
+    content: '';
+    position: absolute;
+}
+
+.theme-haarlem-intranet-izine-list li {
+	padding: 6px 8px;
+	border-bottom: 1px solid #DCDCDC;
+}
+
+.theme-haarlem-intranet-izine-list li.elgg-state-selected a {
+	opacity: 0.5;
+}
+
 .elgg-module-izine {
 	padding: 10px;
 	margin: 0;

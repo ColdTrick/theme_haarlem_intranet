@@ -74,6 +74,7 @@ $english = array(
 	"theme_haarlem_intranet:izine:widget:description" => "Show blogs from a specific group",
 	"theme_haarlem_intranet:izine:widget:group" => "Please select a group to show the blogs from",
 	"theme_haarlem_intranet:izine:widget:tag" => "Optional tag to filter blogs",
+	"theme_haarlem_intranet:izine:widget:show_list" => "Show list of the blogs",
 	"theme_haarlem_intranet:izine:widget:no_group" => "Please select a group",
 	"theme_haarlem_intranet:izine:widget:no_content" => "No blogs in this group, please add some",
 	"theme_haarlem_intranet:izine:widget:more" => "Read more",

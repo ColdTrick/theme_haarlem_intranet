@@ -43,8 +43,8 @@ if (empty($blogs)) {
 shuffle($blogs);
 
 $class = '';
-foreach ($blogs as $blog) {
-	echo "<div class='{$class}'>";
+foreach ($blogs as $index => $blog) {
+	echo "<div class='{$class}' rel='izine-index-{$index}'>";
 	
 	// image + nav
 	
@@ -81,3 +81,27 @@ foreach ($blogs as $blog) {
 		$class = 'hidden';
 	}
 }
+
+if ($widget->show_list !== 'yes') {
+	return;
+}
+
+echo '<ul class="theme-haarlem-intranet-izine-list">';
+
+foreach ($blogs as $index => $blog) {
+	
+	$class = '';
+	if ($index === 0) {
+		$class = ' class="elgg-state-selected"';
+	}
+	
+	echo "<li rel='izine-index-{$index}'{$class}>";
+	echo elgg_view('output/url', array(
+		'text' => $blog->title,
+		'href' => $blog->getURL(),
+		'is_trusted' => true
+	));
+	echo '</li>';
+}
+
+echo '</ul>';
